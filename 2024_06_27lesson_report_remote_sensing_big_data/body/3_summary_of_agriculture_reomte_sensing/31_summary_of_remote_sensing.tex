@@ -1,0 +1,54 @@
+\section{Overview of Remote Sensing}
+
+\subsection{Basic Principles of Agricultural Remote Sensing}
+
+\subsubsection{Basic Principles of Remote Sensing Technology}
+
+Remote sensing technology is a method of obtaining and analyzing information about target objects and their environments from a distance. It primarily relies on sensors to receive electromagnetic waves reflected or emitted by target objects, which are then processed and analyzed to extract useful information. The basic principles of remote sensing technology can be summarized in the following steps\cite{geRemoteSensingSoil2011}:
+
+\paragraph{Energy Source or Illumination} The remote sensing process typically depends on solar energy or artificial electromagnetic sources (such as radar). Sunlight, as a natural energy source, is reflected or absorbed by surface objects and re-emitted at different wavelengths.
+
+\paragraph{Interaction between Energy and Target}Different objects have unique reflection, absorption, and emission characteristics for different wavelengths of electromagnetic waves, known as spectral characteristics. Plants, water bodies, and soil exhibit different spectral reflectance in various bands, forming the basis for remote sensing identification and classification.
+
+\paragraph{Sensor Reception of Energy}Sensors mounted on satellites, aircraft, or drones receive electromagnetic waves reflected or emitted by target objects. Depending on their operational wavelength bands, sensors can be categorized into visible light sensors, infrared sensors, microwave sensors, and more.
+
+\paragraph{Data Transmission and Processing} Electromagnetic signals received by sensors are converted and encoded, then transmitted to ground receiving stations via radio waves. These signals undergo preprocessing (such as atmospheric correction, geometric correction, radiometric correction) to generate remote sensing image data for analysis.
+
+\paragraph{Data Analysis and Application} Processed remote sensing data are further analyzed to extract information on spatial distribution, spectral characteristics, and temporal changes of target objects, applicable in fields such as agriculture, environmental monitoring, and urban planning.
+
+\subsubsection{Optical Remote Sensing Technology in Agriculture}
+
+Optical remote sensing technology, widely used in agricultural remote sensing, primarily utilizes electromagnetic waves in the visible and near-infrared bands for observation. The basic principle is to receive sunlight reflected by surface objects through sensors and analyze the spectral reflectance in different bands to identify and monitor land cover.
+
+\paragraph{Spectral Reflectance Characteristics} Plants, soil, and water bodies exhibit different spectral reflectance characteristics in the visible and near-infrared bands. For example, healthy plants have high reflectance in the near-infrared band (700-1300 nm) and low reflectance in the red band (600-700 nm). Analyzing these spectral characteristics can assess plant health, identify crop types, and monitor soil moisture.
+
+\paragraph{Typical Optical Remote Sensing Indices} Common optical remote sensing indices include the Normalized Difference Vegetation Index (NDVI)\cite{Normaliz41:online} and the Enhanced Vegetation Index (EVI)\cite{Enhanced85:online}. NDVI\cite{Normaliz41:online}, an index measuring vegetation cover and health, is calculated as follows:
+
+\begin{equation}
+        \textbf{NVDI} = \frac{\textbf{NIR}-\textbf{Red}}{\textbf{NIR}+\textbf{Red}}
+        \label{formula:NVDI}
+\end{equation}
+
+where NIR represents the reflectance in the near-infrared band, and Red represents the reflectance in the red band. NDVI values range from -1 to 1, with positive values indicating vegetation cover, and higher values indicating healthier vegetation.
+
+\paragraph{Applications of Optical Remote Sensing} Optical remote sensing is widely applied in crop monitoring, soil analysis, and pest identification. For example, by periodically acquiring optical remote sensing images, crop growth changes can be monitored to timely identify and address issues in agricultural production.
+
+\subsubsection{Radar Remote Sensing Technology in Agriculture}
+
+Radar remote sensing technology utilizes electromagnetic waves in the microwave band (1 mm - 1 m) for observation, capable of all-weather, day-and-night operation. The basic principle involves sensors emitting microwave signals and receiving signals reflected by surface objects, analyzing reflection characteristics and phase information.
+
+\paragraph{Synthetic Aperture Radar (SAR)} SAR, a commonly used radar remote sensing technology, enhances resolution by synthesizing a large aperture antenna. SAR sensors can operate under adverse weather conditions (e.g., cloud cover, rainfall), making them crucial for agricultural remote sensing.
+
+\paragraph{Reflection Characteristics of Radar Signals} Different surface objects have unique reflection characteristics for microwave signals. For example, moist soil and vegetation reflect microwave signals more strongly than dry soil. By analyzing the intensity and phase information of radar images, structural, moisture, and topographical information of surface objects can be obtained.
+
+\paragraph{Applications of Radar Remote Sensing} Radar remote sensing technology is important for soil moisture monitoring, crop growth monitoring, and disaster assessment. For instance, analyzing SAR images from different time points can monitor changes in farmland soil moisture, providing a basis for precision irrigation.
+
+\subsubsection{Thermal Infrared Remote Sensing Technology in Agriculture}
+
+Thermal infrared remote sensing technology utilizes electromagnetic waves in the thermal infrared band (8-14 µm) to measure surface temperature. The basic principle involves sensors receiving thermal infrared radiation emitted by surface objects and analyzing temperature distribution characteristics.
+
+\paragraph{Thermal Infrared Radiation Characteristics} Different surface objects have unique radiation characteristics in the thermal infrared band. For example, vegetation has low thermal radiation intensity at night, while bare soil and buildings have higher thermal radiation intensity. Analyzing the radiation intensity in thermal infrared images can estimate surface temperature and identify different objects.
+
+\paragraph{Applications of Thermal Infrared Remote Sensing} Thermal infrared remote sensing technology is crucial for monitoring crop water stress, irrigation management, and pest warning. For instance, monitoring temperature changes in farmland can assess whether crops are experiencing water stress, guiding precision irrigation.
+
+In summary, agricultural remote sensing technology utilizes electromagnetic waves in optical, radar, and thermal infrared bands to achieve real-time monitoring and management of farmland. Optical remote sensing is suitable for monitoring vegetation health and crop classification, radar remote sensing is ideal for soil moisture monitoring and disaster assessment, and thermal infrared remote sensing is effective for surface temperature measurement and irrigation management. The comprehensive application of these technologies provides robust technical support for precision agriculture and sustainable agricultural development.

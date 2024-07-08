@@ -1,0 +1,151 @@
+\section{逆扩散过程原理与推导}
+
+很显然, 我们想要通过$x_t$来预测$x_{t-1}$. 
+
+如果我们能够逆转上述扩散过程, 并从$p(x_{t-1}|x_t)$采样，就可以从高斯噪声$x_t\sim N(0,1)$还原出原图服从的分布$x_0\sim p(x)$。
+
+如何获得$p_\theta(x_{t-1}\vert x_t)$这个概率密度 (式子中的$\theta$表示神经网络的参数)就是一个需要探讨的问题. 直接计算比较困难, 所以我们可以考虑对公式进行变形. 对公式使用贝叶斯公式, 有如下结果
+
+
+\begin{equation}
+\begin{aligned}
+p_\theta(x_{t-1}|x_t) &\xlongequal{\text{贝叶斯公式}} \frac{p_\theta(x_{t-1},x_t)}{p(x_t)}\\
+&\xlongequal{\text{分母用全概率公式展开}} \frac{p(x_t|x_{t-1})\cdot p_\theta(x_{t-1})}{p(x_t)}\\
+&=p(x_t|x_{t-1}) \cdot \frac{p_\theta(x_{t-1})}{p(x_t)}\\
+\end{aligned}
+\end{equation}
+
+
+通过这样的变换, 我们将一个无法计算的式子$p_\theta(x_{t-1}|x_t)$, 改写成了一个可计算的部分$p(x_t|x_{t-1})$和一个不可计算的分式$\frac{p_\theta(x_{t-1})}{p(x_t)}$的乘积
+
+自己观察这个不可计算的分式, 可以发现, 这个分式的分子与分母都是不可计算的. 因为如果我们能直接得到$p(x_{t})$或$p(x_{x-1})$, 那我们就能直接得出$p(x_0)$. 但是我们计算$p (x_{t-1}|x_t)$的目的就是为了计算$p(x_0)$, 如果可以直接得出$p(x_0)$, 那么我们就没有计算$p (x_{t-1}|x_t)$, 所以我们不可能直接得到$p(x_t)$.
+
+可以想到, 虽然直接计算$p(x_t)$是不可行的, 但是计算$p(x_t|x_0)$是十分简单的, 在\ref{sec_prob} 中我们介绍过这个计算：
+
+$$
+p(x_t\vert x_0)\sim \mathcal{N}(\sqrt{\overline{\alpha_t}}x_0,1-\overline{\alpha_t})
+$$
+
+所以我们可以考虑将$p(x_t)$的计算转换成$p(x_t|x_0)$用于计算, 由此可以计算$p_\theta(x_{t-1}|x_t,x_0)$, 有
+
+
+
+\begin{equation}
+\begin{aligned}
+p_\theta(x_{t-1}|x_t,x_0) &\xlongequal{\text{贝叶斯公式}} \frac{p_\theta(x_{t-1},x_t,x_0)}{p(x_t,x_0)}\\
+&\xlongequal{\text{分子用全概率公式展开}} \frac{p(x_t|x_{t-1},x_0)\cdot p_\theta(x_{t-1},x_0)}{p(x_t,x_0)}\\
+&=p(x_t|x_{t-1}) \cdot \frac{p(x_{t-1},x_0)}{p(x_t,x_0)}\\
+&=p(x_t|x_{t-1}) \cdot \frac{p(x_{t-1},x_0)}{p(x_t,x_0)}\\
+=& p(x_t|x_{t-1}) \cdot \frac{p(x_{t-1}|x_0)\cdot p(x_0)}{p(x_t|x_0)\cdot p(x_0)}\\
+=& p(x_t|x_{t-1}) \cdot \frac{p(x_{t-1}|x_0)}{p(x_t|x_0)}\\
+\end{aligned}
+\end{equation}
+
+
+对上述推导取等式左侧与右侧第一项, 有 $p_\theta(x_{t-1}|x_t,x_0)=p(x_t|x_{t-1}) \cdot \frac{p_\theta(x_{t-1}|x_0)}{p(x_t|x_0)}$
+
+可能有人发现, 在第三个等式中, 我们直接将 $p(x_t|x_{t-1},x_0)$ 替换为了 $p(x_t|x_{x-1})$, 这可以用马尔可夫性（Markov property）来解释：马尔可夫性假设指出，一个状态只依赖于前一个状态，而与更早的状态条件独立。应用于 DDPM 模型，这意味着：
+
+$p(x_t|x_{t-1},x_0)=p(x_t|x_{t-1})p(x_t | x_{t-1}, x_0) = p(x_t | x_{t-1})p(x_t|x_{t-1},x_0)=p(x_t|x_{t-1})$
+
+这三项就都是很好计算的项了, 虽然此处我们使用的是$p(x_{t}|x_{t-1})$而非$q(x_t|x_{t-1})$, 但他们之间表示的内容是一致的, 均表示前向过程中的加噪.
+
+从\ref{sec_prob}中, 我们有推导结果
+
+
+\begin{equation}
+    \begin{aligned}
+        p(x_t|x_{t-1},x_0)= q(x_t|x_{t-1},x_0)&\sim \mathcal{N}(\sqrt{\alpha_t}x_{t-1}, 1-\alpha_t)\\
+        &=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\cdot(\frac{x_t-\mu}{\sigma})^2}\\
+        &= \frac{1}{\sqrt{2\pi}\cdot\sqrt{1-\alpha_t}}\exp\left[{-\frac{1}{2}\cdot\left(\frac{x_t-\sqrt{\alpha_t}x_{t-1}}{\sqrt{1-\alpha_t}}\right)^2}\right]\\
+        \text{$x_t$为随机变量}
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        p_\theta(x_{t-1}\vert x_0)=q(x_{t-1}\vert x_0)&\sim \mathcal{N}(\sqrt{\overline{\alpha_t}}x_0,1-\overline{\alpha_{t-1}})\\
+        &=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\cdot(\frac{x_{t-1}-\mu}{\sigma})^2}\\
+        &= \frac{1}{\sqrt{2\pi}\cdot\sqrt{1-\overline{\alpha_{t-1}}}}\exp\left[{-\frac{1}{2}\cdot\left(\frac{x_{t-1}-\sqrt{\overline{\alpha_{t-1}}}x_0}{\sqrt{1-\overline{\alpha_{t-1}}}}\right)^2}\right]\\
+        &\text{$x_{t-1}$为随机变量}
+    \end{aligned}
+\end{equation}
+
+
+\begin{equation}
+    \begin{aligned}
+        p(x_t\vert x_0)=q(x_t\vert x_0)&\sim \mathcal{N}(\sqrt{\overline{\alpha_t}}x_0,1-\overline{\alpha_t})\\
+        &=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\cdot(\frac{x_t-\mu}{\sigma})^2}\\
+        &= \frac{1}{\sqrt{2\pi}\cdot\sqrt{1-\overline{\alpha_t}}}\exp\left[{-\frac{1}{2}\cdot\left(\frac{x_t-\sqrt{\overline{\alpha_t}}x_0}{\sqrt{1-\overline{\alpha_t}}}\right)^2}\right]\\
+        &\text{$x_t$为随机变量}
+    \end{aligned}
+\end{equation}
+
+
+将这三个式子带入上述公式$p_\theta(x_{t-1}|x_t,x_0)=p(x_t|x_{t-1}) \cdot \frac{p_\theta(x_{t-1}|x_0)}{p(x_t|x_0)}$, 有如下化简：
+
+
+\begin{equation}
+    \begin{aligned}
+        p_\theta(x_{t-1}|x_t,x_0) &= p(x_t|x_{t-1}) \cdot \frac{p_\theta(x_{t-1}|x_0)}{p(x_t|x_0)}\\
+        &= \frac{1}{\sqrt{2\pi}\cdot\sqrt{1-\alpha_t}}\exp\left[{-\frac{1}{2}\cdot\left(\frac{x_t-\sqrt{\alpha_t}x_{t-1}}{\sqrt{1-\alpha_t}}\right)^2}\right]\cdot\frac{\frac{1}{\sqrt{2\pi}\cdot\sqrt{1-\overline{\alpha_{t-1}}}}\exp\left[{-\frac{1}{2}\cdot\left(\frac{x_{t-1}-\sqrt{\overline{\alpha_{t-1}}}x_0}{\sqrt{1-\overline{\alpha_{t-1}}}}\right)^2}\right]}{\frac{1}{\sqrt{2\pi}\cdot\sqrt{1-\overline{\alpha_t}}}\exp\left[{-\frac{1}{2}\cdot\left(\frac{x_t-\sqrt{\overline{\alpha_t}}x_0}{\sqrt{1-\overline{\alpha_t}}}\right)^2}\right]}\\
+        &\xlongequal[\text{忽略前面的系数}]{\text{指数相乘(除)等于幂相加(减)}}k\cdot\exp\left\{-\frac12\cdot\left[ \left(\frac{x_t-\sqrt{\alpha_t}x_{t-1}}{\sqrt{1-\alpha_t}}\right)^2 +\left(\frac{x_{t-1}-\sqrt{\overline{\alpha_{t-1}}}x_0}{\sqrt{1-\overline{\alpha_{t-1}}}}\right)^2- \left(\frac{x_t-\sqrt{\overline{\alpha_t}}x_0}{\sqrt{1-\overline{\alpha_t}}}\right)^2 \right]\right\}\\
+    \end{aligned}
+\end{equation}
+
+
+这个公式看起来很复杂, 但是我们可以这样考虑：整个公式为一个常数与一个「以$e$为底的指数」的乘积, 与高斯分布的形式很像, 而我们知道, 高斯分布中的指数部分是一个完全平方：$\exp\left(-\frac12\cdot\left[\frac{(x-\mu)}{\sigma}\right]^2\right)=\exp\left\{-\frac12\left(\frac{1}{\sigma^2}x^2-\frac{2\mu}{\sigma^2}x+\frac{\mu^2}{\sigma^2}\right)\right\}$, 所以我们可以也将上面公式中的指数部分变成一个完全平方. 
+
+根据上面的思想，我们可以有如下推导：
+
+\begin{equation}
+    \begin{aligned}
+        p_\theta(x_{t-1}|x_t,x_0) &= k\cdot \exp{\left\{-\frac{1}{2}\cdot\left[\left(\frac{x-\sqrt{\alpha_t}x_{t-1}}{\sqrt{1-\alpha_t}}\right)^2+\left(\frac{x-\sqrt{\overline{\alpha_{t-1}}}x_0}{\sqrt{1-\overline{\alpha_{t-1}}}}\right)^2-\left(\frac{x-\sqrt{\overline{\alpha_t}}x_0}{\sqrt{1-\overline{\alpha_t}}}\right)^2   \right]\right\}}\\
+        &\Downarrow\text{将等式右侧平方拆开}\\
+        \text{原式} &=k\cdot\exp \left\{ -\frac{1}{2}\left(\frac{{x}_{t}^{2}-2 \sqrt{\alpha_{t}} {x}_{t} {x}_{t-1}+\alpha_{t} {x}_{t-1}^{2}}{1-\alpha_{t}}+\frac{{x}_{t-1}^{2}-2 \sqrt{\overline{\alpha_{t-1}}} {x}_{0} {x}_{t-1}+\overline{\alpha_{t-1}} {x}_{0}^{2}}{1-\overline{\alpha_{t-1}}}-\frac{\left({x}_{t}-\sqrt{\overline{\alpha_{t}}} {x}_{0}\right)^{2}}{1-\overline{\alpha_{t}}}\right)\right\} \\
+        &\Downarrow\text{合并等式右侧$x_{t-1}$的同类项}\\
+        \text{原式} &=k\cdot\exp \left\{\underbrace{-\frac{1}{2}\left[\left(\frac{\alpha_{t}}{1-\alpha_{t}}+\frac{1}{1-\overline{\alpha_{t-1}}}\right) {x}_{t-1}^{2}-2\left(\frac{ \sqrt{\alpha_{t}}}{1-\alpha_{t}} {x}_{t}+\frac{\sqrt{\overline{\alpha_{t-1}}}}{1-\overline{\alpha_{t-1}}} {x}_{0}\right) {x}_{t-1}+C\left({x}_{t}, {x}_{0}\right)\right]}_{\text{这部分就是高斯分布中的}-\frac12\left(\frac{1}{\sigma^2}x^2-\frac{2\mu}{\sigma^2}x+\frac{\mu^2}{\sigma^2}\right)} \right\}\\
+        &\xlongequal{\text{完全平方公式}}k\cdot\exp\left\{-\frac{1}{2}\cdot\left[  \frac{x_{t-1}-\left(\frac{\sqrt{\alpha_t}(1-\overline{\alpha_{t-1}})}{1-\overline{\alpha_t}}x_t+\frac{\sqrt{\overline{\alpha_{t-1}}}\left(1-\alpha_t\right)}{1-\overline{\alpha_t}}x_0\right)}{\sqrt{\frac{\alpha_t}{1-\alpha_t}+\frac{1}{1-\overline{\alpha_{t-1}}}}}  \right]^2\right\}\\
+        &=\exp\left(-\frac12\cdot\left[\frac{(x-\mu)}{\sigma}\right]^2\right)\\
+    \end{aligned}
+\end{equation}
+
+
+其中,$\mu=\frac{\sqrt{\alpha_t}(1-\overline{\alpha_{t-1}})}{1-\overline{\alpha_t}}x_t+\frac{\sqrt{\overline{\alpha_{t-1}}}\left(1-\alpha_t\right)}{1-\overline{\alpha_t}}x_0$,$\sigma=\sqrt{\frac{\alpha_t}{1-\alpha_t}+\frac{1}{1-\overline{\alpha_{t-1}}}}$
+
+通过以上化简, 我们轻易的得到的$p_\theta(x_{t-1}|x_t,x_0)$所服从的分布实际上也是一个高斯分布, 即
+
+$$p_\theta(x_{t-1}|x_t,x_0)\sim\mathcal{N}(\mu,\sigma^2)\sim\mathcal{N}\left(\frac{\sqrt{\alpha_t}(1-\overline{\alpha_{t-1}})}{1-\overline{\alpha_t}}x_t+\frac{\sqrt{\overline{\alpha_{t-1}}}\left(1-\alpha_t\right)}{1-\overline{\alpha_t}}x_0, \frac{\alpha_t}{1-\alpha_t}+\frac{1}{1-\overline{\alpha_{t-1}}}\right)$$
+
+观察方差$\sigma^2=\frac{\alpha_t}{1-\alpha_t}+\frac{1}{1-\overline{\alpha_{t-1}}}$可以发现, 其中所有的值均为常数, 是一个可以直接计算的值
+
+观察均值$\mu=\frac{\sqrt{\alpha_t}(1-\overline{\alpha_{t-1}})}{1-\overline{\alpha_t}}x_t+\frac{\sqrt{\overline{\alpha_{t-1}}}\left(1-\alpha_t\right)}{1-\overline{\alpha_t}}x_0$, 可以发现所有的$\alpha$均是已知值,$x_t$也是已知值, 而整个均值的式子中, 唯一一个不知道的值为$x_0$. 如果能得知$x_0$就能很快的进行计算了.
+
+实际上, 我们在\ref{sec_prob}中有扩散过程的公式\ref{fomula_f4}如下
+
+$$x_t=\sqrt{\overline{\alpha_t}}x_0 + \sqrt{1-\overline{a_t}}\widetilde{z},\quad \text{其中}\widetilde{z}\sim\mathcal{N}(0,1)$$
+
+从这个式子中, 我们可以通过移项的方式，反推出$x_0$，即$x_0 = \frac{1}{\sqrt{\overline{\alpha_t}}}\left(x_{t-1}-\sqrt{1-\overline{\alpha_t}}\widetilde{z}\right)$，用这个值替换$\mu$中的$x_0$, 有如下结果：
+
+
+\begin{equation}
+\begin{aligned}
+\mu&=\frac{\sqrt{\alpha_t}(1-\overline{\alpha_{t-1}})}{1-\overline{\alpha_t}}x_t+\frac{\sqrt{\overline{\alpha_{t-1}}}\left(1-\alpha_t\right)}{1-\overline{\alpha_t}}x_0\\
+&=\frac{\sqrt{\alpha_t}(1-\overline{\alpha_{t-1}})}{1-\overline{\alpha_t}}x_t+\frac{\sqrt{\overline{\alpha_{t-1}}}\left(1-\alpha_t\right)}{1-\overline{\alpha_t}}\cdot\frac{1}{\sqrt{\overline{\alpha_t}}}\left(x_{t-1}-\sqrt{1-\overline{\alpha_t}}\widetilde{z}\right)\\
+&=\frac{1}{\sqrt{\alpha_t}}\left( x_t-\frac{1-\alpha_t}{\sqrt{1-\overline{\alpha_t}}}\widetilde{z} \right)
+\end{aligned}
+\end{equation}
+
+
+即
+
+$$
+\mu=\frac{1}{\sqrt{\alpha_t}}\left( x_t-\frac{1-\alpha_t}{\sqrt{1-\overline{\alpha_t}}}\widetilde{z} \right)
+$$
+
+整个式子中仅有$\widetilde{z}$是一个不可直接获得的值了. 为何会出现一个不能直接获得的$\widetilde{z}$呢？回顾上述过程发现, 这个$\widetilde{z}$是在为了消去$x_0$时引入的一个值. 这个$\widetilde{z}$表示的是在获得$x_t$的过程中,  向$x_0$中加入的噪声. 
+
+为了能够获得这个噪声, 原文使用了一个神经网络进行预测.
+
+在使用神经网络获得$\widetilde{z}$后,$\mu$与$\sigma^2$都变的可以计算, 从而$p_\theta(x_{t-1}|x_t,x_0)\sim \mathcal{N}(\mu, \sigma^2)$就变成了可以直接获得的高斯分布. 从而$x_{t-1}$就可以轻松的从这个分布中采样获取了.
+这个神经网络就是\ref{sec_inverse}逆扩散过程中所说的Denoise网络，也即我们下面将要介绍的噪声预测器。

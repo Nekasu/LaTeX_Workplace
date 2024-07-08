@@ -1,0 +1,341 @@
+\section{噪声预测器的训练}
+
+在 DDPM 中, 使用 UNet 网络进行噪声图像的预测, 并采样极大似然函数作为损失函数进行预测。
+
+首先我们介绍一下极大似然函数与极大似然估计。
+
+\subsection{极大似然函数与极大似然估计}
+
+实际上，这一部分对于没有思考过极大似然估计背后原理的读者可能有些难懂，所以本人推荐观看bilibili网站中视频博主“小崔说数”关于极大似然估计的讲解\cite{XiaoCuiShuoShuShiFenZhongGaoDingZuiDaSiRanGuJi2021}，此处简单记录关于视频内容的理解。
+
+极大似然估计（Maximum Likelihood Estimation，MLE）是统计学中用于估计模型参数的一种方法，这个方法适用于已经得知样本所服从的分布时，估计这个分布中参数的情况。它基于这样一个简单而强有力的想法：小概率事件在现实中几乎不发生。因此，当我们观测到某种事件发生时，这个事件在其所服从的分布中应该是一个大概率事件。
+
+具体来说，假设我们有一个概率分布模型，它依赖于一些未知参数，我们的任务是根据观测数据来估计这些参数。假设我们观测到了 \(n\) 个独立同分布的数据点 \(x_1, x_2, \ldots, x_n\)，并且我们知道数据服从一个参数为 \(\theta\) 的概率分布 \(P(x|\theta)\)。
+
+极大似然估计的核心思想是选择使得观测数据出现的概率最大的参数 \(\theta\)。这意味着我们需要找到一个参数 \(\theta\) 使得所有观测到的事件的联合概率最大化。
+
+1. 似然函数：首先，我们定义似然函数（Likelihood Function），它表示在参数 \(\theta\) 下，观测数据 \(x_1, x_2, \ldots, x_n\) 出现的联合概率。对于独立同分布的数据，似然函数可以表示为：
+   \[
+   L(\theta) = P(x_1, x_2, \ldots, x_n | \theta) = \prod_{i=1}^n P(x_i | \theta)
+   \]
+
+2. 最大化似然函数：我们的目标是找到参数 \(\theta\) 使得似然函数 \(L(\theta)\) 最大。由于乘积运算复杂，我们通常对似然函数取对数，将其转化为对数似然函数（Log-Likelihood Function）：
+   \[
+   \ell(\theta) = \log L(\theta) = \log \left( \prod_{i=1}^n P(x_i | \theta) \right) = \sum_{i=1}^n \log P(x_i | \theta)
+   \]
+   取对数不会改变最大值的位置，但使得计算更为简便。
+
+3. 求解最优参数：我们通过求解对数似然函数 \(\ell(\theta)\) 的最大值来找到最优参数 \(\theta\)。这通常涉及对 \(\theta\) 求导，并找到导数为零的点，即：
+   \[
+   \frac{\partial \ell(\theta)}{\partial \theta} = 0
+   \]
+   导数为$0$的点为函数的极值点，当$\theta$为极值点时，对应的$\ell(\theta)$便可能达到最大值，及联合概率密度达到最大值。这说明，当$\theta$为极值点，从这个概率分布中取得样本为我们所观测数据的概率达到最大值
+
+极大似然估计方法可以解释为：在所有可能的参数值中，我们选择这样一个参数，使得实际观测到的数据在该参数下的出现概率最大。换句话说，这个参数使得观测到的数据最符合模型的假设。因此，极大似然估计本质上是在寻找最能解释观测数据的参数。
+
+总之，极大似然估计是一种通过最大化观测数据在模型下出现的概率来估计参数的方法。它基于一个直观的想法，即观测到的事件应该是高概率事件，因此选择使观测数据出现概率最大的参数，就是最符合数据的参数。
+
+\subsection{利用极大似然函数进行参数迭代}
+
+我们知道, 极大似然估计在参数估计时, 使用的是这样的想法：小概率事件在现实中几乎不发生. 所以如果我们观测到某种事件发生了, 则说明这个事件所服从的分布中, 已经发生的这个事件一定是一个大概率事件. 能将所有已发生的事件的概率都最大化的参数, 也就是使似然函数最大的参数, 则是我们需要的参数.
+
+从另一个角度说, 如果似然函数 $L$ 越大, 则说明当前取得的参数越合理.  
+
+所以我们使用似然函数 $L$ 作为似然函数, 将最大化似然函数 $\max L$ 作为训练的目标. 
+
+\subsubsection{复习极大似然函数的构建过程}
+
+我们先用一个简单例子复习一下极大似然函数的构建过程. 如果你对极大似然估计很熟悉的话, 可以跳过这一部分. 
+
+如果下一部分中构建似然函数的过程难以理解, 可以与这一个简单的例子进行类比.
+
+\begin{enumerate}
+    \item 现在有这样一个场景\begin{enumerate}
+        \item 我们有一个装了不知道多少个黑白小球的袋子 (是一个满足二项分布的模型)
+        \begin{enumerate}
+            \item 取得黑球的概率为 $\theta$, 取得白球的概率为 $1-\theta$ 
+        \end{enumerate}
+        \item 现在进行 $5$ 次采样, 有结果如下：
+        \begin{enumerate}
+            \item  采样 1：黑
+            \item  采样 2：黑
+            \item  采样 3：黑
+            \item  采样 4：白
+            \item  采样 5：白
+        \end{enumerate}
+        \item 问这个二项分布的参数 $\theta$ 是多少
+    \end{enumerate}
+    \item 采样与二项分布
+    \begin{enumerate}
+        \item 对于采样 1, 摸到了黑球, 在二项分布中有概率为 $\theta$ 
+        \item 对于采样 2, 摸到了黑球, 在二项分布中有概率为 $\theta$ 
+        \item 对于采样 3, 摸到了黑球, 在二项分布中有概率为 $\theta$ 
+        \item 对于采样 4, 摸到了白球, 在二项分布中有概率为 $1-\theta$ 
+        \item 对于采样 5, 摸到了白球, 在二项分布中有概率为 $1-\theta$ 
+        \item 对于整个五次采样结果为 (黑、黑、黑、白、白) 的概率为：$\theta^3\cdot(1-\theta)^2$ 
+    \end{enumerate}
+    \item 极大似然估计的思想
+    \begin{enumerate}
+        \item 既然五次采样出现了这样的结果, 所以我们认为发生这种 (黑、黑、黑、白、白) 情况的概率应该是最大的 (因为小概率事件不可能发生)
+    \end{enumerate}
+    \item 极大似然估计
+    \begin{enumerate}
+        \item 所以我们认为, $\theta$ 一定能使采样概率 $\theta^3\cdot(1-\theta)^2$ 取到最大值.
+        \item 也即, 一个能使概率 $\theta^3\cdot(1-\theta)^2$ 达到最大值的 $\theta$ 是一个合理的 $\theta$
+        \item 所以应该求 $\theta^3\cdot(1-\theta)^2$ 取最大值时, $\theta$ 的取值.
+        \item 因为 $\theta^3\cdot(1-\theta)^2$ 是一个高次幂的式子, 难以计算, 我们我们转而计算 $L(\theta)=\log\left[ \theta^3\cdot (1-\theta)^2 \right]$ 
+        \item $L(\theta)=\log\left[ \theta^3\cdot (1-\theta)^2 \right]$ 即为似然函数
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{扩散模型场景与极大似然估计}
+
+当我们复习了一个简单情形的似然估计的用法后, 可以快速的类比到当前的扩散模型任务中.
+
+\begin{enumerate}
+    \item 现在我们有扩散模型的场景
+    \begin{enumerate}
+        \item 我们有一个装了不知道多少个各异图像的图像集 (是一个满足 $p_\theta(x_{t-1}|x_t)$ 的模型)
+        \begin{enumerate}
+            \item 取得图像 $x_t$ 的概率为 $p_\theta(x_{t-1}|x_t)$ , $t=1,2,3,\cdots,T-1$
+            \item 取得图形 $x_T$ 的概率为 $p(x_T)\sim\mathcal{N}(0,1)$
+        \end{enumerate}
+        \item 现在进行 $T$ 次采样, 有结果如下
+        \begin{enumerate}
+            \item 采样 0：$x_0$ 
+            \item 采样 1：$x_1$ 
+            \item 采样 2：$x_3$ 
+            \item $\cdots$ 
+            \item 采样 $t$：$x_t$ 
+            \item $\cdots$
+            \item 采样 $T$：$x_T$ 
+        \end{enumerate}
+        \item 问这个概率模型 $p_\theta(x_{t}|x_{t+1})$ 中的 $\theta$ 是多少
+    \end{enumerate}
+    \item 采样与二项分布
+    \begin{enumerate}
+        \item 对于采样 0, 获得了图像 $x_0$, 在分布中有概率 $p_\theta(x_0|x_1)$
+        \item 对于采样 1, 获得了图像 $x_1$, 在分布中有概率 $p_\theta(x_1|x_2)$.
+        \item $\cdots$
+        \item 对于采样 t, 获得了图像 $x_{t}$, 在分布中有概率 $p_\theta(x_{t}|x_{t+1})$.
+        \item $\cdots$
+        \item 对于采样 $T-1$, 获得了图像 $x_{T-1}$, 在分布中有概率 $p_\theta(x_{T-1}|x_T)$ 
+        \item 对于采样 $T$, 获得了图像 $x_{T}$, 在分布中有概率 $p(x_T)\sim\mathcal N (0,1)$. 
+        \item 因为 $x_T$ 是直接从标准高斯分布中获取的, 所以下标中没有 $\theta$ 
+        \item 对于整个 $T$ 次采样结果为 $(x_0,x_1,x_2,\cdots,x_T)$ 的概率为
+        
+        $$p (x_T)\cdot p_\theta(x_{T-1}|x_T)\cdot p_\theta(x_{T-2}|x_{T-1})\cdots p_\theta(x_1|x_2)\cdot p (x_0|x_1)$$
+    \end{enumerate}
+    \item 极大似然估计的思想
+    \begin{enumerate}
+        \item 既然 $T$ 次采样出现了这样的结果, 所以我们认为发生这种 $(x_0,x_1,x_2,\cdots,x_T)$ 情况的概率应该是最大的 (因为小概率事件不可能发生)
+    \end{enumerate}
+    \item 极大似然估计
+    \begin{enumerate}
+        \item 所以我们认为, $\theta$ 一定能使采样概率 $p (x_T)\cdot p_\theta(x_{T-1}|x_T)\cdot p_\theta(x_{T-2}|x_{T-1})\cdots p_\theta(x_1|x_2)\cdot p_\theta(x_0|x_1)$ 取到最大值.
+        \item 也即, 一个能使上述概率达到最大值的 $\theta$ 是一个合理的 $\theta$
+        \item 所以应该求 $p (x_T)\cdot p_\theta(x_{T-1}|x_T)\cdot p_\theta(x_{T-2}|x_{T-1})\cdots p_\theta(x_1|x_2)\cdot p_\theta(x_0|x_1)$ 取最大值时, $\theta$ 的取值.
+        \item 因为 $p (x_T)\cdot p_\theta(x_{T-1}|x_T)\cdot p_\theta(x_{T-2}|x_{T-1})\cdots p_\theta(x_1|x_2)\cdot p_\theta (x_0|x_1)$ 是一个高次幂的式子, 难以计算, 我们我们转而计算 $L(\theta)=\log\left[ p (x_T)\cdot p_\theta(x_{T-1}|x_T)\cdot p_\theta(x_{T-2}|x_{T-1})\cdots p_\theta(x_1|x_2)\cdot p_\theta (x_0|x_1) \right]$ 
+        \item $L(\theta)=\log\left[ p (x_T)\cdot p_\theta(x_{T-1}|x_T)\cdot p_\theta(x_{T-2}|x_{T-1})\cdots p_\theta(x_1|x_2)\cdot p_\theta (x_0|x_1) \right]$ 即为似然函数
+    \end{enumerate}
+\end{enumerate}
+
+实际上, 我们不可能简单的仅仅采样一个 $x_0$, 数据集中的所有图像都应该是一个可能的 $x_0$
+
+所以我们要对式子 $p (x_T)\cdot p_\theta(x_{T-1}|x_T)\cdot p_\theta(x_{T-2}|x_{T-1})\cdots p_\theta(x_1|x_2)\cdot p (x_0|x_1)$ 进行积分, 有如下结果
+
+\begin{equation}
+\begin{aligned}
+    P_\theta(x_0)=\int\limits_{x_1:x_T}p (x_T)\cdot p_\theta(x_{T-1}|x_T)\cdot p_\theta(x_{T-2}|x_{T-1})\cdots p_\theta(x_1|x_2)\cdot p_\theta (x_0|x_1)dx_1:x_T
+\end{aligned}
+\end{equation}
+
+所以有对数似然函数
+
+\begin{equation}
+\begin{aligned}
+    L(\theta)=\log P_\theta(x_0)=\log\left(\int\limits_{x_1:x_T}p (x_T)\cdot p_\theta(x_{T-1}|x_T)\cdot p_\theta(x_{T-2}|x_{T-1})\cdots p_\theta(x_1|x_2)\cdot p_\theta (x_0|x_1)dx_1:x_T\right)
+\end{aligned}
+\end{equation}
+
+但实际上, 这个似然函数的计算比较困难, 所以在训练时不会直接进行计算.
+
+那么该如何计算这个似然函数呢？请看下面的部分.
+
+\subsubsection{最大化似然函数的下界}
+
+由于 DDPM 的过程有些复杂, 一共经过了 $t$ 次的去噪, 比较复杂. 所以我们构建一个只有一个加噪过程的 DDPM 模型用来推导 (实际上这个「只有一个加噪过程的 DDPM」就是变分自编码器 VAE)
+
+\paragraph{单个Denoise过程的DDPM}
+
+由于只有一个加噪过程, 所以有似然函数如下：
+
+\begin{equation}
+\begin{aligned}
+    \log P_\theta(x)=\log\int\limits_{x_1}p(x_1)p_{\theta}(x_0|x_1)dx_1
+\end{aligned}
+\end{equation}
+
+
+
+从而可以有以下推导：
+
+
+\begin{equation}
+\begin{aligned}
+\log P_\theta(x)&=\log\int\limits_{x_1}p(x_1)p_{\theta}(x_0|x_1)dx_1\\
+&=\log\int\limits_{x_1}p_\theta(x_0,{x_1})d{x_1}\\
+&=\log\int\limits_{x_1}\frac{q(x_1|x_0)}{q({x_1}|x_0)}p_\theta(x_0,{x_1})d{x_1}\\
+&=\log\int\limits_{x_1}q(x_1|x_0)\frac{p_\theta(x_0,x_1)}{q(x_1|x_0)}dx_1\\
+&=\log \mathbb{E}_{q(x_1|x_0)}\left[\frac{p_\theta(x_0,x_1)}{q(x_1|x_0)}\right]\\
+&\ge \mathbb{E}_{q(x_1|x_0)}\left[\log\frac{p_\theta(x_0,x_1)}{q(x_1|x_0)}\right]\quad\quad[\text{琴生不等式, 如果函数}\varphi\text{为凹函数, 则有}\varphi\left(\mathbb{E}(x)\right)\ge\mathbb{E}\left(\varphi(x)\right)]
+\end{aligned}
+\end{equation}
+
+
+我们将 $p_\theta(x_0,x_1)$ 替换为 $p_\theta(x_0|x_1)p(x_1)$ , 则有
+
+
+\begin{equation}
+\begin{aligned}
+\mathbb{E}_{q(x_1|x_0)}\left[\log\frac{p_\theta(x_0,x_1)}{q(x_1|x_0)}\right]&=\mathbb{E}_{q(x_1|x_0)}\left[\log\frac{p_\theta(x_0|x_1)p(x_1)}{q(x_1|x_0)}\right]\\
+&=\mathbb{E}_{q(x_1|x_0)}\left[\log{ p_\theta(x_0|x_1) }+\log{p(x_1)}-\log{q(x_1|x_0)}\right]\\
+&=\mathbb{E}_{q(x_1|x_0)}\left[\log{ p_\theta(x_0|x_1) }\right]-\text{KL}\left[q(x_1|x_0)\Vert p(x_1)\right]\\
+\end{aligned}
+\end{equation}
+
+
+这个式子分为了两项, 其中
+\begin{enumerate}
+    \item 第一项 $\mathbb{E}_{q(x_1|x_0)}\left[\log{ p_\theta(x_0|x_1) }\right]$ 是一个期望值，它表示的是给定潜在变量 $x_1$ 后生成原始图像 $x_0$ 的对数似然。这个期望, 也即其下标 $q(x_1|x_0)$ 表示前向过程, 是一个已知的过程 , 所以我们可以通过采样 $x_1$ 来近似计算这个期望值
+    \item 第二项 $\text{KL}\left[q(x_1|x_0)\Vert p(x_1)\right]$ 是是两个已知分布之间的 KL 散度。而经过上面的计算, 我们知道 $q(x_1|x_0)$ 与 $p(x_1)$ 均服从正态分布, 这使得 KL 散度可以解析计算 (两个正态分布之间的 KL 散度可以用公式直接计算).
+\end{enumerate}
+
+从而整个变分下界可以计算. 通过最大化这个变分下界的形式, 我们可以最大化似然函数, 找到最适合的 $\theta$ 值.
+
+
+\paragraph{多个Denoise过程的DDPM}
+
+我们只需要将「单个Denoise过程的DDPM」中的 $x_1$ 变成 $x_0:x_T$ 即可得到 DDPM 的推导过程.
+
+根据上面的推导, 我们知道 DDPM 有似然函数如下：
+
+\begin{equation}
+\begin{aligned}
+	\log P_\theta(x_0)=\log\left[\int\limits_{x_1:x_T}p (x_T)\cdot p_\theta(x_{T-1}|x_T)\cdot p_\theta(x_{T-2}|x_{T-1})\cdots p_\theta(x_1|x_2)\cdot p_\theta (x_0|x_1)dx_1:x_T\right]
+\end{aligned}
+\end{equation}
+
+
+从而有以下推导：
+
+\begin{equation}
+    \begin{aligned}
+	\log P_\theta(x_0)&=\log\left[\int\limits_{x_1:x_T}p (x_T)\cdot p_\theta(x_{T-1}|x_T)\cdot p_\theta(x_{T-2}|x_{T-1})\cdots p_\theta(x_1|x_2)\cdot p_\theta (x_0|x_1)dx_1:x_T\right]\\
+	&=\log\left[\int\limits_{x_{1}:x_T}p_\theta(x_0,x_1,\cdots,x_T)dx_1:x_T\right]\\
+	&=\log\left[\int\limits_{x_1:x_T} \frac{\prod_{t=1}^T q(x_t|x_{t-1})}{\prod_{t=1}^T q(x_t|x_{t-1})} p_\theta(x_0,x_1,\cdots,x_T) dx_1:x_T\right]\\
+	&=\log\left[\int\limits_{x_1:x_T} \prod_{t=1}^T q(x_t|x_{t-1})\cdot\frac{p_\theta(x_0,x_1,\cdots,x_T) }{\prod_{t=1}^T q(x_t|x_{t-1})}dx_1:x_T\right]\\
+    \end{aligned}
+\end{equation}
+
+
+在上面这个推导中的第 3 个等式, 我们仿照 VAE 中的推导, 将被积函数变形为了 $1\cdot$ 被积函数的形式. 
+\begin{itemize}
+    \item 在 「单个Denoise过程的DDPM」 中，这个 1 是分子分母均为 $q (x_1|x_0)$ 的分式.
+    \begin{itemize}
+        \item $q$ 表示的是前项过程, 也就是从 $x_0$ 获得噪声图像 $x_1$ 的过程
+    \end{itemize}
+    \item 在「多个Denoise过程的DDPM」中，这个 1 是分子分母均为 $\prod_{t=1}^T q(x_t|x_{t-1})$ 的分式
+    \begin{itemize}
+        \item 同样的, $q$ 表示的是前项过程, 也就是从 $x_0$ 获得一系列噪声图的过程.
+        \item 与 VAE 中仅有一个加早过程不同, DDPM 中具有 $T$ 个加噪过程, 即 $q(x_{t}|x_{t-1}), t=1,2,3,\cdots,T$ 这 $T$ 个加噪过程.
+        \item 所以需要将这 $T$ 的加噪过程相乘, 也即 $\prod_{t=1}^T q(x_t|x_{t-1})$
+    \end{itemize}
+\end{itemize}
+
+对于上面都推导中的累乘 $\prod_{t=1}^T q(x_{t-1}|x_t)$, 我们可以有如下的化简: 
+
+\begin{equation}
+\begin{aligned}
+    \prod_{t=1}^T q(x_{t-1}|x_t)=q(x_0|x_1)\cdot q(x_1|x_2)\cdots q(x_{T-1}|x_T)=q(x_1,\cdots,x_T|x_0)
+\end{aligned}
+\end{equation}
+
+\begin{itemize}
+    \item 为了简便表示, 我们将化简后的结果 $q(x_1,\cdots,x_T|x_0)$ 中的 $x_1,x_2,\cdots, x_T$ 记做 $x_{1:T}$
+    \begin{itemize}
+        \item 因此有 $q(x_1,\cdots,x_T|x_0)$ 可以记作 $q(x_{1:T}|x_0)$
+    \end{itemize}
+    \item 类似的, 我们将分式中的分母 $p_\theta(x_0,x_1,\cdots,x_T)$ 记做 $p_\theta(x_{0:T})$
+\end{itemize}
+
+将这个累乘的化简继续代入公式进行推导, 有
+
+\begin{equation}\begin{aligned}
+	\log P_\theta(x_0)&=\log\left[\int\limits_{x_1:x_T} \prod_{t=1}^T q(x_{t-1}|x_t)\cdot\frac{p_\theta(x_{0:T}) }{\prod_{t=1}^T q(x_{t-1}|x_t)}dx_1:x_T\right]\\
+	&=\log\left[\int\limits_{x_1:x_T} q(x_{1:T}|x_0)\cdot\frac{p_\theta(x_{0:T})}{q(x_{1:T}|x_0)}dx_1:x_T\right]\\
+	&=\log \mathbb{E}_{q(x_{1:T}|x_0)}\left[\frac{p_\theta(x_{0:T})}{q(x_{1:T}|x_0)}\right]\\
+	&\ge \mathbb{E}_{q(x_{1:T}|x_0)}\left[\log\frac{p_\theta(x_{0:T})}{q(x_{1:T}|x_0)}\right]\quad\quad[\text{琴生不等式, 如果函数}\varphi\text{为凹函数, 则有}\varphi\left(\mathbb{E}(x)\right)\ge\mathbb{E}\left(\varphi(x)\right)]\\
+\end{aligned}\end{equation}
+
+
+
+实际上, 我们真正想要计算的是包含参数 $\theta$ 的部分, 所以我们需要将不含参数 $\theta$ 的部分与含有 $\theta$ 的部分分开.
+
+对于 $p_\theta(x_{0:T})=p_\theta(x_0,x_1,\cdots,x_T)$ 而言, $p(x_T)$ 是一个与 $\theta$ 无关的量, 因为 $x_T$ 是直接从标准正态分布中获取的. 所以我们将 $p_\theta(x_{0:T})$ 替换为 $p(x_T)\cdot\prod\limits_{t=1}^{T-1}p_\theta(x_{t-1}|x_t)$ , 有以下推导
+
+
+\begin{equation}
+\begin{aligned}
+	\log P_\theta(x_0) &\ge \mathbb{E}_{q(x_{1:T}|x_0)}\left[\log\frac{p_\theta(x_{0:T})}{q(x_{1:T}|x_0)}\right]\\
+	&=\mathbb{E}_{q(x_{1:T}|x_0)}\left[\log\frac{p(x_T)\cdot\prod\limits_{t=1}^{T}p_\theta(x_{t-1}|x_t)}{q(x_{1:T}|x_0)}\right]\\
+	&=\mathbb{E}_{q(x_{1:T}|x_0)}\left[\log p(x_T)+\sum_{t=1}^{T}\log\left[p_\theta(x_{t-1}|x_t)\right]-\log q(x_{1:T}|x_0)\right]\\	
+\end{aligned}
+\end{equation}
+
+
+此处分解联合分布 $p(x_T)\cdot\prod\limits_{t=1}^{T-1}p_\theta(x_{t-1}|x_t)$ 使我们能够逐步处理每一个时间步的生成过程，有助于将整体问题分解为多个子问题
+
+而 $q(x_{1:T}|x_0)$ 则是表示前向过程, 是一个与 $\theta$ 无关的值. 同样的, 我们希望分解这个联合分布以逐步处理每一个时间步的生成过程, 将问题分成多个子问题, 所以可以进行如下替换：
+
+\begin{equation}
+\begin{aligned}
+    q(x_{1:T}|x_0)=\prod_{t=1}^T q(x_t|x_{t-1}|x_0)
+\end{aligned}
+\end{equation}
+
+因此有：
+
+
+\begin{equation}
+\begin{aligned}
+	\log P_\theta(x_0) &\ge \mathbb{E}_{q(x_{1:T}|x_0)}\left[\log p(x_T)+\sum_{t=1}^{T}\log\left[p_\theta(x_{t-1}|x_t)\right]-\log q(x_{1:T}|x_0)\right]\\	
+	&= \mathbb{E}_{q(x_{1:T}|x_0)}\left[\log p(x_T)+\sum_{t=1}^{T}\log\left[p_\theta(x_{t-1}|x_t)\right]-\sum_{t=1}^T\log\left[ q(x_t|x_{t-1}|x_0)\right] \right]\\
+	&= \mathbb{E}_{q(x_{1:T}|x_0)}\left[\log p(x_T)+\sum_{t=1}^{T}\log\left[\frac{p_\theta(x_{t-1}|x_t)}{q(x_t|x_{t-1}|x_0)}\right] \right]\\
+	&= \mathbb{E}_{q(x_{1:T}|x_0)}\left[\log p(x_T)\right]+\mathbb{E}_{q(x_{1:T}|x_0)}\left[\sum_{t=1}^{T}\log\left[\frac{p_\theta(x_{t-1}|x_t)}{q(x_t|x_{t-1}|x_0)}\right] \right]\\
+	&= \mathbb{E}_{q(x_{1:T}|x_0)}\left[\log p(x_T)\right]+\sum_{t=1}^{T}\mathbb{E}_{q(x_{1:T}|x_0)}\left[\log\left[\frac{p_\theta(x_{t-1}|x_t)}{q(x_t|x_{t-1}|x_0)}\right] \right]\\
+	&= \mathbb{E}_{q(x_{1:T}|x_0)}\left[\log p(x_T)\right]+\sum_{t=1}^{T}\mathbb{E}_{q(x_{1:T}|x_0)}\left[D_{KL}\left(q(x_t|x_{t-1})\Vert p_\theta(x_{t-1}|x_t)\right) \right]\\
+\end{aligned}
+\end{equation}
+
+
+这个式子分为了两项, 其中
+
+\begin{enumerate}
+    \item 第一项 $\mathbb{E}_{q(x_{1:T}|x_0)}\left[\log p(x_T)\right]$ 是一个与 $\theta$ 无关的值, 在优化时可以忽略。
+    \item 第二项 $\sum_{t=1}^{T}\mathbb{E}_{q(x_{1:T}|x_0)}\left[D_{KL}\left(q(x_t|x_{t-1})\Vert p_\theta(x_{t-1}|x_t)\right) \right]$ 是已知分布之间的 KL 散度的和。而经过上面的计算, 我们知道 $q(x_t|x_{t-1})$ 与 $p_\theta(x_{t-1}|x_t)$ 均服从正态分布, 这使得 KL 散度可以解析计算 (两个正态分布之间的 KL 散度可以用公式直接计算).
+\end{enumerate}
+
+
+从而整个公式变得容易计算。
+
+实际上, 本人推导的结果与原始论文中推导的结果不太相同. 原始论文中的结果中包含了 3 项, 而本人的推导仅有 2 项. 导致这种区别的原因与说明如下：
+
+\begin{enumerate}
+    \item 原因：原始论文中, 为了能够让其更好运算, 并获得更好的效果, 将 KL 散度进一步细分；而本人并未做这样的工作, 主要是为了降低理解门槛, 并与 VAE 的推导同步.
+    \item 说明：虽然结果不同, 但理解起来并无区别. 也即, 本人的推导更偏向于理解, 而原始论文的推导更偏向于实践.
+\end{enumerate}
+
+至此，DDPM\cite{hoDenoisingDiffusionProbabilistic2020a}中的两个重要过程：『扩散过程』、『逆扩散过程』的推导与原理讲解完毕，DDPM\cite{hoDenoisingDiffusionProbabilistic2020a}成为一个可以理解且实际应用的模型。
+
+在上述两个过程的指导下，结合『噪声预测器』，使得DDPM\cite{hoDenoisingDiffusionProbabilistic2020a}为基础与核心的『基于扩散的图像生成模型』成为当前最为流行的图像生成模型。

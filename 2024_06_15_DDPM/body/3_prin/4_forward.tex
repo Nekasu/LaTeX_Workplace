@@ -1,0 +1,220 @@
+在介绍了『基于扩散的图像生成模型』的基本工作流程后，我们将深入探讨该领域中最早提出的经典模型之一：DDPM。该模型由Ho等人在论文《Denoising Diffusion Probabilistic Models》\cite{hoDenoisingDiffusionProbabilistic2020a}中提出，是一种具有开创性意义的图像生成模型。DDPM\cite{hoDenoisingDiffusionProbabilistic2020a}第一个在图像生成模型中引入了『扩散过程与逆扩散过程』，奠定了基于扩散方法的图像生成技术的理论基础。通过详细推导DDPM的原理，我们可以更好地理解『基于扩散的图像生成模型』的原理。
+
+接下来，让我们一起探讨DDPM的具体原理及其推导过程。该部分将包括三个主要内容：其一为扩散过程的原理与推导，其二为逆扩散过程的原理与推导，其三为Dnoise网络的训练。
+
+\section{扩散过程原理与推导}
+
+扩散过程如图\ref{fig_kuosan}所示。
+扩散过程作为为Denoise网络提供训练数据的过程，在DDPM\cite{hoDenoisingDiffusionProbabilistic2020a}存在重要的作用。该部分主要将扩散过程以参数化的形式表示，通过写出该过程公式并化简的方式，从公式的角度介绍扩散过程。
+
+\subsection{参数设定}
+
+\begin{itemize}
+    \item 原始图像：$x_0$
+    \item 第 $t$ 次的从标准高斯分布中采样噪声图像： $z_t$
+    \item 第$t$次将噪声$z_t$加入$x_0$后的图像：$x_t$
+    \item 第$t$次加噪声时, 噪声图像$z_t$与图像$x_{t-1}$的比例$1-\alpha_t$与$\alpha_t$。$\alpha_1,\alpha_2,\cdots,\alpha_t$是一组常数，在扩散过程开始前人为设定。
+\end{itemize}
+
+\subsection{扩散过程}
+
+\paragraph{扩散过程公式}
+
+我们可以用符号语言描述扩散过程，如下：
+
+1. 从数据集中获取一张原始的真实图像$x_0$
+
+2. 从标准高斯分布$\mathcal{N}(0,1)$中采样一张噪声图$z_1$
+
+3. 将噪声图$z_1$与原始图像$x_0$按$\sqrt{1-\alpha_1}$与$\sqrt{\alpha_1}$的比例混合, 可以得到第一步的加噪声结果, 如下所示
+
+\begin{equation}
+    x_1 = \sqrt{1-\alpha_1}z_0 + \sqrt{\alpha_1}x_0
+\end{equation}
+
+4. 将噪声图$z_2$与上一步得到的结果$z_1$按$\sqrt{1-\alpha_2}$与$\sqrt{\alpha_2}$的比例混合, 如下所示
+
+
+\begin{equation}
+	\begin{aligned}
+		x_2 =& \sqrt{1-\alpha_2}z_1 + \sqrt{\alpha_2}x_1\\ 
+	\end{aligned}
+\end{equation}
+
+
+5. 则第$t$张加噪图像$x_t$满足以下公式：
+
+\begin{equation}
+    x_t = \sqrt{\alpha_t}x_{t-1}+\sqrt{1-\alpha_t}z_t
+\end{equation}
+
+
+\paragraph{扩散过程公式简化}
+
+\subparagraph{整体简化}
+
+我们考察一般情况，对第$t$张加噪图像$x_t$满足的公式$x_t = \sqrt{\alpha_t}x_{t-1}+\sqrt{1-\alpha_t}z_t$进行如下变换：
+
+
+\begin{equation}
+\begin{aligned}
+\label{fomula_f1}
+x_t &= \sqrt{\alpha_t}x_{t-1}+\sqrt{1-\alpha_t}z_t\\
+&= \sqrt{\alpha_t}\left(\sqrt{\alpha_{t-1}}x_{t-2}+\sqrt{1-\alpha_{t-1}}z_{t-1}\right)+\sqrt{1-\alpha_t}z_t\\
+&= \sqrt{\alpha_t\alpha_{t-1}}x_{t-2}+\sqrt{\alpha_t(1-\alpha_{t-1})}z_{t-1}+\sqrt{1-\alpha_t}z_t\\
+\\
+&= \sqrt{\alpha_t\alpha_{t-1}}\left(\sqrt{\alpha_{t-2}}x_{t-3}+\sqrt{1-\alpha_{t-2}}z_{t-2}\right)+\sqrt{\alpha_t(1-\alpha_{t-1})}z_{t-1}+\sqrt{1-\alpha_t}z_t\\
+&= \sqrt{\alpha_t\alpha_{t-1}\alpha_{t-2}}x_{t-3}+\sqrt{\alpha_t\alpha_{t-1}(1-\alpha_{t-2})}z_{t-2}+\sqrt{\alpha_t(1-\alpha_{t-1})}z_{t-1}+\sqrt{1-\alpha_t}z_t\\
+\\
+&=\cdots\\
+&=\sqrt{\alpha_t\alpha_{t-1}\alpha_{t-2}\cdots\alpha_1}x_0+\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_2(1-\alpha_1)}z_1+\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_3(1-\alpha_2)}z_2\\
+&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad+ \sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_4(1-\alpha_3)}z_3+ \sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_5(1-\alpha_4)}z_4\\
+&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad+ \sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_6(1-\alpha_5)}z_5+ \sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_7(1-\alpha_6)}z_6\\
+&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\vdots\\
+&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad+ \sqrt{\alpha_t(1-\alpha_{t-1})}z_{t-1}+ \sqrt{1-\alpha_t}z_{t}\\
+&= \underbrace{\sqrt{\alpha_t\alpha_{t-1}\alpha_{t-2}\cdots\alpha_1}x_0}_{\text{原图项}}+ \underbrace{\sum_{i=1}^t\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}z_i}_{\text{叠加噪声项}}
+\end{aligned}
+\end{equation}
+
+
+通过上述公式\ref{fomula_f1}, 我们便可以计算经过$t$次加噪后获得的图像$x_t$. 整个公式可以看作是两个部分, 
+
+\begin{enumerate}
+    \item 其一为包含原图$x_0$的「原图项」$\sqrt{\alpha_t\alpha_{t-1}\alpha_{t-2}\cdots\alpha_1}x_0$
+    \item 其二为包含$t$个噪声$z_i$的「叠加噪声项」$\sum_{i=1}^t\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}z_i$
+\end{enumerate}
+
+下面我们分别对「原图项」与「叠加噪声项」进行化简。
+
+
+\subparagraph{原图项的简化}
+
+实际上, 「原图项」是一个化简过程较为简单的项, 而后面的「叠加噪声项」是一个化简过程较为复杂的项. 现在我们探索如何简化「原图项」.
+
+我们定义「原图项」$\sqrt{\alpha_t\alpha_{t-1}\alpha_{t-2}\cdots\alpha_1}x_0$的系数$\sqrt{\alpha_t\alpha_{t-1}\alpha_{t-2}\cdots\alpha_1}$为$\overline{\alpha_t}$,  有
+
+\begin{equation}
+    \overline{\alpha_t} = \prod\limits_{i=1}^t\alpha_i=\sqrt{\alpha_t\alpha_{t-1}\alpha_{t-2}\cdots\alpha_1} \tag{5}
+\end{equation}
+
+如$\overline{\alpha_2}=\alpha_2\cdot\alpha_1$,$\overline{\alpha_4}=\alpha_4\cdot\alpha_3\cdot\alpha_2\cdot\alpha_1$
+
+在此定义下, 将$\overline{\alpha_t} = \prod\limits_{i=1}^t\alpha_i$代入$x_t$中的「原图项」, 有
+
+\begin{equation}
+    \begin{aligned}
+        x_t &= \sqrt{\alpha_t\alpha_{t-1}\alpha_{t-2}\cdots\alpha_1}x_0+ \sum_{i=1}^t\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}z_i\\
+        &= \sqrt{\overline{\alpha_t}}x_0 + \sum_{i=1}^t\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}z_i\\
+    \end{aligned}
+\end{equation}
+
+\subparagraph{叠加噪声项的简化}
+
+因为我们希望整个「叠加噪声项」是一个简单的噪声, 所以我们希望最终$x_t$满足的表达式能与其一般式$x_t = \sqrt{\alpha_t}x_{t-1}+\sqrt{1-\alpha_t}z_t$具有相同的形式。即，我们希望$x_t$的最终化简结果为$x_t=\sqrt{\overline{\alpha_t}}x_0+\sqrt{1-\overline{\alpha_t}}\widetilde{z}$的形式。 在这个形式中，叠加噪声项系数与原图项系数的平方和为$1$，与一般式保持一致；同时，我们也希望叠加噪声项的主体部分$\widetilde{z}$是一个简单的噪声，而非公式\ref{fomula_f1}中那样一堆噪声的叠加。下面正式开始对叠加噪声项的简化。
+
+  注意到「原图项」的系数现在为$\sqrt{\overline{\alpha_t}}$, 我们期望后面的「叠加噪声项」的系数为$\sqrt{1-\overline{\alpha_i}}$, 所以对「叠加噪声项」提取系数$\sqrt{1-\overline{\alpha_t}}$, 从而有以下变化
+
+
+\begin{equation}
+\begin{aligned}
+    \label{fomula_f2}
+x_t &= \sqrt{\overline{\alpha_t}}x_0 + \sum_{i=1}^t\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}z_i\\
+&= \sqrt{\overline{\alpha_t}}x_0 +\sqrt{1-\overline{\alpha_t}}\sum_{i=1}^t\frac{\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}}{\sqrt{1-\overline{\alpha_t}}}z_i
+\end{aligned}
+\end{equation}
+
+
+
+现在考察上述公式\ref{fomula_f2}中的$\sum_{i=1}^t\frac{\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}}{\sqrt{1-\overline{\alpha_t}}}z_i$部分 (即上面公式中最后一个分式)以期望他是一个简单的分布。
+
+为了方便描述，我们记这个分布为$\widetilde{z}$，即有$\widetilde{z}=\sum_{i=1}^t\frac{\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}}{\sqrt{1-\overline{\alpha_t}}}z_i$.
+
+这个分式部分$\widetilde{z}$中的单个噪声项$z_i$均是从标准高斯分布中采样得到的, 即$z_i\sim\mathcal{N}(0,1)$(均值为0，方差为1), 且由于上一次采样的噪声不会影响下一次噪声的采样, 所以$z_i$的获取是相互独立的.
+
+同时, 我们知道, 如果$X\sim \mathcal{N}(\mu_x,\sigma_x^2)$,$Y\sim \mathcal{N}(\mu_y,\sigma_y^2)$, 且$X$与$Y$相互独立, 则有$aX+bY\sim\mathcal{N}(a\mu_x+b\mu_y,a^2\sigma_x^2+b^2\sigma_y^2)$。
+
+在这样的情况下, 有$\widetilde{z}$服从以下高斯分布：
+
+\begin{equation}
+    \begin{aligned}
+        \widetilde{z} \sim \mathcal{N}\left[\sum_{i=1}^t\left(\frac{\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}}{\sqrt{1-\overline{\alpha_t}}}\cdot0\right), \sum_{i=1}^t\left(\frac{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}{1-\overline{\alpha_t}}\cdot 1\right)\right]
+    \end{aligned}
+\end{equation}
+
+可以发现, 这个高斯分布的均值部分为$0$, 因为均值部分中累加的每一项都与$0$相乘了. 从而上述高斯分布可以化简为：
+
+\begin{equation}
+    \begin{aligned}
+        \widetilde{z}\sim \mathcal{N}\left(0, \sum_{i=1}^t\frac{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}{1-\overline{\alpha_t}} \right)
+    \end{aligned}
+\end{equation}
+
+为了搞清楚这个「叠加噪声项」到底满足什么样的高斯分布, 我们继续考察这个高斯分布的方差部分, 记为$\sigma^2_s=\sum_{i=1}^t\frac{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}{1-\overline{\alpha_t}}$, 下标$s$为 sum 的缩写, 表示累加。
+
+直接将$\sigma^2_S$拆开, 有
+
+\begin{equation}
+    \begin{aligned}
+        \sigma^2_s &=\sum_{i=1}^t\frac{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}{1-\overline{\alpha_t}}\\
+        &=\frac{1}{1-\overline{\alpha_t}}\left[\sum_{i=1}^t\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)\right]\\
+        &\xlongequal{\text{去除累加符号}} \frac{1}{1-\overline{\alpha_t}}\left[(1-\alpha_t)+\alpha_t(1-\alpha_{t-1})+\alpha_t\alpha_{t-1}(1-\alpha_{t-2})+\cdots+\alpha_t\alpha_{t-1}\cdots\alpha_2(1-\alpha_1)\right]\\
+        &\xlongequal{\text{拆除小括号}}  \frac{1}{1-\overline{\alpha_t}}\left[1-\alpha_t+\alpha_t-\alpha_t\alpha_{t-1}+\alpha_t\alpha_{t-1}-\alpha_t\alpha_{t-1}\alpha_{t-2}+\cdots+\alpha_t\alpha_{t-1}\cdots\alpha_2-\alpha_t\alpha_{t-1}\cdots\alpha_2\alpha_1\right]\\
+        &=\frac{1}{1-\overline{\alpha_t}}\left[1+-\cancel{\alpha_t}+\cancel{\alpha_t}-\cancel{\alpha_t\alpha_{t-1}}+\cancel{\alpha_t\alpha_{t-1}}-\cancel{\alpha_t\alpha_{t-1}\alpha_{t-2}}+\cdots+\cancel{\alpha_t\alpha_{t-1}\cdots\alpha_2}-\alpha_t\alpha_{t-1}\cdots\alpha_2\alpha_1\right]\\
+        &\xlongequal{\text{发现中括号中除了第一项和最后一项都可以消去}} \frac{1}{1-\overline{\alpha_t}}\left[1-\alpha_t\alpha_{t-1}\cdots\alpha_2\alpha_1\right]\\
+        &=\frac{1}{1-\overline{\alpha_t}}(1-\overline{a_t})\\
+        &\xlongequal{\text{分子分母相同}}1
+    \end{aligned}
+\end{equation}
+
+也即$\sigma^2_s=1$, 从而有$\widetilde{z}=\sum_{i=1}^t\frac{\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}}{\sqrt{1-\overline{\alpha_t}}}z_i\sim\mathcal{N}(0,1)$,
+
+
+至此, 我们可以发现, 「叠加噪声项」也是一个服从标准高斯分布的噪声, 从而我们可以得到第$t$步图像$x_t$与原图$x_0$之间的关系：
+
+\begin{equation}
+    \begin{aligned}
+        \label{fomula_f3}
+    x_t &= \sqrt{\overline{\alpha_t}}x_0 + \sum_{i=1}^t\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_{i+1}(1-\alpha_i)}z_i\\
+    &= \sqrt{\overline{\alpha_t}}x_0 + \sqrt{1-\overline{a_t}}\widetilde{z},\quad \text{其中}\widetilde{z}\sim\mathcal{N}(0,1)
+    \end{aligned}
+\end{equation}
+
+进行对「叠加噪声项」的化简后，我们发现实际上$t$次添加噪声的操作与直接进行一次噪声添加的效果相同。
+
+\paragraph{扩散过程的总结}
+
+在公式\ref{fomula_f3}的指导下, 可以立刻得到某个特定步骤$t$的加噪图像$x_t$, 且加噪图像仅与原始图像$x_0$与当前步骤数$t$有关.
+
+经过这样的简化, 就可以简单的获取加噪后的图像, 也即训练数据了。
+
+\paragraph{概率采样的角度看扩散过程}
+\label{sec_prob}
+在上面的推导中, 我们得出了直接从原图$x_0$获取第$t$次后的加噪图像$x_t$的公式如下：
+
+\begin{equation}
+    \begin{aligned}
+        \label{fomula_f4}
+        x_t= \sqrt{\overline{\alpha_t}}x_0 + \sqrt{1-\overline{a_t}}\widetilde{z},\quad \text{其中}\widetilde{z}\sim\mathcal{N}(0,1)
+    \end{aligned}
+\end{equation}
+
+实际上, 我们也可以将$x_t$看作是某种概率的采样结果, 推导如下：
+
+已知$\widetilde{z}\sim\mathcal{N}(0,1)$, 则有$\sqrt{1-\overline{a_t}}\widetilde{z}\sim\mathcal{N}(0,1-\overline{\alpha_t})$
+
+从而有$\sqrt{\overline{\alpha_t}}x_0 + \sqrt{1-\overline{a_t}}\widetilde{z}\sim\mathcal{N}(\sqrt{\overline{\alpha_t}}x_0,1-\overline{\alpha_t})$ , 
+
+从而有$q(x_t\vert x_0)\sim \mathcal{N}(\sqrt{\overline{\alpha_t}}x_0,1-\overline{\alpha_t})$
+
+这个结果表明，第$t$步的加噪图像$x_t$​可以看作是从一个正态分布中采样的结果，其均值和方差分别由初始图像$x_0$和累积噪声参数$\overline{\alpha_t}$​决定
+
+同理, 由于有$x_t = \sqrt{\alpha_t}x_{t-1}+\sqrt{1-\alpha_t}z_t$, 所以有 
+
+\begin{equation}
+    \begin{aligned}
+        q(x_t|x_{t-1},x_0)\sim \mathcal{N}(\sqrt{\alpha_t}x_{t-1}, 1-\alpha_t)
+    \end{aligned}
+\end{equation}
+
+
+从概率的角度理解扩散过程有助于下面对于逆扩散过程的推导。

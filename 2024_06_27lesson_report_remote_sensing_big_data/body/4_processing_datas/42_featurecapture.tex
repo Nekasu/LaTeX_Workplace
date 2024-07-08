@@ -1,0 +1,48 @@
+\subsection{Feature Extraction}
+
+Feature extraction is a critical step in agricultural remote sensing data analysis. By extracting useful spectral and temporal features, it is possible to identify and monitor crop growth status, health conditions, and environmental changes\cite{mullaTwentyFiveYears2013}. The methods for feature extraction include spectral feature extraction and time series analysis.
+
+\subsubsection{Spectral Feature Extraction}
+
+Spectral feature extraction involves deriving indicators that reflect the characteristics of ground objects from the spectral data of remote sensing images. Common spectral features include the Normalized Difference Vegetation Index (NDVI) and the Enhanced Vegetation Index (EVI).
+
+\paragraph{Normalized Difference Vegetation Index (NDVI)}
+
+NDVI is a spectral index that measures vegetation cover and health status. Its calculation formula is introduced before at Formula. \ref{formula:NVDI}.
+
+Here are some applications.
+Crop Health Monitoring: Analyzing NDVI values can assess crop health and vigor.
+Land Cover Classification: NDVI can differentiate between vegetation, bare land, and water bodies.
+Drought Monitoring: Changes in NDVI values can reflect vegetation water stress, making it suitable for drought monitoring.
+
+\paragraph{Enhanced Vegetation Index (EVI)}
+
+EVI\cite{Enhanced25:online} is a vegetation index developed from NDVI that reduces the influence of atmospheric and soil background effects. Its calculation formula is:
+
+\begin{equation}
+    \textbf{EVI} = G \times \frac{NIR - Red}{NIR + C_1 \times Red - C_2 \times Blue + L}
+\end{equation}
+
+where NIR, Red, and Blue are the reflectance values in the near-infrared, red, and blue bands respectively. G is a gain factor (usually 2.5), C1 and C2 are correction coefficients (usually 6 and 7.5), and L is an adjustment factor (usually 1)\cite{khanalRemoteSensingAgriculture2020}.
+
+Here are some applications.
+High-Density Vegetation Monitoring: EVI performs better than NDVI in areas with dense vegetation, making it suitable for monitoring dense forests and crops.
+Crop Growth Analysis: EVI can be used to assess crop vigor and growth changes.
+
+\subsubsection{Time Series Analysis}
+
+Time series analysis uses multi-temporal remote sensing data to analyze the temporal variation characteristics of target objects. By performing time series analysis, it is possible to dynamically monitor crop growth processes and evaluate changes and trends in agricultural production.
+
+\subsubsection{Crop Growth Monitoring}
+
+Crop growth monitoring involves analyzing spectral and morphological features of crops at different times to assess their growth status and trends. Common time series analysis methods include time series models, trend analysis, and change detection.
+
+Several methods are applied to this kind of monitoring.
+Time Series Models: Using time series models (such as autoregressive models and ARIMA models) to analyze changes and trends in crop growth, predicting future growth.
+Trend Analysis: Evaluating crop growth dynamics and health status by calculating the trend of spectral indices (such as NDVI and EVI) from multi-temporal data.
+Change Detection: Identifying abnormal changes in crop growth processes using change detection algorithms (such as image differencing and principal component analysis), such as pest outbreaks and water stress.
+
+Here are some applications.
+Crop Growth Monitoring: Evaluating crop growth dynamics and vigor by analyzing changes in NDVI or EVI values from multi-temporal data.
+Farm Management: Time series analysis helps farmers timely detect and address issues in crop growth, optimizing agricultural management practices.
+Disaster Early Warning: Monitoring temporal changes in crops can provide early warnings of agricultural disasters like droughts and floods, reducing disaster losses.

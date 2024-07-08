@@ -1,0 +1,172 @@
+% !TeX program  = XeLaTeX
+% !TeX encoding = UTF-8
+\documentclass[a4paper]{nuist}
+\usepackage{tikz}
+\usetikzlibrary{plotmarks}
+\usepackage{pgfplots}
+\title{综述论文报告}
+\author{
+    周肖桐 \\
+}
+\date{\today}
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+% \begin{equation}
+%   \begin{aligned}
+%       P_\theta(x_i)\\
+%       x_1,x_2, \cdots, x_n\\
+%       \vec{\theta}\\
+%       \prod_{i=1}^{n} P_\theta (x_i)\\
+%       \vec{\theta^*} =  \text{avg} \max \prod_{i=1}^{n} P_\theta (x_i)
+%   \end{aligned}
+% \end{equation}
+
+% \begin{tikzpicture}
+%   \begin{axis}[
+%     xlabel=$x$,
+%     ylabel=$P(x)$,
+%     domain=-3:3,
+%     samples=100,
+%     smooth,
+%     no markers,
+%     axis lines=center,
+%     x axis line style={->},
+%     y axis line style={-},
+%     ]
+
+%     \addplot {exp(-x^2/2)/sqrt(2*pi)};
+
+%     % 画两条竖线
+%     \draw[dashed] (axis cs: 0, 0) -- (axis cs: 0, {exp(0)/sqrt(2*pi)});
+%     \draw[dashed] (axis cs: 1, 0) -- (axis cs: 1, {exp(-1)/sqrt(2*pi)});
+
+%     % 在两条竖线之间添加阴影
+%     \fill[gray!20, domain=0:1]
+%     (axis cs: -0.2, 0.5) -- % 使用 exp(0) 代替 exp(-0^2/2)，即 x=0 处的值
+%     (axis cs: -0.2, 0) -- (axis cs: 0.2, 0) -- (axis cs: 0.2, 0.5) -- cycle;
+
+%   \end{axis}
+% \end{tikzpicture}
+
+% \begin{tikzpicture}
+%   \begin{axis}[
+%     xlabel=$x$,
+%     ylabel=$P(x)$,
+%     domain=-4:4,
+%     samples=100,
+%     smooth,
+%     no markers,
+%     axis lines=center,
+%     x axis line style={->},
+%     y axis line style={->}
+%     ]
+    
+    
+  
+%     \addplot[fill=gray!20, draw=none, domain=-0.2:0.2, samples=50] {exp(-x^2/2)/sqrt(2*pi)} \closedcycle;
+  
+%   % 画两条竖线
+%       \draw[dashed] (axis cs: -0.2, -0.1) -- (axis cs: -0.2, {exp(-0.04)/sqrt(2*pi)});
+%       \draw[dashed] (axis cs: 0.2, -0.1) -- (axis cs: 0.2, {exp(-0.04)/sqrt(2*pi)});
+%       \addplot {exp(-x^2/2)/sqrt(2*pi)};
+%       \node at (axis cs: -0.52, 0.018) {$x_2$};
+%       \node at (axis cs: 0.52, 0.018) {$x_2$};
+%     \end{axis}
+% \end{tikzpicture}
+
+
+%\input{body/0_Abstract/0_Abstrct.tex}
+\input{body/1_Introduction/1_Introduction.tex}
+\input{body/2_Traditional_ST/2_Traditiontal_ST.tex}
+
+\input{body/3_Neraul_ST/3_1Overview.tex}
+\input{body/3_Neraul_ST/3_2Image_Optimisition.tex}
+\input{body/3_Neraul_ST/3_3Model_Optimisition.tex}
+
+\input{body/4_Evalutaion/Evaluation.tex}
+
+\input{body/5_Diffuculties/Diffuculties.tex}
+%%%%%%%%%% 参考文献 %%%%%%%%%%
+% \input{body/bib.tex}
+\clearpage % 输出所有剩余的浮动体（图片、表格等），另起一页
+%%%%%%%%%% 参考文献 %%%%%%%%%%
+
+%%%%%%%%%% 附录（可选） %%%%%%%%%%
+% \input{body/appendix.tex}
+%%%%%%%%%% 附录（可选） %%%%%%%%%%
+
+\bibliography{D:\\Paper_Quote\\style_transfer.bib}
+
+\newpage
+
+\begin{tikzpicture}
+      % 垂直滤波器
+  \draw (0,0) grid (3,3);
+  
+  \foreach \i/\j in {0/0, 1/0, 2/0}
+    \node[red] at (\i+0.5, \j+0.5) {1};
+
+    \foreach \i/\j in {0/1, 1/1, 2/1}
+    \node at (\i+0.5, \j+0.5) {0};
+
+    \foreach \i/\j in {0/2, 1/2, 2/2}
+    \node[blue] at (\i+0.5, \j+0.5) {-1};
+
+\end{tikzpicture}
+
+\begin{equation}
+    L_{content}\left(\vec{p},\vec{x},l\right)=\frac{1}{2} \sum_{i,j} \left(F_{ij}^l-P_{ij}^l\right)^2
+\end{equation}
+
+\begin{tikzpicture}
+    % 垂直滤波器
+\draw (0,0) grid (3,1);
+
+\foreach \i in {3, 4, 5}
+  \node at (\i+0.5, 0.5) {·};
+  
+  
+\draw (6,0) grid (7,1);
+\node at (6.5,0.5) {j};
+
+\foreach \i in {7, 8, 9}
+  \node at (\i+0.5, 0.5) {·};
+
+\draw (10,0) grid (12,1);
+
+\node at (6, -0.3) {$\underbrace{\hspace{12cm}}$};
+\node at (6,-0.7) {原图中像素的个数};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+    % 垂直滤波器
+\draw (0,0) grid (3,1);
+
+\foreach \i in {3, 4, 5}
+  \node at (\i+0.5, 0.5) {·};
+  
+  
+\draw (6,0) grid (7,1);
+\node at (6.5,0.5) {j};
+
+\foreach \i in {7, 8, 9}
+  \node at (\i+0.5, 0.5) {·};
+
+\draw (10,0) grid (12,1);
+
+\node at (6, -0.3) {$\underbrace{\hspace{12cm}}$};
+\node at (6,-0.7) {特征图中像素的个数};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\draw (0,0) rectangle (10,10);
+    \node at (5,5) {CNN} ;
+\end{tikzpicture}
+
+
+\end{document}

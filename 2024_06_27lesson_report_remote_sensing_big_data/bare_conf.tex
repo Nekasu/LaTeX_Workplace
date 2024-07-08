@@ -1,0 +1,119 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{cite}
+% \usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{booktabs}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Advancements, Challenges, and Future Prospects in\\ Agricultural Remote Sensing: A Review}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Xiaotong Zhou}
+\IEEEauthorblockA{School of Computer Science\\
+Nanjing University of Information Science \& Technology\\
+Nan Jing, Jiang Su, China, 210031\\
+Email: zxt1428147954@163.com}
+}
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+  Agricultural remote sensing, a crucial component of precision agriculture, leverages advanced technologies to monitor and manage crop production efficiently. This report delves into the applications, challenges, and future prospects of agricultural remote sensing. It highlights the significant role of high-resolution data and intelligent analysis in real-time agricultural monitoring and decision-making. The report also addresses the challenges in technology adoption and proposes solutions such as enhanced training and user-friendly tools. Finally, it explores the future trends of integrating deep learning and IoT with remote sensing for intelligent agricultural management.
+\end{abstract}
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+\input{body/1_Introduciton/11_intro.tex}
+
+
+\input{body/2_Background/21background.tex}
+\input{body/3_summary_of_agriculture_reomte_sensing/31_summary_of_remote_sensing.tex}
+\input{body/3_summary_of_agriculture_reomte_sensing/32_acquisition_of_agricultural_remote_sensing_data.tex}
+
+\input{body/4_processing_datas/41_preprocessing.tex}
+\input{body/4_processing_datas/42_featurecapture.tex}
+\input{body/4_processing_datas/43_analysis.tex}
+
+\input{body/5_application_of_remote_sensing/51_applications.tex}
+
+\input{body/6_challenges/61_data_get_challenges.tex}
+\input{body/6_challenges/63_application_challenges.tex}
+\input{body/6_challenges/63_application_challenges.tex}
+
+\section{Conclusion}
+
+In conclusion, agricultural remote sensing has revolutionized modern agriculture by providing accurate, real-time data for crop monitoring and management. Despite challenges in technology adoption, strategic measures like robust training programs and user-friendly platforms can enhance its widespread implementation. The future of agricultural remote sensing looks promising with the integration of high-resolution data, advanced analysis techniques, and emerging technologies like deep learning and IoT. These advancements will further optimize agricultural practices, improve crop yields, and contribute to sustainable agricultural development.
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliograpy.bib}
+
+
+
+% that's all folks
+\end{document}
+
+

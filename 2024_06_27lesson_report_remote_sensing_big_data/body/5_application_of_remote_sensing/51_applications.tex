@@ -1,0 +1,121 @@
+\section{Applications of Agricultural Remote Sensing}
+
+\subsection{Crop Monitoring and Yield Prediction}
+Remote sensing technology plays a crucial role in crop monitoring and yield prediction. Through analysis of remote sensing data and model construction, real-time monitoring of crop growth and accurate prediction of crop yield can be achieved. This not only enhances agricultural production efficiency but also provides a scientific basis for agricultural decision-making.
+
+Monitoring Crop Growth Using Remote Sensing Data
+Monitoring crop growth is a vital component of precision agriculture. Remote sensing data enables real-time and continuous monitoring of crop growth across large agricultural areas, facilitating assessment of crop health and growth dynamics.
+
+Multispectral and Hyperspectral Remote Sensing
+\paragraph*{Multispectral Remote Sensing} utilizes data from multiple spectral bands, especially visible and near-infrared bands, to monitor crop growth. Common multispectral remote sensing data sources include Landsat and Sentinel-2.
+
+Normalized Difference Vegetation Index (NDVI): NDVI, one of the most commonly used vegetation indices, reflects vegetation cover and health. Changes in NDVI over time and space enable monitoring of crop health during growth.
+
+Enhanced Vegetation Index (EVI): EVI performs better than NDVI in dense vegetation areas and is more suitable for monitoring the growth status of dense crops.
+
+\paragraph*{Hyperspectral Remote Sensing} utilizes finely segmented spectral bands to capture more subtle spectral characteristics of crops. Hyperspectral data sources include Hyperion and AVIRIS.
+
+Red Edge Position: Hyperspectral data can analyze the spectral characteristics between red and near-infrared bands to assess chlorophyll content and crop growth status.
+
+Combined Spectral Indices: Using hyperspectral data, multiple spectral indices such as NDVI, SAVI (Soil-Adjusted Vegetation Index), MSAVI (Modified Soil-Adjusted Vegetation Index), etc., can be constructed to comprehensively evaluate crop health.
+
+\paragraph*{Radar Remote Sensing} uses data from microwave bands to gather information on crops under conditions like cloud cover and nighttime. Common radar data sources include Sentinel-1 and Radarsat.
+
+Synthetic Aperture Radar (SAR): SAR data can monitor crop growth and soil moisture. Analysis of radar backscatter intensity helps assess crop biomass and growth dynamics.
+
+Radar Vegetation Index (RVI): RVI, calculated using radar data, reflects vegetation structure and density.
+
+Building Yield Prediction Models to Assess Crop Yield
+Yield prediction is a critical task in agricultural management. By constructing yield prediction models, crop yields can be assessed in advance during the growing season, providing a scientific basis for agricultural decision-making\cite{sahooHyperspectralRemoteSensing2015}.
+
+Data Acquisition and Preprocessing
+\paragraph*{Data Acquisition} requires multiple data sources, including remote sensing, meteorological, and historical yield data.
+
+Remote Sensing Data: Includes multispectral, hyperspectral, and radar data providing temporal and spatial information on crop growth.
+
+Meteorological Data: Includes temperature, precipitation, and sunlight, affecting crop growth.
+
+Historical Yield Data: Includes historical records of crop yield, serving as the basis for model training and validation.
+
+\paragraph*{Data Preprocessing} involves atmospheric correction, geometric correction, radiometric calibration, and data fusion to ensure data accuracy and consistency.
+
+Feature Extraction and Selection
+Useful features are extracted from preprocessed remote sensing data, including vegetation indices (e.g., NDVI, EVI), red edge position, SAR backscatter intensity, combined with meteorological features (temperature, precipitation), and historical yield data to construct a comprehensive feature set.
+
+Model Selection and Training
+\paragraph*{Machine Learning Models}
+Regression Models: Such as linear regression, ridge regression, LASSO regression, suitable for simple linear relationship yield prediction.
+
+Support Vector Regression (SVR): Utilizing support vector machine regression algorithms, suitable for non-linear relationship yield prediction.
+
+Random Forest Regression (RFR): Based on decision tree ensemble methods, capable of handling complex non-linear relationships, with high prediction accuracy.
+
+\paragraph*{Deep Learning Models}
+Long Short-Term Memory Networks (LSTM): Suitable for time-series data yield prediction, analyzing temporal changes in crop growth to forecast future yields.
+
+Convolutional Neural Networks (CNN): Combined with remote sensing image features, using CNN to extract spatial features from images for yield prediction.
+
+Hybrid Models: Combining LSTM and CNN advantages to build hybrid models, considering both temporal sequences and spatial features to improve prediction accuracy.
+
+Model Evaluation and Validation
+Evaluate and validate constructed yield prediction models using common evaluation metrics such as Mean Squared Error (MSE), Root Mean Squared Error (RMSE), Coefficient of Determination (R²), etc.
+
+\paragraph*{Cross-Validation} Evaluate model generalization ability through cross-validation methods to avoid overfitting.
+
+\paragraph*{Independent Validation Set} Use independent validation set data to verify model prediction accuracy and reliability.
+
+Application of Yield Prediction
+Apply trained and validated models to predict crop yields in practical production.
+
+Real-Time Prediction: Use real-time updates of remote sensing and meteorological data to dynamically predict current season crop yields.
+
+Decision Support: Based on prediction results, guide agricultural production decisions such as fertilization, irrigation, and harvest timing to improve agricultural production efficiency.
+
+\subsection{Monitoring and Control of Diseases and Pests}
+Diseases and pests pose significant threats to agricultural production. Early detection and precise control of diseases and pests are crucial for ensuring healthy crop growth and increasing agricultural yields. Remote sensing technology combined with ground monitoring data can efficiently and accurately monitor and control diseases and pests over large areas, minimizing environmental impact.
+
+Early Detection of Diseases and Pests Using Remote Sensing Technology
+Remote sensing technology offers advantages such as wide coverage, high monitoring frequency, and diverse data acquisition, enabling early detection and precise control of diseases and pests across large agricultural areas.
+
+Multispectral and Hyperspectral Remote Sensing
+\paragraph*{Multispectral Remote Sensing} captures data from multiple spectral bands to identify and monitor crop health and occurrences of diseases and pests.
+
+Normalized Difference Vegetation Index (NDVI): Decreases in NDVI typically indicate deteriorating vegetation health, serving as an early warning indicator for diseases and pests.
+
+Enhanced Vegetation Index (EVI): EVI is highly sensitive to vegetation structure and is suitable for monitoring disease and pest situations in dense vegetation areas.
+
+\paragraph*{Hyperspectral Remote Sensing} captures continuous spectral bands to detect subtle spectral changes, thereby identifying the impact of diseases and pests on crops.
+
+Red Edge Position: Diseases and pests often cause changes in vegetation red edge positions. Analyzing these positions helps identify crop health conditions.
+
+Specific Band Analysis: Specific bands in hyperspectral remote sensing data (e.g., 670 nm, 800 nm) are sensitive to diseases and pests and can be used for disease and pest identification.
+
+\paragraph*{Radar Remote Sensing} uses microwave band data to monitor crop growth and disease and pest conditions under various weather conditions, including cloud cover and nighttime\cite{javedPerformanceRelationshipFour2021}.
+
+Synthetic Aperture Radar (SAR): SAR data provides vegetation structure information. Analysis of radar backscatter intensity and phase changes helps identify the effects of diseases and pests on crop structure.
+
+\paragraph*{Thermal Infrared Remote Sensing} monitors changes in crop canopy temperature to identify the impact of diseases and pests on crop transpiration and water status.
+
+Canopy Temperature: Diseases and pests often lead to an increase in crop canopy temperature. Thermal infrared remote sensing detects these temperature changes for early disease and pest warnings\cite{navalgundRemoteSensingApplications2007}.
+
+Precise Control
+Disease and pest monitoring based on remote sensing data guides precise control measures, reducing pesticide use and environmental pollution.
+
+Precision Spraying: Identify specific areas of disease and pest occurrence using remote sensing data for targeted spraying, avoiding widespread pesticide spraying.
+
+Preventive Measures: Before disease and pest outbreaks, early detection through remote sensing monitoring analysis allows for early preventive measures such as adjusting irrigation methods and applying biological pesticides.
+
+Integration of Ground Monitoring Data to Improve Accuracy in Disease and Pest Identification
+Ground monitoring data includes field surveys, automatic weather station data, and ground sensors. Integrating this data with remote sensing data improves the accuracy and timeliness of disease and pest monitoring and identification.
+
+Field Surveys
+Field surveys directly gather disease and pest information. Conducting field sample collection and analysis in suspected disease and pest areas identified by remote sensing monitoring verifies and corrects remote sensing data analysis results.
+
+Field Sample Collection: Collect and analyze field samples in areas suspected of disease and pest occurrence identified by remote sensing monitoring to confirm the type and severity of diseases and pests.
+
+Geographical Calibration: Geographically calibrate field survey data with remote sensing data to build high-precision disease and pest monitoring models.
+
+Automatic Weather Stations
+Automatic weather stations provide meteorological data (temperature, humidity, precipitation, etc.), crucial for disease and pest monitoring. Integrating this data with remote sensing data improves disease and pest risk assessment accuracy.
+
+Meteorological Factor Analysis: Analyze meteorological data's impact on disease and pest occurrence. For example, disease and pests are prone to outbreaks in hot and humid conditions. Combining meteorological and remote sensing data improves
