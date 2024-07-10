@@ -1,0 +1,58 @@
+\documentclass[a4paper]{nuist}
+
+
+\begin{document}
+
+%%%%%%%%%% 封面目录摘要 %%%%%%%%%%
+% WARN: 请检查校徽是否为最新版，当前（2022 年）使用校徽为 2015 版；若不是最新版，请在 nuist_logo 文件夹中替换
+% TIPS: 若标题、学院、专业名太长，可使用 \\ 进行换行，如 计算机学院 软件学院\\网络空间安全学院
+% TIPS: 若不允许换行，请在 nuist.cls 文件中查找“封面”部分，并将 \parbox[b]{58mm} 中的 58 改为更大的数字
+% TIPS: 2021 年论文格式要求指导老师不用加职称
+\cover{南京信息工程大学本科生毕业论文\LaTeX 模板}
+{杨欢、张轩豪、周肖桐}{2023122000??\\2023122000??\\202312200030}{计算机学院}{计算机科学与技术}{杨盘隆}{二Ｏ二四\hspace{0.4em} 年\hspace{0.4em} 七\hspace{0.4em} 月\hspace{0.4em} 十二\hspace{0.4em} 日}
+
+
+%%%%%%%%%% 封面目录摘要 %%%%%%%%%%
+\mytableofcontents
+
+\maketitleofchinese{南京信息工程大学本科生毕业论文\LaTeX 模板V2022\footnote{本模板制作时间：2014年5月，最后修订于2022年1月}}{Bruce Y.P. Lee\footnote{E-mail：\url{yupenglee119@gmail.com}}、LiR\footnote{第二版修改者，E-mail：\url{stuliren@outlook.com}}、John D\footnote{2021.6版修改者，E-mail：\url{mailto:work.temp.place@outlook.com}}、B. Shen\footnote{2022版修改者，E-mail：\href{mailto:nj\_bwshen@outlook.com}{nj\_bwshen@outlook.com}}}{\LaTeX }
+
+\abstractofchinese{这是一份南京信息工程大学本科生毕业论文\LaTeX 模板。友善提醒：本文档是非官方版，属个人兴趣产物。}{模板；南信大；毕业论文；}
+
+\maketitleofenglish{\LaTeX\ Template for Undergraduate
+    Thesis of Nanjing University of Information Science and Technology
+}{Bruce Y.P. Lee、LiR、John D、B. Shen}{School of \LaTeX}
+
+\abstractofenglish{This is a \LaTeX{~}template for the Undergraduate thesis of Nanjing University of Information Science and Technology. Caution:
+    due to personal interest, not an official template.}
+{template；NUIST；thesis；}
+
+\pagenumbering{arabic}
+\input{body/application/applications.tex}
+\input{body/market/market.tex}
+\input{body/challenge_trends/challenges.tex}
+%%%%%%%%%% 正文 %%%%%%%%%%
+
+%%%%%%%%%% 参考文献 %%%%%%%%%%
+
+\clearpage % 输出所有剩余的浮动体（图片、表格等），另起一页
+%%%%%%%%%% 参考文献 %%%%%%%%%%
+\bibliography{bibliography}
+%%%%%%%%%% 附录（可选） %%%%%%%%%%
+
+%%%%%%%%%% 附录（可选） %%%%%%%%%%
+
+%%%%%%%%%% 致谢 %%%%%%%%%%
+% TIPS: \thanking 命令中包含了 \clearpage
+\thanking
+{
+    感谢春风之骀荡，感谢细雨之无声，感谢花枝之袅娜，感谢土地之坚忍。
+
+    \vspace{5em}
+    {\color{red}
+        \heartpar{鉴于您已经读到这里，噢，也可能是用鼠标拖到这里的，但这不是什么大不了的区别，重要的是您手指或者眼睛一定有一些疲倦了吧？ 这段文字能与您相遇，笔者心里已经满是感激，为了表达这样的心情，特奉上红心一颗，望看官笑纳！ -- Lee贰零壹肆年伍月叁日于南京}
+    }
+}
+%%%%%%%%%% 致谢 %%%%%%%%%%
+
+\end{document}
