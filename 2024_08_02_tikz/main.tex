@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{fp}
+\usepackage{ifthen}
+
+\newcommand{\rsquareset}[5]{
+    %进行多个叠放的圆角矩形的命令定义
+    %参数1：圆角矩形的长度与宽度
+    %参数2：每个圆角矩形与上一层圆角矩形之间的便宜量
+    %参数3：填充的颜色
+    %参数4：Text展示的文本, 放在最下侧
+    %参数5：用于判断是否为开始图层, 当此变量为start时, 将重新开始绘制一个圆角矩形组
+    \xdef\totalOffset{\totalOffset}
+    \ifthenelse{\equal{#5}{start}}{\FPset{totalOffset}{0}}{}
+    \FPeval\currentOffset{0+(totalOffset)+(#2)}
+
+    \def\hw{#1} %用第一个变量给\hw变量赋值, 表示圆角矩形的长度与宽度
+    \def\x{\currentOffset}% X offset for current layer.
+    \def\y{\currentOffset}% Y offset for current layer.
+    \def\inText{#4}
+
+    % 定义矩形的四个角的坐标
+    \coordinate (left_buttom_A) at (\x, -\hw/2+\x)
+    \coordinate (left_buttom_B) at (\x+\hw, -\hw/2+\x)
+    \coordinate (left_buttom_C) at (\x+\hw, \hw/2+\x)
+    \coordinate (left_upper_D) at (\x, \hw/2+\x)
+}
+
+\begin{document}
+ 
+
+\end{document}
