@@ -1,0 +1,80 @@
+% mytikzpackage.sty - A custom package for drawing rounded rectangles with TikZ
+
+% Package declaration and requirements
+\ProvidesPackage{network_tikz_package}[2024/08/07 v1.0 A custom package for rounded rectangles with TikZ]
+
+% Load necessary packages
+\RequirePackage{tikz}
+\RequirePackage{fp}
+\RequirePackage{ifthen}
+\usetikzlibrary{calc}
+
+% Define color
+\definecolor{NekasuBlue}{HTML}{6495ED}
+
+% Define single rounded rectangle command
+\newcommand{\rSquare}[6]{
+    % Parameters:
+    % 1: Length and width of the rounded rectangle
+    % 2: Fill color
+    % 3: Fill color opacity
+    % 4: Radius of the rounded corners
+    % 5: Starting x-coordinate
+    % 6: Starting y-coordinate
+    \def\hw{#1} % Assign the first variable to \hw, representing the length and width of the rounded rectangle
+    \def\fillcolor{#2}
+    \def\alphaChannel{#3}
+    \def\roundedIndex{#4}
+    \def\x{#5}
+    \def\y{#6}
+
+    % Define the coordinates of the four corners of the rectangle
+    \coordinate (left_bottom_A) at (\x, \y);
+    \coordinate (right_bottom_B) at (\x+\hw, \y);
+    \coordinate (right_upper_C) at (\x+\hw, \hw+\y);
+    \coordinate (left_upper_D) at (\x, \hw+\y);
+
+    \draw[fill=\fillcolor!\alphaChannel, ultra thin, rounded corners=\roundedIndex] (left_bottom_A) rectangle (right_upper_C);
+}
+
+% Define multiple rounded rectangles command
+\newcommand{\rSquareSet}[9]{
+    % Parameters:
+    % 1: Length and width of the rounded rectangles
+    % 2: Fill color
+    % 3: Fill color opacity
+    % 4: Radius of the rounded corners
+    % 5: Starting x-coordinate
+    % 6: Starting y-coordinate
+    % 7: x, y offset between each rounded rectangle, these two values are equal
+    % 8: Name of this set of rounded rectangles
+    % 9: y-direction distance between the set of rounded rectangles and its name
+    \def\hww{#1} % Assign the first variable to \hww, representing the length and width of the rounded rectangle
+    \def\fillcolorw{#2}
+    \def\alphaChannelw{#3}
+    \def\roundedIndexw{#4}
+    \def\xw{#5}
+    \def\yw{#6}
+    \def\xxw{#7}
+    \def\inText{#8}
+    \def\yLen{#9}
+
+    % Draw a set of 3 rounded rectangles
+    \rSquare{\hww}{\fillcolorw}{\alphaChannelw}{\roundedIndexw}{\xw}{\yw};
+    \rSquare{\hww}{\fillcolorw}{\alphaChannelw}{\roundedIndexw}{\xw-\xxw}{\yw-\xxw};
+    \rSquare{\hww}{\fillcolorw}{\alphaChannelw}{\roundedIndexw}{\xw-\xxw-\xxw}{\yw-\xxw-\xxw};
+
+    % Define coordinates for arrows
+    \coordinate (#8_left) at  (\xw-\xxw-\xxw-2*\yLen, \yw-\xxw+\hw/2);
+    \coordinate (#8_right) at   (\xw+\hww+\yLen+\yLen, \yw-\xxw+\hw/2);
+    \coordinate (#8_top) at    (\xw-\xxw+\hww/2, \yw+\hww+\yLen);
+    \coordinate (#8_bottom) at (\xw-\xxw+\hww/2, \yw-\xxw-\xxw-\yLen);
+
+    % \node at (#8_left) {left};
+    % \node at (#8_right) {left};
+    % \node at (#8_top) {top};
+    % \node at (#8_bottom) {bottom};
+}
+
+% Ensure the package is loaded only once
+\endinput
