@@ -66,9 +66,10 @@
 
 \newcommand{\networkLayer}[9]{
 	% Define the macro.
+    %from https://www.cnblogs.com/pprp/p/13678535.html
 	% 1st argument: Height and width of the layer rectangle slice.
 	% 2nd argument: Depth of the layer slice
-	% 3rd argument: X Offset --> use it to offset layers from previously drawn layers.
+	% 3rd argument: X Offset --> use it to offset layers from previously drawn layers., 两个层之间的x偏移量
 	% 4th argument: Y Offset --> Use it when an output needs to be fed to multiple layers that are on the same X offset.
 	% 5th argument: Z Offset --> Use to offset layers from previous 
 	% 6th argument: Options for filldraw.
@@ -76,11 +77,12 @@
 	% 8th argument: Name of coordinates. When name = "start" this resets the offset counter
 	% 9th argument: list of nodes to connect to (previous layers)
 	% 全局变量
+    \def\totalOffset{0}
 	\xdef\totalOffset{\totalOffset}
  	\ifthenelse{\equal{#8} {start}}
- 	{\FPset{totalOffset}{0}}
+ 	{\FPset{\totalOffset}{0}}
  	{}
- 	\FPeval\currentOffset{0+(totalOffset)+(#3)}
+ 	\FPeval\currentOffset{0+(\totalOffset)+(#3)}
 
 	\def\hw{#1} % Used to distinguish input resolution for current layer.
 	\def\b{0.02}
@@ -137,17 +139,17 @@
 
 	\FPeval\totalOffset{0+(currentOffset)+\c}
 
-	\draw[ultra thick, red] (#8_back) circle[radius=0.02];
-	\node[left] at (#8_back) {back};
+	% \draw[ultra thick, red] (#8_back) circle[radius=0.02];
+	% \node[left] at (#8_back) {back};
 	
-	\draw[ultra thick, red] (#8_top) circle[radius=0.02];
-	\node[above] at (#8_top) {top};
+	% \draw[ultra thick, red] (#8_top) circle[radius=0.02];
+	% \node[above] at (#8_top) {top};
 	
-	\draw[ultra thick, red] (#8_bottom) circle[radius=0.02];
-	\node[below] at (#8_bottom) {bottom};
+	% \draw[ultra thick, red] (#8_bottom) circle[radius=0.02];
+	% \node[below] at (#8_bottom) {bottom};
 	
-	\draw[ultra thick, red] (#8_front) circle[radius=0.02];
-	\node[left] at (#8_front) {front};
+	% \draw[ultra thick, red] (#8_front) circle[radius=0.02];
+	% \node[left] at (#8_front) {front};
 }
 
 % \newcommand{\centeredSquare}[3]{
