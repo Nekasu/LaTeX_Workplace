@@ -5,7 +5,7 @@
 \begin{document}
 
 \begin{tikzpicture}
-    \draw[help lines] (-3,-10) grid (10,10);
+    % \draw[help lines] (-3,-10) grid (10,10);
         % Use the new command to draw a single rounded rectangle
     % \rSquare{0.6}{NekasuBlue}{20}{5pt}{0}{0}{rs1}
 
@@ -15,21 +15,17 @@
     \def\offY{3}
     % 一个用于表示原始风格图像的node
     \coordinate (S) at (-2,0);
-    \node at (S) (S_fig) {\includegraphics[width=1.5cm]{./pics/S.jpg}};
+    \node at (S) (S_fig) {\includegraphics[width=1.5cm]{../pics/S.jpg}};
     \node at ($(S)+(0,-1)$) (S_text) {$S$};
     
 
-    %创建一个方形, 用于表示Dsal模块
+    %创建一个神经网络, 用于表示Dsal模块, 并定义一个Dasl坐标表示这个模块
     \coordinate (Dsal) at ($(S)+(\offX,0)$);
-    \def\widthDsal{1};
-    \coordinate (Dsal_left_bottom) at ($(Dsal)+(-\widthDsal/2,-\widthDsal/2)$);
-    \coordinate (Dsal_right_bottom) at ($(Dsal)+(\widthDsal/2,\widthDsal/2)$);
-    \coordinate (Dsal_left) at ($(Dsal)+(-\widthDsal/2-0.1,0)$);
-    \coordinate (Dsal_right) at ($(Dsal)+(\widthDsal/2+0.1,0)$);
-    \coordinate (Dsal_upper) at ($(Dsal)+(0,\widthDsal/2+0.1)$);
-    \coordinate (Dsal_bottom) at ($(Dsal)+(0,-\widthDsal/2-0.1)$);
-    \draw (Dsal_left_bottom) rectangle (Dsal_right_bottom);
-    \node at ($(Dsal)+(0,-\widthDsal/2-0.5)$) (Dsal_text) {$D_{sal}$};
+    \networkLayer{1.5}{0.15}{0.0}{0.0}{0.0}{color=GunYu_midblue!40}{}{start}{};
+    \networkLayer{1}{0.15}{0.1}{0.0}{0.0}{color=GunYu_midblue!50}{}{}{};
+    \networkLayer{0.75}{0.15}{0.1}{0.0}{0.0}{color=GunYu_midblue!70}{}{mid_right}{};
+    \networkLayer{1}{0.15}{0.2}{0.0}{0.0}{color=GunYu_midblue!40}{}{last}{};
+    \node at ($(mid_right_bottom)+(-0.08,-0.7)$) (Dsal_bottom) {$D_{sal}$};
 
     %创建一个方形, 用于表示Msal, 是一个矩阵
     \coordinate (Msal) at ($(Dsal)+(\offX,0)$);
@@ -54,10 +50,10 @@
     \fill[lightgray] ($(Msal_left_bottom)+(\widthMsal/3*2, \widthMsal/3*2)$) rectangle ($(Msal_left_bottom)+(\widthMsal/3*2+\widthMsal/3, \widthMsal/3*2+\widthMsal/3)$);
     % 为Msal划上方格, 表示一个矩阵
     \foreach \y in {0, \widthMsal/3, 2*\widthMsal/3}{
-        \draw[thin] ($(Msal_left_bottom)+(0,\y)$) -- ($(Msal_left_bottom)+(\widthMsal,\y)$);
+        \draw[black,thin] ($(Msal_left_bottom)+(0,\y)$) -- ($(Msal_left_bottom)+(\widthMsal,\y)$);
     }
     \foreach \x in {0, \widthMsal/3, 2*\widthMsal/3}{
-        \draw[gray, thin] ($(Msal_left_bottom)+(\x,0)$) -- ($(Msal_left_bottom)+(\x,\widthMsal)$);
+        \draw[black, thin] ($(Msal_left_bottom)+(\x,0)$) -- ($(Msal_left_bottom)+(\x,\widthMsal)$);
     }
 
     % 创建一个\odot符号
@@ -92,10 +88,10 @@
     \fill[darkgray] ($(IMsal_left_bottom)+(\widthIMsal/3*2, \widthIMsal/3*2)$) rectangle ($(IMsal_left_bottom)+(\widthIMsal/3*2+\widthIMsal/3, \widthIMsal/3*2+\widthIMsal/3)$);
     % 为I-Msal划上方格, 表示一个矩阵
     \foreach \y in {0, \widthMsal/3, 2*\widthMsal/3}{
-        \draw[gray, thin] ($(IMsal_left_bottom)+(0,\y)$) -- ($(IMsal_left_bottom)+(\widthIMsal,\y)$);
+        \draw[black, thin] ($(IMsal_left_bottom)+(0,\y)$) -- ($(IMsal_left_bottom)+(\widthIMsal,\y)$);
     }
     \foreach \x in {0, \widthIMsal/3, 2*\widthIMsal/3}{
-        \draw[gray, thin] ($(IMsal_left_bottom)+(\x,0)$) -- ($(IMsal_left_bottom)+(\x,\widthIMsal)$);
+        \draw[black, thin] ($(IMsal_left_bottom)+(\x,0)$) -- ($(IMsal_left_bottom)+(\x,\widthIMsal)$);
     }
 
     % 创建一个\odot符号
@@ -110,16 +106,16 @@
 
     % 绘制箭头
     % S上的出度箭头1：S->Dsal
-    \draw[->, thick] (S_fig.east) -- (Dsal_left);
+    \draw[->, thick] (S_fig.east) -- ($(start_back)+(-0.5,0)$);
     % S上的出度箭头2：S -> odot1
     \draw[->, thick] (S_fig.north)  -- ($(S)+(0,1.5)$) -| (odot1.north);
     % S上的出度箭头3：S -> IMsal
     \draw[->, thick] (S_text.south) -- ($(S)+(0,-4.5)$)  -| (odot2.south);
 
     % Dsal的出度箭头1：Dsal->Msal
-    \draw[->, thick] (Dsal_right) -- (Msal_left);
+    \draw[->, thick] ($(last_front)+(0.3,0)$) -- (Msal_left);
     % Dsal的出度箭头2：Dsal->I-Msal
-    \draw[->, thick] (Dsal_text.south) -- (IMsal_upper);
+    \draw[->, thick] (Dsal_bottom.south) -- (IMsal_upper);
 
     % Msal的出度箭头箭头1：Msal->odot
     \draw[->, thick] (Msal_right) -- (odot1.west);
@@ -132,8 +128,8 @@
     
     % odot2的出度箭头1：odot2->Sb
     \draw[->, thick] (odot2.east) -- (Sb_fig.west);
-
-
+    
+    % \networkLayer{3.0}{0.1}{0.5}{0.0}{0.0}{color=white}{conv}{}{};
     % Use the new command to draw a set of rounded rectangles
     % \rSquare{1}{NekasuBlue}{70}{5pt}{0}{0};
     % \rSquare{1}{NekasuBlue}{70}{5pt}{-0.5}{-0.5};
