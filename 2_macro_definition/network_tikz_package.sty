@@ -1,0 +1,68 @@
+% mytikzpackage.sty - A custom package for drawing rounded rectangles with TikZ
+
+% Package declaration and requirements
+\ProvidesPackage{network_tikz_package}[2024/08/07 v1.0 A custom package for nueral network with TikZ]
+
+% Load necessary packages
+\RequirePackage{tikz}
+\RequirePackage{fp}
+\RequirePackage{ifthen}
+\usetikzlibrary{calc}
+
+% Define color
+\definecolor{NekasuBlue}{HTML}{6495ED}
+
+% Define single rounded rectangle command
+\newcommand{\rSquare}[6]{
+    % 使用时需要注意, 各个参数的单位应该保持一致, 不要一些坐标加了cm单位, 一些没有加
+    % Parameters:
+    % 1: Length and width of the rounded rectangle
+    % 2: Fill color
+    % 3: Fill color opacity
+    % 4: Radius of the rounded corners
+    % 5: Starting x-coordinate
+    % 6: Starting y-coordinate
+
+
+    % Define the coordinates of the four corners of the rectangle
+    % \coordinate (#7_left_bottom_A) at (#5, #6);
+    % \coordinate (#7_right_bottom_B) at (#5+#1, #6);
+    % \coordinate (#7_right_upper_C) at (#5+#1, #1+#6);
+    % \coordinate (#7_left_upper_D) at (#5, #1+#6);
+
+    \draw[fill=#2!#3, ultra thin, rounded corners=#4] (#5, #6) rectangle (#5+#1, #1+#6);
+}
+
+\newcommand{\rSquareSet}[9]{
+    % 使用时需要注意, 各个参数的单位应该保持一致, 不要一些坐标加了cm单位, 一些没有加
+    % Parameters:
+    % 1: Length and width of the rounded rectangles
+    % 2: Fill color
+    % 3: Fill color opacity
+    % 4: Radius of the rounded corners
+    % 5: Starting x-coordinate
+    % 6: Starting y-coordinate
+    % 7: x, y offset between each rounded rectangle, these two values are equal
+    % 8: Name of this set of rounded rectangles
+    % 9: y-direction distance between the set of rounded rectangles and its name
+
+    % Draw a set of 3 rounded rectangles
+    \rSquare{#1}{#2}{#3}{#4}{#5+#7}{#6+#7};
+    \rSquare{#1}{#2}{#3}{#4}{#5}{#6};
+    \rSquare{#1}{#2}{#3}{#4}{#5-#7}{#6-#7};
+
+    % Define coordinates for arrows
+    \coordinate (#8_left) at  (#5-#7-#9, #6+#1/2);
+    \coordinate (#8_right) at   (#5+#7+#1+#9, #6+#1/2);
+    \coordinate (#8_top) at    (#5+#1/2, #6+#7+#1+#9);
+    \coordinate (#8_bottom) at (#5+#1/2, #6-#7-#9);
+
+
+    \node at (#8_left) {left};
+    \node at (#8_right) {left};
+    \node at (#8_top) {top};
+    \node at (#8_bottom) {#8};
+}
+
+% Ensure the package is loaded only once
+\endinput

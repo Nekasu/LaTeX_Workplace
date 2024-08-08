@@ -1,14 +1,20 @@
 \documentclass{article}
 
-% Load the custom package
-\usepackage{network_tikz_package}
+\usepackage{E:/vscode_Workspace/LaTeX_Workplace/2_macro_definition/network_tikz_package}
 
 \begin{document}
 
-% Use the new command to draw a single rounded rectangle
-\rSquare{2cm}{NekasuBlue}{50}{0.5cm}{0}{0}
+\begin{tikzpicture}
+    \draw[help lines] (-2,-2) grid(2,2);
+        % Use the new command to draw a single rounded rectangle
+    % \rSquare{0.6}{NekasuBlue}{20}{5pt}{0}{0}{rs1}
 
-% Use the new command to draw a set of rounded rectangles
-\rSquareSet{1cm}{NekasuBlue}{70}{0.25cm}{4cm}{4cm}{1cm}{ExampleSet}{0.5cm}
+    % Use the new command to draw a set of rounded rectangles
+    % \rSquare{1}{NekasuBlue}{70}{5pt}{0}{0};
+    % \rSquare{1}{NekasuBlue}{70}{5pt}{-0.5}{-0.5};
+    % \rSquare{1}{NekasuBlue}{70}{5pt}{-1}{-1};
+    \rSquareSet{1}{NekasuBlue}{70}{5pt}{0}{0}{0.2}{ExampleSet}{0.5};
+    \draw[->,thick] ($(ExampleSet_left) + (-2,0)$) -- (ExampleSet_left);
+\end{tikzpicture}
 
 \end{document}
