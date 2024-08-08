@@ -79,7 +79,7 @@
 	% 6th argument: Options for filldraw.
 	% 7th argument: Text to be placed below this layer.
 	% 8th argument: Name of coordinates. When name = "start" this resets the offset counter
-	% 9th argument: list of nodes to connect to (previous layers)
+	% 9th argument: 神经网络的起始x坐标
 	% 全局变量
     
 	
@@ -98,29 +98,20 @@
 	\def\inText{#7}
 
     % Define references to points on the cube surfaces
-    \coordinate (#8_front) at  (\x+\c  , \z      , \y);
-    \coordinate (#8_back) at   (\x     , \z      , \y);
-    \coordinate (#8_top) at    (\x+\c/2, \z+\hw/2, \y);
-    \coordinate (#8_bottom) at (\x+\c/2, \z-\hw/2, \y);
+    \coordinate (#8_front) at  (\x+\c  +#9, \z      , \y);
+    \coordinate (#8_back) at   (\x     +#9, \z      , \y);
+    \coordinate (#8_top) at    (\x+\c/2+#9, \z+\hw/2, \y);
+    \coordinate (#8_bottom) at (\x+\c/2+#9, \z-\hw/2, \y);
     
  	% Define cube coords
-	\coordinate (blr) at (\c+\x,  -\hw/2+\z,  -\hw/2+\y); %back lower right
-	\coordinate (bur) at (\c+\x,   \hw/2+\z,  -\hw/2+\y); %back upper right
-	\coordinate (bul) at (0 +\x,   \hw/2+\z,  -\hw/2+\y); %back upper left
-	\coordinate (fll) at (0 +\x,  -\hw/2+\z,   \hw/2+\y); %front lower left
-	\coordinate (flr) at (\c+\x,  -\hw/2+\z,   \hw/2+\y); %front lower right
-	\coordinate (fur) at (\c+\x,   \hw/2+\z,   \hw/2+\y); %front upper right
-	\coordinate (ful) at (0 +\x,   \hw/2+\z,   \hw/2+\y); %front upper left
+	\coordinate (blr) at (\c+\x+#9,  -\hw/2+\z,  -\hw/2+\y); %back lower right
+	\coordinate (bur) at (\c+\x+#9,   \hw/2+\z,  -\hw/2+\y); %back upper right
+	\coordinate (bul) at (0 +\x+#9,   \hw/2+\z,  -\hw/2+\y); %back upper left
+	\coordinate (fll) at (0 +\x+#9,  -\hw/2+\z,   \hw/2+\y); %front lower left
+	\coordinate (flr) at (\c+\x+#9,  -\hw/2+\z,   \hw/2+\y); %front lower right
+	\coordinate (fur) at (\c+\x+#9,   \hw/2+\z,   \hw/2+\y); %front upper right
+	\coordinate (ful) at (0 +\x+#9,   \hw/2+\z,   \hw/2+\y); %front upper left
 	
-
-    % Draw connections from other points to the back of this node
-    \ifthenelse{\equal{#9} {}}
- 	{} % 为空什么都不做
- 	{ % 非空 开始画层与层之间的连线
- 	    \foreach \val in #9
- 	    % \val = start_front
- 	        \draw[line width=0.3mm] (\val)--(#8_back);
- 	}
  	
 	% Draw the layer body.
 	% back plane
