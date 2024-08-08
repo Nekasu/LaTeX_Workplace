@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.21)  8 AUG 2024 00:23
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.26)  8 AUG 2024 15:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,63 +6,84 @@ entering extended mode
 **main
 (./main.tex
 LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2023-02-22> (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2023-02-22> (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/standalone/standalone.cls
+Document Class: standalone 2022/10/10 v1.3b Class to compile TeX sub-files standalone
+(c:/SoftWares/texlive/2023/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/xkeyval/xkeyval.tex (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks16
+\XKV@tempa@toks=\toks17
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count181
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\sa@internal=\count182
+\c@sapage=\count183
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/standalone/standalone.cfg
+File: standalone.cfg 2022/10/10 v1.3b Default configuration file for 'standalone' class
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
-(d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/base/size10.clo
+(c:/SoftWares/texlive/2023/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count181
-\c@section=\count182
-\c@subsection=\count183
-\c@subsubsection=\count184
-\c@paragraph=\count185
-\c@subparagraph=\count186
-\c@figure=\count187
-\c@table=\count188
+\c@part=\count184
+\c@section=\count185
+\c@subsection=\count186
+\c@subsubsection=\count187
+\c@paragraph=\count188
+\c@subparagraph=\count189
+\c@figure=\count190
+\c@table=\count191
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (e:/vscode_Workspace/LaTeX_Workplace/2_macro_definition/network_tikz_package.sty
+)
+\sa@box=\box51
+) (d:/DevData/LaTeX_Workplace/2_macro_definition/network_tikz_package.sty
 
-LaTeX Warning: You have requested package `E:/vscode_Workspace/LaTeX_Workplace/2_macro_definition/network_tikz_package',
+LaTeX Warning: You have requested package `D:/DevData/LaTeX_Workplace/2_macro_definition/network_tikz_package',
                but the package provides `network_tikz_package'.
 
 Package: network_tikz_package 2024/08/07 v1.0 A custom package for nueral network with TikZ
-(d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks16
+(c:/SoftWares/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks18
 \pgfutil@tempdima=\dimen141
 \pgfutil@tempdimb=\dimen142
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box51
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box52
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 107.
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/graphics-def/xetex.def
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics-def/xetex.def
 File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen143
 \Gin@req@width=\dimen144
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks18
-\pgfkeys@temptoks=\toks19
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks20
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks19
+\pgfkeys@temptoks=\toks20
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks21
 ))
 \pgf@x=\dimen145
 \pgf@y=\dimen146
@@ -76,39 +97,39 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yd=\dimen154
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count189
-\c@pgf@countb=\count190
-\c@pgf@countc=\count191
-\c@pgf@countd=\count192
-\t@pgf@toka=\toks21
-\t@pgf@tokb=\toks22
-\t@pgf@tokc=\toks23
-\pgf@sys@id@count=\count193
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+\c@pgf@counta=\count192
+\c@pgf@countb=\count193
+\c@pgf@countc=\count194
+\c@pgf@countd=\count195
+\t@pgf@toka=\toks22
+\t@pgf@tokb=\toks23
+\t@pgf@tokc=\toks24
+\pgf@sys@id@count=\count196
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
 Driver file for pgf: pgfsys-xetex.def
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
 File: pgfsys-xetex.def 2023-01-15 v3.1.10 (3.1.10)
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
 File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )
-\pgfsys@objnum=\count194
-))) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+\pgfsys@objnum=\count197
+))) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count195
-\pgfsyssoftpath@bigbuffer@items=\count196
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+\pgfsyssoftpath@smallbuffer@items=\count198
+\pgfsyssoftpath@bigbuffer@items=\count199
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
+)) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 227.
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1369.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
@@ -117,18 +138,18 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen155
-\pgfmath@count=\count197
-\pgfmath@box=\box52
-\pgfmath@toks=\toks24
-\pgfmath@stack@operand=\toks25
-\pgfmath@stack@operation=\toks26
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count198
-)) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+\pgfmath@count=\count266
+\pgfmath@box=\box53
+\pgfmath@toks=\toks25
+\pgfmath@stack@operand=\toks26
+\pgfmath@stack@operation=\toks27
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count267
+)) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picminx=\dimen156
 \pgf@picmaxx=\dimen157
@@ -144,77 +165,77 @@ File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yy=\dimen167
 \pgf@zx=\dimen168
 \pgf@zy=\dimen169
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@path@lastx=\dimen170
 \pgf@path@lasty=\dimen171
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@shorten@end@additional=\dimen172
 \pgf@shorten@start@additional=\dimen173
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box53
-\pgf@hbox=\box54
-\pgf@layerbox@main=\box55
-\pgf@picture@serial@count=\count199
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+\pgfpic=\box54
+\pgf@hbox=\box55
+\pgf@layerbox@main=\box56
+\pgf@picture@serial@count=\count268
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen174
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@pt@x=\dimen175
 \pgf@pt@y=\dimen176
 \pgf@pt@temp=\dimen177
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowsep=\dimen178
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen179
-\pgf@sys@shading@range@num=\count266
-\pgf@shadingcount=\count267
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+\pgf@sys@shading@range@num=\count269
+\pgf@shadingcount=\count270
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box56
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+\pgfexternal@startupbox=\box57
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+))) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box57
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+\pgfnodeparttextbox=\box58
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
 \pgf@nodesepstart=\dimen180
 \pgf@nodesepend=\dimen181
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
-)) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/pgf/math/pgfmath.sty (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+)) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/pgf/math/pgfmath.sty (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen182
 \pgffor@skip=\dimen183
-\pgffor@stack=\toks27
-\pgffor@toks=\toks28
-)) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+\pgffor@stack=\toks28
+\pgffor@toks=\toks29
+)) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count268
+\pgf@plot@mark@count=\count271
 \pgfplotmarksize=\dimen184
 )
 \tikz@lastx=\dimen185
@@ -225,69 +246,69 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@lastmovetoy=\dimen190
 \tikzleveldistance=\dimen191
 \tikzsiblingdistance=\dimen192
-\tikz@figbox=\box58
-\tikz@figbox@bg=\box59
-\tikz@tempbox=\box60
-\tikz@tempbox@bg=\box61
-\tikztreelevel=\count269
-\tikznumberofchildren=\count270
-\tikznumberofcurrentchild=\count271
-\tikz@fig@count=\count272
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+\tikz@figbox=\box59
+\tikz@figbox@bg=\box60
+\tikz@tempbox=\box61
+\tikz@tempbox@bg=\box62
+\tikztreelevel=\count272
+\tikznumberofchildren=\count273
+\tikznumberofcurrentchild=\count274
+\tikz@fig@count=\count275
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count273
-\pgfmatrixcurrentcolumn=\count274
-\pgf@matrix@numberofcolumns=\count275
+\pgfmatrixcurrentrow=\count276
+\pgfmatrixcurrentcolumn=\count277
+\pgf@matrix@numberofcolumns=\count278
 )
-\tikz@expandcount=\count276
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+\tikz@expandcount=\count279
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/fp/fp.sty
+))) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/fp/fp.sty
 Package: fp 1995/04/02
- `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/fp/defpattern.sty
+ `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count277
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/fp/fp-basic.sty
+\actioncount=\count280
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count278
-\FP@xia=\count279
-\FP@xib=\count280
-\FP@xfa=\count281
-\FP@xfb=\count282
-\FP@rega=\count283
-\FP@regb=\count284
-\FP@regs=\count285
-\FP@times=\count286
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/fp/fp-addons.sty
+\FP@xs=\count281
+\FP@xia=\count282
+\FP@xib=\count283
+\FP@xfa=\count284
+\FP@xfb=\count285
+\FP@rega=\count286
+\FP@regb=\count287
+\FP@regs=\count288
+\FP@times=\count289
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/fp/fp-snap.sty
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/fp/fp-snap.sty
 Package: fp-snap 1995/04/05
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/fp/fp-exp.sty
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/fp/fp-exp.sty
 Package: fp-exp 1995/04/03
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/fp/fp-trigo.sty
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/fp/fp-trigo.sty
 Package: fp-trigo 1995/04/14
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/fp/fp-pas.sty
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/fp/fp-pas.sty
 Package: fp-pas 1994/08/29
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/fp/fp-random.sty
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count287
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/fp/fp-eqn.sty
+\FPseed=\count290
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/fp/fp-upn.sty
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/fp/fp-upn.sty
 Package: fp-upn 1996/10/21
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/fp/fp-eval.sty
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/fp/fp-eval.sty
 Package: fp-eval 1995/04/03
-)) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
+)) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+)) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2023-01-16 L3 backend support: XeTeX
-\g__graphics_track_int=\count288
-\l__pdf_internal_box=\box62
-\g__pdf_backend_object_int=\count289
-\g__pdf_backend_annotation_int=\count290
-\g__pdf_backend_link_int=\count291
+\g__graphics_track_int=\count291
+\l__pdf_internal_box=\box63
+\g__pdf_backend_object_int=\count292
+\g__pdf_backend_annotation_int=\count293
+\g__pdf_backend_link_int=\count294
 ) (./main.aux)
 \openout1 = `main.aux'.
 
@@ -301,7 +322,7 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5.
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 5.
@@ -311,21 +332,36 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
+File: ./pics/S.jpg Graphic file (type bmp)
+<./pics/S.jpg>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 19.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 19.
 
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 65.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 65.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 65.
+File: ./pics/S_m.jpg Graphic file (type bmp)
+<./pics/S_m.jpg>
 Missing character: There is no ; ("3B) in font nullfont!
-Missing character: There is no ; ("3B) in font nullfont!
+File: ./pics/S_b.jpg Graphic file (type bmp)
+<./pics/S_b.jpg>
 [1
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 12515 strings out of 476683
- 265492 string characters out of 5798314
- 1845012 words of memory out of 5000000
- 32557 multiletter control sequences out of 15000+600000
- 512295 words of font info for 33 fonts, out of 8000000 for 9000
+ 13402 strings out of 476683
+ 279835 string characters out of 5803164
+ 1854012 words of memory out of 5000000
+ 33401 multiletter control sequences out of 15000+600000
+ 515039 words of font info for 43 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 115i,5n,118p,410b,568s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,5n,118p,410b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (1 page).
