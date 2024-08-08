@@ -11,6 +11,10 @@
 
 % Define color
 \definecolor{NekasuBlue}{HTML}{6495ED}
+\definecolor{GunYu_darkblbue}{HTML}{33395B}
+\definecolor{GunYu_midblbue}{HTML}{4D74A2}
+\definecolor{GunYu_lightblbue}{HTML}{C4D8F2}
+\definecolor{GunYu_ricewhite}{HTML}{F2E8E3}
 
 % Define single rounded rectangle command
 \newcommand{\rSquare}[6]{
@@ -77,12 +81,13 @@
 	% 8th argument: Name of coordinates. When name = "start" this resets the offset counter
 	% 9th argument: list of nodes to connect to (previous layers)
 	% 全局变量
-    \def\totalOffset{0}
-	\xdef\totalOffset{\totalOffset}
+    
+	
  	\ifthenelse{\equal{#8} {start}}
  	{\FPset{\totalOffset}{0}}
  	{}
  	\FPeval\currentOffset{0+(\totalOffset)+(#3)}
+    \xdef\totalOffset{\totalOffset}
 
 	\def\hw{#1} % Used to distinguish input resolution for current layer.
 	\def\b{0.02}
