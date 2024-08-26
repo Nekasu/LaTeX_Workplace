@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.26)  8 AUG 2024 21:39
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.26)  8 AUG 2024 21:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**fig2
-(./fig2.tex
+**fig3
+(./fig3.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/standalone/standalone.cls
 Document Class: standalone 2022/10/10 v1.3b Class to compile TeX sub-files standalone
@@ -309,8 +309,9 @@ File: l3backend-xetex.def 2023-01-16 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count292
 \g__pdf_backend_annotation_int=\count293
 \g__pdf_backend_link_int=\count294
-) (./fig2.aux)
-\openout1 = `fig2.aux'.
+)
+No file fig3.aux.
+\openout1 = `fig3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -322,7 +323,7 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5.
- (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
+(c:/SoftWares/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 5.
@@ -332,22 +333,32 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
-File: ../pics/Content.jpeg Graphic file (type bmp)
-<../pics/Content.jpeg>
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 23.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 23.
 
 Missing character: There is no ; ("3B) in font nullfont!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 26.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 26.
+Missing character: There is no ; ("3B) in font nullfont!
+( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
+Missing character: There is no ; ("3B) in font nullfont!
+( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
+Missing character: There is no ; ("3B) in font nullfont!
+( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
+Missing character: There is no ; ("3B) in font nullfont!
+( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
+Missing character: There is no ; ("3B) in font nullfont!
+( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
+Missing character: There is no ; ("3B) in font nullfont!
+( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
+Missing character: There is no ; ("3B) in font nullfont!
+( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
+Missing character: There is no ; ("3B) in font nullfont!
+( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 64.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 64.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 64.
+Missing character: There is no ; ("3B) in font nullfont!
+Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
 Missing character: There is no ; ("3B) in font nullfont!
@@ -363,25 +374,25 @@ Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
+( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
+Missing character: There is no ; ("3B) in font nullfont!
+( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
+Missing character: There is no ; ("3B) in font nullfont!
+( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
+Missing character: There is no ; ("3B) in font nullfont!
+( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ( FP-ADD ) ( FP-ADD ) ) )
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
-Missing character: There is no ; ("3B) in font nullfont!
-Missing character: There is no ; ("3B) in font nullfont!
-Missing character: There is no ; ("3B) in font nullfont!
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 281.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 281.
 [1
 
-] (./fig2.aux) ) 
+] (./fig3.aux) ) 
 Here is how much of TeX's memory you used:
- 14113 strings out of 476683
- 294651 string characters out of 5803164
- 1876012 words of memory out of 5000000
- 34111 multiletter control sequences out of 15000+600000
- 516874 words of font info for 50 fonts, out of 8000000 for 9000
+ 14099 strings out of 476683
+ 294787 string characters out of 5803164
+ 1900012 words of memory out of 5000000
+ 34116 multiletter control sequences out of 15000+600000
+ 512295 words of font info for 33 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 115i,7n,118p,410b,629s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,7n,118p,410b,656s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on fig2.pdf (1 page).
+Output written on fig3.pdf (1 page).

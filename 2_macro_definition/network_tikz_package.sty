@@ -11,10 +11,17 @@
 
 % Define color
 \definecolor{NekasuBlue}{HTML}{6495ED}
-\definecolor{GunYu_lightgray}{HTML}{33395B}
-\definecolor{GunYu_midblue}{HTML}{4D74A2}
-\definecolor{GunYu_lightblue}{HTML}{C4D8F2}
-\definecolor{GunYu_ricewhite}{HTML}{F2E8E3}
+
+\definecolor{GanYu_lightgray}{HTML}{33395B}
+\definecolor{GanYu_midblue}{HTML}{4D74A2}
+\definecolor{GanYu_lightblue}{HTML}{C4D8F2}
+\definecolor{GanYu_ricewhite}{HTML}{F2E8E3}
+
+\definecolor{Nahida_darkgreen}{HTML}{658873}
+\definecolor{Nahida_lightgreen}{HTML}{B9C78D}
+
+\definecolor{6ecd32}{HTML}{6ecd32}
+
 
 % Define single rounded rectangle command
 \newcommand{\rSquare}[6]{
@@ -57,15 +64,15 @@
 
     % Define coordinates for arrows
     \coordinate (#8_left) at  (#5-#7-#9, #6+#1/2);
-    \coordinate (#8_right) at   (#5+#7+#1+#9, #6+#1/2);
-    \coordinate (#8_top) at    (#5+#1/2, #6+#7+#1+#9);
+    \coordinate (#8_right) at   (#5+#7+#1, #6+#1/2);
+    \coordinate (#8_top) at    (#5+#1/2, #6+#7+#1);
     \coordinate (#8_bottom) at (#5+#1/2, #6-#7-#9);
 
 
-    \node at (#8_left) {left};
-    \node at (#8_right) {left};
-    \node at (#8_top) {top};
-    \node at (#8_bottom) {#8};
+    % \node at (#8_left) {left};
+    % \node at (#8_right) {left};
+    % \node at (#8_top) {top};
+    % \node at (#8_bottom) {#8};
 }
 
 \newcommand{\networkLayer}[9]{
@@ -79,7 +86,7 @@
 	% 6th argument: Options for filldraw.
 	% 7th argument: Text to be placed below this layer.
 	% 8th argument: Name of coordinates. When name = "start" this resets the offset counter
-	% 9th argument: 神经网络的起始x坐标
+	% 9th argument: 神经网络的起始坐标(x,y,z)
 	% 全局变量
     
 	
@@ -97,20 +104,21 @@
 	\def\z{#5} % Z offset for current layer.
 	\def\inText{#7}
 
+	\coordinate (off9) at #9;
     % Define references to points on the cube surfaces
-    \coordinate (#8_front) at  (\x+\c  +#9, \z      , \y);
-    \coordinate (#8_back) at   (\x     +#9, \z      , \y);
-    \coordinate (#8_top) at    (\x+\c/2+#9, \z+\hw/2, \y);
-    \coordinate (#8_bottom) at (\x+\c/2+#9, \z-\hw/2, \y);
+    \coordinate (#8_front) at  ($(\x+\c  , \z      , \y)+(off9)$);
+    \coordinate (#8_back) at   ($(\x     , \z      , \y)+(off9)$);
+    \coordinate (#8_top) at    ($(\x+\c/2, \z+\hw/2, \y)+(off9)$);
+    \coordinate (#8_bottom) at ($(\x+\c/2, \z-\hw/2, \y)+(off9)$);
     
  	% Define cube coords
-	\coordinate (blr) at (\c+\x+#9,  -\hw/2+\z,  -\hw/2+\y); %back lower right
-	\coordinate (bur) at (\c+\x+#9,   \hw/2+\z,  -\hw/2+\y); %back upper right
-	\coordinate (bul) at (0 +\x+#9,   \hw/2+\z,  -\hw/2+\y); %back upper left
-	\coordinate (fll) at (0 +\x+#9,  -\hw/2+\z,   \hw/2+\y); %front lower left
-	\coordinate (flr) at (\c+\x+#9,  -\hw/2+\z,   \hw/2+\y); %front lower right
-	\coordinate (fur) at (\c+\x+#9,   \hw/2+\z,   \hw/2+\y); %front upper right
-	\coordinate (ful) at (0 +\x+#9,   \hw/2+\z,   \hw/2+\y); %front upper left
+	\coordinate (blr) at ($(\c+\x,  -\hw/2+\z,  -\hw/2+\y)+(off9)$); %back lower right
+	\coordinate (bur) at ($(\c+\x,   \hw/2+\z,  -\hw/2+\y)+(off9)$); %back upper right
+	\coordinate (bul) at ($(0 +\x,   \hw/2+\z,  -\hw/2+\y)+(off9)$); %back upper left
+	\coordinate (fll) at ($(0 +\x,  -\hw/2+\z,   \hw/2+\y)+(off9)$); %front lower left
+	\coordinate (flr) at ($(\c+\x,  -\hw/2+\z,   \hw/2+\y)+(off9)$); %front lower right
+	\coordinate (fur) at ($(\c+\x,   \hw/2+\z,   \hw/2+\y)+(off9)$); %front upper right
+	\coordinate (ful) at ($(0 +\x,   \hw/2+\z,   \hw/2+\y)+(off9)$); %front upper left
 	
  	
 	% Draw the layer body.

@@ -1,0 +1,295 @@
+\documentclass{standalone}
+% \documentclass{paper}
+\usepackage{D:/DevData/LaTeX_Workplace/2_macro_definition/network_tikz_package}
+
+\begin{document}
+
+\begin{tikzpicture}
+    % \draw[help lines] (-3,-10) grid (20,10);
+    % Use the new command to draw a single rounded rectangle
+    % \rSquare{0.6}{NekasuBlue}{20}{5pt}{0}{0}{rs1}
+
+    %表示图像中两个元素之间的水平偏移
+    \def\offX{2}
+    %表示图像中两个元素之间的垂直偏移
+    \def\offY{3}
+    %创建一个方形, 本阶段输入1：Rcei
+    \coordinate (Rcei) at ($(0,0)+(0, 3*\offY/4)$);
+    \def\widthRcei{1.2};
+    \coordinate (Rcei_left_bottom) at ($(Rcei)+(-\widthRcei/2,-\widthRcei/2)$);
+    \coordinate (Rcei_right_bottom) at ($(Rcei)+(\widthRcei/2,\widthRcei/2)$);
+    \coordinate (Rcei_left) at ($(Rcei)+(-\widthRcei/2-0.1,0)$);
+    \coordinate (Rcei_right) at ($(Rcei)+(\widthRcei/2+0.1,0)$);
+    \coordinate (Rcei_upper) at ($(Rcei)+(0,\widthRcei/2+0.1)$);
+    \coordinate (Rcei_bottom) at ($(Rcei)+(0,-\widthRcei/2-0.1)$);
+    \draw[fill=GanYu_ricewhite!30] (Rcei_left_bottom) rectangle (Rcei_right_bottom);
+    \node at ($(Rcei)+(0,-\widthRcei/2-0.3)$) (Rcei_text) {$R_{ce\_i}$};
+
+    %创建一个方形, 本阶段输入2：Sm
+    \coordinate (Sm) at ($(0,0)+(0, -3*\offY/4)$);
+    \def\widthSm{1.2};
+    \coordinate (Sm_left_bottom) at ($(Sm)+(-\widthSm/2,-\widthSm/2)$);
+    \coordinate (Sm_right_bottom) at ($(Sm)+(\widthSm/2,\widthSm/2)$);
+    \coordinate (Sm_left) at ($(Sm)+(-\widthSm/2-0.1,0)$);
+    \coordinate (Sm_right) at ($(Sm)+(\widthSm/2+0.1,0)$);
+    \coordinate (Sm_upper) at ($(Sm)+(0,\widthSm/2+0.1)$);
+    \coordinate (Sm_bottom) at ($(Sm)+(0,-\widthSm/2-0.1)$);
+    \draw[fill=GanYu_ricewhite!30] (Sm_left_bottom) rectangle (Sm_right_bottom);
+    \node at ($(Sm)+(0,-\widthSm/2-0.3)$) (Sm_text) {$S_m$};
+
+    %创建一个神经网络, 用于表示八度卷积OctConv1, 并定义一个坐标表示这个模块
+    \coordinate (OctConv1) at ($(Rcei)+(\offX,0)$);
+    \networkLayer{1.75}{0.15}{0.0}{0.0}{0.0}{color=GanYu_lightblue!40}{}{start}{(3,3*\offY/4,0)};
+    \networkLayer{1}{0.15}{0.1}{0.0}{0.0}{color=GanYu_lightblue!50}{}{}{(3,3*\offY/4,0)};
+    \networkLayer{1.25}{0.15}{0.1}{0.0}{0.0}{color=GanYu_lightblue!70}{}{mid_right}{(3,3*\offY/4,0)};
+    \networkLayer{1}{0.15}{0.2}{0.0}{0.0}{color=GanYu_lightblue!40}{}{last}{(3,3*\offY/4,0)};
+    \node at ($(mid_right_bottom)+(-0.08,-1)$) (OctConv1_bottom) {$OctConv$};
+
+    %创建一个神经网络, 用于表示八度卷积OctConv2, 并定义一个坐标表示这个模块
+    \coordinate (OctConv2) at ($(Sm)+(\offX,0)$);
+    \networkLayer{1.75}{0.15}{0.0}{0.0}{0.0}{color=GanYu_lightblue!40}{}{start}{(3,-3*\offY/4,0)};
+    \networkLayer{1}{0.15}{0.1}{0.0}{0.0}{color=GanYu_lightblue!50}{}{}{(3,-3*\offY/4,0)};
+    \networkLayer{1.25}{0.15}{0.1}{0.0}{0.0}{color=GanYu_lightblue!70}{}{mid_right}{(3,-3*\offY/4,0)};
+    \networkLayer{1}{0.15}{0.2}{0.0}{0.0}{color=GanYu_lightblue!40}{}{last}{(3,-3*\offY/4,0)};
+    \node at ($(mid_right_bottom)+(-0.08,-1)$) (OctConv2_bottom) {$OctConv$};
+
+    %创建一个矩形, 用于包裹RceiH与RceiL
+    \draw[fill=6ecd32!10, rounded corners=5pt] (6.2,0)rectangle(7.8,4.2);
+    \coordinate (verticleRec1_left) at (6.0,3*\offY/4);
+    \coordinate (verticleRec1_right) at (8.0,3*\offY/4);
+    %创建一个方形, RceiH
+    \coordinate (RceiH) at ($(Rcei)+(3.5*\offX, \offY/3)$);
+    \def\widthRceiH{1.2};
+    \coordinate (RceiH_left_bottom) at ($(RceiH)+(-\widthRceiH/2,-\widthRceiH/2)$);
+    \coordinate (RceiH_right_bottom) at ($(RceiH)+(\widthRceiH/2,\widthRceiH/2)$);
+    \coordinate (RceiH_left) at ($(RceiH)+(-\widthRceiH/2-0.1,0)$);
+    \coordinate (RceiH_right) at ($(RceiH)+(\widthRceiH/2+0.1,0)$);
+    \coordinate (RceiH_upper) at ($(RceiH)+(0,\widthRceiH/2+0.1)$);
+    \coordinate (RceiH_bottom) at ($(RceiH)+(0,-\widthRceiH/2-0.1)$);
+    \draw[fill=GanYu_ricewhite!30] (RceiH_left_bottom) rectangle (RceiH_right_bottom);
+    \node at ($(RceiH)+(0,-\widthRceiH/2-0.3)$) (RceiH_text) {$R_{ce\_i}^H$};
+
+    %创建一个方形, RceiL
+    \coordinate (RceiL) at ($(Rcei)+(3.5*\offX, -\offY/3)$);
+    \def\widthRceiL{1.2};
+    \coordinate (RceiL_left_bottom) at ($(RceiL)+(-\widthRceiL/2,-\widthRceiL/2)$);
+    \coordinate (RceiL_right_bottom) at ($(RceiL)+(\widthRceiL/2,\widthRceiL/2)$);
+    \coordinate (RceiL_left) at ($(RceiL)+(-\widthRceiL/2-0.1,0)$);
+    \coordinate (RceiL_right) at ($(RceiL)+(\widthRceiL/2+0.1,0)$);
+    \coordinate (RceiL_upper) at ($(RceiL)+(0,\widthRceiL/2+0.1)$);
+    \coordinate (RceiL_bottom) at ($(RceiL)+(0,-\widthRceiL/2-0.1)$);
+    \draw[fill=GanYu_ricewhite!30] (RceiL_left_bottom) rectangle (RceiL_right_bottom);
+    \node at ($(RceiL)+(0,-\widthRceiL/2-0.3)$) (RceiL_text) {$R_{ce\_i}^L$};
+
+    %创建一个矩形, 用于包裹SmH与SmL
+    \draw[fill=6ecd32!10, rounded corners=5pt] (6.2,-4.5)rectangle(7.8,-0.3);
+    \coordinate (verticleRec2_left) at (6.0,-3*\offY/4);
+    \coordinate (verticleRec2_right) at (8.0,-3*\offY/4);
+    %创建一个方形, SmH
+    \coordinate (SmH) at ($(Sm)+(3.5*\offX, \offY/3)$);
+    \def\widthSmH{1.2};
+    \coordinate (SmH_left_bottom) at ($(SmH)+(-\widthSmH/2,-\widthSmH/2)$);
+    \coordinate (SmH_right_bottom) at ($(SmH)+(\widthSmH/2,\widthSmH/2)$);
+    \coordinate (SmH_left) at ($(SmH)+(-\widthSmH/2-0.1,0)$);
+    \coordinate (SmH_right) at ($(SmH)+(\widthSmH/2+0.1,0)$);
+    \coordinate (SmH_upper) at ($(SmH)+(0,\widthSmH/2+0.1)$);
+    \coordinate (SmH_bottom) at ($(SmH)+(0,-\widthSmH/2-0.1)$);
+    \draw[fill=GanYu_ricewhite!30] (SmH_left_bottom) rectangle (SmH_right_bottom);
+    \node at ($(SmH)+(0,-\widthSmH/2-0.3)$) (SmH_text) {$S_m^H$};
+
+    %创建一个方形, SmL
+    \coordinate (SmL) at ($(Sm)+(3.5*\offX, -\offY/3)$);
+    \def\widthSmL{1.2};
+    \coordinate (SmL_left_bottom) at ($(SmL)+(-\widthSmL/2,-\widthSmL/2)$);
+    \coordinate (SmL_right_bottom) at ($(SmL)+(\widthSmL/2,\widthSmL/2)$);
+    \coordinate (SmL_left) at ($(SmL)+(-\widthSmL/2-0.1,0)$);
+    \coordinate (SmL_right) at ($(SmL)+(\widthSmL/2+0.1,0)$);
+    \coordinate (SmL_upper) at ($(SmL)+(0,\widthSmL/2+0.1)$);
+    \coordinate (SmL_bottom) at ($(SmL)+(0,-\widthSmL/2-0.1)$);
+    \draw[fill=GanYu_ricewhite!30] (SmL_left_bottom) rectangle (SmL_right_bottom);
+    \node at ($(SmL)+(0,-\widthSmL/2-0.3)$) (SmL_text) {$S_m^L$};
+
+    %创建一个神经网络, 用于表示Es, 并定义一个坐标表示这个模块
+    \coordinate (Es) at ($(Sm)+(5*\offX,0)$);
+    \networkLayer{0.9}{0.15}{0.0}{0.0}{0.0}{color=Nahida_darkgreen!40}{}{start}{(4.5*\offX,-3*\offY/4,0)};
+    \networkLayer{1.46}{0.15}{0.1}{0.0}{0.0}{color=Nahida_darkgreen!50}{}{}{(4.5*\offX,-3*\offY/4,0)};
+    \networkLayer{0.67}{0.15}{0.1}{0.0}{0.0}{color=Nahida_darkgreen!70}{}{mid_right}{(4.5*\offX,-3*\offY/4,0)};
+    \networkLayer{1.41}{0.15}{0.2}{0.0}{0.0}{color=Nahida_darkgreen!40}{}{last}{(4.5*\offX,-3*\offY/4,0)};
+    \node at ($(mid_right_bottom)+(-0.08,-1)$) (Es_bottom) {$E_s$};
+
+    %创建一个矩形, 用于包裹knH与bnH
+    \draw[fill=Nahida_lightgreen!10, rounded corners=5pt] (11.2,-2.4)rectangle(13.5,-0.4);
+    \coordinate (horizonRec1_left) at (11,-1.4);
+    \coordinate (horizonRec1_right) at (13.7,-1.4);
+
+    %创建一个方形, 用于表示knH, 是一个矩阵
+    \coordinate (knH) at ($(Sm)+(6*\offX,\offY/3)$);
+    \def\widthknH{1.2};
+    \coordinate (knH_left_bottom) at ($(knH)+(-\widthknH/2,-\widthknH/2)$);
+    \coordinate (knH_right_bottom) at ($(knH)+(\widthknH/2,\widthknH/2)$);
+    \coordinate (knH_left) at ($(knH)+(-\widthknH/2-0.1,0)$);
+    \coordinate (knH_right) at ($(knH)+(\widthknH/2+0.1,0)$);
+    \coordinate (knH_upper) at ($(knH)+(0,\widthknH/2+0.1)$);
+    \coordinate (knH_bottom) at ($(knH)+(0,-\widthknH/2-0.1)$);
+    \draw (knH_left_bottom) rectangle (knH_right_bottom);
+    \node at ($(knH)+(0,-\widthknH/2-0.3)$) (knH_text) {$k_{n,H}$};
+    %为knH的方格涂上颜色
+        %(0,0)
+    \fill[NekasuBlue!76] ($(knH_left_bottom)+(\widthknH/3*0, \widthknH/3*0)$) rectangle ($(knH_left_bottom)+(\widthknH/3*0+\widthknH/3, \widthknH/3*0+\widthknH/3)$);
+        %(1,0)  
+    \fill[GanYu_lightblue!90] ($(knH_left_bottom)+(\widthknH/3*0, \widthknH/3*1)$) rectangle ($(knH_left_bottom)+(\widthknH/3*0+\widthknH/3, \widthknH/3*1+\widthknH/3)$);
+        %(2,0)
+    \fill[NekasuBlue!63] ($(knH_left_bottom)+(\widthknH/3*0, \widthknH/3*2)$) rectangle ($(knH_left_bottom)+(\widthknH/3*0+\widthknH/3, \widthknH/3*2+\widthknH/3)$);
+        %(1,0)
+    \fill[GanYu_lightblue!81] ($(knH_left_bottom)+(\widthknH/3*1, \widthknH/3*0)$) rectangle ($(knH_left_bottom)+(\widthknH/3*1+\widthknH/3, \widthknH/3*0+\widthknH/3)$);
+        %(1,1)
+    \fill[GanYu_lightblue!94] ($(knH_left_bottom)+(\widthknH/3*1, \widthknH/3*1)$) rectangle ($(knH_left_bottom)+(\widthknH/3*1+\widthknH/3, \widthknH/3*1+\widthknH/3)$);
+        %(1,2)
+    \fill[GanYu_lightblue!62] ($(knH_left_bottom)+(\widthknH/3*1, \widthknH/3*2)$) rectangle ($(knH_left_bottom)+(\widthknH/3*1+\widthknH/3, \widthknH/3*2+\widthknH/3)$);
+        %(2,0)
+    \fill[GanYu_lightblue!86] ($(knH_left_bottom)+(\widthknH/3*2, \widthknH/3*0)$) rectangle ($(knH_left_bottom)+(\widthknH/3*2+\widthknH/3, \widthknH/3*0+\widthknH/3)$);
+        %(2,1)
+    \fill[GanYu_lightblue!75] ($(knH_left_bottom)+(\widthknH/3*2, \widthknH/3*1)$) rectangle ($(knH_left_bottom)+(\widthknH/3*2+\widthknH/3, \widthknH/3*1+\widthknH/3)$);
+        %(2,2)
+    \fill[GanYu_lightblue!90] ($(knH_left_bottom)+(\widthknH/3*2, \widthknH/3*2)$) rectangle ($(knH_left_bottom)+(\widthknH/3*2+\widthknH/3, \widthknH/3*2+\widthknH/3)$);
+    % 为knH划上方格, 表示一个矩阵
+    \foreach \y in {0, \widthknH/3, 2*\widthknH/3}{
+        \draw[GanYu_lightgray,thin] ($(knH_left_bottom)+(0,\y)$) -- ($(knH_left_bottom)+(\widthknH,\y)$);
+    }
+    \foreach \x in {0, \widthknH/3, 2*\widthknH/3}{
+        \draw[GanYu_lightgray, thin] ($(knH_left_bottom)+(\x,0)$) -- ($(knH_left_bottom)+(\x,\widthknH)$);
+    }
+    
+    %创建一个矩形, 表示表bnH
+    \coordinate (bnH) at ($(knH)+(1,0)$);
+    \def\widthbnH{0.4};
+    \def\lengthbnH{1.2};
+    \coordinate (bnH_left_bottom) at ($(bnH)+(-\widthbnH/2,-\lengthbnH/2)$);
+    \coordinate (bnH_right_bottom) at ($(bnH)+(\widthbnH/2,\lengthbnH/2)$);
+    \coordinate (bnH_left) at ($(bnH)+(-\lengthbnH/2-0.1,0)$);
+    \coordinate (bnH_right) at ($(bnH)+(\lengthbnH/2+0.1,0)$);
+    \coordinate (bnH_upper) at ($(bnH)+(0,\lengthbnH/2+0.1)$);
+    \coordinate (bnH_bottom) at ($(bnH)+(0,-\lengthbnH/2-0.1)$);
+    \draw (bnH_left_bottom) rectangle (bnH_right_bottom);
+    \node at ($(bnH)+(0,-\lengthbnH/2-0.3)$) (bnH_text) {$b_{n,H}$};
+    %为bnH上色
+    \fill[NekasuBlue!76] ($(bnH_left_bottom)+(\widthbnH*0, \lengthbnH/3*0)$) rectangle ($(bnH_left_bottom)+(\widthbnH*0+\widthbnH, \lengthbnH/3*0+\lengthbnH/3)$);
+    \fill[GanYu_lightblue!94] ($(bnH_left_bottom)+(\widthbnH*0, \lengthbnH/3*1)$) rectangle ($(bnH_left_bottom)+(\widthbnH*0+\widthbnH, \lengthbnH/3*1+\lengthbnH/3)$);
+    \fill[GanYu_lightgray!90] ($(bnH_left_bottom)+(\widthbnH*0, \lengthbnH/3*2)$) rectangle ($(bnH_left_bottom)+(\widthbnH*0+\widthbnH, \lengthbnH/3*2+\lengthbnH/3)$);
+
+    %创建一个矩形, 用于包裹knL与bnL
+    \draw[fill=Nahida_lightgreen!10, rounded corners=5pt] (11.2,-4.4)rectangle(13.5,-2.5);
+    \coordinate (horizonRec2_left) at (11,-3.4);
+    \coordinate (horizonRec2_right) at (13.7,-3.4);
+    %创建一个方形, 用于表示knL, 是一个矩阵
+    \coordinate (knL) at ($(Sm)+(6*\offX,-\offY/3)$);
+    \def\widthknL{1.2};
+    \coordinate (knL_left_bottom) at ($(knL)+(-\widthknL/2,-\widthknL/2)$);
+    \coordinate (knL_right_bottom) at ($(knL)+(\widthknL/2,\widthknL/2)$);
+    \coordinate (knL_left) at ($(knL)+(-\widthknL/2-0.1,0)$);
+    \coordinate (knL_right) at ($(knL)+(\widthknL/2+0.1,0)$);
+    \coordinate (knL_upper) at ($(knL)+(0,\widthknL/2+0.1)$);
+    \coordinate (knL_bottom) at ($(knL)+(0,-\widthknL/2-0.1)$);
+    \draw (knL_left_bottom) rectangle (knL_right_bottom);
+    \node at ($(knL)+(0,-\widthknL/2-0.3)$) (knL_text) {$k_{n,L}$};
+    %为knL的方格涂上颜色
+        %(0,0)
+    \fill[NekasuBlue!76] ($(knL_left_bottom)+(\widthknL/3*0, \widthknL/3*0)$) rectangle ($(knL_left_bottom)+(\widthknL/3*0+\widthknL/3, \widthknL/3*0+\widthknL/3)$);
+        %(1,0)  
+    \fill[GanYu_lightblue!90] ($(knL_left_bottom)+(\widthknL/3*0, \widthknL/3*1)$) rectangle ($(knL_left_bottom)+(\widthknL/3*0+\widthknL/3, \widthknL/3*1+\widthknL/3)$);
+        %(2,0)
+    \fill[NekasuBlue!63] ($(knL_left_bottom)+(\widthknL/3*0, \widthknL/3*2)$) rectangle ($(knL_left_bottom)+(\widthknL/3*0+\widthknL/3, \widthknL/3*2+\widthknL/3)$);
+        %(1,0)
+    \fill[GanYu_lightblue!81] ($(knL_left_bottom)+(\widthknL/3*1, \widthknL/3*0)$) rectangle ($(knL_left_bottom)+(\widthknL/3*1+\widthknL/3, \widthknL/3*0+\widthknL/3)$);
+        %(1,1)
+    \fill[GanYu_lightblue!94] ($(knL_left_bottom)+(\widthknL/3*1, \widthknL/3*1)$) rectangle ($(knL_left_bottom)+(\widthknL/3*1+\widthknL/3, \widthknL/3*1+\widthknL/3)$);
+        %(1,2)
+    \fill[GanYu_lightblue!62] ($(knL_left_bottom)+(\widthknL/3*1, \widthknL/3*2)$) rectangle ($(knL_left_bottom)+(\widthknL/3*1+\widthknL/3, \widthknL/3*2+\widthknL/3)$);
+        %(2,0)
+    \fill[GanYu_lightblue!86] ($(knL_left_bottom)+(\widthknL/3*2, \widthknL/3*0)$) rectangle ($(knL_left_bottom)+(\widthknL/3*2+\widthknL/3, \widthknL/3*0+\widthknL/3)$);
+        %(2,1)
+    \fill[GanYu_lightblue!75] ($(knL_left_bottom)+(\widthknL/3*2, \widthknL/3*1)$) rectangle ($(knL_left_bottom)+(\widthknL/3*2+\widthknL/3, \widthknL/3*1+\widthknL/3)$);
+        %(2,2)
+    \fill[GanYu_lightblue!90] ($(knL_left_bottom)+(\widthknL/3*2, \widthknL/3*2)$) rectangle ($(knL_left_bottom)+(\widthknL/3*2+\widthknL/3, \widthknL/3*2+\widthknL/3)$);
+    % 为knL划上方格, 表示一个矩阵
+    \foreach \y in {0, \widthknL/3, 2*\widthknL/3}{
+        \draw[GanYu_lightgray,thin] ($(knL_left_bottom)+(0,\y)$) -- ($(knL_left_bottom)+(\widthknL,\y)$);
+    }
+    \foreach \x in {0, \widthknL/3, 2*\widthknL/3}{
+        \draw[GanYu_lightgray, thin] ($(knL_left_bottom)+(\x,0)$) -- ($(knL_left_bottom)+(\x,\widthknL)$);
+    }
+
+    %创建一个矩形, 表示表bnL
+    \coordinate (bnL) at ($(knL)+(1,0)$);
+    \def\widthbnL{0.4};
+    \def\lengthbnL{1.2};
+    \coordinate (bnL_left_bottom) at ($(bnL)+(-\widthbnL/2,-\lengthbnL/2)$);
+    \coordinate (bnL_right_bottom) at ($(bnL)+(\widthbnL/2,\lengthbnL/2)$);
+    \coordinate (bnL_left) at ($(bnL)+(-\lengthbnL/2-0.1,0)$);
+    \coordinate (bnL_right) at ($(bnL)+(\lengthbnL/2+0.1,0)$);
+    \coordinate (bnL_upper) at ($(bnL)+(0,\lengthbnL/2+0.1)$);
+    \coordinate (bnL_bottom) at ($(bnL)+(0,-\lengthbnL/2-0.1)$);
+    \draw (bnL_left_bottom) rectangle (bnL_right_bottom);
+    \node at ($(bnL)+(0,-\lengthbnL/2-0.3)$) (bnL_text) {$b_{n,L}$};
+    %为bnL上色
+    \fill[NekasuBlue!76] ($(bnL_left_bottom)+(\widthbnL*0, \lengthbnL/3*0)$) rectangle ($(bnL_left_bottom)+(\widthbnL*0+\widthbnL, \lengthbnL/3*0+\lengthbnL/3)$);
+    \fill[GanYu_lightgray!94] ($(bnL_left_bottom)+(\widthbnL*0, \lengthbnL/3*1)$) rectangle ($(bnL_left_bottom)+(\widthbnL*0+\widthbnL, \lengthbnL/3*1+\lengthbnL/3)$);
+    \fill[GanYu_lightblue!90] ($(bnL_left_bottom)+(\widthbnL*0, \lengthbnL/3*2)$) rectangle ($(bnL_left_bottom)+(\widthbnL*0+\widthbnL, \lengthbnL/3*2+\lengthbnL/3)$);
+
+    %创建一个神经网络, 用于表示G, 并定义一个坐标表示这个模块
+    \coordinate (G) at ($(Sm)+(7.5*\offX,0)$);
+    \networkLayer{1.36}{0.15}{0.0}{0.0}{0.0}{color=Nahida_darkgreen!40}{}{start}{(7.5*\offX,-3*\offY/4,0)};
+    \networkLayer{1.01}{0.15}{0.1}{0.0}{0.0}{color=Nahida_darkgreen!50}{}{}{(7.5*\offX,-3*\offY/4,0)};
+    \networkLayer{1.18}{0.15}{0.1}{0.0}{0.0}{color=Nahida_darkgreen!70}{}{mid_right}{(7.5*\offX,-3*\offY/4,0)};
+    \networkLayer{1.46}{0.15}{0.2}{0.0}{0.0}{color=Nahida_darkgreen!40}{}{last}{(7.5*\offX,-3*\offY/4,0)};
+    \node at ($(mid_right_bottom)+(-0.08,-1)$) (G_bottom) {$G$};
+
+
+    %创建一个方形, 本阶段输出：Om
+    \coordinate (Om) at ($(Sm)+(9*\offX, 0)$);
+    \def\widthOm{1.2};
+    \coordinate (Om_left_bottom) at ($(Om)+(-\widthOm/2,-\widthOm/2)$);
+    \coordinate (Om_right_bottom) at ($(Om)+(\widthOm/2,\widthOm/2)$);
+    \coordinate (Om_left) at ($(Om)+(-\widthOm/2-0.1,0)$);
+    \coordinate (Om_right) at ($(Om)+(\widthOm/2+0.1,0)$);
+    \coordinate (Om_upper) at ($(Om)+(0,\widthOm/2+0.1)$);
+    \coordinate (Om_bottom) at ($(Om)+(0,-\widthOm/2-0.1)$);
+    \draw[fill=GanYu_ricewhite!30!GanYu_lightblue!90] (Om_left_bottom) rectangle (Om_right_bottom);
+    \node at ($(Om)+(0,-\widthOm/2-0.3)$) (Om_text) {$O_m$};
+
+    % 绘制箭头
+    % CRcei上的出度箭头1：Rcei->Octconv1
+    \draw[->, thick] (Rcei_right) -- (2.5,3*\offY/4);
+
+    % Sm上的出度箭头1：Sm->Octconv2
+    \draw[->, thick] (Sm_right) -- (2.3,-3*\offY/4);
+
+    %OctConv1上的出度箭头1：OctCOnv1=>verticleRec1
+    \draw[->, thick] (4.3,3*\offY/4) -- (verticleRec1_left);
+
+    %OctConv2上的出度箭头1：OctCOnv2=>verticleRec2
+    \draw[->, thick] (4.3,-3*\offY/4) -- (verticleRec2_left);
+
+    %verticleRec1上的出度箭头1：verticleRec1->G
+    \draw[->, thick] (verticleRec1_right) -| (15.5,-1);
+
+    %verticleRec2上的出度箭头1：verticleRec2->Es
+    \draw[->, thick] (verticleRec2_right) -- ($(verticleRec2_right)+(0.6,0)$);
+
+    %Es 上的出度箭头1： Es->horizonRec1
+    \draw[->, thick] ($(verticleRec2_right)+(2.4,0)$) -- ($(verticleRec2_right)+(2.6,0)$) |- (horizonRec1_left);
+    %Es 上的出度箭头2： Es->horizonRec2
+    \draw[->, thick] ($(verticleRec2_right)+(2.4,0)$) -- ($(verticleRec2_right)+(2.6,0)$) |- (horizonRec2_left);
+
+    %horizonRec1 上的出度箭头1： horizonRec1 -> G
+    \draw[->, thick] (horizonRec1_right) -- ($(horizonRec1_right)+(0.3,0)$) |- (14.6,-3*\offY/4);
+
+    %horizonRec2 上的出度箭头1： horizonRec2 -> G
+    \draw[->, thick] (horizonRec2_right) -- ($(horizonRec2_right)+(0.3,0)$) |- (14.6,-3*\offY/4);
+
+    % G 上的出度箭头1：G->Om
+    \draw[->, thick] (16.5,-3*\offY/4) -- (Om_left);
+
+\end{tikzpicture}
+
+\end{document}

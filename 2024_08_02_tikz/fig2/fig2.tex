@@ -5,18 +5,22 @@
 \begin{document}
 
 \begin{tikzpicture}
-    \draw[help lines] (-3,-10) grid (10,10);
+    % \draw[help lines] (-3,-10) grid (20,10);
         % Use the new command to draw a single rounded rectangle
     % \rSquare{0.6}{NekasuBlue}{20}{5pt}{0}{0}{rs1}
 
     %表示图像中两个元素之间的水平偏移
-    \def\offX{2.5}
+    \def\offX{2}
     %表示图像中两个元素之间的垂直偏移
     \def\offY{3}
+    
+
+    % 一个将频域处理的四张图像包裹起来的矩形
+    \draw[fill=6ecd32!10, rounded corners=5pt] (-2,-3) rectangle (6,2.5);
     % % 一个用于表示原始风格图像的node
     \coordinate (C) at (0,0);
     \node at (C) (C_fig) {\includegraphics[width=2.5cm]{../pics/Content.jpeg}};
-    % \node at ($(C)+(0,-1)$) (C_text) {$C$};
+    \node at ($(C)+(0,-1)$) (C_text) {$C$};
     
 
     %创建一个方形, 用于表示图像的高频部分H, 
@@ -28,7 +32,7 @@
     \coordinate (H_right) at ($(H)+(\widthH/2+0.1,0)$);
     \coordinate (H_upper) at ($(H)+(0,\widthH/2+0.1)$);
     \coordinate (H_bottom) at ($(H)+(0,-\widthH/2-0.1)$);
-    \draw (H_left_bottom) rectangle (H_right_bottom);
+    \draw[fill=GanYu_ricewhite!30] (H_left_bottom) rectangle (H_right_bottom);
     \node at ($(H)+(0,-\widthH/2-0.5)$) (H_text) {$H$};
     
     %创建一个方形, 用于表示图像的高频降噪部分Hdenoised
@@ -40,8 +44,8 @@
     \coordinate (Hdenoised_right) at ($(Hdenoised)+(\widthHdenoised/2+0.1,0)$);
     \coordinate (Hdenoised_upper) at ($(Hdenoised)+(0,\widthHdenoised/2+0.1)$);
     \coordinate (Hdenoised_bottom) at ($(Hdenoised)+(0,-\widthHdenoised/2-0.1)$);
-    \draw (Hdenoised_left_bottom) rectangle (Hdenoised_right_bottom);
-    \node at ($(Hdenoised)+(0,-\widthHdenoised/2-0.5)$) (Hdenoised_text) {$L$};
+    \draw[fill=GanYu_ricewhite!30] (Hdenoised_left_bottom) rectangle (Hdenoised_right_bottom);
+    \node at ($(Hdenoised)+(0,-\widthHdenoised/2-0.5)$) (Hdenoised_text) {$H_{\rm{denoised}}$};
 
     %创建一个方形, 用于表示图像的高频部分L
     \coordinate (Low) at ($(C)+(\offX+1,-1.5)$);
@@ -52,8 +56,272 @@
     \coordinate (Low_right) at ($(Low)+(\widthLow/2+0.1,0)$);
     \coordinate (Low_upper) at ($(Low)+(0,\widthLow/2+0.1)$);
     \coordinate (Low_bottom) at ($(Low)+(0,-\widthLow/2-0.1)$);
-    \draw (Low_left_bottom) rectangle (Low_right_bottom);
+    \draw[fill=GanYu_ricewhite!30] (Low_left_bottom) rectangle (Low_right_bottom);
     \node at ($(Low)+(0,-\widthLow/2-0.5)$) (Low_text) {$L$};
+
+    % 创建一个\oplus符号
+    \coordinate (oplus) at ($(Hdenoised)+(\offX-0.5,-1.5)$);
+    \node at (oplus) (oplus) {\large $\oplus$};
+
+    %创建一个方形, 增强后的内容图Ccanonical
+    \coordinate (Ccanonical) at ($(oplus)+(\offX,0)$);
+    \def\widthCcanonical{1.2};
+    \coordinate (Ccanonical_left_bottom) at ($(Ccanonical)+(-\widthCcanonical/2,-\widthCcanonical/2)$);
+    \coordinate (Ccanonical_right_bottom) at ($(Ccanonical)+(\widthCcanonical/2,\widthCcanonical/2)$);
+    \coordinate (Ccanonical_left) at ($(Ccanonical)+(-\widthCcanonical/2-0.1,0)$);
+    \coordinate (Ccanonical_right) at ($(Ccanonical)+(\widthCcanonical/2+0.1,0)$);
+    \coordinate (Ccanonical_upper) at ($(Ccanonical)+(0,\widthCcanonical/2+0.1)$);
+    \coordinate (Ccanonical_bottom) at ($(Ccanonical)+(0,-\widthCcanonical/2-0.1)$);
+    \draw[fill=GanYu_ricewhite!30] (Ccanonical_left_bottom) rectangle (Ccanonical_right_bottom);
+    \node at ($(Ccanonical)+(0,-\widthCcanonical/2-0.5)$) (Ccanonical_text) {$C_{\rm{canonical}}$};
+
+    %创建一个神经网络, 用于表示深度估计模块Esti, 并定义一个坐标表示这个模块
+    \coordinate (Esti) at ($(Ccanonical)+(\offX,0)$);
+    \def\netX{10.5}
+    \networkLayer{1.5}{0.15}{0.0}{0.0}{0.0}{color=GanYu_midblue!40}{}{start}{(\netX,0,0)};
+    \networkLayer{1}{0.15}{0.1}{0.0}{0.0}{color=GanYu_midblue!50}{}{}{(\netX,0,0)};
+    \networkLayer{0.75}{0.15}{0.1}{0.0}{0.0}{color=GanYu_midblue!70}{}{mid_right}{(\netX,0,0)};
+    \networkLayer{1}{0.15}{0.2}{0.0}{0.0}{color=GanYu_midblue!40}{}{last}{(\netX,0,0)};
+    \node at ($(mid_right_bottom)+(-0.08,-1)$) (DE_bottom) {$Depth\\Estimation$};
+
+    %创建一个组圆角矩形, 表示深度估计的结果depth
+    \coordinate (depth) at ($(last_front)+(\offX,0)$);
+    \def\widthdepth{1.2};
+    \rSquareSet{1}{GanYu_ricewhite}{50}{2pt}{13}{-0.5}{0.2}{DN}{0.1};
+    \node at ($(DN_bottom)-(0,0.5)$) (DN_text) {$D_N$};
+
+    %一个将右侧四个矩阵包裹起来的矩形
+    \draw[fill=NekasuBlue!20, rounded corners=5pt] (15.2,-5) rectangle (17.8,5);
+    \node at (16.5,-5) (verticleRec_bottom) {};
+    %一个将右侧四个矩阵中, 上面两个包裹起来的矩形
+    \draw[fill=GanYu_lightgray!20, rounded corners=5pt] (15.5,0.2) rectangle (17.5,4.5);
+    %一个将右侧四个矩阵中, 下面两个包裹起来的矩形
+    \draw[fill=GanYu_midblue!20, rounded corners=5pt] (15.5,-0.3) rectangle (17.5,-4.7);
+    \node at (16.5,-5) (verticleRec_bottom) {};
+
+    %创建一个方形, 用于表示Mi, 是一个矩阵
+    \coordinate (Mi) at ($(Esti)+(3*\offX,1+2*\offY/3+0.5)$);
+    \def\widthMi{1.2};
+    \coordinate (Mi_left_bottom) at ($(Mi)+(-\widthMi/2,-\widthMi/2)$);
+    \coordinate (Mi_right_bottom) at ($(Mi)+(\widthMi/2,\widthMi/2)$);
+    \coordinate (Mi_left) at ($(Mi)+(-\widthMi/2-0.1,0)$);
+    \coordinate (Mi_right) at ($(Mi)+(\widthMi/2+0.1,0)$);
+    \coordinate (Mi_upper) at ($(Mi)+(0,\widthMi/2+0.1)$);
+    \coordinate (Mi_bottom) at ($(Mi)+(0,-\widthMi/2-0.1)$);
+    \draw (Mi_left_bottom) rectangle (Mi_right_bottom);
+    \node at ($(Mi)+(0,-\widthMi/2-0.5)$) (Mi_text) {$M_{i}$};
+    %为Mi的方格涂上颜色
+        %(0,0)
+    \fill[NekasuBlue!76] ($(Mi_left_bottom)+(\widthMi/3*0, \widthMi/3*0)$) rectangle ($(Mi_left_bottom)+(\widthMi/3*0+\widthMi/3, \widthMi/3*0+\widthMi/3)$);
+        %(1,0)  
+    \fill[GanYu_midblue!90] ($(Mi_left_bottom)+(\widthMi/3*0, \widthMi/3*1)$) rectangle ($(Mi_left_bottom)+(\widthMi/3*0+\widthMi/3, \widthMi/3*1+\widthMi/3)$);
+        %(2,0)
+    \fill[NekasuBlue!63] ($(Mi_left_bottom)+(\widthMi/3*0, \widthMi/3*2)$) rectangle ($(Mi_left_bottom)+(\widthMi/3*0+\widthMi/3, \widthMi/3*2+\widthMi/3)$);
+        %(1,0)
+    \fill[GanYu_lightblue!81] ($(Mi_left_bottom)+(\widthMi/3*1, \widthMi/3*0)$) rectangle ($(Mi_left_bottom)+(\widthMi/3*1+\widthMi/3, \widthMi/3*0+\widthMi/3)$);
+        %(1,1)
+    \fill[GanYu_lightblue!94] ($(Mi_left_bottom)+(\widthMi/3*1, \widthMi/3*1)$) rectangle ($(Mi_left_bottom)+(\widthMi/3*1+\widthMi/3, \widthMi/3*1+\widthMi/3)$);
+        %(1,2)
+    \fill[GanYu_lightblue!62] ($(Mi_left_bottom)+(\widthMi/3*1, \widthMi/3*2)$) rectangle ($(Mi_left_bottom)+(\widthMi/3*1+\widthMi/3, \widthMi/3*2+\widthMi/3)$);
+        %(2,0)
+    \fill[GanYu_midblue!86] ($(Mi_left_bottom)+(\widthMi/3*2, \widthMi/3*0)$) rectangle ($(Mi_left_bottom)+(\widthMi/3*2+\widthMi/3, \widthMi/3*0+\widthMi/3)$);
+        %(2,1)
+    \fill[GanYu_midblue!75] ($(Mi_left_bottom)+(\widthMi/3*2, \widthMi/3*1)$) rectangle ($(Mi_left_bottom)+(\widthMi/3*2+\widthMi/3, \widthMi/3*1+\widthMi/3)$);
+        %(2,2)
+    \fill[GanYu_midblue!90] ($(Mi_left_bottom)+(\widthMi/3*2, \widthMi/3*2)$) rectangle ($(Mi_left_bottom)+(\widthMi/3*2+\widthMi/3, \widthMi/3*2+\widthMi/3)$);
+    % 为Mi划上方格, 表示一个矩阵
+    \foreach \y in {0, \widthMi/3, 2*\widthMi/3}{
+        \draw[GanYu_lightgray,thin] ($(Mi_left_bottom)+(0,\y)$) -- ($(Mi_left_bottom)+(\widthMi,\y)$);
+    }
+    \foreach \x in {0, \widthMi/3, 2*\widthMi/3}{
+        \draw[GanYu_lightgray, thin] ($(Mi_left_bottom)+(\x,0)$) -- ($(Mi_left_bottom)+(\x,\widthMi)$);
+    }
+
+    %创建一个方形, 用于表示Mia, 是一个矩阵
+    \coordinate (Mia) at ($(Mi)+(0,-2*\offY/3)$);
+    \def\widthMia{1.2};
+    \coordinate (Mia_left_bottom) at ($(Mia)+(-\widthMia/2,-\widthMia/2)$);
+    \coordinate (Mia_right_bottom) at ($(Mia)+(\widthMia/2,\widthMia/2)$);
+    \coordinate (Mia_left) at ($(Mia)+(-\widthMia/2-0.1,0)$);
+    \coordinate (Mia_right) at ($(Mia)+(\widthMia/2+0.1,0)$);
+    \coordinate (Mia_upper) at ($(Mia)+(0,\widthMia/2+0.1)$);
+    \coordinate (Mia_bottom) at ($(Mia)+(0,-\widthMia/2-0.1)$);
+    \draw (Mia_left_bottom) rectangle (Mia_right_bottom);
+    \node at ($(Mia)+(0,-\widthMia/2-0.5)$) (Mia_text) {$M_{i}^{\alpha}$};
+    %为Mia的方格涂上颜色
+        %(0,0)
+    \fill[GanYu_lightblue!92] ($(Mia_left_bottom)+(\widthMia/3*0, \widthMia/3*0)$) rectangle ($(Mia_left_bottom)+(\widthMia/3*0+\widthMia/3, \widthMia/3*0+\widthMia/3)$);
+        %(1,0)
+    \fill[GanYu_midblue!90] ($(Mia_left_bottom)+(\widthMia/3*0, \widthMia/3*1)$) rectangle ($(Mia_left_bottom)+(\widthMia/3*0+\widthMia/3, \widthMia/3*1+\widthMia/3)$);
+        %(2,0)
+    \fill[GanYu_midblue!71] ($(Mia_left_bottom)+(\widthMia/3*0, \widthMia/3*2)$) rectangle ($(Mia_left_bottom)+(\widthMia/3*0+\widthMia/3, \widthMia/3*2+\widthMia/3)$);
+        %(1,0)
+    \fill[GanYu_midblue!70] ($(Mia_left_bottom)+(\widthMia/3*1, \widthMia/3*0)$) rectangle ($(Mia_left_bottom)+(\widthMia/3*1+\widthMia/3, \widthMia/3*0+\widthMia/3)$);
+        %(1,1)
+    \fill[NekasuBlue!88] ($(Mia_left_bottom)+(\widthMia/3*1, \widthMia/3*1)$) rectangle ($(Mia_left_bottom)+(\widthMia/3*1+\widthMia/3, \widthMia/3*1+\widthMia/3)$);
+        %(1,2)
+    \fill[NekasuBlue!86] ($(Mia_left_bottom)+(\widthMia/3*1, \widthMia/3*2)$) rectangle ($(Mia_left_bottom)+(\widthMia/3*1+\widthMia/3, \widthMia/3*2+\widthMia/3)$);
+        %(2,0)
+    \fill[GanYu_midblue!93] ($(Mia_left_bottom)+(\widthMia/3*2, \widthMia/3*0)$) rectangle ($(Mia_left_bottom)+(\widthMia/3*2+\widthMia/3, \widthMia/3*0+\widthMia/3)$);
+        %(2,1)
+    \fill[NekasuBlue!82] ($(Mia_left_bottom)+(\widthMia/3*2, \widthMia/3*1)$) rectangle ($(Mia_left_bottom)+(\widthMia/3*2+\widthMia/3, \widthMia/3*1+\widthMia/3)$);
+        %(2,2)
+    \fill[GanYu_midblue!80] ($(Mia_left_bottom)+(\widthMia/3*2, \widthMia/3*2)$) rectangle ($(Mia_left_bottom)+(\widthMia/3*2+\widthMia/3, \widthMia/3*2+\widthMia/3)$);
+    % 为Mia划上方格, 表示一个矩阵
+    \foreach \y in {0, \widthMia/3, 2*\widthMia/3}{
+        \draw[black,thin] ($(Mia_left_bottom)+(0,\y)$) -- ($(Mia_left_bottom)+(\widthMia,\y)$);
+    }
+    \foreach \x in {0, \widthMia/3, 2*\widthMia/3}{
+        \draw[black, thin] ($(Mia_left_bottom)+(\x,0)$) -- ($(Mia_left_bottom)+(\x,\widthMia)$);
+    }
+
+    %创建一个方形, 用于表示Mo, 是一个矩阵
+    \coordinate (Mo) at ($(Mia)+(0,-2*\offY/3-0.8)$);
+    \def\widthMo{1.2};
+    \coordinate (Mo_left_bottom) at ($(Mo)+(-\widthMo/2,-\widthMo/2)$);
+    \coordinate (Mo_right_bottom) at ($(Mo)+(\widthMo/2,\widthMo/2)$);
+    \coordinate (Mo_left) at ($(Mo)+(-\widthMo/2-0.1,0)$);
+    \coordinate (Mo_right) at ($(Mo)+(\widthMo/2+0.1,0)$);
+    \coordinate (Mo_upper) at ($(Mo)+(0,\widthMo/2+0.1)$);
+    \coordinate (Mo_bottom) at ($(Mo)+(0,-\widthMo/2-0.1)$);
+    \draw (Mo_left_bottom) rectangle (Mo_right_bottom);
+    \node at ($(Mo)+(0,-\widthMo/2-0.5)$) (Mo_text) {$M_{o}$};
+    %为Mo的方格涂上颜色
+        %(0,0)
+    \fill[GanYu_midblue!80] ($(Mo_left_bottom)+(\widthMo/3*0, \widthMo/3*0)$) rectangle ($(Mo_left_bottom)+(\widthMo/3*0+\widthMo/3, \widthMo/3*0+\widthMo/3)$);
+        %(1,0)
+    \fill[GanYu_midblue!76] ($(Mo_left_bottom)+(\widthMo/3*0, \widthMo/3*1)$) rectangle ($(Mo_left_bottom)+(\widthMo/3*0+\widthMo/3, \widthMo/3*1+\widthMo/3)$);
+        %(2,0)
+    \fill[NekasuBlue!78] ($(Mo_left_bottom)+(\widthMo/3*0, \widthMo/3*2)$) rectangle ($(Mo_left_bottom)+(\widthMo/3*0+\widthMo/3, \widthMo/3*2+\widthMo/3)$);
+        %(1,0)
+    \fill[NekasuBlue!65] ($(Mo_left_bottom)+(\widthMo/3*1, \widthMo/3*0)$) rectangle ($(Mo_left_bottom)+(\widthMo/3*1+\widthMo/3, \widthMo/3*0+\widthMo/3)$);
+        %(1,1)
+    \fill[GanYu_midblue!88] ($(Mo_left_bottom)+(\widthMo/3*1, \widthMo/3*1)$) rectangle ($(Mo_left_bottom)+(\widthMo/3*1+\widthMo/3, \widthMo/3*1+\widthMo/3)$);
+        %(1,2)
+    \fill[GanYu_lightblue!91] ($(Mo_left_bottom)+(\widthMo/3*1, \widthMo/3*2)$) rectangle ($(Mo_left_bottom)+(\widthMo/3*1+\widthMo/3, \widthMo/3*2+\widthMo/3)$);
+        %(2,0)
+    \fill[GanYu_midblue!70] ($(Mo_left_bottom)+(\widthMo/3*2, \widthMo/3*0)$) rectangle ($(Mo_left_bottom)+(\widthMo/3*2+\widthMo/3, \widthMo/3*0+\widthMo/3)$);
+        %(2,1)
+    \fill[GanYu_midblue!64] ($(Mo_left_bottom)+(\widthMo/3*2, \widthMo/3*1)$) rectangle ($(Mo_left_bottom)+(\widthMo/3*2+\widthMo/3, \widthMo/3*1+\widthMo/3)$);
+        %(2,2)
+    \fill[NekasuBlue!71] ($(Mo_left_bottom)+(\widthMo/3*2, \widthMo/3*2)$) rectangle ($(Mo_left_bottom)+(\widthMo/3*2+\widthMo/3, \widthMo/3*2+\widthMo/3)$);
+    % 为Mo划上方格, 表示一个矩阵
+    \foreach \y in {0, \widthMo/3, 2*\widthMo/3}{
+        \draw[black,thin] ($(Mo_left_bottom)+(0,\y)$) -- ($(Mo_left_bottom)+(\widthMo,\y)$);
+    }
+    \foreach \x in {0, \widthMo/3, 2*\widthMo/3}{
+        \draw[black, thin] ($(Mo_left_bottom)+(\x,0)$) -- ($(Mo_left_bottom)+(\x,\widthMo)$);
+    }
+
+    
+    %创建一个方形, 用于表示Moa, 是一个矩阵
+    \coordinate (Moa) at ($(Mo)+(0,-2*\offY/3)$);
+    \def\widthMoa{1.2};
+    \coordinate (Moa_left_bottom) at ($(Moa)+(-\widthMoa/2,-\widthMoa/2)$);
+    \coordinate (Moa_right_bottom) at ($(Moa)+(\widthMoa/2,\widthMoa/2)$);
+    \coordinate (Moa_left) at ($(Moa)+(-\widthMoa/2-0.1,0)$);
+    \coordinate (Moa_right) at ($(Moa)+(\widthMoa/2+0.1,0)$);
+    \coordinate (Moa_upper) at ($(Moa)+(0,\widthMoa/2+0.1)$);
+    \coordinate (Moa_bottom) at ($(Moa)+(0,-\widthMoa/2-0.1)$);
+    \draw (Moa_left_bottom) rectangle (Moa_right_bottom);
+    \node at ($(Moa)+(0,-\widthMoa/2-0.5)$) (Moa_text) {$M_{o}^{\alpha}$};
+    %为Moa的方格涂上颜色
+        %(0,0)
+    \fill[NekasuBlue!84] ($(Moa_left_bottom)+(\widthMoa/3*0, \widthMoa/3*0)$) rectangle ($(Moa_left_bottom)+(\widthMoa/3*0+\widthMoa/3, \widthMoa/3*0+\widthMoa/3)$);
+        %(1,0)
+    \fill[GanYu_lightblue!70] ($(Moa_left_bottom)+(\widthMoa/3*0, \widthMoa/3*1)$) rectangle ($(Moa_left_bottom)+(\widthMoa/3*0+\widthMoa/3, \widthMoa/3*1+\widthMoa/3)$);
+        %(2,0)
+    \fill[GanYu_midblue!92] ($(Moa_left_bottom)+(\widthMoa/3*0, \widthMoa/3*2)$) rectangle ($(Moa_left_bottom)+(\widthMoa/3*0+\widthMoa/3, \widthMoa/3*2+\widthMoa/3)$);
+        %(1,0)
+    \fill[GanYu_midblue!90] ($(Moa_left_bottom)+(\widthMoa/3*1, \widthMoa/3*0)$) rectangle ($(Moa_left_bottom)+(\widthMoa/3*1+\widthMoa/3, \widthMoa/3*0+\widthMoa/3)$);
+        %(1,1)
+    \fill[GanYu_lightblue!93] ($(Moa_left_bottom)+(\widthMoa/3*1, \widthMoa/3*1)$) rectangle ($(Moa_left_bottom)+(\widthMoa/3*1+\widthMoa/3, \widthMoa/3*1+\widthMoa/3)$);
+        %(1,2)
+    \fill[GanYu_midblue!89] ($(Moa_left_bottom)+(\widthMoa/3*1, \widthMoa/3*2)$) rectangle ($(Moa_left_bottom)+(\widthMoa/3*1+\widthMoa/3, \widthMoa/3*2+\widthMoa/3)$);
+        %(2,0)
+    \fill[GanYu_midblue!65] ($(Moa_left_bottom)+(\widthMoa/3*2, \widthMoa/3*0)$) rectangle ($(Moa_left_bottom)+(\widthMoa/3*2+\widthMoa/3, \widthMoa/3*0+\widthMoa/3)$);
+        %(2,1)
+    \fill[NekasuBlue!75] ($(Moa_left_bottom)+(\widthMoa/3*2, \widthMoa/3*1)$) rectangle ($(Moa_left_bottom)+(\widthMoa/3*2+\widthMoa/3, \widthMoa/3*1+\widthMoa/3)$);
+        %(2,2)
+    \fill[GanYu_lightblue!78] ($(Moa_left_bottom)+(\widthMoa/3*2, \widthMoa/3*2)$) rectangle ($(Moa_left_bottom)+(\widthMoa/3*2+\widthMoa/3, \widthMoa/3*2+\widthMoa/3)$);
+    % 为Moa划上方格, 表示一个矩阵
+    \foreach \y in {0, \widthMoa/3, 2*\widthMoa/3}{
+        \draw[black,thin] ($(Moa_left_bottom)+(0,\y)$) -- ($(Moa_left_bottom)+(\widthMoa,\y)$);
+    }
+    \foreach \x in {0, \widthMoa/3, 2*\widthMoa/3}{
+        \draw[black, thin] ($(Moa_left_bottom)+(\x,0)$) -- ($(Moa_left_bottom)+(\x,\widthMia)$);
+    }
+
+    %创建一个方形, 本阶段结果1：Rcei
+    \coordinate (Rcei) at ($(C)+(19,-6)$);
+    \def\widthRcei{1.2};
+    \coordinate (Rcei_left_bottom) at ($(Rcei)+(-\widthRcei/2,-\widthRcei/2)$);
+    \coordinate (Rcei_right_bottom) at ($(Rcei)+(\widthRcei/2,\widthRcei/2)$);
+    \coordinate (Rcei_left) at ($(Rcei)+(-\widthRcei/2-0.1,0)$);
+    \coordinate (Rcei_right) at ($(Rcei)+(\widthRcei/2+0.1,0)$);
+    \coordinate (Rcei_upper) at ($(Rcei)+(0,\widthRcei/2+0.1)$);
+    \coordinate (Rcei_bottom) at ($(Rcei)+(0,-\widthRcei/2-0.1)$);
+    \draw[fill=GanYu_ricewhite!30] (Rcei_left_bottom) rectangle (Rcei_right_bottom);
+    \node at ($(Rcei)+(0,-\widthRcei/2-0.5)$) (Rcei_text) {$R_{ce\_i}$};
+
+    %创建一个方形, 本阶段结果2：Rceo
+    \coordinate (Rceo) at ($(Rcei)+(0,-2)$);
+    \def\widthRceo{1.2};
+    \coordinate (Rceo_left_bottom) at ($(Rceo)+(-\widthRceo/2,-\widthRceo/2)$);
+    \coordinate (Rceo_right_bottom) at ($(Rceo)+(\widthRceo/2,\widthRceo/2)$);
+    \coordinate (Rceo_left) at ($(Rceo)+(-\widthRceo/2-0.1,0)$);
+    \coordinate (Rceo_right) at ($(Rceo)+(\widthRceo/2+0.1,0)$);
+    \coordinate (Rceo_upper) at ($(Rceo)+(0,\widthRceo/2+0.1)$);
+    \coordinate (Rceo_bottom) at ($(Rceo)+(0,-\widthRceo/2-0.1)$);
+    \draw[fill=GanYu_ricewhite!30] (Rceo_left_bottom) rectangle (Rceo_right_bottom);
+    \node at ($(Rceo)+(0,-\widthRceo/2-0.5)$) (Rceo_text) {$R_{ce\_o}$};
+    
+    % 创建一个\odot符号
+    \coordinate (odot) at ($(C)+(16.5,-6)$);
+    \node at (odot) (odot) {\huge $\odot$};
+    
+    % 绘制箭头
+    % C上的出度箭头1：C->H
+    \draw[->, thick] (C_fig.east) -- ($(C)+(2,0)$) |- (H_left);
+    % C上的出度箭头2：C->Low
+    \draw[->, thick] (C_fig.east) -- ($(C)+(2,0)$) |- (Low_left);
+    % C上的出度箭头3：C->odot
+    \draw[->, thick] (C_text.south)  |- (odot.west);
+
+    % H上的出度箭头1：H->Hdenoised
+    \draw[->, thick] (H_right) -> (Hdenoised_left);
+
+    % Hdenoised上的出度箭头1：Hdenoised->oplus
+    \draw[->, thick] (Hdenoised_right) -| (oplus.north);
+
+    % Low上的出度箭头1：Low->oplus
+    \draw[->, thick] (Low_right) -| (oplus.south);
+
+    %oplus上的出度箭头1：oplus->Ccanonical
+    \draw[->, thick] (oplus.east) -- (Ccanonical_left) node[midway, above] {$D^{-1}$} node[midway, below] {$\tau_c$};
+
+    %Ccanonical上的出度箭头1：Ccanonical->Estimation
+    \draw[->, thick] (Ccanonical_right) -- ($(start_back)+(0-0.5,0)$);
+
+    %Estimation上的出度箭头1：Estimation->DN
+    \draw[->, thick] ($(last_front)+(0.3,0)$) -- (DN_left);
+
+    %DN上的出度箭头1：DN->Mi
+    \draw[->, thick] (DN_right) -- ($(DN_right)+(0.5,0)$) |- (Mi_left);
+    %DN上的出度箭头2：DN->Mia
+    \draw[->, thick] (DN_right) -- ($(DN_right)+(0.5,0)$) |- (Mia_left);
+    %DN上的出度箭头3：DN->Mo
+    \draw[->, thick] (DN_right) -- ($(DN_right)+(0.5,0)$) |- (Mo_left);
+    %DN上的出度箭头4：DN->Mio
+    \draw[->, thick] (DN_right) -- ($(DN_right)+(0.5,0)$) |- (Moa_left);
+
+    %verticleRec上的出度箭头：verticleRec->odot
+    \draw[->, thick] (verticleRec_bottom) -- (odot.north);
+
+    %odot上的出度箭头1：odot->Rcei
+    \draw[->, thick] (odot.east)--(Rcei_left);
+    %odot上的出度箭头2：odot->Rceo
+    \draw[->, thick] (odot.south) |- (Rceo_left);
 \end{tikzpicture}
 
 \end{document}

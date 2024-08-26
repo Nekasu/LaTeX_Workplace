@@ -1,0 +1,109 @@
+\documentclass[tikz,convert={outext=.svg}]{standalone}
+% \documentclass{paper}
+\usepackage{D:/DevData/LaTeX_Workplace/2_macro_definition/network_tikz_package}
+
+\begin{document}
+
+\begin{tikzpicture}
+    % \draw[help lines] (-3,-10) grid (20,10);
+        % Use the new command to draw a single rounded rectangle
+    % \rSquare{0.6}{NekasuBlue}{20}{5pt}{0}{0}{rs1}
+
+    %表示图像中两个元素之间的水平偏移
+    \def\offX{3}
+    %表示图像中两个元素之间的垂直偏移
+    \def\offY{2}
+    
+    %创建一个方形, 本阶段输入1：Rceo
+    \coordinate (Rceo) at ($(0,0)+(0, \offY)$);
+    \def\widthRceo{1.2};
+    \coordinate (Rceo_left_bottom) at ($(Rceo)+(-\widthRceo/2,-\widthRceo/2)$);
+    \coordinate (Rceo_right_bottom) at ($(Rceo)+(\widthRceo/2,\widthRceo/2)$);
+    \coordinate (Rceo_left) at ($(Rceo)+(-\widthRceo/2-0.1,0)$);
+    \coordinate (Rceo_right) at ($(Rceo)+(\widthRceo/2+0.1,0)$);
+    \coordinate (Rceo_upper) at ($(Rceo)+(0,\widthRceo/2+0.1)$);
+    \coordinate (Rceo_bottom) at ($(Rceo)+(0,-\widthRceo/2-0.1)$);
+    \draw[fill=GanYu_ricewhite!30] (Rceo_left_bottom) rectangle (Rceo_right_bottom);
+    \node at ($(Rceo)+(0,-\widthRceo/2-0.3)$) (Rceo_text) {$R_{ce\_o}$};
+
+    %创建一个方形, 本阶段输入2：Sb
+    \coordinate (Sb) at ($(0,0)+(0, -\offY)$);
+    \def\widthSb{1.2};
+    \coordinate (Sb_left_bottom) at ($(Sb)+(-\widthSb/2,-\widthSb/2)$);
+    \coordinate (Sb_right_bottom) at ($(Sb)+(\widthSb/2,\widthSb/2)$);
+    \coordinate (Sb_left) at ($(Sb)+(-\widthSb/2-0.1,0)$);
+    \coordinate (Sb_right) at ($(Sb)+(\widthSb/2+0.1,0)$);
+    \coordinate (Sb_upper) at ($(Sb)+(0,\widthSb/2+0.1)$);
+    \coordinate (Sb_bottom) at ($(Sb)+(0,-\widthSb/2-0.1)$);
+    \draw[fill=GanYu_ricewhite!30] (Sb_left_bottom) rectangle (Sb_right_bottom);
+    \node at ($(Sb)+(0,-\widthSb/2-0.3)$) (Sb_text) {$S_b$};
+
+    %创建一个方形, Rb
+    \coordinate (Rb) at ($(Rceo)+(\offX, 0)$);
+    \def\widthRb{1.2};
+    \coordinate (Rb_left_bottom) at ($(Rb)+(-\widthRb/2,-\widthRb/2)$);
+    \coordinate (Rb_right_bottom) at ($(Rb)+(\widthRb/2,\widthRb/2)$);
+    \coordinate (Rb_left) at ($(Rb)+(-\widthRb/2-0.1,0)$);
+    \coordinate (Rb_right) at ($(Rb)+(\widthRb/2+0.1,0)$);
+    \coordinate (Rb_upper) at ($(Rb)+(0,\widthRb/2+0.1)$);
+    \coordinate (Rb_bottom) at ($(Rb)+(0,-\widthRb/2-0.1)$);
+    \draw[fill=Nahida_darkgreen!40] (Rb_left_bottom) rectangle (Rb_right_bottom);
+    \node at ($(Rb)+(0,-\widthRb/2-0.3)$) (Rb_text) {$R_{b}$};
+
+    %创建一个方形, Sbg
+    \coordinate (Sbg) at ($(Sb)+(\offX, 0)$);
+    \def\widthSbg{1.2};
+    \coordinate (Sbg_left_bottom) at ($(Sbg)+(-\widthSbg/2,-\widthSbg/2)$);
+    \coordinate (Sbg_right_bottom) at ($(Sbg)+(\widthSbg/2,\widthSbg/2)$);
+    \coordinate (Sbg_left) at ($(Sbg)+(-\widthSbg/2-0.1,0)$);
+    \coordinate (Sbg_right) at ($(Sbg)+(\widthSbg/2+0.1,0)$);
+    \coordinate (Sbg_upper) at ($(Sbg)+(0,\widthSbg/2+0.1)$);
+    \coordinate (Sbg_bottom) at ($(Sbg)+(0,-\widthSbg/2-0.1)$);
+    \draw[fill=Nahida_lightgreen!30] (Sbg_left_bottom) rectangle (Sbg_right_bottom);
+    \node at ($(Sbg)+(0,-\widthSbg/2-0.3)$) (Sbg_text) {$S_{bg}$};
+
+    %创建一个矩形, AdaIN
+    \coordinate (AdaIN) at ($(Sbg)+(\offX, \offY)$);
+    \def\lengthAdaIN{1.4};
+    \def\widthAdaIN{2};
+    \coordinate (AdaIN_left_bottom) at ($(AdaIN)+(-\widthAdaIN/2,-\lengthAdaIN/2)$);
+    \coordinate (AdaIN_right_bottom) at ($(AdaIN)+(\widthAdaIN/2,\lengthAdaIN/2)$);
+    \coordinate (AdaIN_left) at ($(AdaIN)+(-\widthAdaIN/2-0.1,0)$);
+    \coordinate (AdaIN_right) at ($(AdaIN)+(\widthAdaIN/2+0.1,0)$);
+    \coordinate (AdaIN_upper) at ($(AdaIN)+(0,\lengthAdaIN/2+0.1)$);
+    \coordinate (AdaIN_bottom) at ($(AdaIN)+(0,-\lengthAdaIN/2-0.1)$);
+    \draw[fill=GanYu_midblue!40!blue!30, rounded corners=10pt] (AdaIN_left_bottom) rectangle (AdaIN_right_bottom);
+    \node at ($(AdaIN)$) (AdaIN_text) {$AdaIN$};
+
+
+    %创建一个方形, Oo
+    \coordinate (Oo) at ($(AdaIN)+(\offX, 0)$);
+    \def\widthOo{1.2};
+    \coordinate (Oo_left_bottom) at ($(Oo)+(-\widthOo/2,-\widthOo/2)$);
+    \coordinate (Oo_right_bottom) at ($(Oo)+(\widthOo/2,\widthOo/2)$);
+    \coordinate (Oo_left) at ($(Oo)+(-\widthOo/2-0.1,0)$);
+    \coordinate (Oo_right) at ($(Oo)+(\widthOo/2+0.1,0)$);
+    \coordinate (Oo_upper) at ($(Oo)+(0,\widthOo/2+0.1)$);
+    \coordinate (Oo_bottom) at ($(Oo)+(0,-\widthOo/2-0.1)$);
+    \draw[fill=Nahida_darkgreen!50!green!30] (Oo_left_bottom) rectangle (Oo_right_bottom);
+    \node at ($(Oo)+(0,-\widthOo/2-0.3)$) (Oo_text) {$O_{o}$};
+
+    
+    % 绘制箭头
+    % Sceo上的出度箭头1：Sceo->Rb
+    \draw[->, thick] (Rceo_right) -- (Rb_left) node[midway, above] {Gaussian} node[midway, below] {Blur};
+
+    % Sm上的出度箭头1：Sm->Sbg
+    \draw[->, thick] (Sb_right) -- (Sbg_left) node[midway, above] {VGG19};
+
+    % Rb 上的出度箭头1：Rb_AdaIN
+    \draw[->, thick] (Rb_right) -- ($(Rb_right)+(0.4,0)$) |- (AdaIN_left);
+
+    % Sbg 上的出度箭头1：Sbg_AdaIN
+    \draw[->, thick] (Sbg_right) -- ($(Sbg_right)+(0.4,0)$) |- (AdaIN_left);
+
+    % AdaIN 上的出度箭头1： AdaIN -> Oo
+    \draw[->, thick] (AdaIN_right) -- (Oo_left);
+\end{tikzpicture}
+
+\end{document}

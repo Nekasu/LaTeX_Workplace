@@ -21,10 +21,10 @@
 
     %创建一个神经网络, 用于表示Dsal模块, 并定义一个Dasl坐标表示这个模块
     \coordinate (Dsal) at ($(S)+(\offX,0)$);
-    \networkLayer{1.5}{0.15}{0.0}{0.0}{0.0}{color=GunYu_midblue!40}{}{start}{};
-    \networkLayer{1}{0.15}{0.1}{0.0}{0.0}{color=GunYu_midblue!50}{}{}{};
-    \networkLayer{0.75}{0.15}{0.1}{0.0}{0.0}{color=GunYu_midblue!70}{}{mid_right}{};
-    \networkLayer{1}{0.15}{0.2}{0.0}{0.0}{color=GunYu_midblue!40}{}{last}{};
+    \networkLayer{1.5}{0.15}{0.0}{0.0}{0.0}{color=GanYu_midblue!40}{}{start}{(0,0,0)};
+    \networkLayer{1}{0.15}{0.1}{0.0}{0.0}{color=GanYu_midblue!50}{}{}{(0,0,0)};
+    \networkLayer{0.75}{0.15}{0.1}{0.0}{0.0}{color=GanYu_midblue!70}{}{mid_right}{(0,0,0)};
+    \networkLayer{1}{0.15}{0.2}{0.0}{0.0}{color=GanYu_midblue!40}{}{last}{(0,0,0)};
     \node at ($(mid_right_bottom)+(-0.08,-0.7)$) (Dsal_bottom) {$D_{sal}$};
 
     %创建一个方形, 用于表示Msal, 是一个矩阵
@@ -62,7 +62,7 @@
 
     % 创建一个用于表示风格主体图像Sm的node
     \coordinate (Sm) at ($(odot1)+(\offX,0)$);
-    \node at (Sm) (Sm_fig) {\includegraphics[width=1.5cm]{./pics/S_m.jpg}};
+    \node at (Sm) (Sm_fig) {\includegraphics[width=1.5cm]{../pics/S_m.jpg}};
     \node at ($(Sm)+(0,-1)$) (Sm_text) {$S_m$};
 
     %创建一个方形, 用于表示I-Msal模块
@@ -100,7 +100,7 @@
 
     % 创建一个用于表示风格主体图像Sb的node
     \coordinate (Sb) at ($(odot2)+(\offX,0)$);
-    \node at (Sb) (Sb_fig) {\includegraphics[width=1.5cm]{./pics/S_b.jpg}};
+    \node at (Sb) (Sb_fig) {\includegraphics[width=1.5cm]{../pics/S_b.jpg}};
     \node at ($(Sb)+(0,-1)$) (Sb_text) {$S_b$};
 
 
