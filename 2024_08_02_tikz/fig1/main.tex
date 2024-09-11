@@ -1,7 +1,7 @@
 \documentclass{standalone}
 % \documentclass{paper}
 \usepackage{D:/DevData/LaTeX_Workplace/2_macro_definition/network_tikz_package}
-
+\RequirePackage[CJKnumber=true]{xeCJK}
 \begin{document}
 
 \begin{tikzpicture}
@@ -16,7 +16,7 @@
     % 一个用于表示原始风格图像的node
     \coordinate (S) at (-2,0);
     \node at (S) (S_fig) {\includegraphics[width=1.5cm]{../pics/S.jpg}};
-    \node at ($(S)+(0,-1)$) (S_text) {$S$};
+    \node at ($(S)+(0,-1)$) (S_text) {原始风格图像$S$};
     
 
     %创建一个神经网络, 用于表示Dsal模块, 并定义一个Dasl坐标表示这个模块
@@ -25,7 +25,7 @@
     \networkLayer{1}{0.15}{0.1}{0.0}{0.0}{color=GanYu_midblue!50}{}{}{(0,0,0)};
     \networkLayer{0.75}{0.15}{0.1}{0.0}{0.0}{color=GanYu_midblue!70}{}{mid_right}{(0,0,0)};
     \networkLayer{1}{0.15}{0.2}{0.0}{0.0}{color=GanYu_midblue!40}{}{last}{(0,0,0)};
-    \node at ($(mid_right_bottom)+(-0.08,-0.7)$) (Dsal_bottom) {$D_{sal}$};
+    \node[align=center] at ($(mid_right_bottom)+(-0.08,-1)$) (Dsal_bottom) {显著性\\检测网络$D_{sal}$};
 
     %创建一个方形, 用于表示Msal, 是一个矩阵
     \coordinate (Msal) at ($(Dsal)+(\offX,0)$);
@@ -37,7 +37,7 @@
     \coordinate (Msal_upper) at ($(Msal)+(0,\widthMsal/2+0.1)$);
     \coordinate (Msal_bottom) at ($(Msal)+(0,-\widthMsal/2-0.1)$);
     \draw (Msal_left_bottom) rectangle (Msal_right_bottom);
-    \node at ($(Msal)+(0,-\widthMsal/2-0.5)$) (Msal_text) {$M_{sal}$};
+    \node[align=center] at ($(Msal)+(0,-\widthMsal/2-0.5)$) (Msal_text) {显著性图\\$M_{sal}$};
     %为Msal的方格涂上颜色
     \fill[black!80] ($(Msal_left_bottom)+(\widthMsal/3*0, \widthMsal/3*0)$) rectangle ($(Msal_left_bottom)+(\widthMsal/3*0+\widthMsal/3, \widthMsal/3*0+\widthMsal/3)$);
     \fill[black!85] ($(Msal_left_bottom)+(\widthMsal/3*0, \widthMsal/3*1)$) rectangle ($(Msal_left_bottom)+(\widthMsal/3*0+\widthMsal/3, \widthMsal/3*1+\widthMsal/3)$);
@@ -63,7 +63,7 @@
     % 创建一个用于表示风格主体图像Sm的node
     \coordinate (Sm) at ($(odot1)+(\offX,0)$);
     \node at (Sm) (Sm_fig) {\includegraphics[width=1.5cm]{../pics/S_m.jpg}};
-    \node at ($(Sm)+(0,-1)$) (Sm_text) {$S_m$};
+    \node[align=center] at ($(Sm)+(0,-1)$) (Sm_text) {风格主体对象\\$S_m$};
 
     %创建一个方形, 用于表示I-Msal模块
     \coordinate (IMsal) at ($(Dsal)+(0,-\offY)$);
@@ -75,7 +75,7 @@
     \coordinate (IMsal_upper) at ($(IMsal)+(0,\widthIMsal/2+0.1)$);
     \coordinate (IMsal_bottom) at ($(IMsal)+(0,-\widthIMsal/2-0.1)$);
     \draw (IMsal_left_bottom) rectangle (IMsal_right_bottom);
-    \node at ($(IMsal)+(0,-\widthIMsal/2-0.5)$) (IMsal_text) {$I-M_{sal}$};
+    \node[align=center] at ($(IMsal)+(0,-\widthIMsal/2-0.5)$) (IMsal_text) {反显著性图\\$I-M_{sal}$};
     %为IMsal的方格涂上颜色
     \fill[black!20] ($(IMsal_left_bottom)+(\widthIMsal/3*0, \widthIMsal/3*0)$) rectangle ($(IMsal_left_bottom)+(\widthIMsal/3*0+\widthIMsal/3, \widthIMsal/3*0+\widthIMsal/3)$);
     \fill[black!15] ($(IMsal_left_bottom)+(\widthIMsal/3*0, \widthIMsal/3*1)$) rectangle ($(IMsal_left_bottom)+(\widthIMsal/3*0+\widthIMsal/3, \widthIMsal/3*1+\widthIMsal/3)$);
@@ -101,7 +101,7 @@
     % 创建一个用于表示风格主体图像Sb的node
     \coordinate (Sb) at ($(odot2)+(\offX,0)$);
     \node at (Sb) (Sb_fig) {\includegraphics[width=1.5cm]{../pics/S_b.jpg}};
-    \node at ($(Sb)+(0,-1)$) (Sb_text) {$S_b$};
+    \node[align=center] at ($(Sb)+(0,-1)$) (Sb_text) {风格背景对象\\$S_b$};
 
 
     % 绘制箭头
