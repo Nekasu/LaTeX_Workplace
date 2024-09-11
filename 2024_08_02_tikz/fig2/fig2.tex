@@ -1,6 +1,7 @@
 \documentclass{standalone}
 % \documentclass{paper}
 \usepackage{D:/DevData/LaTeX_Workplace/2_macro_definition/network_tikz_package}
+\RequirePackage[CJKnumber=true]{xeCJK}
 
 \begin{document}
 
@@ -16,11 +17,11 @@
     
 
     % 一个将频域处理的四张图像包裹起来的矩形
-    \draw[fill=6ecd32!10, rounded corners=5pt] (-2,-3) rectangle (6,2.5);
+    \draw[fill=6ecd32!10, rounded corners=5pt] (-1.6,-3) rectangle (6.2,2.5);
     % % 一个用于表示原始风格图像的node
     \coordinate (C) at (0,0);
     \node at (C) (C_fig) {\includegraphics[width=2.5cm]{../pics/Content.jpeg}};
-    \node at ($(C)+(0,-1)$) (C_text) {$C$};
+    \node[align=center] at ($(C)+(0,-1.3)$) (C_text) {原始内容图像\\$C$};
     
 
     %创建一个方形, 用于表示图像的高频部分H, 
@@ -33,7 +34,7 @@
     \coordinate (H_upper) at ($(H)+(0,\widthH/2+0.1)$);
     \coordinate (H_bottom) at ($(H)+(0,-\widthH/2-0.1)$);
     \draw[fill=GanYu_ricewhite!30] (H_left_bottom) rectangle (H_right_bottom);
-    \node at ($(H)+(0,-\widthH/2-0.5)$) (H_text) {$H$};
+    \node[align=center] at ($(H)+(0,-\widthH/2-0.5)$) (H_text) {高频分量\\$H$};
     
     %创建一个方形, 用于表示图像的高频降噪部分Hdenoised
     \coordinate (Hdenoised) at ($(H)+(\offX,0)$);
@@ -45,7 +46,7 @@
     \coordinate (Hdenoised_upper) at ($(Hdenoised)+(0,\widthHdenoised/2+0.1)$);
     \coordinate (Hdenoised_bottom) at ($(Hdenoised)+(0,-\widthHdenoised/2-0.1)$);
     \draw[fill=GanYu_ricewhite!30] (Hdenoised_left_bottom) rectangle (Hdenoised_right_bottom);
-    \node at ($(Hdenoised)+(0,-\widthHdenoised/2-0.5)$) (Hdenoised_text) {$H_{\rm{denoised}}$};
+    \node[align=center] at ($(Hdenoised)+(0,-\widthHdenoised/2-0.5)$) (Hdenoised_text) {降噪高频分量\\$H_{\rm{denoised}}$};
 
     %创建一个方形, 用于表示图像的高频部分L
     \coordinate (Low) at ($(C)+(\offX+1,-1.5)$);
@@ -57,7 +58,7 @@
     \coordinate (Low_upper) at ($(Low)+(0,\widthLow/2+0.1)$);
     \coordinate (Low_bottom) at ($(Low)+(0,-\widthLow/2-0.1)$);
     \draw[fill=GanYu_ricewhite!30] (Low_left_bottom) rectangle (Low_right_bottom);
-    \node at ($(Low)+(0,-\widthLow/2-0.5)$) (Low_text) {$L$};
+    \node[align=center] at ($(Low)+(0,-\widthLow/2-0.5)$) (Low_text) {低频分量\\$L$};
 
     % 创建一个\oplus符号
     \coordinate (oplus) at ($(Hdenoised)+(\offX-0.5,-1.5)$);
@@ -73,7 +74,7 @@
     \coordinate (Ccanonical_upper) at ($(Ccanonical)+(0,\widthCcanonical/2+0.1)$);
     \coordinate (Ccanonical_bottom) at ($(Ccanonical)+(0,-\widthCcanonical/2-0.1)$);
     \draw[fill=GanYu_ricewhite!30] (Ccanonical_left_bottom) rectangle (Ccanonical_right_bottom);
-    \node at ($(Ccanonical)+(0,-\widthCcanonical/2-0.5)$) (Ccanonical_text) {$C_{\rm{canonical}}$};
+    \node[align=center] at ($(Ccanonical)+(0,-\widthCcanonical/2-0.5)$) (Ccanonical_text) {增强后图像\\$C_{\rm{canonical}}$};
 
     %创建一个神经网络, 用于表示深度估计模块Esti, 并定义一个坐标表示这个模块
     \coordinate (Esti) at ($(Ccanonical)+(\offX,0)$);
@@ -82,21 +83,21 @@
     \networkLayer{1}{0.15}{0.1}{0.0}{0.0}{color=GanYu_midblue!50}{}{}{(\netX,0,0)};
     \networkLayer{0.75}{0.15}{0.1}{0.0}{0.0}{color=GanYu_midblue!70}{}{mid_right}{(\netX,0,0)};
     \networkLayer{1}{0.15}{0.2}{0.0}{0.0}{color=GanYu_midblue!40}{}{last}{(\netX,0,0)};
-    \node at ($(mid_right_bottom)+(-0.08,-1)$) (DE_bottom) {$Depth\\Estimation$};
+    \node[align=center] at ($(mid_right_bottom)+(-0.08,-1.2)$) (DE_bottom) {深度估计网络\\$DepthEstimation$};
 
     %创建一个组圆角矩形, 表示深度估计的结果depth
     \coordinate (depth) at ($(last_front)+(\offX,0)$);
     \def\widthdepth{1.2};
     \rSquareSet{1}{GanYu_ricewhite}{50}{2pt}{13}{-0.5}{0.2}{DN}{0.1};
-    \node at ($(DN_bottom)-(0,0.5)$) (DN_text) {$D_N$};
+    \node[align=center] at ($(DN_bottom)-(0,0.5)$) (DN_text) {归一化深度图\\$D_N$};
 
     %一个将右侧四个矩阵包裹起来的矩形
-    \draw[fill=NekasuBlue!20, rounded corners=5pt] (15.2,-5) rectangle (17.8,5);
+    \draw[fill=NekasuBlue!20, rounded corners=5pt] (15,-5.4) rectangle (18,4.7);
     \node at (16.5,-5) (verticleRec_bottom) {};
     %一个将右侧四个矩阵中, 上面两个包裹起来的矩形
-    \draw[fill=GanYu_lightgray!20, rounded corners=5pt] (15.5,0.2) rectangle (17.5,4.5);
+    \draw[fill=GanYu_lightgray!20, rounded corners=5pt] (15.2,-0.2) rectangle (17.8,4.5);
     %一个将右侧四个矩阵中, 下面两个包裹起来的矩形
-    \draw[fill=GanYu_midblue!20, rounded corners=5pt] (15.5,-0.3) rectangle (17.5,-4.7);
+    \draw[fill=GanYu_midblue!20, rounded corners=5pt] (15.2,-0.5) rectangle (17.8,-5.2);
     \node at (16.5,-5) (verticleRec_bottom) {};
 
     %创建一个方形, 用于表示Mi, 是一个矩阵
@@ -109,7 +110,7 @@
     \coordinate (Mi_upper) at ($(Mi)+(0,\widthMi/2+0.1)$);
     \coordinate (Mi_bottom) at ($(Mi)+(0,-\widthMi/2-0.1)$);
     \draw (Mi_left_bottom) rectangle (Mi_right_bottom);
-    \node at ($(Mi)+(0,-\widthMi/2-0.5)$) (Mi_text) {$M_{i}$};
+    \node[align=center] at ($(Mi)+(0,-\widthMi/2-0.5)$) (Mi_text) {兴趣区域掩膜\\$M_{i}$};
     %为Mi的方格涂上颜色
         %(0,0)
     \fill[NekasuBlue!76] ($(Mi_left_bottom)+(\widthMi/3*0, \widthMi/3*0)$) rectangle ($(Mi_left_bottom)+(\widthMi/3*0+\widthMi/3, \widthMi/3*0+\widthMi/3)$);
@@ -138,7 +139,7 @@
     }
 
     %创建一个方形, 用于表示Mia, 是一个矩阵
-    \coordinate (Mia) at ($(Mi)+(0,-2*\offY/3)$);
+    \coordinate (Mia) at ($(Mi)+(0,-2.2*\offY/3)$);
     \def\widthMia{1.2};
     \coordinate (Mia_left_bottom) at ($(Mia)+(-\widthMia/2,-\widthMia/2)$);
     \coordinate (Mia_right_bottom) at ($(Mia)+(\widthMia/2,\widthMia/2)$);
@@ -147,7 +148,7 @@
     \coordinate (Mia_upper) at ($(Mia)+(0,\widthMia/2+0.1)$);
     \coordinate (Mia_bottom) at ($(Mia)+(0,-\widthMia/2-0.1)$);
     \draw (Mia_left_bottom) rectangle (Mia_right_bottom);
-    \node at ($(Mia)+(0,-\widthMia/2-0.5)$) (Mia_text) {$M_{i}^{\alpha}$};
+    \node[align=center] at ($(Mia)+(0,-\widthMia/2-0.5)$) (Mia_text) {兴趣$\alpha$掩膜\\$M_{i}^{\alpha}$};
     %为Mia的方格涂上颜色
         %(0,0)
     \fill[GanYu_lightblue!92] ($(Mia_left_bottom)+(\widthMia/3*0, \widthMia/3*0)$) rectangle ($(Mia_left_bottom)+(\widthMia/3*0+\widthMia/3, \widthMia/3*0+\widthMia/3)$);
@@ -185,7 +186,7 @@
     \coordinate (Mo_upper) at ($(Mo)+(0,\widthMo/2+0.1)$);
     \coordinate (Mo_bottom) at ($(Mo)+(0,-\widthMo/2-0.1)$);
     \draw (Mo_left_bottom) rectangle (Mo_right_bottom);
-    \node at ($(Mo)+(0,-\widthMo/2-0.5)$) (Mo_text) {$M_{o}$};
+    \node[align=center] at ($(Mo)+(0,-\widthMo/2-0.5)$) (Mo_text) {非兴趣区域掩膜\\$M_{o}$};
     %为Mo的方格涂上颜色
         %(0,0)
     \fill[GanYu_midblue!80] ($(Mo_left_bottom)+(\widthMo/3*0, \widthMo/3*0)$) rectangle ($(Mo_left_bottom)+(\widthMo/3*0+\widthMo/3, \widthMo/3*0+\widthMo/3)$);
@@ -215,7 +216,7 @@
 
     
     %创建一个方形, 用于表示Moa, 是一个矩阵
-    \coordinate (Moa) at ($(Mo)+(0,-2*\offY/3)$);
+    \coordinate (Moa) at ($(Mo)+(0,-2.2*\offY/3)$);
     \def\widthMoa{1.2};
     \coordinate (Moa_left_bottom) at ($(Moa)+(-\widthMoa/2,-\widthMoa/2)$);
     \coordinate (Moa_right_bottom) at ($(Moa)+(\widthMoa/2,\widthMoa/2)$);
@@ -224,7 +225,7 @@
     \coordinate (Moa_upper) at ($(Moa)+(0,\widthMoa/2+0.1)$);
     \coordinate (Moa_bottom) at ($(Moa)+(0,-\widthMoa/2-0.1)$);
     \draw (Moa_left_bottom) rectangle (Moa_right_bottom);
-    \node at ($(Moa)+(0,-\widthMoa/2-0.5)$) (Moa_text) {$M_{o}^{\alpha}$};
+    \node[align=center] at ($(Moa)+(0,-\widthMoa/2-0.5)$) (Moa_text) {非兴趣$\alpha$掩膜\\$M_{o}^{\alpha}$};
     %为Moa的方格涂上颜色
         %(0,0)
     \fill[NekasuBlue!84] ($(Moa_left_bottom)+(\widthMoa/3*0, \widthMoa/3*0)$) rectangle ($(Moa_left_bottom)+(\widthMoa/3*0+\widthMoa/3, \widthMoa/3*0+\widthMoa/3)$);
@@ -262,10 +263,10 @@
     \coordinate (Rcei_upper) at ($(Rcei)+(0,\widthRcei/2+0.1)$);
     \coordinate (Rcei_bottom) at ($(Rcei)+(0,-\widthRcei/2-0.1)$);
     \draw[fill=GanYu_ricewhite!30] (Rcei_left_bottom) rectangle (Rcei_right_bottom);
-    \node at ($(Rcei)+(0,-\widthRcei/2-0.5)$) (Rcei_text) {$R_{ce\_i}$};
+    \node[align=center] at ($(Rcei)+(0,-\widthRcei/2-0.5)$) (Rcei_text) {内容兴趣对象\\$R_{ce\_i}$};
 
     %创建一个方形, 本阶段结果2：Rceo
-    \coordinate (Rceo) at ($(Rcei)+(0,-2)$);
+    \coordinate (Rceo) at ($(Rcei)+(0,-2.2)$);
     \def\widthRceo{1.2};
     \coordinate (Rceo_left_bottom) at ($(Rceo)+(-\widthRceo/2,-\widthRceo/2)$);
     \coordinate (Rceo_right_bottom) at ($(Rceo)+(\widthRceo/2,\widthRceo/2)$);
@@ -274,7 +275,7 @@
     \coordinate (Rceo_upper) at ($(Rceo)+(0,\widthRceo/2+0.1)$);
     \coordinate (Rceo_bottom) at ($(Rceo)+(0,-\widthRceo/2-0.1)$);
     \draw[fill=GanYu_ricewhite!30] (Rceo_left_bottom) rectangle (Rceo_right_bottom);
-    \node at ($(Rceo)+(0,-\widthRceo/2-0.5)$) (Rceo_text) {$R_{ce\_o}$};
+    \node[align=center] at ($(Rceo)+(0,-\widthRceo/2-0.5)$) (Rceo_text) {内容非兴趣对象\\$R_{ce\_o}$};
     
     % 创建一个\odot符号
     \coordinate (odot) at ($(C)+(16.5,-6)$);

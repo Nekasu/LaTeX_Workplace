@@ -1,7 +1,7 @@
 \documentclass[tikz,convert={outext=.svg}]{standalone}
 % \documentclass{paper}
 \usepackage{D:/DevData/LaTeX_Workplace/2_macro_definition/network_tikz_package}
-
+\RequirePackage[CJKnumber=true]{xeCJK}
 \begin{document}
 
 \begin{tikzpicture}
@@ -24,7 +24,7 @@
     \coordinate (Rceo_upper) at ($(Rceo)+(0,\widthRceo/2+0.1)$);
     \coordinate (Rceo_bottom) at ($(Rceo)+(0,-\widthRceo/2-0.1)$);
     \draw[fill=GanYu_ricewhite!30] (Rceo_left_bottom) rectangle (Rceo_right_bottom);
-    \node at ($(Rceo)+(0,-\widthRceo/2-0.3)$) (Rceo_text) {$R_{ce\_o}$};
+    \node[align=center] at ($(Rceo)+(0,-\widthRceo/2-0.5)$) (Rceo_text) {内容非兴趣对象\\$R_{ce\_o}$};
 
     %创建一个方形, 本阶段输入2：Sb
     \coordinate (Sb) at ($(0,0)+(0, -\offY)$);
@@ -36,7 +36,7 @@
     \coordinate (Sb_upper) at ($(Sb)+(0,\widthSb/2+0.1)$);
     \coordinate (Sb_bottom) at ($(Sb)+(0,-\widthSb/2-0.1)$);
     \draw[fill=GanYu_ricewhite!30] (Sb_left_bottom) rectangle (Sb_right_bottom);
-    \node at ($(Sb)+(0,-\widthSb/2-0.3)$) (Sb_text) {$S_b$};
+    \node[align=center] at ($(Sb)+(0,-\widthSb/2-0.5)$) (Sb_text) {风格背景对象\\$S_b$};
 
     %创建一个方形, Rb
     \coordinate (Rb) at ($(Rceo)+(\offX, 0)$);
@@ -48,7 +48,7 @@
     \coordinate (Rb_upper) at ($(Rb)+(0,\widthRb/2+0.1)$);
     \coordinate (Rb_bottom) at ($(Rb)+(0,-\widthRb/2-0.1)$);
     \draw[fill=Nahida_darkgreen!40] (Rb_left_bottom) rectangle (Rb_right_bottom);
-    \node at ($(Rb)+(0,-\widthRb/2-0.3)$) (Rb_text) {$R_{b}$};
+    \node[align=center] at ($(Rb)+(0,-\widthRb/2-0.5)$) (Rb_text) {非兴趣模糊对象\\$R_{b}$};
 
     %创建一个方形, Sbg
     \coordinate (Sbg) at ($(Sb)+(\offX, 0)$);
@@ -60,7 +60,7 @@
     \coordinate (Sbg_upper) at ($(Sbg)+(0,\widthSbg/2+0.1)$);
     \coordinate (Sbg_bottom) at ($(Sbg)+(0,-\widthSbg/2-0.1)$);
     \draw[fill=Nahida_lightgreen!30] (Sbg_left_bottom) rectangle (Sbg_right_bottom);
-    \node at ($(Sbg)+(0,-\widthSbg/2-0.3)$) (Sbg_text) {$S_{bg}$};
+    \node[align=center] at ($(Sbg)+(0,-\widthSbg/2-0.5)$) (Sbg_text) {风格背景对象特征\\$S_{bg}$};
 
     %创建一个矩形, AdaIN
     \coordinate (AdaIN) at ($(Sbg)+(\offX, \offY)$);
@@ -73,7 +73,7 @@
     \coordinate (AdaIN_upper) at ($(AdaIN)+(0,\lengthAdaIN/2+0.1)$);
     \coordinate (AdaIN_bottom) at ($(AdaIN)+(0,-\lengthAdaIN/2-0.1)$);
     \draw[fill=GanYu_midblue!40!blue!30, rounded corners=10pt] (AdaIN_left_bottom) rectangle (AdaIN_right_bottom);
-    \node at ($(AdaIN)$) (AdaIN_text) {$AdaIN$};
+    \node[align=center] at ($(AdaIN)$) (AdaIN_text) {自适应\\实例归一化\\$AdaIN$};
 
 
     %创建一个方形, Oo
@@ -86,21 +86,21 @@
     \coordinate (Oo_upper) at ($(Oo)+(0,\widthOo/2+0.1)$);
     \coordinate (Oo_bottom) at ($(Oo)+(0,-\widthOo/2-0.1)$);
     \draw[fill=Nahida_darkgreen!50!green!30] (Oo_left_bottom) rectangle (Oo_right_bottom);
-    \node at ($(Oo)+(0,-\widthOo/2-0.3)$) (Oo_text) {$O_{o}$};
+    \node[align=center] at ($(Oo)+(0,-\widthOo/2-0.5)$) (Oo_text) {风格化背景对象\\$O_{o}$};
 
     
     % 绘制箭头
     % Sceo上的出度箭头1：Sceo->Rb
-    \draw[->, thick] (Rceo_right) -- (Rb_left) node[midway, above] {Gaussian} node[midway, below] {Blur};
+    \draw[->, thick] (Rceo_right) -- (Rb_left) node[midway, above] {高斯模糊} ;
 
     % Sm上的出度箭头1：Sm->Sbg
     \draw[->, thick] (Sb_right) -- (Sbg_left) node[midway, above] {VGG19};
 
     % Rb 上的出度箭头1：Rb_AdaIN
-    \draw[->, thick] (Rb_right) -- ($(Rb_right)+(0.4,0)$) |- (AdaIN_left);
+    \draw[->, thick] (Rb_right) -- ($(Rb_right)+(0.6,0)$) |- (AdaIN_left);
 
     % Sbg 上的出度箭头1：Sbg_AdaIN
-    \draw[->, thick] (Sbg_right) -- ($(Sbg_right)+(0.4,0)$) |- (AdaIN_left);
+    \draw[->, thick] (Sbg_right) -- ($(Sbg_right)+(0.6,0)$) |- (AdaIN_left);
 
     % AdaIN 上的出度箭头1： AdaIN -> Oo
     \draw[->, thick] (AdaIN_right) -- (Oo_left);

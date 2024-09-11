@@ -1,7 +1,7 @@
 \documentclass{standalone}
 % \documentclass{paper}
 \usepackage{D:/DevData/LaTeX_Workplace/2_macro_definition/network_tikz_package}
-
+\RequirePackage[CJKnumber=true]{xeCJK}
 \begin{document}
 
 \begin{tikzpicture}
@@ -12,7 +12,7 @@
     %表示图像中两个元素之间的水平偏移
     \def\offX{3}
     %表示图像中两个元素之间的垂直偏移
-    \def\offY{2}
+    \def\offY{2.5}
 
     %创建一个方形, 本阶段输入1： Om
     \coordinate (Om) at ($(0,0)+(0, 0)$);
@@ -24,7 +24,7 @@
     \coordinate (Om_upper) at ($(Om)+(0,\widthOm/2+0.1)$);
     \coordinate (Om_bottom) at ($(Om)+(0,-\widthOm/2-0.1)$);
     \draw[fill=GanYu_ricewhite!30!GanYu_lightblue!90] (Om_left_bottom) rectangle (Om_right_bottom);
-    \node at ($(Om)+(0,-\widthOm/2-0.3)$) (Om_text) {$O_m$};
+    \node[align=center] at ($(Om)+(0,-\widthOm/2-0.5)$) (Om_text) {风格化主体对象\\$O_m$};
 
     %创建一个方形, 本阶段输入2： Oo
     \coordinate (Oo) at ($(Om)+(0, -\offY)$);
@@ -36,7 +36,7 @@
     \coordinate (Oo_upper) at ($(Oo)+(0,\widthOo/2+0.1)$);
     \coordinate (Oo_bottom) at ($(Oo)+(0,-\widthOo/2-0.1)$);
     \draw[fill=Nahida_darkgreen!50!green!30] (Oo_left_bottom) rectangle (Oo_right_bottom);
-    \node at ($(Oo)+(0,-\widthOo/2-0.3)$) (Oo_text) {$O_{o}$};
+    \node[align=center] at ($(Oo)+(0,-\widthOo/2-0.5)$) (Oo_text) {风格化背景对象\\$O_{o}$};
 
     %创建一个odot
     \coordinate (odot1) at ($(Om)+(\offX, 0)$);
@@ -52,7 +52,7 @@
     \coordinate (Mi_upper) at ($(Mi)+(0,\widthMi/2+0.1)$);
     \coordinate (Mi_bottom) at ($(Mi)+(0,-\widthMi/2-0.1)$);
     \draw (Mi_left_bottom) rectangle (Mi_right_bottom);
-    \node at ($(Mi)+(0,-\widthMi/2-0.5)$) (Mi_text) {$[M_{i},M_{i}^{\alpha}]$};
+    \node[align=center] at ($(Mi)+(0,-\widthMi/2-0.5)$) (Mi_text) {兴趣掩膜及其$\alpha$通道\\$[M_{i},M_{i}^{\alpha}]$};
     %为Mi的方格涂上颜色
     %(0,0)
     \fill[NekasuBlue!76] ($(Mi_left_bottom)+(\widthMi/3*0, \widthMi/3*0)$) rectangle ($(Mi_left_bottom)+(\widthMi/3*0+\widthMi/3, \widthMi/3*0+\widthMi/3)$);
@@ -94,7 +94,7 @@
     \coordinate (Mo_upper) at ($(Mo)+(0,\widthMo/2+0.1)$);
     \coordinate (Mo_bottom) at ($(Mo)+(0,-\widthMo/2-0.1)$);
     \draw (Mo_left_bottom) rectangle (Mo_right_bottom);
-    \node at ($(Mo)+(0,-\widthMo/2-0.5)$) (Mo_text) {$[M_{o},M_{o}^{\alpha}]$};
+    \node[align=center] at ($(Mo)+(0,-\widthMo/2-0.5)$) (Mo_text) {非兴趣掩膜及其$\alpha$通道\\$[M_{o},M_{o}^{\alpha}]$};
     %为Mo的方格涂上颜色
         %(0,0)
     \fill[GanYu_midblue!80] ($(Mo_left_bottom)+(\widthMo/3*0, \widthMo/3*0)$) rectangle ($(Mo_left_bottom)+(\widthMo/3*0+\widthMo/3, \widthMo/3*0+\widthMo/3)$);
@@ -136,7 +136,7 @@
     \coordinate (Ofinal_upper) at ($(Ofinal)+(0,\widthOfinal/2+0.1)$);
     \coordinate (Ofinal_bottOfinal) at ($(Ofinal)+(0,-\widthOfinal/2-0.1)$);
     \draw[fill=GanYu_ricewhite!30!GanYu_lightblue!90] (Ofinal_left_bottOfinal) rectangle (Ofinal_right_bottOfinal);
-    \node at ($(Ofinal)+(0,-\widthOfinal/2-0.3)$) (Ofinal_text) {$O_{\rm{final}}$};
+    \node[align=center] at ($(Ofinal)+(0,-\widthOfinal/2-0.5)$) (Ofinal_text) {最终风格迁移结果\\$O_{\rm{final}}$};
 
     % 绘制箭头
     % Om上的出度箭头1：Om->odot1
