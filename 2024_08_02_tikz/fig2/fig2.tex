@@ -299,7 +299,8 @@
     \draw[->, thick] (Low_right) -| (oplus.south);
 
     %oplus上的出度箭头1：oplus->Ccanonical
-    \draw[->, thick] (oplus.east) -- (Ccanonical_left) node[midway, above] {$D^{-1}$} node[midway, below] {$\tau_c$};
+    \draw[->, thick] (oplus.east) -- (Ccanonical_left);
+    %  node[midway, above] {$D^{-1}$} node[midway, below] {$\tau_c$};
 
     %Ccanonical上的出度箭头1：Ccanonical->Estimation
     \draw[->, thick] (Ccanonical_right) -- ($(start_back)+(0-0.5,0)$);
