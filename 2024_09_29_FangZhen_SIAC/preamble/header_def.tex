@@ -1,4 +1,11 @@
 \def\vspaceLen{2mm}
+\def\vspaceofLines{0.1pt}
+
+% 添加页眉与正文之间的间距
+\renewcommand{\headsep}{20pt}  % 调整页眉与正文之间的距离
+\renewcommand{\headrule}{\hrule height 0.5pt \vspace{2pt}\hrule height 0.5pt}
+
+% \renewcommand{\headrulewidth}{0pt}  % 取消页眉的下划线
 
 % 定义首页页眉页脚
 \fancypagestyle{firstpage}{
@@ -16,13 +23,13 @@
             \vspace{\vspaceLen}
             \zihao{5-}\begin{CJK*}{UTF8}{song}CHINESE JOURNAL OF COMPUTERS \end{CJK*}
     }
-
     \fancyhead[R]{
         % 定义页眉
-            \zihao{5-}\begin{CJK*}{UTF8}{song}Vol. ??  No. ?\end{CJK*}\\
+            \zihao{5-}\begin{CJK*}{UTF8}{song}Vol. ??  No. ?\end{CJK*}
             \vspace{\vspaceLen}
             \zihao{5-}\begin{CJK*}{UTF8}{song}???. 20??\end{CJK*}
     }
+    
     \fancyfoot[L]{
         \begin{tabular}{p{0.05cm}p{16.15cm}}
             \multicolumn{2}{l}{\rule[4mm]{40mm}{0.1mm}}\\[-3mm]
@@ -32,6 +39,8 @@
             \end{CJK*}
         \end{tabular}
     }
+    % \renewcommand\headrule{\vskip-1.7\headheight\hrulefill\vskip2pt\hrulefill}
+    % \setlength\headheight{13pt}
 }
 
 
