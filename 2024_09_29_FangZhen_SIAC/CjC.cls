@@ -48,6 +48,7 @@
 %
 % 1 in = 72 bp = 72.27 pt
 
+% 定义字号, 使用命令\zihao[参数], 定义字号.
 \newcommand\zihao[1]{%
    \ifthenelse{\equal{#1}{0}}{%
        \CjC@choosefont{42bp}{.5pt}{.3pt}}{}%
@@ -92,7 +93,9 @@
 \def\scriptsize{\zihao{7}}
 \def\footnotesize{\zihao{6-}}
 \def\small{\zihao{6}}
-\def\normalsize{\zihao{5}}%
+%原始模板中为\zihao{5}, 为了符合“全国仿真应用大赛”的格式要求, 故而修改为\zihao{4-}, 即小四号字体(12磅)
+% \def\normalsize{\zihao{5}} 
+\def\normalsize{\zihao{4-}}
 \def\large{\zihao{4-}}%
 \def\Large{\zihao{4}}%
 \def\LARGE{\zihao{3}}%
@@ -106,7 +109,7 @@
 
 
 
-
+% 使用上述定义的\normalsize命令
 \normalsize  %make \baselinestretch take affect
 %\renewcommand{\@biblabel}[1]{#1}
 \let\@afterindentfalse\@afterindenttrue\@afterindenttrue
