@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.21)  3 OCT 2024 21:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.21)  3 OCT 2024 23:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -602,7 +602,7 @@ File: UTF8.enc 2021/10/16 4.8.5
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-LaTeX Font Info:    Trying to load font information for C70+zhhei on input line 9.
+LaTeX Font Info:    Trying to load font information for C70+zhhei on input line 11.
  (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/zhmetrics/c70zhhei.fd
 File: c70zhhei.fd 2009/09/23 4.8.2
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
@@ -610,29 +610,29 @@ File: UTF8.enc 2021/10/16 4.8.5
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-LaTeX Font Info:    Trying to load font information for C70+fs on input line 19.
+LaTeX Font Info:    Trying to load font information for C70+fs on input line 21.
  (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/zhmetrics/c70fs.fd
 File: c70fs.fd 2009/09/23 4.8.2
 )
-LaTeX Font Info:    Calculating math sizes for size <16.06> on input line 19.
+LaTeX Font Info:    Calculating math sizes for size <16.06> on input line 21.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <16.06> not available
-(Font)              size <17.28> substituted on input line 19.
+(Font)              size <17.28> substituted on input line 21.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <16.06> not available
-(Font)              size <17.28> substituted on input line 19.
+(Font)              size <17.28> substituted on input line 21.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <16.06> not available
-(Font)              size <17.28> substituted on input line 19.
+(Font)              size <17.28> substituted on input line 21.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
 (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
  (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
@@ -640,33 +640,33 @@ File: UTF8.enc 2021/10/16 4.8.5
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-LaTeX Font Info:    Calculating math sizes for size <7.52812> on input line 27.
+LaTeX Font Info:    Calculating math sizes for size <7.52812> on input line 29.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 27.
+(Font)              size <8> substituted on input line 29.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.76405> not available
-(Font)              size <5> substituted on input line 27.
+(Font)              size <5> substituted on input line 29.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.52812> not available
-(Font)              size <8> substituted on input line 27.
+(Font)              size <8> substituted on input line 29.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.76405> not available
-(Font)              size <5> substituted on input line 27.
+(Font)              size <5> substituted on input line 29.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 27.
+(Font)              size <8> substituted on input line 29.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.76405> not available
-(Font)              size <5> substituted on input line 27.
+(Font)              size <5> substituted on input line 29.
 
-LaTeX Font Info:    Trying to load font information for C70+song on input line 27.
+LaTeX Font Info:    Trying to load font information for C70+song on input line 29.
 (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/c70song.fd
 File: c70song.fd 2021/10/16 4.8.5
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
@@ -681,60 +681,20 @@ File: UTF8.chr 2021/10/16 4.8.5
 File: UTF8.enc 2021/10/16 4.8.5
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
-File: UTF8.enc 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-File: UTF8.chr 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
-File: UTF8.enc 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-File: UTF8.chr 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
-File: UTF8.enc 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-File: UTF8.chr 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
-File: UTF8.enc 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-File: UTF8.chr 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
-File: UTF8.enc 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-File: UTF8.chr 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
-File: UTF8.enc 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-File: UTF8.chr 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
-File: UTF8.enc 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-File: UTF8.chr 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
-File: UTF8.enc 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-File: UTF8.chr 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
-File: UTF8.enc 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-File: UTF8.chr 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
-File: UTF8.enc 2021/10/16 4.8.5
-) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-File: UTF8.chr 2021/10/16 4.8.5
 )
-LaTeX Font Info:    Calculating math sizes for size <10.53937> on input line 101.
+LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 55.
 
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 101.
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.43146> not available
+(Font)              size <8> substituted on input line 55.
 
 
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 101.
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.43146> not available
+(Font)              size <8> substituted on input line 55.
 
 
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 101.
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.43146> not available
+(Font)              size <8> substituted on input line 55.
 
 (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
 File: UTF8.enc 2021/10/16 4.8.5
@@ -757,6 +717,66 @@ File: UTF8.enc 2021/10/16 4.8.5
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+LaTeX Font Info:    Calculating math sizes for size <10.53937> on input line 104.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 104.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 104.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 104.
+
+(d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Overfull \hbox (1.94667pt too wide) in paragraph at lines 127--155
+[][] 
+ []
+
+(d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
 File: UTF8.enc 2021/10/16 4.8.5
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
@@ -783,50 +803,25 @@ File: UTF8.chr 2021/10/16 4.8.5
 )
 
 Package fancyhdr Warning: \headheight is too small (17.07164pt): 
-(fancyhdr)                Make it at least 24.6614pt, for example:
-(fancyhdr)                \setlength{\headheight}{24.6614pt}.
+(fancyhdr)                Make it at least 27.6614pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.6614pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-7.58977pt}.
-
-LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 157.
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.43146> not available
-(Font)              size <8> substituted on input line 157.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.43146> not available
-(Font)              size <8> substituted on input line 157.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.43146> not available
-(Font)              size <8> substituted on input line 157.
+(fancyhdr)                \addtolength{\topmargin}{-10.58977pt}.
 
 (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
 File: UTF8.enc 2021/10/16 4.8.5
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
-) [1{d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
+)
+
+Package fancyhdr Warning: \footskip is too small (35.00005pt): 
+(fancyhdr)                Make it at least 52.61241pt, for example:
+(fancyhdr)                \setlength{\footskip}{52.61241pt}.
+
+[1{d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
-])
-CUTED [- LAST -]
-Extra skip:0.0pt
-Left:0.0pt/0.0pt
-Right:0.0pt/0.0pt
-Split: 0.0pt
-Output:0.0pt
-Pageshrink: 0.0pt
-Pagestretch: 0.0pt
-@colht:668.63977pt
-CUTED [output]: 0.0pt
-CUTED [leftcolumn badness]: 0
-CUTED [rightcolumn badness]: 0
-
-Overfull \hbox (489.3874pt too wide) has occurred while \output is active
-[] []|[] []
- []
-
-(d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+]) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
 File: UTF8.enc 2021/10/16 4.8.5
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
@@ -835,85 +830,121 @@ File: UTF8.chr 2021/10/16 4.8.5
 LaTeX Font Warning: Font shape `C70/song/b/n' undefined
 (Font)              using `C70/song/m/n' instead on input line 15.
 
-<CJC1.pdf, id=173, 1897.0875pt x 1192.455pt>
+
+Underfull \hbox (badness 6510) in paragraph at lines 67--69
+[]\OT1/ptm/m/n/12.045 15) \C70/song/b/n/12.045/7e Ä \C70/song/b/n/12.045/54 ^^H \C70/song/b/n/12.045/53 U \C70/song/b/n/12.045/4f M \C70/song/b/n/12.045/91 Ç \C70/song/m/n/12.045/75 ( \C70/song/m/n/12.045/68 ^^G \C70/song/b/n/12.045/51 Æ \C70/song/m/n/12.045/68 < \C70/song/b/n/12.045/5f ^^O \C70/song/b/n/12.045/ff ^^L
+ []
+
+<CJC1.pdf, id=183, 1897.0875pt x 1192.455pt>
 File: CJC1.pdf Graphic file (type pdf)
 <use CJC1.pdf>
 Package pdftex.def Info: CJC1.pdf  used on input line 79.
 (pdftex.def)             Requested size: 227.64067pt x 143.08842pt.
-)
-LaTeX Font Info:    Trying to load font information for C70+kai on input line 36.
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/zhmetrics/c70kai.fd
-File: c70kai.fd 2009/09/23 4.8.2
-)
+
+Overfull \hbox (4.4861pt too wide) in paragraph at lines 88--103
+ [] 
+ []
+
+
 Overfull \vbox (5.78505pt too high) has occurred while \output is active []
 
- [2 <./CJC1.pdf>]
-LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 54.
+ [2
 
+
+
+ <./CJC1.pdf>]) (./mainbody/thanking.tex
+LaTeX Font Info:    Trying to load font information for C70+kai on input line 3.
+ (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/zhmetrics/c70kai.fd
+File: c70kai.fd 2009/09/23 4.8.2
+)) (./mainbody/ref.tex
+Underfull \hbox (badness 1189) in paragraph at lines 118--7
+\C70/song/m/n/9.03374/51 ý \C70/song/m/n/9.03374/65 p \C70/song/m/n/9.03374/54 ^^M \C70/song/m/n/9.03374/79 ð \C70/song/m/n/9.03374/75 ( \C70/song/m/n/9.03374/65 œ \C70/song/m/n/9.03374/4f S\OT1/ptm/m/n/9.03374 *  \C70/zhhei/m/n/10.53937/81 ô \C70/zhhei/m/n/10.53937/8c "  \OT1/ptm/m/n/10.53937 *\C70/kai/m/n/10.53937/81 ô \C70/kai/m/n/10.53937/8c " \C70/kai/m/n/10.53937/51 … \C70/kai/m/n/10.53937/5b ¹\OT1/ptm/m/n/10.53937 .* \C70/kai/m/n/10.53937/81 ô \C70/kai/m/n/10.53937/8c "
+ []
+
+LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 16.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.51686> not available
-(Font)              size <5> substituted on input line 54.
+(Font)              size <5> substituted on input line 16.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.51686> not available
-(Font)              size <5> substituted on input line 54.
+(Font)              size <5> substituted on input line 16.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.51686> not available
-(Font)              size <5> substituted on input line 54.
+(Font)              size <5> substituted on input line 16.
 
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 54.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 16.
 (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-LaTeX Font Info:    Calculating math sizes for size <6.52437> on input line 54.
+LaTeX Font Info:    Calculating math sizes for size <6.52437> on input line 16.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.52437> not available
-(Font)              size <7> substituted on input line 54.
+(Font)              size <7> substituted on input line 16.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.56703> not available
-(Font)              size <5> substituted on input line 54.
+(Font)              size <5> substituted on input line 16.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.26218> not available
-(Font)              size <5> substituted on input line 54.
+(Font)              size <5> substituted on input line 16.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.52437> not available
-(Font)              size <7> substituted on input line 54.
+(Font)              size <7> substituted on input line 16.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.56703> not available
-(Font)              size <5> substituted on input line 54.
+(Font)              size <5> substituted on input line 16.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.26218> not available
-(Font)              size <5> substituted on input line 54.
+(Font)              size <5> substituted on input line 16.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.52437> not available
-(Font)              size <7> substituted on input line 54.
+(Font)              size <7> substituted on input line 16.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.56703> not available
-(Font)              size <5> substituted on input line 54.
+(Font)              size <5> substituted on input line 16.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.26218> not available
-(Font)              size <5> substituted on input line 54.
+(Font)              size <5> substituted on input line 16.
 
-<yourphotofilename.jpg, id=218, 120.45pt x 120.45pt>
+) (./mainbody/appendix.tex
+<yourphotofilename.jpg, id=220, 120.45pt x 120.45pt>
 File: yourphotofilename.jpg Graphic file (type jpg)
 <use yourphotofilename.jpg>
-Package pdftex.def Info: yourphotofilename.jpg  used on input line 102.
+Package pdftex.def Info: yourphotofilename.jpg  used on input line 10.
 (pdftex.def)             Requested size: 71.13287pt x 93.89731pt.
 File: yourphotofilename.jpg Graphic file (type jpg)
 <use yourphotofilename.jpg>
-Package pdftex.def Info: yourphotofilename.jpg  used on input line 109.
+Package pdftex.def Info: yourphotofilename.jpg  used on input line 17.
 (pdftex.def)             Requested size: 71.13287pt x 93.89731pt.
-(d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+) (./mainbody/background.tex
+Underfull \hbox (badness 1009) in paragraph at lines 6--7
+[]\OT1/ptm/m/n/9.03374 *\C70/song/b/n/9.03374/8b º \C70/song/b/n/9.03374/65 ‡ \C70/song/b/n/9.03374/80 Ì \C70/song/b/n/9.03374/66 o \C70/song/b/n/9.03374/4e Ë \C70/song/b/n/9.03374/7e Í \C70/song/b/n/9.03374/4e : \C70/song/b/n/9.03374/82 ñ \C70/song/b/n/9.03374/65 ‡ \C70/song/b/n/9.03374/ff ^^L \C70/song/b/n/9.03374/5b W \C70/song/b/n/9.03374/4f S \C70/song/b/n/9.03374/4e : \C70/song/m/n/9.03374/5c ^^O\OT1/ptm/m/n/9.03374 5\C70/song/b/n/9.03374/53 ÷\OT1/ptm/m/n/9.03374 Times New
+ []
+
+)
+- LAST -
+Extra skip:0.0pt
+Left:524.50426pt/0.90337pt
+Right:502.11406pt/0.0pt
+Split: 513.6624pt
+Output:513.6624pt
+Pageshrink: 4.0pt
+Pagestretch: 4.0pt
+@colht:668.63977pt
+FLUSHEND [output]: 513.6624pt
+FLUSHEND [leftcolumn badness]: 26
+FUSHEND [rightcolumn badness]: 19
+ (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
 File: UTF8.enc 2021/10/16 4.8.5
 ) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
@@ -922,10 +953,7 @@ Overfull \hbox (2.28857pt too wide) has occurred while \output is active
 [] 
  []
 
-
-Overfull \vbox (5.78505pt too high) has occurred while \output is active []
-
- [3 <./yourphotofilename.jpg>] (./CjC_template_tex.aux)
+[3 <./yourphotofilename.jpg>] (./CjC_template_tex.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.73782pt have occurred.
@@ -935,18 +963,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 10689 strings out of 476025
- 181395 string characters out of 5783536
- 1891382 words of memory out of 5000000
- 30261 multiletter control sequences out of 15000+600000
- 627363 words of font info for 419 fonts, out of 8000000 for 9000
+ 10806 strings out of 476025
+ 183357 string characters out of 5783536
+ 1908382 words of memory out of 5000000
+ 30341 multiletter control sequences out of 15000+600000
+ 631947 words of font info for 440 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,18n,76p,1420b,1227s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<simsun.ttc><simhei.ttf><simkai.ttf><simkai.ttf><simkai.ttf><simkai.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simhei.ttf><simhei.ttf><simhei.ttf><simsun.ttc><simsun.ttc><simhei.ttf><simhei.ttf><simhei.ttf><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simfang.ttf><simfang.ttf><simfang.ttf><simfang.ttf><simfang.ttf><simfang.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on CjC_template_tex.pdf (3 pages, 779492 bytes).
+ 72i,18n,76p,1416b,1261s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<simsun.ttc><simhei.ttf><simkai.ttf><simkai.ttf><simkai.ttf><simkai.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simhei.ttf><simhei.ttf><simhei.ttf><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simhei.ttf><simhei.ttf><simhei.ttf><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simfang.ttf><simfang.ttf><simfang.ttf><simfang.ttf><simfang.ttf><simfang.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simhei.ttf><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><simsun.ttc><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on CjC_template_tex.pdf (3 pages, 788066 bytes).
 PDF statistics:
- 672 PDF objects out of 1000 (max. 8388607)
- 436 compressed objects within 5 object streams
+ 677 PDF objects out of 1000 (max. 8388607)
+ 439 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
- 299 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 303 words of extra memory for PDF output out of 10000 (max. 10000000)
 

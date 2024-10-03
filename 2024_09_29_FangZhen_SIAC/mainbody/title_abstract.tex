@@ -1,156 +1,159 @@
 
-    
-    
-    % 定义标题
-    \centering
-    \vspace {11mm}
-    \begin{CJK*}{UTF8}{zhhei}
-    {
-      \zihao{2} 题目（中英文题目一致）字体为2号黑体(全文除特别声明外， 外文统一用Times New Roman) 
-    }
+
+
+
+{%大括号用于限制\centering命令的范围
+  \centering
+  \vspace {11mm}
+  % 定义标题
+  \begin{CJK*}{UTF8}{zhhei}
+  {
+    \zihao{2} 题目（中英文题目一致）字体为2号黑体(全文除特别声明外， 外文统一用Times New Roman) 
+  }
+  \end{CJK*}
+
+  \vskip 5mm
+
+  % 定义作者
+  {
+    \zihao{3}
+    \begin{CJK*}{UTF8}{fs}
+      作者名$^{1)}$\quad  作者名$^{2),3)}$ \quad 作者名$^{3) }$($^*$字体为3号仿宋*作者)
     \end{CJK*}
+  }
+
+  \vspace {5mm}
+
+  % 定义中文作者单位1
+  \zihao{6}{\begin{CJK*}{UTF8}{song}
+  $^{1)}$(单位全名 部门(系)全名, 市(或直辖市) 国家名 邮政编码)
+  *字体为6号宋体*单位
+  \end{CJK*}}
+
+  % 定义中文作者单位2
+  \zihao{6}{\begin{CJK*}{UTF8}{song}
+  $^{2)}$(单位全名 部门(系)全名, 市(或直辖市) 国家名
+  邮政编码)*中英文单位名称、作者姓名须一致*
+  \end{CJK*}}
+
+  % 定义中文作者单位3
+  \zihao{6}{\begin{CJK*}{UTF8}{song}
+  $^{3)}$(单位全名 部门(系)全名, 市(或直辖市) 国家名 邮政编码)
+  \end{CJK*}}
+
+  % 定义中文作者单位4
+  \zihao{6}{\begin{CJK*}{UTF8}{zhhei}
+  论文定稿后，作者署名、单位无特殊情况不能变更。若变更，须提交签章申请，国家名为中国可以不写，省会城市不写省的名称，其他国家必须写国家名。
+  \end{CJK*}}
+
+  % \vskip 命令在 LaTeX 中用于在垂直方向上插入可调节的空间。它可以在文档中增加或减少行间距、段落间距，或在图形、表格和文本之间插入额外的空白。
+  \vskip 5mm
+}
+
+{%大括号用于限制\centering命令的范围
+  \centering
+  \begin{tabular}{p{160mm}}
+    % 定义中文摘要
+    \zihao{5-}{
+      \setlength{\baselineskip}{16pt}
+      \selectfont{
+        \noindent\begin{CJK*}{UTF8}{zhhei}摘\quad 要\quad \end{CJK*} 
+        \begin{CJK*}{UTF8}{song}
+          *中文摘要内容置于此处(英文摘要中要有这些内容)，字体为小5号宋体。摘要贡献部分，要有数据支持，不要出现``...大大提高''、``...显著改善''等描述，正确的描述是``比{\ldots}提高X{\%}''、
+          ``在{\ldots}上改善X{\%}''。*摘要
+        \end{CJK*}\par
+      }
+    }\\[2mm]
     
-    \vskip 5mm
-    
-    % 定义作者
+    % 定义中文关键词
+    \zihao{5-}{
+      \noindent
+      \begin{CJK*}{UTF8}{zhhei}
+        关键词\end{CJK*} \quad \begin{CJK*}{UTF8}{song}{*关键词（中文关键字与英文关键字对应且一致，应有5-7个关键词)；关键词；关键词；关键词*  }
+      \end{CJK*}
+    }\\[2mm]
+
+    % 定义中图法分类号、TP、DOI号
+    \zihao{5-}{
+      \begin{CJK*}{UTF8}{zhhei} 中图法分类号 \end{CJK*}	
+      \begin{CJK*}{UTF8}{song} TP \end{CJK*}
+      \rm{\quad \quad \quad}
+      \begin{CJK*}{UTF8}{zhhei} DOI号: \end{CJK*}
+      \begin{CJK*}{UTF8}{song}
+    *投稿时不提供DOI号\end{CJK*}
+    }
+  \end{tabular}
+}
+
+\vskip 7mm
+
+% 英文标题
+\begin{center}
+  \zihao{3}{
     {
-      \zihao{3}
-      \begin{CJK*}{UTF8}{fs}
-        作者名$^{1)}$\quad  作者名$^{2),3)}$ \quad 作者名$^{3) }$($^*$字体为3号仿宋*作者)
+      \begin{CJK*}{UTF8}{zhhei}
+        Title *（中英文题目一致）字体为4号Times New Roman,加粗* Title
       \end{CJK*}
     }
-    
-    \vspace {5mm}
-    
-    % 定义中文作者单位1
-    \zihao{6}{\begin{CJK*}{UTF8}{song}
-    $^{1)}$(单位全名 部门(系)全名, 市(或直辖市) 国家名 邮政编码)
-    *字体为6号宋体*单位
-    \end{CJK*}}
-    
-    % 定义中文作者单位2
-    \zihao{6}{\begin{CJK*}{UTF8}{song}
-    $^{2)}$(单位全名 部门(系)全名, 市(或直辖市) 国家名
-    邮政编码)*中英文单位名称、作者姓名须一致*
-    \end{CJK*}}
-    
-    % 定义中文作者单位3
-    \zihao{6}{\begin{CJK*}{UTF8}{song}
-    $^{3)}$(单位全名 部门(系)全名, 市(或直辖市) 国家名 邮政编码)
-    \end{CJK*}}
-    
-    % 定义中文作者单位4
-    \zihao{6}{\begin{CJK*}{UTF8}{zhhei}
-    论文定稿后，作者署名、单位无特殊情况不能变更。若变更，须提交签章申请，国家名为中国可以不写，省会城市不写省的名称，其他国家必须写国家名。
-    \end{CJK*}}
-    
-    % \vskip 命令在 LaTeX 中用于在垂直方向上插入可调节的空间。它可以在文档中增加或减少行间距、段落间距，或在图形、表格和文本之间插入额外的空白。
-    \vskip 5mm
-    
-    {
-      \centering
-      \begin{tabular}{p{160mm}}
-        % 定义中文摘要
-        \zihao{5-}{
-          \setlength{\baselineskip}{16pt}
-          \selectfont{
-            \noindent\begin{CJK*}{UTF8}{zhhei}摘\quad 要\quad \end{CJK*} 
-            \begin{CJK*}{UTF8}{song}
-              *中文摘要内容置于此处(英文摘要中要有这些内容)，字体为小5号宋体。摘要贡献部分，要有数据支持，不要出现``...大大提高''、``...显著改善''等描述，正确的描述是``比{\ldots}提高X{\%}''、
-              ``在{\ldots}上改善X{\%}''。*摘要
-            \end{CJK*}\par
-          }
-        }\\[2mm]
-        
-        % 定义中文关键词
-        \zihao{5-}{
-          \noindent
-          \begin{CJK*}{UTF8}{zhhei}
-            关键词\end{CJK*} \quad \begin{CJK*}{UTF8}{song}{*关键词（中文关键字与英文关键字对应且一致，应有5-7个关键词)；关键词；关键词；关键词*  }
-          \end{CJK*}
-        }\\[2mm]
-    
-        % 定义中图法分类号、TP、DOI号
-        \zihao{5-}{
-          \begin{CJK*}{UTF8}{zhhei} 中图法分类号 \end{CJK*}	
-          \begin{CJK*}{UTF8}{song} TP \end{CJK*}
-          \rm{\quad \quad \quad}
-          \begin{CJK*}{UTF8}{zhhei} DOI号: \end{CJK*}
-          \begin{CJK*}{UTF8}{song}
-        *投稿时不提供DOI号\end{CJK*}
-        }
-      \end{tabular}
+  }\\
+
+  % 英文作者
+  \vspace {5mm}
+  \zihao{5}{ {
+    \begin{CJK*}{UTF8}{zhhei}
+      NAME Name-Name$^{1)}$ NAME Name$^{2)}$ NAME Name-Name$^{3)}$ *字体为5号Times new Roman*Name
+    \end{CJK*}
+  }}\\
+
+  \vspace {2mm}
+  % 英文作者单位1
+  \zihao{6}{
+    \begin{CJK*}{UTF8}{zhhei}{$^{1)}$(Department of ****, University, City ZipCode, China) *字体为6号Times new Roman* Depart.Correspond}\end{CJK*}
+  }
+
+  % 英文作者单位2
+  \zihao{6}{
+    \begin{CJK*}{UTF8}{zhhei}{$^{2)}$(Department of ****, University, City ZipCode)*中国不写国家名*}\end{CJK*}
+  }
+
+  % 英文作者单位3
+  \zihao{6}{
+    \begin{CJK*}{UTF8}{zhhei}{$^{3)}$(Department of ****, University, City ZipCode, country)*外国写国家名*}\end{CJK*}
     }
-    
-    \vskip 7mm
-    
-    % 英文标题
-    \begin{center}
-      \zihao{3}{
-        {
-          \begin{CJK*}{UTF8}{zhhei}
-            Title *（中英文题目一致）字体为4号Times New Roman,加粗* Title
-          \end{CJK*}
-        }
-      }\\
-    
-      % 英文作者
+
+\end{center}
+
+
+\begin{tabular}{p{160mm}}
+  % 英文摘要标题：Abstract
+  \zihao{5}{
+    \setlength{\baselineskip}{18pt}
+    \selectfont{
+      {\bf Abstract}\quad
+      \begin{CJK*}{UTF8}{zhhei}(\textbf{500英文单词，内容包含中文摘要的内容}).字体为Times new Roman,字号5号* Abstract\end{CJK*}
+      \par
+    }
+  }\\
+
+  % 英文摘要内容
+  \setlength{\baselineskip}{18pt}
+  \selectfont{
+    \zihao{5}{
+      \noindent Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred. and Tables, create a new break line and paste the resized artworks where desired. Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred. All Schemes, Equations, Figures, and Tables should be mentioned in the text consecutively and numbered with Arabic numerals, and appear below where they are mentioned for the first time in the main text. To insert Schemes, Equations, Figures, and Tables, create a new break line and paste the resized artworks where desired. Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred.Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred. and Tables, create a new break line and paste the resized artworks where desired. Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred. All Schemes, Equations, Figures, and Tables should be mentioned in the text consecutively and numbered with Arabic numerals, and appear below where they are mentioned for the first time in the main text.
+
       \vspace {5mm}
-      \zihao{5}{ {
-        \begin{CJK*}{UTF8}{zhhei}
-          NAME Name-Name$^{1)}$ NAME Name$^{2)}$ NAME Name-Name$^{3)}$ *字体为5号Times new Roman*Name
-        \end{CJK*}
-      }}\\
-    
-      \vspace {2mm}
-      % 英文作者单位1
-      \zihao{6}{
-        \begin{CJK*}{UTF8}{zhhei}{$^{1)}$(Department of ****, University, City ZipCode, China) *字体为6号Times new Roman* Depart.Correspond}\end{CJK*}
-      }
-    
-      % 英文作者单位2
-      \zihao{6}{
-        \begin{CJK*}{UTF8}{zhhei}{$^{2)}$(Department of ****, University, City ZipCode)*中国不写国家名*}\end{CJK*}
-      }
-    
-      % 英文作者单位3
-      \zihao{6}{
-        \begin{CJK*}{UTF8}{zhhei}{$^{3)}$(Department of ****, University, City ZipCode, country)*外国写国家名*}\end{CJK*}
-        }
-    
-    \end{center}
-    
-    
-    \begin{tabular}{p{160mm}}
-      % 英文摘要标题：Abstract
-      \zihao{5}{
-        \setlength{\baselineskip}{18pt}
-        \selectfont{
-          {\bf Abstract}\quad
-          \begin{CJK*}{UTF8}{zhhei}(\textbf{500英文单词，内容包含中文摘要的内容}).字体为Times new Roman,字号5号* Abstract\end{CJK*}
-          \par
-        }
-      }\\
-    
-      % 英文摘要内容
-      \setlength{\baselineskip}{18pt}
-      \selectfont{
-        \zihao{5}{
-          \noindent Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred. and Tables, create a new break line and paste the resized artworks where desired. Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred. All Schemes, Equations, Figures, and Tables should be mentioned in the text consecutively and numbered with Arabic numerals, and appear below where they are mentioned for the first time in the main text. To insert Schemes, Equations, Figures, and Tables, create a new break line and paste the resized artworks where desired. Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred.Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred. and Tables, create a new break line and paste the resized artworks where desired. Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred. All Schemes, Equations, Figures, and Tables should be mentioned in the text consecutively and numbered with Arabic numerals, and appear below where they are mentioned for the first time in the main text.
-    
-          \vspace {5mm}
-    
-          % 英文关键词
-          {\bf Keywords}\quad
-          \begin{CJK*}{UTF8}{zhhei}
-            中文关键字与英文关键字对应且一致，\textbf{不要用英文缩写}); key word; key word; key word* *字体为5号Times new Roman * Key words
-          \end{CJK*}
-        }
-        \par
-      }
-    \end{tabular}
-    
-    % \setlength{\tabcolsep}{2pt}
+
+      % 英文关键词
+      {\bf Keywords}\quad
+      \begin{CJK*}{UTF8}{zhhei}
+        中文关键字与英文关键字对应且一致，\textbf{不要用英文缩写}); key word; key word; key word* *字体为5号Times new Roman * Key words
+      \end{CJK*}
+    }
+    \par
+  }
+\end{tabular}
+
+% \setlength{\tabcolsep}{2pt}
 
 
 
