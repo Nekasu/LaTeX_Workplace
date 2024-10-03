@@ -1,0 +1,53 @@
+\def\vspaceLen{2mm}
+\def\vspaceofLines{0.1pt}
+
+% 添加页眉与正文之间的间距
+\renewcommand{\headsep}{20pt}  % 调整页眉与正文之间的距离
+
+
+% \renewcommand{\headrulewidth}{0pt}  % 取消页眉的下划线
+
+% 定义首页页眉页脚
+\fancypagestyle{firstpage}{
+    \renewcommand{\headrule}{\hrule height 0.5pt \vspace{2pt}\hrule height 0.5pt}
+    \fancyhf{} %清空页眉页脚
+    \fancyhead[L]{
+        % 定义页眉
+            test1\\
+            \vspace{\vspaceLen}
+            est2
+    }
+
+    \fancyhead[C]{
+        % 定义页眉
+            test\\
+            \vspace{\vspaceLen}
+            test3
+    }
+    \fancyhead[R]{
+        % 定义页眉
+           dsf1\\
+            \vspace{\vspaceLen}
+            12321
+    }
+    
+    \fancyfoot[L]{
+        dfsafsdasdf
+    }
+    % \renewcommand\headrule{\vskip-1.7\headheight\hrulefill\vskip2pt\hrulefill}
+    % \setlength\headheight{13pt}
+}
+
+
+\fancypagestyle{normalstyle}{
+    \fancyhead{}
+    % 偶数页页眉页脚设置
+    \fancyhead[LE]{E123}
+    \fancyhead[CE]{E234}
+    \fancyhead[RE]{E345}
+
+    % 奇数页页眉页脚设置
+    \fancyhead[LO]{O1}
+    \fancyhead[CO]{O2}
+    \fancyhead[RO]{O3}    
+}

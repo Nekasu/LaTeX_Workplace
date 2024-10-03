@@ -6,6 +6,8 @@
 % 使用fancyhdr包设置不同页面的不同页眉页脚。
 \usepackage{fancyhdr}
 
+
+
 \usepackage{CJKutf8}
 %\usepackage{CJK}
 \usepackage{graphicx}
@@ -31,6 +33,9 @@
 \usepackage{captionhack}
 \usepackage{epstopdf}
 \usepackage[utf8]{inputenc}
+
+\usepackage{cite}
+\usepackage{hyperref} %使引用文献可以跳转的包
 %\usepackage{ccmap}
 %\CJKtilde
 %\usepackage{CJKpunct} 
@@ -39,9 +44,9 @@
 %===============================%
 
 %\firstfootname{ \quad \quad }
-\headevenname{\mbox{\quad} \hfill  \mbox{\zihao{-5}{\begin{CJK*}{UTF8}{song}计\quad \quad 算\quad \quad 机\quad \quad 学\quad \quad 报\end{CJK*}} \hspace {50mm} \mbox{\begin{CJK*}{UTF8}{song}2024 年\end{CJK*}}}}%
-\headoddname{\begin{CJK*}{UTF8}{song}? 期 \hfill
-作者姓名等：论文题目\end{CJK*}}%
+\headevenname{\mbox{\quad} \hfill  \mbox{\zihao{-5}{\begin{CJK*}{UTF8}{song}全国仿真创新应用大赛\end{CJK*}} \hspace {50mm} \mbox{\begin{CJK*}{UTF8}{song}2024 年\end{CJK*}}}}%
+\headoddname{\begin{CJK*}{UTF8}{song}第二届 \hfill
+人工智能与数字建模方向\end{CJK*}}%
 
 %footnote use of *
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
@@ -62,5 +67,5 @@
 \setlength\parindent{2em}
 %\renewcommand{\hth}{\begin{CJK*}{UTF8}{zhhei}}
 %\renewcommand{\htss}{\begin{CJK*}{UTF8}{song}}
-
+\bibliographystyle{IEEEtran} % 这里的 IEEEtran 文件的后缀为 .bst
 \input{zhwinfonts}

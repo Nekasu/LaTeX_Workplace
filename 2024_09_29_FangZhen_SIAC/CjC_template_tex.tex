@@ -17,7 +17,7 @@
 \input{mainbody/command.tex}
 
 \onecolumn % 该命令表示本页为单栏页面
-\thispagestyle{firstpage} %使用preamble/header_def.tex文件中定义的页眉
+\thispagestyle{firstpage} %为首页设置页眉。使用preamble/header_def.tex文件中定义的页眉
 
 \input{mainbody/title_abstract.tex} % 引入中英文标题、作者、作者单位、关键词
 
@@ -27,9 +27,9 @@
 %     % \linespread{1.15}
 
 
-\begin{CJK*}{UTF8}{song}
+\begin{CJK*}{UTF8}{fs}
 
-\twocolumn[]
+\twocolumn
 \input{mainbody/section1.tex}%添加主体
 \input{mainbody/thanking.tex}%添加致谢
 \input{mainbody/ref.tex}%添加参考文献
