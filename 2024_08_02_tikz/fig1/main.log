@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.26)  11 SEP 2024 16:00
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.26)  23 SEP 2024 21:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -440,7 +440,7 @@ Package fontspec Info: Font family 'FandolSong-Regular(0)' created for font
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
-(./main.aux)
+No file main.aux.
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -453,7 +453,7 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5.
- (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
+(c:/SoftWares/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 5.
@@ -550,8 +550,8 @@ File: ../pics/S_b.jpg Graphic file (type bmp)
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 17743 strings out of 476683
- 422580 string characters out of 5803164
+ 17741 strings out of 476683
+ 422562 string characters out of 5803164
  1866012 words of memory out of 5000000
  37689 multiletter control sequences out of 15000+600000
  515677 words of font info for 55 fonts, out of 8000000 for 9000
