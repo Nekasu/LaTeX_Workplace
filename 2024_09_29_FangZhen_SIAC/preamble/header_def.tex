@@ -1,0 +1,81 @@
+\def\vspaceLen{2mm}
+
+% 定义首页页眉页脚
+\fancypagestyle{firstpage}{
+    \fancyhf{} %清空页眉页脚
+    \fancyhead[L]{
+        % 定义页眉
+            \zihao{5-}\begin{CJK*}{UTF8}{song}第??卷\quad 第?期 \end{CJK*}\\
+            \vspace{\vspaceLen}
+            \zihao{5-}\begin{CJK*}{UTF8}{song}20??年?月 \end{CJK*}
+    }
+
+    \fancyhead[C]{
+        % 定义页眉
+            \zihao{5-}\begin{CJK*}{UTF8}{song}计\quad 算\quad 机\quad 学\quad 报\end{CJK*}\\
+            \vspace{\vspaceLen}
+            \zihao{5-}\begin{CJK*}{UTF8}{song}CHINESE JOURNAL OF COMPUTERS \end{CJK*}
+    }
+
+    \fancyhead[R]{
+        % 定义页眉
+            \zihao{5-}\begin{CJK*}{UTF8}{song}Vol. ??  No. ?\end{CJK*}\\
+            \vspace{\vspaceLen}
+            \zihao{5-}\begin{CJK*}{UTF8}{song}???. 20??\end{CJK*}
+    }
+    \fancyfoot[L]{
+        \begin{tabular}{p{0.05cm}p{16.15cm}}
+            \multicolumn{2}{l}{\rule[4mm]{40mm}{0.1mm}}\\[-3mm]
+            &
+            \begin{CJK*}{UTF8}{song}
+              此处填写页脚
+            \end{CJK*}
+        \end{tabular}
+    }
+}
+
+
+% 定义双数页页眉页脚
+\fancypagestyle{evenpages}{
+    \fancyhf{} %清空页眉页脚
+    \fancyhead[L]{
+        % 定义页眉
+            \zihao{5-}\begin{CJK*}{UTF8}{song}第??卷\quad 第?期 \end{CJK*}\\
+            \vspace{\vspaceLen}
+            \zihao{5-}\begin{CJK*}{UTF8}{song}20??年?月 \end{CJK*}
+    }
+
+    \fancyhead[C]{
+        % 定义页眉
+            \zihao{5-}\begin{CJK*}{UTF8}{song}计\quad 算\quad 机\quad 学\quad 报\end{CJK*}\\
+            \vspace{\vspaceLen}
+            \zihao{5-}\begin{CJK*}{UTF8}{song}CHINESE JOURNAL OF COMPUTERS \end{CJK*}
+    }
+
+    \fancyhead[R]{
+        % 定义页眉
+            \zihao{5-}\begin{CJK*}{UTF8}{song}Vol. ??  No. ?\end{CJK*}\\
+            \vspace{\vspaceLen}
+            \zihao{5-}\begin{CJK*}{UTF8}{song}???. 20??\end{CJK*}
+    }
+    \fancyfoot[L]{
+        \begin{tabular}{p{0.05cm}p{16.15cm}}
+            \multicolumn{2}{l}{\rule[4mm]{40mm}{0.1mm}}\\[-3mm]
+            &
+            \begin{CJK*}{UTF8}{song}
+              此处填写页脚
+            \end{CJK*}
+        \end{tabular}
+    }
+}
+
+% 偶数页页眉页脚设置
+\fancyhead[LE]{\zihao{5-}\begin{CJK*}{UTF8}{song}\thepage \end{CJK*}}
+\fancyhead[CE]{\zihao{5-}\begin{CJK*}{UTF8}{song}计 \quad 算 \quad 机 \quad 学 \quad 报 \end{CJK*}}
+\fancyfoot[RE]{\zihao{5-}\begin{CJK*}{UTF8}{song}2024 年\end{CJK*}}
+
+% 奇数页页眉页脚设置
+\fancyhead[LO]{\zihao{5-}\begin{CJK*}{UTF8}{song}? 期 \end{CJK*}}
+\fancyhead[CO]{\zihao{5-}\begin{CJK*}{UTF8}{song}作者姓名等：论文题目\end{CJK*}}
+\fancyfoot[RO]{\zihao{5-}\begin{CJK*}{UTF8}{song} \thepage \end{CJK*}}
+
