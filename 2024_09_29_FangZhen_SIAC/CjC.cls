@@ -89,10 +89,10 @@
 %%-------------------------\normalsize --------------------------%%
 %%---------------\large \Large \LARGE \huge \Huge ---------------%%
 %% Refer to ctex
-\def\tiny{\zihao{7-}}
-\def\scriptsize{\zihao{7}}
-\def\footnotesize{\zihao{6-}}
-\def\small{\zihao{6}}
+\def\tiny{\zihao{6-}}
+\def\scriptsize{\zihao{6}}
+\def\footnotesize{\zihao{5-}}
+\def\small{\zihao{5}}
 %原始模板中为\zihao{5}, 为了符合“全国仿真应用大赛”的格式要求, 故而修改为\zihao{4-}, 即小四号字体(12磅)
 % \def\normalsize{\zihao{5}} 
 \def\normalsize{\zihao{4-}}

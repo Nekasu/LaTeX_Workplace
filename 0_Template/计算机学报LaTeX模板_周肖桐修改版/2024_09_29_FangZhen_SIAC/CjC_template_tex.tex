@@ -1,0 +1,42 @@
+%这个是根据计算机学报官网下的LaTeX模板改的，主要修改内容：①把GBK编码改成了UTF-8编码。②引入zhwinfonts，用上传的字体文件实现了字体的使用。
+%现存的问题：①中文无法使用加粗功能，但是英文可以。解决方式1：使用黑体来凑合代替。解决方式2：在PDF编辑器里面一个一个加粗。②无法实现模板中所要求的每页脚注从1开始的要求。
+%如果您在使用该模板的过程中遇到问题，或者有对该模板的修改意见，请联系本人：微信PolarisRisingWar（诸神缄默不语），或者CSDN诸神缄默不语（PolarisRisingWar）
+
+\documentclass[10.5pt,compsoc,twocolumn]{CjC}
+
+%% ------------------- 导言区 ------------------- %%
+
+\input{preamble/preamble.tex}
+\input{preamble/header_def.tex}
+
+
+%% ------------------- 正文区 ------------------- %%
+\begin{document}
+
+% 引入一些定义
+\input{mainbody/command.tex}
+
+\onecolumn % 该命令表示本页为单栏页面
+\thispagestyle{firstpage} %为首页设置页眉。使用preamble/header_def.tex文件中定义的页眉
+
+\input{mainbody/title_abstract.tex} % 引入中英文标题、作者、作者单位、关键词
+
+% \begin{strip}
+% \vspace {-13mm}
+% \end{strip}
+%     % \linespread{1.15}
+
+
+\begin{CJK*}{UTF8}{fs}
+
+\twocolumn
+\input{mainbody/section1.tex}%添加主体
+\input{mainbody/thanking.tex}%添加致谢
+\input{mainbody/ref.tex}%添加参考文献
+\input{mainbody/appendix.tex}%添加附录
+\input{mainbody/background.tex}%添加项目与背景介绍
+
+\end{CJK*}
+\end{document}
+
+

@@ -5,6 +5,7 @@
 \documentclass[10.5pt,compsoc,twocolumn]{CjC}
 
 %% ------------------- 导言区 ------------------- %%
+\usepackage{caption}
 
 \input{preamble/preamble.tex}
 \input{preamble/header_def.tex}
@@ -12,7 +13,6 @@
 
 %% ------------------- 正文区 ------------------- %%
 \begin{document}
-
 % 引入一些定义
 \input{mainbody/command.tex}
 
@@ -26,15 +26,18 @@
 % \end{strip}
 %     % \linespread{1.15}
 
-
-\begin{CJK*}{UTF8}{fs}
-
 \twocolumn
-\input{mainbody/section1.tex}%添加主体
-\input{mainbody/thanking.tex}%添加致谢
+\begin{CJK*}{UTF8}{fs}
+% \input{mainbody/section1.tex}%添加主体
+\input{sections/1_introduction.tex} %添加引言
+\input{sections/2_related_work.tex} %添加相关工作
+\input{sections/3_method.tex}%添加方法论
+\input{sections/4_experiments.tex}%添加实验
+\input{sections/5_conclusion.tex}%添加结论
+% \input{mainbody/thanking.tex}%添加致谢
 \input{mainbody/ref.tex}%添加参考文献
-\input{mainbody/appendix.tex}%添加附录
-\input{mainbody/background.tex}%添加项目与背景介绍
+% \input{mainbody/appendix.tex}%添加附录
+% \input{mainbody/background.tex}%添加项目与背景介绍
 
 \end{CJK*}
 \end{document}

@@ -1,4 +1,5 @@
 \relax 
+\providecommand{\transparent@use}[1]{}
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
@@ -14,13 +15,162 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \bibstyle{IEEEtran}
-\citation{bastiaanssenRemoteSensingIrrigated2000}
-\@writefile{toc}{\contentsline {section}{\numberline {1}一级标题*字体为4号黑体*标题1}{2}{section.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}二级标题 *字体为5号黑体*标题2}{2}{subsection.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.1}三级标题 *字体为5号宋体*标题3}{2}{subsubsection.1.1.1}\protected@file@percent }
+\citation{39dai2015boxsup,40zhang2021affinity}
+\citation{41lin2016scribblesup}
+\citation{03ru2023token,12xu2022multi}
+\citation{01zhou2016learning}
+\citation{02dosovitskiy2020image}
+\citation{03ru2023token,12xu2022multi,13ru2022learning}
+\citation{12xu2022multi}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces SS-EPA整体框架。SS-EPA首先将输入图像分成多个补丁，每个补丁线性转换成补丁令牌，并连接一个类别令牌。ViT输出令牌一方面经过重拍列和$1\times 1$卷积生成初始CAM，并由分类层输出分类分数。另一方面经过分割decoder生成语义分割结果。然后从ViT中提取多头自注意力图，并通过HAAF模块进行增强，获取增强补丁语义亲和力。最后通过增强补丁语义亲和力对初始CAM进行优化，并生成伪标签用于监督分割任务。\relax }}{2}{figure.caption.1}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig1}{{\caption@xref {fig1}{ on input line 81}}{2}{三级标题 *字体为5号宋体*标题3}{figure.caption.1}{}}
+\newlabel{fig1}{{1}{2}{SS-EPA整体框架。SS-EPA首先将输入图像分成多个补丁，每个补丁线性转换成补丁令牌，并连接一个类别令牌。ViT输出令牌一方面经过重拍列和$1\times 1$卷积生成初始CAM，并由分类层输出分类分数。另一方面经过分割decoder生成语义分割结果。然后从ViT中提取多头自注意力图，并通过HAAF模块进行增强，获取增强补丁语义亲和力。最后通过增强补丁语义亲和力对初始CAM进行优化，并生成伪标签用于监督分割任务。\relax }{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}引言}{2}{section.1}\protected@file@percent }
+\citation{03ru2023token}
+\citation{42ahn2018learning}
+\citation{04wei2017object}
+\citation{05chang2020weakly}
+\citation{06wang2020self}
+\citation{07li2021group}
+\citation{08xie2022clims,09lin2023clip}
+\citation{10radford2021learning}
+\@writefile{toc}{\contentsline {section}{\numberline {2}相关技术}{3}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}图像级弱监督语义分割}{3}{subsection.2.1}\protected@file@percent }
+\citation{02dosovitskiy2020image}
+\citation{11gao2021ts}
+\citation{12xu2022multi}
+\citation{13ru2022learning}
+\citation{03ru2023token}
+\citation{12xu2022multi}
+\citation{13ru2022learning}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 补丁语义亲和力获取流程图\relax }}{4}{figure.caption.2}\protected@file@percent }
+\newlabel{fig2}{{2}{4}{补丁语义亲和力获取流程图\relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}弱监督语义分割中的ViT}{4}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}方法}{4}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}概述}{4}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}SS-EPA框架}{4}{subsection.3.2}\protected@file@percent }
+\newlabel{section3.2}{{3.2}{4}{SS-EPA框架}{subsection.3.2}{}}
+\citation{14vaswani2017attention}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}头平均注意力融合增强模块（HAAF）}{5}{subsection.3.3}\protected@file@percent }
+\newlabel{section3.3_HAAF}{{3.3}{5}{头平均注意力融合增强模块（HAAF）}{subsection.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces HAAF结构图\relax }}{5}{figure.caption.3}\protected@file@percent }
+\newlabel{fig3}{{3}{5}{HAAF结构图\relax }{figure.caption.3}{}}
+\citation{13ru2022learning,15tang2018regularized,16zhang2021dynamic,17zhang2020reliability}
+\citation{18everingham2010pascal}
+\citation{06wang2020self,12xu2022multi,13ru2022learning,03ru2023token}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 增强补丁语义亲和力获取流程图\relax }}{6}{figure.caption.4}\protected@file@percent }
+\newlabel{fig4}{{4}{6}{增强补丁语义亲和力获取流程图\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}模型训练与损失函数}{6}{subsection.3.4}\protected@file@percent }
+\newlabel{equation_8}{{8}{6}{}{equation.3.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}实验}{6}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}实验设置}{6}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}数据集}{6}{subsubsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}评估指标}{6}{subsubsection.4.1.2}\protected@file@percent }
+\citation{19deng2009imagenet}
+\citation{02dosovitskiy2020image}
+\citation{20chen2017deeplab}
+\citation{21loshchilov2017decoupled}
+\citation{23rossetti2022max}
+\citation{12xu2022multi}
+\citation{24chen2023extracting}
+\citation{26zhao2024sfc}
+\citation{25murugesan2024prompting}
+\citation{17zhang2020reliability}
+\citation{27araslanov2020single}
+\citation{28pan2022learning}
+\citation{13ru2022learning}
+\citation{29wu2024masked}
+\citation{03ru2023token}
+\citation{03ru2023token}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 生成CAM可视化结果，从上到下依次为输入图片（input），真值标签（GT），ToCo生成CAM，SS-EPA生成CAM（不使用HAAF），SS-EPA生成CAM（使用HAAF）。红框部分为显著提升区域。\relax }}{7}{figure.caption.5}\protected@file@percent }
+\newlabel{fig5}{{5}{7}{生成CAM可视化结果，从上到下依次为输入图片（input），真值标签（GT），ToCo生成CAM，SS-EPA生成CAM（不使用HAAF），SS-EPA生成CAM（使用HAAF）。红框部分为显著提升区域。\relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}实现细节}{7}{subsubsection.4.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}实验结果}{7}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}CAM与伪标签}{7}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 伪标签生成定量评估（MS：Multi Scale，CRF：dense CRF）（单位mIoU\%）\relax }}{7}{table.caption.6}\protected@file@percent }
+\newlabel{table1}{{1}{7}{伪标签生成定量评估（MS：Multi Scale，CRF：dense CRF）（单位mIoU\%）\relax }{table.caption.6}{}}
+\citation{33chen2022class}
+\citation{23rossetti2022max}
+\citation{08xie2022clims}
+\citation{34lee2022threshold}
+\citation{30wu2021embedded}
+\citation{26zhao2024sfc}
+\citation{25murugesan2024prompting}
+\citation{12xu2022multi}
+\citation{31jiang2022l2g}
+\citation{35rong2023boundary}
+\citation{32zhou2022regional}
+\citation{24chen2023extracting}
+\citation{36cheng2023out}
+\citation{27araslanov2020single}
+\citation{27araslanov2020single}
+\citation{13ru2022learning}
+\citation{28pan2022learning}
+\citation{29wu2024masked}
+\citation{03ru2023token}
+\citation{22chen2014semantic}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 生成伪标签的可视化结果，从上到下依次为分割真值标签（GT），ToCo分割结果（不加CRF），ToCo分割结果（加CRF），SS-EPA分割结果（不加CRF），SS-EPA分割结果（加CRF）。红框部分为显著提升区域。\relax }}{8}{figure.caption.7}\protected@file@percent }
+\newlabel{fig6}{{6}{8}{生成伪标签的可视化结果，从上到下依次为分割真值标签（GT），ToCo分割结果（不加CRF），ToCo分割结果（加CRF），SS-EPA分割结果（不加CRF），SS-EPA分割结果（加CRF）。红框部分为显著提升区域。\relax }{figure.caption.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 分割结果定量评估（单位mIoU\%）\relax }}{8}{table.caption.8}\protected@file@percent }
+\newlabel{table2}{{2}{8}{分割结果定量评估（单位mIoU\%）\relax }{table.caption.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}分割结果}{8}{subsubsection.4.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces 分割结果的可视化结果，左半部分为VOC验证集（Val），从上到下依次为输入图片（input），分割真值标签（GT），ToCo分割结果，SS-EPA分割结果。右半部分为VOC测试集（Test），从上到下依次为输入图片（input），ToCo分割结果，SS-EPA分割结果。红框部分为显著提升区域。\relax }}{9}{figure.caption.9}\protected@file@percent }
+\newlabel{fig7}{{7}{9}{分割结果的可视化结果，左半部分为VOC验证集（Val），从上到下依次为输入图片（input），分割真值标签（GT），ToCo分割结果，SS-EPA分割结果。右半部分为VOC测试集（Test），从上到下依次为输入图片（input），ToCo分割结果，SS-EPA分割结果。红框部分为显著提升区域。\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}消融实验}{9}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}补丁语义亲和力分析}{9}{subsubsection.4.3.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces 分割结果定量评估（单位mIoU\%）\relax }}{9}{table.caption.10}\protected@file@percent }
+\newlabel{table3}{{3}{9}{分割结果定量评估（单位mIoU\%）\relax }{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}HAAF分析}{9}{subsubsection.4.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces SS-EPA计算资源占用实验结果评估（单位GB）\relax }}{9}{table.caption.11}\protected@file@percent }
+\newlabel{table4}{{4}{9}{SS-EPA计算资源占用实验结果评估（单位GB）\relax }{table.caption.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Backbone分析}{9}{subsubsection.4.3.3}\protected@file@percent }
+\citation{37li2022efficientformer}
+\citation{38liu2021swin}
 \bibdata{bibliograpy}
-\bibcite{bastiaanssenRemoteSensingIrrigated2000}{1}
-\newlabel{tab1}{{\caption@xref {tab1}{ on input line 102}}{3}{三级标题 *字体为5号宋体*标题3}{table.caption.2}{}}
-\gdef \@abspage@last{3}
+\bibcite{39dai2015boxsup}{1}
+\bibcite{40zhang2021affinity}{2}
+\bibcite{41lin2016scribblesup}{3}
+\bibcite{03ru2023token}{4}
+\bibcite{12xu2022multi}{5}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces  SS-EPA不同Backbone实验结果评估（单位mIoU\%）\relax }}{10}{table.caption.12}\protected@file@percent }
+\newlabel{table5}{{5}{10}{SS-EPA不同Backbone实验结果评估（单位mIoU\%）\relax }{table.caption.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}结论}{10}{section.5}\protected@file@percent }
+\bibcite{01zhou2016learning}{6}
+\bibcite{02dosovitskiy2020image}{7}
+\bibcite{13ru2022learning}{8}
+\bibcite{42ahn2018learning}{9}
+\bibcite{04wei2017object}{10}
+\bibcite{05chang2020weakly}{11}
+\bibcite{06wang2020self}{12}
+\bibcite{07li2021group}{13}
+\bibcite{08xie2022clims}{14}
+\bibcite{09lin2023clip}{15}
+\bibcite{10radford2021learning}{16}
+\bibcite{11gao2021ts}{17}
+\bibcite{14vaswani2017attention}{18}
+\bibcite{15tang2018regularized}{19}
+\bibcite{16zhang2021dynamic}{20}
+\bibcite{17zhang2020reliability}{21}
+\bibcite{18everingham2010pascal}{22}
+\bibcite{19deng2009imagenet}{23}
+\bibcite{20chen2017deeplab}{24}
+\bibcite{21loshchilov2017decoupled}{25}
+\bibcite{23rossetti2022max}{26}
+\bibcite{24chen2023extracting}{27}
+\bibcite{26zhao2024sfc}{28}
+\bibcite{25murugesan2024prompting}{29}
+\bibcite{27araslanov2020single}{30}
+\bibcite{28pan2022learning}{31}
+\bibcite{29wu2024masked}{32}
+\bibcite{22chen2014semantic}{33}
+\bibcite{33chen2022class}{34}
+\bibcite{34lee2022threshold}{35}
+\bibcite{30wu2021embedded}{36}
+\bibcite{31jiang2022l2g}{37}
+\bibcite{35rong2023boundary}{38}
+\bibcite{32zhou2022regional}{39}
+\bibcite{36cheng2023out}{40}
+\bibcite{37li2022efficientformer}{41}
+\bibcite{38liu2021swin}{42}
+\gdef\svg@ink@ver@settings{{\m@ne }{inkscape}{\m@ne }}
+\gdef \@abspage@last{14}

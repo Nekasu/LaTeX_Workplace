@@ -1,10 +1,11 @@
 % change the look of the captions
-\renewcommand{\fnum@figure}{{\zihao{-5}\textbf{Fig.~\thefigure}}}
-\renewcommand{\fnum@table}{{\zihao{-5}\textbf{Table \thetable}}}
+\renewcommand{\fnum@figure}{{\zihao{5-}图~\thefigure}}
+\renewcommand{\fnum@table}{{\zihao{5-}表~\thetable}}
 \let\ocaption\caption
-\renewcommand{\caption}[2][]{\ocaption[#1]{{\zihao{-5}\textbf{#2}}}}
+\renewcommand{\caption}[2][]{\ocaption[#1]{{\zihao{5-}\textbf{#2}}}}
 \renewcommand{\@makecaption}[2]{%
 \vskip\abovecaptionskip%
+\zihao{5-}
 \sbox\@tempboxa{#1\quad #2}%
 \ifdim \wd\@tempboxa >\hsize
 #1\quad #2\par%

@@ -1,0 +1,140 @@
+{%大括号用于限制\centering命令的范围
+  \centering
+  \vspace {11mm}
+  % 定义标题
+  \begin{CJK*}{UTF8}{zhhei}
+  {
+    \zihao{2} SS-EPA ：基于补丁语义亲和力增强的单阶段弱监督语义分割方法
+  }
+  \end{CJK*}
+
+  \vskip 5mm
+
+  % 定义作者
+  {
+    \centering
+    \zihao{3}
+    \begin{CJK*}{UTF8}{song}
+      姜景杰$^{1)}$\quad  周肖桐$^{1)}$ \quad 李轩慧$^{1)}$ \quad 张轩豪$^{1)}$ \quad 杨钧茗$^{1)}$
+    \end{CJK*}
+  }
+
+  \vspace {5mm}
+
+  % 定义中文作者单位1
+  \zihao{6}{\begin{CJK*}{UTF8}{song}
+  $^{1)}$( 南京信息工程大学\quad 计算机学院、网络空间安全学院\quad 南京\quad 中国 \quad 210044)
+  \end{CJK*}}
+
+  % \vskip 命令在 LaTeX 中用于在垂直方向上插入可调节的空间。它可以在文档中增加或减少行间距、段落间距，或在图形、表格和文本之间插入额外的空白。
+  \vskip 5mm
+}
+
+{%大括号用于限制\centering命令的范围
+  \centering
+  \begin{tabular}{p{160mm}}
+    % 定义中文摘要
+    \zihao{5-}{
+      \setlength{\baselineskip}{16pt}
+      \selectfont{
+        \noindent\begin{CJK*}{UTF8}{zhhei}摘\quad 要\quad \end{CJK*} 
+        \begin{CJK*}{UTF8}{fs}
+          图像级弱监督语义分割（Image Level Weakly Supervised Semantic Segmentation，Image Level WSSS）通常利用类激活图（Class Activation Map，CAM）来生成伪标签（Pseudo Label）。先前WSSS方法无论使用CNN还是Transformer框架，多数都采用多阶段方法，需要分阶段地训练模型和采取不同的训练策略，多个阶段间的复杂交互较为繁琐。且先前的方法通常直接通过ViT中的语义亲和力优化CAM，对计算资源要求较高，还可能会给CAM带来错误和误导。本文提出了一种名为SS-EPA（Single Stage WSSS with Enhaced Patch Affinity）的单阶段WSSS方法，集成了端到端式的多头自注意力CAM优化方法，利用ViT中的补丁语义亲和力（Patch Affinity）信息，对从补丁令牌生成的初始CAM执行优化。为了进一步解决语义亲和力中噪声、错误和注意力图过于庞大的问题，本文提出了头平均注意力融合增强模块（Head Average Attention Fusion，HAAF）。HAAF通过对ViT中不同头的注意力权重执行平均操作来聚合语义信息，去除头重复关注、包含无效信息的冗余问题，提取更加精简有效的信息，极大减少计算资源占用。在Pascal VOC 2012数据集上的实验表明，本文所提方法可以显著优化生成的CAM和伪标签，语义分割性能在验证集和测试集上分别达到了72.4\%和73.3\%。相较先前的单阶段方法，SS-EPA误分类的概率更小，且有更加完整和准确的对象边界，充分验证了本文方法的有效性。
+        \end{CJK*}\par
+      }
+    }\\[2mm]
+    
+    % 定义中文关键词
+    \zihao{5-}{
+      \noindent
+      \begin{CJK*}{UTF8}{zhhei}
+        关键词\end{CJK*} \quad \begin{CJK*}{UTF8}{song}{计算机视觉；语义分割；弱监督学习；Transformer；语义亲和力}
+      \end{CJK*}
+    }\\[2mm]
+
+    % % 定义中图法分类号、TP、DOI号
+    % \zihao{5-}{
+    %   \begin{CJK*}{UTF8}{zhhei} 中图法分类号 \end{CJK*}	
+    %   \begin{CJK*}{UTF8}{song} TP \end{CJK*}
+    %   \rm{\quad \quad \quad}
+    %   \begin{CJK*}{UTF8}{zhhei} DOI号: \end{CJK*}
+    %   \begin{CJK*}{UTF8}{song}
+    % *投稿时不提供DOI号\end{CJK*}
+    % }
+  \end{tabular}
+}
+
+\vskip 7mm
+
+% 英文标题
+\begin{center}
+  \zihao{3}{
+    {
+      \begin{CJK*}{UTF8}{zhhei}
+        Title *（中英文题目一致）字体为4号Times New Roman,加粗* Title
+      \end{CJK*}
+    }
+  }\\
+
+  % 英文作者
+  \vspace {5mm}
+  \zihao{5}{ {
+    \begin{CJK*}{UTF8}{zhhei}
+      NAME Name-Name$^{1)}$ NAME Name$^{2)}$ NAME Name-Name$^{3)}$ *字体为5号Times new Roman*Name
+    \end{CJK*}
+  }}\\
+
+  \vspace {2mm}
+  % 英文作者单位1
+  \zihao{6}{
+    \begin{CJK*}{UTF8}{zhhei}{$^{1)}$(Department of ****, University, City ZipCode, China) *字体为6号Times new Roman* Depart.Correspond}\end{CJK*}
+  }
+
+  % 英文作者单位2
+  \zihao{6}{
+    \begin{CJK*}{UTF8}{zhhei}{$^{2)}$(Department of ****, University, City ZipCode)*中国不写国家名*}\end{CJK*}
+  }
+
+  % 英文作者单位3
+  \zihao{6}{
+    \begin{CJK*}{UTF8}{zhhei}{$^{3)}$(Department of ****, University, City ZipCode, country)*外国写国家名*}\end{CJK*}
+    }
+
+\end{center}
+
+
+\begin{tabular}{p{160mm}}
+  % 英文摘要标题：Abstract
+  \zihao{5}{
+    \setlength{\baselineskip}{18pt}
+    \selectfont{
+      {\bf Abstract}\quad
+      \begin{CJK*}{UTF8}{zhhei}(\textbf{500英文单词，内容包含中文摘要的内容}).字体为Times new Roman,字号5号* Abstract\end{CJK*}
+      \par
+    }
+  }\\
+
+  % 英文摘要内容
+  \setlength{\baselineskip}{18pt}
+  \selectfont{
+    \zihao{5}{
+      \noindent Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred. and Tables, create a new break line and paste the resized artworks where desired. Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred. All Schemes, Equations, Figures, and Tables should be mentioned in the text consecutively and numbered with Arabic numerals, and appear below where they are mentioned for the first time in the main text. To insert Schemes, Equations, Figures, and Tables, create a new break line and paste the resized artworks where desired. Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred.Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred. and Tables, create a new break line and paste the resized artworks where desired. Do not modify the amount of space before and after the artworks. One- or two-column format artworks are preferred. All Schemes, Equations, Figures, and Tables should be mentioned in the text consecutively and numbered with Arabic numerals, and appear below where they are mentioned for the first time in the main text.
+
+      \vspace {5mm}
+
+      % 英文关键词
+      {\bf Keywords}\quad
+      \begin{CJK*}{UTF8}{zhhei}
+        中文关键字与英文关键字对应且一致，\textbf{不要用英文缩写}); key word; key word; key word* *字体为5号Times new Roman * Key words
+      \end{CJK*}
+    }
+    \par
+  }
+\end{tabular}
+
+% \setlength{\tabcolsep}{2pt}
+
+
+
+\clearpage \clearpage
+\newpage

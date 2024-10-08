@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.21)  4 OCT 2024 01:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.21)  4 OCT 2024 22:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -11,15 +11,15 @@ Document Class: book 2022/07/02 v1.4n Standard LaTeX document class
 (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/base/bk10.clo
 File: bk10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count181
-\c@chapter=\count182
-\c@section=\count183
-\c@subsection=\count184
-\c@subsubsection=\count185
-\c@paragraph=\count186
-\c@subparagraph=\count187
-\c@figure=\count188
-\c@table=\count189
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
@@ -34,13 +34,10 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@erf=\skip56
 \f@nch@O@olf=\skip57
 \f@nch@O@orf=\skip58
-) (./header_def.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2023-01-16 L3 backend support: XeTeX
-\g__graphics_track_int=\count190
+) (./header_def.tex) (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count194
 \l__pdf_internal_box=\box51
-\g__pdf_backend_object_int=\count191
-\g__pdf_backend_annotation_int=\count192
-\g__pdf_backend_link_int=\count193
 ) (./CjC_template_tex.aux)
 \openout1 = `CjC_template_tex.aux'.
 
@@ -53,12 +50,6 @@ LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 11.
- (d:/PardoNekasu/Software/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
-File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-)
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
@@ -67,21 +58,27 @@ LaTeX Font Info:    ... okay on input line 11.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 31.34058pt, for example:
-(fancyhdr)                \setlength{\headheight}{31.34058pt}.
+(fancyhdr)                Make it at least 31.23502pt, for example:
+(fancyhdr)                \setlength{\headheight}{31.23502pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-19.34058pt}.
+(fancyhdr)                \addtolength{\topmargin}{-19.23502pt}.
 
-[1
+[1{d:/PardoNekasu/Software/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ] [2] [3] (./CjC_template_tex.aux) ) 
 Here is how much of TeX's memory you used:
- 680 strings out of 476683
- 12860 string characters out of 5798314
- 1843012 words of memory out of 5000000
- 20998 multiletter control sequences out of 15000+600000
- 512295 words of font info for 33 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 33i,11n,55p,151b,292s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 644 strings out of 476025
+ 11456 string characters out of 5783536
+ 1850382 words of memory out of 5000000
+ 21171 multiletter control sequences out of 15000+600000
+ 512287 words of font info for 32 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 34i,11n,55p,269b,292s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<d:/PardoNekasu/Software/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on CjC_template_tex.pdf (3 pages, 13943 bytes).
+PDF statistics:
+ 19 PDF objects out of 1000 (max. 8388607)
+ 11 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on CjC_template_tex.pdf (3 pages).
