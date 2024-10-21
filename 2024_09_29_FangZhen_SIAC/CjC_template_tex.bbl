@@ -116,9 +116,6 @@ J.~Pan, P.~Zhu, K.~Zhang, B.~Cao, Y.~Wang, D.~Zhang, J.~Han, and Q.~Hu, ``Learni
 \bibitem{29wu2024masked}
 F.~Wu, J.~He, Y.~Yin, Y.~Hao, G.~Huang, and L.~Cheng, ``Masked collaborative contrast for weakly supervised semantic segmentation,'' in \emph{Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision}, 2024, pp. 862--871.
 
-\bibitem{22chen2014semantic}
-L.-C. Chen, ``Semantic image segmentation with deep convolutional nets and fully connected crfs,'' \emph{arXiv preprint arXiv:1412.7062}, 2014.
-
 \bibitem{33chen2022class}
 Z.~Chen, T.~Wang, X.~Wu, X.-S. Hua, H.~Zhang, and Q.~Sun, ``Class re-activation maps for weakly-supervised semantic segmentation,'' in \emph{Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, 2022, pp. 969--978.
 
@@ -139,6 +136,9 @@ T.~Zhou, M.~Zhang, F.~Zhao, and J.~Li, ``Regional semantic contrast and aggregat
 
 \bibitem{36cheng2023out}
 Z.~Cheng, P.~Qiao, K.~Li, S.~Li, P.~Wei, X.~Ji, L.~Yuan, C.~Liu, and J.~Chen, ``Out-of-candidate rectification for weakly supervised semantic segmentation,'' in \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, 2023, pp. 23\,673--23\,684.
+
+\bibitem{22chen2014semantic}
+L.-C. Chen, ``Semantic image segmentation with deep convolutional nets and fully connected crfs,'' \emph{arXiv preprint arXiv:1412.7062}, 2014.
 
 \bibitem{37li2022efficientformer}
 Y.~Li, G.~Yuan, Y.~Wen, J.~Hu, G.~Evangelidis, S.~Tulyakov, Y.~Wang, and J.~Ren, ``Efficientformer: Vision transformers at mobilenet speed,'' \emph{Advances in Neural Information Processing Systems}, vol.~35, pp. 12\,934--12\,949, 2022.
