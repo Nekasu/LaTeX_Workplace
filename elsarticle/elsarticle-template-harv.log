@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.21)  21 OCT 2024 20:50
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.21)  21 OCT 2024 21:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -186,8 +186,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
 LaTeX Font Info:    ... okay on input line 52.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
 LaTeX Font Info:    ... okay on input line 52.
-File: example-image-a.pdf Graphic file (type pdf)
-<use example-image-a.pdf>
+File: fig/overview.pdf Graphic file (type pdf)
+<use fig/overview.pdf>
  [1
 
 ] [2
@@ -213,12 +213,12 @@ File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
  [2] [3] (./elsarticle-template-harv.aux) ) 
 Here is how much of TeX's memory you used:
- 3370 strings out of 476683
- 51186 string characters out of 5798314
+ 3379 strings out of 476683
+ 51365 string characters out of 5798314
  1850012 words of memory out of 5000000
- 23590 multiletter control sequences out of 15000+600000
+ 23597 multiletter control sequences out of 15000+600000
  518703 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 70i,8n,76p,1113b,325s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,8n,76p,1113b,336s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on elsarticle-template-harv.pdf (5 pages).
