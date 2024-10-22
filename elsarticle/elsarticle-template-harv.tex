@@ -16,7 +16,7 @@
 %% 
 %% Template article for Elsevier's document class `elsarticle'
 %% with harvard style bibliographic references
-\documentclass[preprint,12pt,authoryear]{elsarticle}
+\documentclass[preprint,12pt]{elsarticle}
 
 %% Use the option review to obtain double line spacing
 %% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
@@ -42,8 +42,8 @@
 %% \usepackage{amsthm}
 
 \usepackage{cite} %使用\cite{}命令所必须的包
-\usepackage[hidelinks]{hyperref} %使引用文献可以跳转的包
-
+% \usepackage[hidelinks]{hyperref} %使引用文献可以跳转的包
+\usepackage{hyperref}
 %% The lineno packages adds line numbers. Start line numbering with
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
 %% for the whole article with \linenumbers.
@@ -133,7 +133,7 @@ Image style transfer is a technique that combines the content of a real photogra
     \centering%% For centre alignment of image.
     \includegraphics[width=0.95\textwidth]{fig/overview.pdf}
     %% Use \caption command for figure caption and label.
-    \caption{Overview and Category of Style Transfer}\label{fig0}
+    \caption{Overview and Category of Style Transfer}\label{fig1}
     %% https://en.wikibooks.org/wiki/LaTeX/Importing_Graphics#Importing_external_graphics
     \end{figure}
   \end{graphicalabstract}
@@ -218,7 +218,7 @@ Example citation, See \citet{lamport94}.
 
 \end{thebibliography}
 
-\bibliographystyle{elsarticle-harv}
+\bibliographystyle{elsarticle-num}
 \bibliography{references}
 
 \end{document}
