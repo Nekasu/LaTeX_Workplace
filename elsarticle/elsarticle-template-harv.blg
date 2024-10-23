@@ -3,48 +3,57 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: elsarticle-template-harv.aux
 The style file: elsarticle-num.bst
 Database file #1: references.bib
-Warning--I didn't find a database entry for "lamport94"
 Warning--can't use both volume and number fields in 03li2023frequency
 Warning--can't use both volume and number fields in 10liu2021self
-You've used 33 entries,
+Warning--there's a number but no volume in 30cross1983markov
+Warning--there's a number but no volume in 31chellappa1985texture
+Warning--can't use both volume and number fields in 41jing2020dynamic
+Warning--can't use both volume and number fields in 47wu2023preserving
+Warning--can't use both volume and number fields in 60zhang2024artbank
+Warning--can't use both volume and number fields in 63ahn2024dreamstyler
+Warning--can't use both volume and number fields in 71kwon2024aesfa
+Warning--can't use both volume and number fields in 72wang2023microast
+Warning--can't use both volume and number fields in 78lin2023adacm
+Warning--can't use both volume and number fields in 80cheng2023user
+You've used 79 entries,
             2952 wiz_defined-function locations,
-            835 strings with 11735 characters,
-and the built_in function-call counts, 14259 in all, are:
-= -- 1353
-> -- 456
-< -- 24
-+ -- 174
-- -- 141
-* -- 833
-:= -- 1742
-add.period$ -- 33
-call.type$ -- 33
-change.case$ -- 33
+            1051 strings with 20928 characters,
+and the built_in function-call counts, 35685 in all, are:
+= -- 3365
+> -- 1225
+< -- 66
++ -- 461
+- -- 382
+* -- 2158
+:= -- 4345
+add.period$ -- 79
+call.type$ -- 79
+change.case$ -- 79
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 571
-empty$ -- 1600
-format.name$ -- 173
-if$ -- 3790
+cite$ -- 91
+duplicate$ -- 1414
+empty$ -- 3941
+format.name$ -- 459
+if$ -- 9446
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 33
-newline$ -- 107
-num.names$ -- 33
-pop$ -- 286
+int.to.str$ -- 79
+missing$ -- 79
+newline$ -- 245
+num.names$ -- 79
+pop$ -- 678
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1053
+skip$ -- 2615
 stack$ -- 0
-substring$ -- 1001
-swap$ -- 257
-text.length$ -- 24
+substring$ -- 2525
+swap$ -- 659
+text.length$ -- 66
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
-while$ -- 108
-width$ -- 35
-write$ -- 295
-(There were 3 warnings)
+warning$ -- 12
+while$ -- 268
+width$ -- 81
+write$ -- 708
+(There were 12 warnings)

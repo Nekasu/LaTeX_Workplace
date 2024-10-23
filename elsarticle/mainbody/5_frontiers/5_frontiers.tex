@@ -1,21 +1,21 @@
 \section{Frontiers and Challenges}
 
-By combining the artistic style of one image with the content of another, style transfer technology has had a profound impact on areas such as image editing, film production, and computer art (e.g., [15,20,74]).
+By combining the artistic style of one image with the content of another, style transfer technology has had a profound impact on areas such as image editing, film production, and computer art (e.g., \citep{05ke2023neural,20guan2022cdtnet,77wang2023deepvecfont}).
 However, despite impressive progress, the field of style transfer still faces a series of challenges. These issues not only involve improvements in image quality and visual realism but also include challenges related to algorithm efficiency, generalization, and interpretability. This section focuses on the unresolved problems in the field, aiming to provide valuable guidance and inspiration for future research.
 
 \subsection{Evaluation Criteria}
 
-Currently, there is a wide variety of evaluation criteria in the field of style transfer, with no unified objective standard. For example, in 2023 papers, Wu et al. [48] used Deception Rate, FID, and LPIPS as evaluation metrics; Wang et al. [69] employed time and memory consumption, SSIM, and Style Loss; Li et al. [75] utilized SSIM, LPIPS, Content Loss, and Style Loss; Cheng et al. [73] adopted Pixel Distance, LPIPS, and Deception Rate. This diversity and lack of standardization in evaluation metrics make it difficult for researchers to compare the performance of different models across various aspects.
+Currently, there is a wide variety of evaluation criteria in the field of style transfer, with no unified objective standard. For example, in 2023 papers, Wu et al.\citep{47wu2023preserving} used Deception Rate, FID, and LPIPS as evaluation metrics; Wang et al.\citep{72wang2023microast} employed time and memory consumption, SSIM, and Style Loss; Li et al.\citep{78lin2023adacm} utilized SSIM, LPIPS, Content Loss, and Style Loss; Cheng et al.\citep{80cheng2023user} adopted Pixel Distance, LPIPS, and Deception Rate. This diversity and lack of standardization in evaluation metrics make it difficult for researchers to compare the performance of different models across various aspects.
 
 Additionally, since style transfer often generates images with artistic qualities, researchers have tried to obtain more objective evaluations through user surveys. According to our statistics, almost all publications in the field of style transfer since 2019 involved questionnaires to compare current methods with previous ones.
 
-To discuss the effectiveness of this approach, Jing et al. [1] investigated the impact of age and profession on aesthetic judgment. They asked eight participants with the same profession but different ages (four males and four females) to rate each stylized image. The experimental results (insert image) revealed that even with the same stylized output, different observers of the same profession and age still gave significantly different ratings.
+To discuss the effectiveness of this approach, Jing et al.\citep{01jing2019neural} investigated the impact of age and profession on aesthetic judgment. They asked eight participants with the same profession but different ages (four males and four females) to rate each stylized image. The experimental results (insert image) revealed that even with the same stylized output, different observers of the same profession and age still gave significantly different ratings.
 
 As a result, there is currently no widely accepted evaluation standard in the field of style transfer. Considering that the evaluation of artistic images is influenced by aesthetic ability, it may be necessary to establish a convincing evaluation standard with the assistance of art professionals.
 
 \subsection{Interpretability}
 
-Current style transfer tasks are often based on deep learning and neural networks. Some results appear more like "discoveries" rather than the construction of an interpretable process for style transfer [23]. This makes the style transfer process uncontrollable, potentially leading to results that do not meet expectations.
+Current style transfer tasks are often based on deep learning and neural networks. Some results appear more like "discoveries" rather than the construction of an interpretable process for style transfer\citep{23ulyanov2016texture}. This makes the style transfer process uncontrollable, potentially leading to results that do not meet expectations.
 
 \subsection{Deformation}
 
