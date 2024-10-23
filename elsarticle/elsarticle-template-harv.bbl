@@ -233,13 +233,13 @@ R.~Zhang, P.~Isola, A.~A. Efros, E.~Shechtman, O.~Wang, The unreasonable effecti
 \bibitem{76wang2020diversified}
 Z.~Wang, L.~Zhao, H.~Chen, L.~Qiu, Q.~Mo, S.~Lin, W.~Xing, D.~Lu, Diversified arbitrary style transfer via deep feature perturbation, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2020, pp. 7789--7798.
 
-\bibitem{77wang2023deepvecfont}
-Y.~Wang, Y.~Wang, L.~Yu, Y.~Zhu, Z.~Lian, Deepvecfont-v2: Exploiting transformers to synthesize vector fonts with higher quality, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023, pp. 18320--18328.
-
 \bibitem{78lin2023adacm}
 T.~Lin, H.~Lin, F.~Li, D.~He, W.~Wu, M.~Wang, X.~Li, Y.~Liu, Adacm: adaptive colormlp for real-time universal photo-realistic style transfer, in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol.~37, 2023, pp. 1613--1621.
 
 \bibitem{80cheng2023user}
 J.~Cheng, Y.~Wu, A.~Jaiswal, X.~Zhang, P.~Natarajan, P.~Natarajan, User-controllable arbitrary style transfer via entropy regularization, in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol.~37, 2023, pp. 433--441.
+
+\bibitem{77wang2023deepvecfont}
+Y.~Wang, Y.~Wang, L.~Yu, Y.~Zhu, Z.~Lian, Deepvecfont-v2: Exploiting transformers to synthesize vector fonts with higher quality, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023, pp. 18320--18328.
 
 \end{thebibliography}

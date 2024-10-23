@@ -23,13 +23,36 @@ if __name__ == '__main__':
     # while i == True:
         # s = input('Plz input the string:')
     s ='''
-Method	Backbone	Depth	Img_size	Seg(val)	Seg(test)
-ToCo	vit-small-patch16-224	8	$224\\times 224$	55.0	52.7
-SS-EPA	vit-small-patch16-224	8	$224\\times 224$	57.6	50.2
-ToCo	vit-base-patch16-384	12	$384\\times 384$	71.1	71.8
-SS-EPA	vit-base-patch16-384	12	$384\\times 384$	71.7	71.9
-ToCo	vit-base-patch16-224	12	$224\\times 224$	71.1	72.2
-SS-EPA	vit-base-patch16-224	12	$224\\times 224$	72.4	73.3
+Chen	2017	0	1	0	0	0	0	0	0	0	0	0
+Jing	2020	0	0	1	0	0	0	0	0	0	0	0
+Chen	2016	0	1	0	0	0		0	0	0	0	0
+Xu	2021	1	1	1	1	0	0	0	0	0	0	0
+Yang	2022	0	0	0	0	0	0	0	0	0	0	1
+Men	2022	0	0	0	0	1	1	0	0	0	0	1
+Wu	2023	0	0	0	1	1	1	0	0	0	1	1
+Liu	2021	0	0	0	0	0	0	0	0	0	1	1
+Deng	2022	1	0	0	0	0	0	0	0	0	1	0
+Li	2023	1	0	0	0	0	0	0	0	0	1	0
+Zhang	2024	0	0	0	0	0	0	0	1	1	0	0
+Wang	2023	0	0	0	0	0	0	0	0	0	1	0
+Zhang	2023	1	0	0	0	0	0	0	0	0	0	0
+Hong	2023	1	0	0	0	0	0	0	1	0	1	0
+Zhu	2023	1	1	0	0	0	1	0	0	0	1	0
+Kwon	2022	0	0	0	0	0	0	0	0	0	0	1
+Hamazaspyan	2023	0	0	0	0	0	1	0	0	0	0	1
+Zhang	2023	0	1	0	0	0	0	0	0	0	1	1
+Rombach	2022	0	0	1	0	1	0	0	0	0	1	0
+Zhang	2023	0	0	0	0	0	0	0	0	0	0	1
+AHN	2024	0	0	0	0	0	0	0	0	0	1	0
+Wang	2023	1	1	1	0	0	0	0	0	0	1	1
+Lu	2023	1	0	0	0	1	0	0	0	0	1	0
+Chung	2024	0	0	0	0	1	1	0	0	0	0	1
+Deng	2024	0	0	0	0	0	0	0	0	0	1	0
+Chen	2019	0	1	1	0	0	0	0	0	0	0	1
+Kwon	2023	1	1	0	0	0	1	1	0	0	1	0
+Wang	2023	1	1	1	0	0	0	1	0	0	1	1
+Lin	2023	1	0	0	0	0	1	1	0	0	0	0
+Chen	2023	0	0	0	1	0	1	0	0	1	1	0
     '''
     
     if s == 'quit':
