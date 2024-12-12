@@ -20,47 +20,16 @@ def remove_dollor(s:str):
 
 if __name__ == '__main__':
     i = True
-    # while i == True:
-        # s = input('Plz input the string:')
-    s ='''
-Chen	2017	0	1	0	0	0	0	0	0	0	0	0
-Jing	2020	0	0	1	0	0	0	0	0	0	0	0
-Chen	2016	0	1	0	0	0		0	0	0	0	0
-Xu	2021	1	1	1	1	0	0	0	0	0	0	0
-Yang	2022	0	0	0	0	0	0	0	0	0	0	1
-Men	2022	0	0	0	0	1	1	0	0	0	0	1
-Wu	2023	0	0	0	1	1	1	0	0	0	1	1
-Liu	2021	0	0	0	0	0	0	0	0	0	1	1
-Deng	2022	1	0	0	0	0	0	0	0	0	1	0
-Li	2023	1	0	0	0	0	0	0	0	0	1	0
-Zhang	2024	0	0	0	0	0	0	0	1	1	0	0
-Wang	2023	0	0	0	0	0	0	0	0	0	1	0
-Zhang	2023	1	0	0	0	0	0	0	0	0	0	0
-Hong	2023	1	0	0	0	0	0	0	1	0	1	0
-Zhu	2023	1	1	0	0	0	1	0	0	0	1	0
-Kwon	2022	0	0	0	0	0	0	0	0	0	0	1
-Hamazaspyan	2023	0	0	0	0	0	1	0	0	0	0	1
-Zhang	2023	0	1	0	0	0	0	0	0	0	1	1
-Rombach	2022	0	0	1	0	1	0	0	0	0	1	0
-Zhang	2023	0	0	0	0	0	0	0	0	0	0	1
-AHN	2024	0	0	0	0	0	0	0	0	0	1	0
-Wang	2023	1	1	1	0	0	0	0	0	0	1	1
-Lu	2023	1	0	0	0	1	0	0	0	0	1	0
-Chung	2024	0	0	0	0	1	1	0	0	0	0	1
-Deng	2024	0	0	0	0	0	0	0	0	0	1	0
-Chen	2019	0	1	1	0	0	0	0	0	0	0	1
-Kwon	2023	1	1	0	0	0	1	1	0	0	1	0
-Wang	2023	1	1	1	0	0	0	1	0	0	1	1
-Lin	2023	1	0	0	0	0	1	1	0	0	0	0
-Chen	2023	0	0	0	1	0	1	0	0	1	1	0
-    '''
-    
-    if s == 'quit':
-        i = False
-        print("process quit")
-    else:
-        s = remove_dollor(s)
-        # s += '\\\\'
-        print(f"\nhere is the result:\n{s}\n\n")
-        pyperclip.copy(s)
-        print("结果已复制到剪贴板！")
+    while i == True:
+        s = input('Plz input the string:')
+    # s ='''1	1	0	0	0	0	0	0	0	0	0
+    # '''
+        if s == 'quit':
+            i = False
+            print("process quit")
+        else:
+            s = remove_dollor(s)
+            # s += '\\\\'
+            print(f"\nhere is the result:\n{s}\n\n")
+            pyperclip.copy(s)
+            print("结果已复制到剪贴板！")

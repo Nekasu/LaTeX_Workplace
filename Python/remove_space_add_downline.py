@@ -1,3 +1,5 @@
+import pyperclip
+
 def remove_dollor(s:str):
     '''
     功能介绍：该函数用于移除文件名中的空格，并添加下划线；去除文件名中的“.”符号, 以防止被系统错误的认为为文件扩展名. 以方便复制粘贴到文件名中
@@ -10,6 +12,7 @@ def remove_dollor(s:str):
     '''
     s = s.replace(' ','_')
     s = s.replace('.', '_')
+    s = s.replace(':', '_')
     
     return s
 
@@ -23,4 +26,6 @@ if __name__ == '__main__':
             print("process quit")
         else:
            s = remove_dollor(s)
-           print(f"\nhere is the result:\n{s}\n\n")
+           print(f"\nhere is the result:\n{s}\n")
+           pyperclip.copy(s)
+           print("结果已复制到剪贴板！")
