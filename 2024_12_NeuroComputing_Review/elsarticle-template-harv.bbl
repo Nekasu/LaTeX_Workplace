@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
@@ -110,6 +110,9 @@ A.~Radford, Unsupervised representation learning with deep convolutional generat
 \bibitem{35li2016precomputed}
 C.~Li, M.~Wand, Precomputed real-time texture synthesis with markovian generative adversarial networks, in: Computer Vision--ECCV 2016: 14th European Conference, Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part III 14, Springer, 2016, pp. 702--716.
 
+\bibitem{119zhang2023caster}
+Z.~Zhang, J.~Sun, J.~Chen, L.~Zhao, B.~Ji, Z.~Lan, G.~Li, W.~Xing, D.~Xu, Caster: Cartoon style transfer via dynamic cartoon style casting, Neurocomputing 556 (2023) 126654.
+
 \bibitem{36goodfellow2020generative}
 I.~Goodfellow, J.~Pouget-Abadie, M.~Mirza, B.~Xu, D.~Warde-Farley, S.~Ozair, A.~Courville, Y.~Bengio, Generative adversarial networks, Communications of the ACM 63~(11) (2020) 139--144.
 
@@ -146,6 +149,9 @@ S.~Yang, L.~Jiang, Z.~Liu, C.~C. Loy, Pastiche master: Exemplar-based high-resol
 \bibitem{47wu2023preserving}
 J.~Wu, L.~Hou, Z.~Li, J.~Liao, L.~Liu, L.~Sun, Preserving structural consistency in arbitrary artist and artwork style transfer, in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol.~37, 2023, pp. 2830--2838.
 
+\bibitem{110wu2021styleformer}
+X.~Wu, Z.~Hu, L.~Sheng, D.~Xu, Styleformer: Real-time arbitrary style transfer via parametric style composition, in: Proceedings of the IEEE/CVF International Conference on Computer Vision, 2021, pp. 14618--14627.
+
 \bibitem{48liu2021adaattn}
 S.~Liu, T.~Lin, D.~He, F.~Li, M.~Wang, X.~Li, Z.~Sun, Q.~Li, E.~Ding, Adaattn: Revisit attention mechanism in arbitrary neural style transfer, in: Proceedings of the IEEE/CVF international conference on computer vision, 2021, pp. 6649--6658.
 
@@ -154,6 +160,15 @@ Y.~Deng, F.~Tang, W.~Dong, C.~Ma, X.~Pan, L.~Wang, C.~Xu, Stytr2: Image style tr
 
 \bibitem{50li2023compact}
 Y.~Li, X.~Xie, H.~Fu, X.~Luo, Y.~Guo, A compact transformer for adaptive style transfer, in: 2023 IEEE International Conference on Multimedia and Expo (ICME), IEEE, 2023, pp. 2687--2692.
+
+\bibitem{112huang2023quantart}
+S.~Huang, J.~An, D.~Wei, J.~Luo, H.~Pfister, Quantart: Quantizing image style transfer towards high visual fidelity, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023, pp. 5947--5956.
+
+\bibitem{114tang2023master}
+H.~Tang, S.~Liu, T.~Lin, S.~Huang, F.~Li, D.~He, X.~Wang, Master: Meta style transformer for controllable zero-shot and few-shot artistic style transfer, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023, pp. 18329--18338.
+
+\bibitem{116liu2304any}
+S.~Liu, J.~Ye, X.~Wang, Any-to-any style transfer: Making picasso and da vinci collaborate. arxiv 2023, arXiv preprint arXiv:2304.09728.
 
 \bibitem{51zhang2024rethink}
 Z.~Zhang, J.~Sun, G.~Li, L.~Zhao, Q.~Zhang, Z.~Lan, H.~Yin, W.~Xing, H.~Lin, Z.~Zuo, Rethink arbitrary style transfer with transformer and contrastive learning, Computer Vision and Image Understanding 241 (2024) 103951.
@@ -170,11 +185,20 @@ M.~Zhu, X.~He, N.~Wang, X.~Wang, X.~Gao, All-to-key attention for arbitrary styl
 \bibitem{54hong2023aespa}
 K.~Hong, S.~Jeon, J.~Lee, N.~Ahn, K.~Kim, P.~Lee, D.~Kim, Y.~Uh, H.~Byun, Aespa-net: Aesthetic pattern-aware style transfer networks, in: Proceedings of the IEEE/CVF International Conference on Computer Vision, 2023, pp. 22758--22767.
 
+\bibitem{108zhang2024s2wat}
+C.~Zhang, X.~Xu, L.~Wang, Z.~Dai, J.~Yang, S2wat: Image style transfer via hierarchical vision transformer using strips window attention, in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol.~38, 2024, pp. 7024--7032.
+
 \bibitem{56radford2021learning}
 A.~Radford, J.~W. Kim, C.~Hallacy, A.~Ramesh, G.~Goh, S.~Agarwal, G.~Sastry, A.~Askell, P.~Mishkin, J.~Clark, et~al., Learning transferable visual models from natural language supervision, in: International conference on machine learning, PMLR, 2021, pp. 8748--8763.
 
 \bibitem{57kwon2022clipstyler}
 G.~Kwon, J.~C. Ye, Clipstyler: Image style transfer with a single text condition, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2022, pp. 18062--18071.
+
+\bibitem{106koley2024you}
+S.~Koley, A.~K. Bhunia, A.~Sain, P.~N. Chowdhury, T.~Xiang, Y.-Z. Song, You'll never walk alone: A sketch and text duet for fine-grained image retrieval, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2024, pp. 16509--16519.
+
+\bibitem{107yu2024foreground}
+Y.~Yu, J.~Wang, N.~Li, Foreground and background separated image style transfer with a single text condition, Image and Vision Computing 143 (2024) 104956.
 
 \bibitem{58ho2020denoising}
 J.~Ho, A.~Jain, P.~Abbeel, Denoising diffusion probabilistic models, Advances in neural information processing systems 33 (2020) 6840--6851.
@@ -206,6 +230,9 @@ J.~Chung, S.~Hyun, J.-P. Heo, Style injection in diffusion: A training-free appr
 \bibitem{67deng2024z}
 Y.~Deng, X.~He, F.~Tang, W.~Dong, Z*: Zero-shot style transfer via attention reweighting, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2024, pp. 6934--6944.
 
+\bibitem{105chen2024artadapter}
+D.-Y. Chen, H.~Tennent, C.-W. Hsu, Artadapter: Text-to-image style transfer using multi-level style encoder and explicit adaptation, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2024, pp. 8619--8628.
+
 \bibitem{68zitnick2014adopting}
 C.~L. Zitnick, R.~Vedantam, D.~Parikh, Adopting abstract images for semantic scene understanding, IEEE transactions on pattern analysis and machine intelligence 38~(4) (2014) 627--638.
 
@@ -214,6 +241,9 @@ L.~Zhang, Y.~Ji, X.~Lin, C.~Liu, Style transfer for anime sketches with enhanced
 
 \bibitem{70chen2019drop}
 Y.~Chen, H.~Fan, B.~Xu, Z.~Yan, Y.~Kalantidis, M.~Rohrbach, S.~Yan, J.~Feng, Drop an octave: Reducing spatial redundancy in convolutional neural networks with octave convolution, in: Proceedings of the IEEE/CVF international conference on computer vision, 2019, pp. 3435--3444.
+
+\bibitem{118wen2023cap}
+L.~Wen, C.~Gao, C.~Zou, Cap-vstnet: content affinity preserved versatile style transfer, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023, pp. 18300--18309.
 
 \bibitem{71kwon2024aesfa}
 J.~Kwon, S.~Kim, Y.~Lin, S.~Yoo, J.~Cha, Aesfa: An aesthetic feature-aware arbitrary neural style transfer, in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol.~38, 2024, pp. 13310--13319.
@@ -239,7 +269,106 @@ T.~Lin, H.~Lin, F.~Li, D.~He, W.~Wu, M.~Wang, X.~Li, Y.~Liu, Adacm: adaptive col
 \bibitem{80cheng2023user}
 J.~Cheng, Y.~Wu, A.~Jaiswal, X.~Zhang, P.~Natarajan, P.~Natarajan, User-controllable arbitrary style transfer via entropy regularization, in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol.~37, 2023, pp. 433--441.
 
+\bibitem{98ruder2016artistic}
+M.~Ruder, A.~Dosovitskiy, T.~Brox, Artistic style transfer for videos, in: Pattern Recognition: 38th German Conference, GCPR 2016, Hannover, Germany, September 12-15, 2016, Proceedings 38, Springer, 2016, pp. 26--36.
+
+\bibitem{99gao2019reconet}
+C.~Gao, D.~Gu, F.~Zhang, Y.~Yu, Reconet: Real-time coherent video style transfer network, in: Computer Vision--ACCV 2018: 14th Asian Conference on Computer Vision, Perth, Australia, December 2--6, 2018, Revised Selected Papers, Part VI 14, Springer, 2019, pp. 637--653.
+
+\bibitem{100chen2020optical}
+X.~Chen, Y.~Zhang, Y.~Wang, H.~Shu, C.~Xu, C.~Xu, Optical flow distillation: Towards efficient and stable video style transfer, in: Computer Vision--ECCV 2020: 16th European Conference, Glasgow, UK, August 23--28, 2020, Proceedings, Part VI 16, Springer, 2020, pp. 614--630.
+
+\bibitem{101li2019learning}
+X.~Li, S.~Liu, J.~Kautz, M.-H. Yang, Learning linear transformations for fast image and video style transfer, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2019, pp. 3809--3817.
+
+\bibitem{102wang2020consistent}
+W.~Wang, J.~Xu, L.~Zhang, Y.~Wang, J.~Liu, Consistent video style transfer via compound regularization, in: Proceedings of the AAAI conference on artificial intelligence, Vol.~34, 2020, pp. 12233--12240.
+
+\bibitem{97deng2021arbitrary}
+Y.~Deng, F.~Tang, W.~Dong, H.~Huang, C.~Ma, C.~Xu, Arbitrary video style transfer via multi-channel correlation, in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol.~35, 2021, pp. 1210--1217.
+
+\bibitem{103xia2021real}
+X.~Xia, T.~Xue, W.-s. Lai, Z.~Sun, A.~Chang, B.~Kulis, J.~Chen, Real-time localized photorealistic video style transfer, in: Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision, 2021, pp. 1089--1098.
+
+\bibitem{84liu2019cubic}
+H.-T.~D. Liu, A.~Jacobson, Cubic stylization, arXiv preprint arXiv:1910.02926 (2019).
+
+\bibitem{85yifan2020neural}
+W.~Yifan, N.~Aigerman, V.~G. Kim, S.~Chaudhuri, O.~Sorkine-Hornung, Neural cages for detail-preserving 3d deformations, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2020, pp. 75--83.
+
+\bibitem{87huang2021learning}
+H.-P. Huang, H.-Y. Tseng, S.~Saini, M.~Singh, M.-H. Yang, Learning to stylize novel views, in: Proceedings of the IEEE/CVF International Conference on Computer Vision, 2021, pp. 13869--13878.
+
+\bibitem{88wu2021styleformer}
+X.~Wu, Z.~Hu, L.~Sheng, D.~Xu, Styleformer: Real-time arbitrary style transfer via parametric style composition, in: Proceedings of the IEEE/CVF International Conference on Computer Vision, 2021, pp. 14618--14627.
+
+\bibitem{89yin20213dstylenet}
+K.~Yin, J.~Gao, M.~Shugrina, S.~Khamis, S.~Fidler, 3dstylenet: Creating 3d shapes with geometric and texture style variations, in: Proceedings of the IEEE/CVF International Conference on Computer Vision, 2021, pp. 12456--12465.
+
+\bibitem{90chiang2022stylizing}
+P.-Z. Chiang, M.-S. Tsai, H.-Y. Tseng, W.-S. Lai, W.-C. Chiu, Stylizing 3d scene via implicit representation and hypernetwork, in: Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision, 2022, pp. 1475--1484.
+
+\bibitem{93huang2022stylizednerf}
+Y.-H. Huang, Y.~He, Y.-J. Yuan, Y.-K. Lai, L.~Gao, Stylizednerf: consistent 3d scene stylization as stylized nerf via 2d-3d mutual learning, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2022, pp. 18342--18352.
+
+\bibitem{86hollein2022stylemesh}
+L.~H{\"o}llein, J.~Johnson, M.~Nie{\ss}ner, Stylemesh: Style transfer for indoor 3d scene reconstructions, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2022, pp. 6198--6208.
+
+\bibitem{91nguyen2022snerf}
+T.~Nguyen-Phuoc, F.~Liu, L.~Xiao, Snerf: stylized neural implicit representations for 3d scenes, arXiv preprint arXiv:2207.02363 (2022).
+
+\bibitem{82liu2023stylerf}
+K.~Liu, F.~Zhan, Y.~Chen, J.~Zhang, Y.~Yu, A.~El~Saddik, S.~Lu, E.~P. Xing, Stylerf: Zero-shot 3d style transfer of neural radiance fields, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023, pp. 8338--8348.
+
+\bibitem{94wang2023nerf}
+C.~Wang, R.~Jiang, M.~Chai, M.~He, D.~Chen, J.~Liao, Nerf-art: Text-driven neural radiance fields stylization, IEEE Transactions on Visualization and Computer Graphics (2023).
+
+\bibitem{95haque2023instruct}
+A.~Haque, M.~Tancik, A.~A. Efros, A.~Holynski, A.~Kanazawa, Instruct-nerf2nerf: Editing 3d scenes with instructions, in: Proceedings of the IEEE/CVF International Conference on Computer Vision, 2023, pp. 19740--19750.
+
+\bibitem{92chen2024upst}
+Y.~Chen, Q.~Yuan, Z.~Li, Y.~Liu, W.~Wang, C.~Xie, X.~Wen, Q.~Yu, Upst-nerf: Universal photorealistic style transfer of neural radiance fields for 3d scene, IEEE Transactions on Visualization and Computer Graphics (2024).
+
+\bibitem{111he2025freditor}
+Y.~He, W.~Yuan, S.~Zhu, Z.~Dong, L.~Bo, Q.~Huang, Freditor: High-fidelity and transferable nerf editing by frequency decomposition, in: European Conference on Computer Vision, Springer, 2025, pp. 73--91.
+
 \bibitem{77wang2023deepvecfont}
 Y.~Wang, Y.~Wang, L.~Yu, Y.~Zhu, Z.~Lian, Deepvecfont-v2: Exploiting transformers to synthesize vector fonts with higher quality, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023, pp. 18320--18328.
+
+\bibitem{120wang2022visual}
+W.~Wang, C.~Han, T.~Zhou, D.~Liu, Visual recognition with deep nearest centroids, arXiv preprint arXiv:2209.07383 (2022).
+
+\bibitem{121angelov2020towards}
+P.~Angelov, E.~Soares, Towards explainable deep neural networks (xdnn), Neural Networks 130 (2020) 185--194.
+
+\bibitem{122li2018deep}
+O.~Li, H.~Liu, C.~Chen, C.~Rudin, Deep learning for case-based reasoning through prototypes: A neural network that explains its predictions, in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol.~32, 2018.
+
+\bibitem{123qin2023unified}
+Z.~Qin, C.~Han, Q.~Wang, X.~Nie, Y.~Yin, L.~Xiankai, Unified 3d segmenter as prototypical classifiers, Advances in Neural Information Processing Systems 36 (2023) 46419--46432.
+
+\bibitem{124gupta2023visual}
+T.~Gupta, A.~Kembhavi, Visual programming: Compositional visual reasoning without training, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023, pp. 14953--14962.
+
+\bibitem{125han2024image}
+C.~Han, J.~C. Liang, Q.~Wang, M.~Rabbani, S.~Dianat, R.~Rao, Y.~N. Wu, D.~Liu, Image translation as diffusion visual programmers, arXiv preprint arXiv:2401.09742 (2024).
+
+\bibitem{126ma2019neural}
+C.~Ma, Z.~Ji, M.~Gao, Neural style transfer improves 3d cardiovascular mr image segmentation on inconsistent data, in: Medical Image Computing and Computer Assisted Intervention--MICCAI 2019: 22nd International Conference, Shenzhen, China, October 13--17, 2019, Proceedings, Part II 22, Springer, 2019, pp. 128--136.
+
+\bibitem{117gao2023clip3dstyler}
+M.~Gao, Y.~Xu, Y.~Zhao, T.~Hou, C.~Zhao, M.~Gong, Clip3dstyler: Language guided 3d arbitrary neural style transfer, arXiv preprint arXiv:2305.15732 (2023).
+
+\bibitem{109ding2024regional}
+Z.~Ding, P.~Li, Q.~Yang, S.~Li, Q.~Gong, Regional style and color transfer, in: 2024 5th International Conference on Computer Vision, Image and Deep Learning (CVIDL), IEEE, 2024, pp. 593--597.
+
+\bibitem{127wang2022learning}
+W.~Wang, J.~Liang, D.~Liu, Learning equivariant segmentation with instance-unique querying, Advances in Neural Information Processing Systems 35 (2022) 12826--12840.
+
+\bibitem{128minaee2021image}
+S.~Minaee, Y.~Boykov, F.~Porikli, A.~Plaza, N.~Kehtarnavaz, D.~Terzopoulos, Image segmentation using deep learning: A survey, IEEE transactions on pattern analysis and machine intelligence 44~(7) (2021) 3523--3542.
+
+\bibitem{129kaur2023comprehensive}
+R.~Kaur, S.~Singh, A comprehensive review of object detection with deep learning, Digital Signal Processing 132 (2023) 103812.
 
 \end{thebibliography}

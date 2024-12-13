@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: elsarticle-template-harv.aux
+The style file: elsarticle-num.bst
+Database file #1: references.bib
+Warning--I didn't find a database entry for "113liu2023name"
+Warning--can't use both volume and number fields in 03li2023frequency
+Warning--can't use both volume and number fields in 10liu2021self
+Warning--there's a number but no volume in 30cross1983markov
+Warning--there's a number but no volume in 31chellappa1985texture
+Warning--can't use both volume and number fields in 41jing2020dynamic
+Warning--can't use both volume and number fields in 47wu2023preserving
+Warning--empty year in 116liu2304any
+Warning--can't use both volume and number fields in 108zhang2024s2wat
+Warning--can't use both volume and number fields in 60zhang2024artbank
+Warning--can't use both volume and number fields in 63ahn2024dreamstyler
+Warning--can't use both volume and number fields in 71kwon2024aesfa
+Warning--can't use both volume and number fields in 72wang2023microast
+Warning--can't use both volume and number fields in 78lin2023adacm
+Warning--can't use both volume and number fields in 80cheng2023user
+Warning--can't use both volume and number fields in 102wang2020consistent
+Warning--can't use both volume and number fields in 97deng2021arbitrary
+Warning--can't use both volume and number fields in 122li2018deep
+Warning--empty pages in 122li2018deep
+You've used 122 entries,
+            2952 wiz_defined-function locations,
+            1233 strings with 28847 characters,
+and the built_in function-call counts, 54192 in all, are:
+= -- 5090
+> -- 1880
+< -- 97
++ -- 708
+- -- 586
+* -- 3270
+:= -- 6620
+add.period$ -- 122
+call.type$ -- 122
+change.case$ -- 122
+chr.to.int$ -- 0
+cite$ -- 140
+duplicate$ -- 2141
+empty$ -- 5994
+format.name$ -- 706
+if$ -- 14341
+int.to.chr$ -- 0
+int.to.str$ -- 122
+missing$ -- 122
+newline$ -- 374
+num.names$ -- 122
+pop$ -- 1049
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 3961
+stack$ -- 0
+substring$ -- 3797
+swap$ -- 980
+text.length$ -- 97
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 18
+while$ -- 403
+width$ -- 125
+write$ -- 1082
+(There were 19 warnings)
