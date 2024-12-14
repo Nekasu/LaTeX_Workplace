@@ -44,6 +44,7 @@
 \usepackage{cite} %使用\cite{}命令所必须的包
 % \usepackage[hidelinks]{hyperref} %使引用文献可以跳转的包
 \usepackage{hyperref}
+\usepackage{multirow}
 \usepackage{booktabs}
 %% The lineno packages adds line numbers. Start line numbering with
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
@@ -777,55 +778,54 @@ Table \ref{table1_Evaluation} in the appendix shows the evaluation metrics used 
     \resizebox{\textwidth}{!}{
         \begin{tabular}{lcccccccccccc}%% Table column specifiers
                 \toprule
-                Paper & Year & Content\& Sytle Loss & Time & Memory Cost & Deception Rate& FID& LPIPS&SSIM&Content Fidelity&PD&User Study & Others\\
+                Paper & Year & Content\& Sytle Loss & Time & Memory Cost & Deception Rate& FID& LPIPS&SSIM&Content Fidelity&User Study & Others\\
                 \midrule
-                Gatys et al.\citep{02gatys2016image}&2016 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-                Li et al.\citep{03li2023frequency} & 2023 & 1 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 \\    
-                Huang et al.\citep{04huang2017arbitrary} & 2017 &1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-                Ke et al.\citep{05ke2023neural} & 2023 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\\
-                Johnson et al.\citep{22johnson2016perceptual} & 2016 &0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0\\
-                Ulyanov et al.\citep{23ulyanov2016texture} & 2016 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-                Risser et al.\citep{27risser2017stable} & 2017 &0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-                Li et al.\citep{28li2017demystifying} & 2017 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-                Li et al.\citep{33li2016combining} & 2016 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\\
-                Li et al.\citep{35li2016precomputed} & 2016 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-                Zhu et al.\citep{37zhu2017unpaired} & 2017 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1\\
-                Men et al.\citep{46Men_2022_CVPR} & 2022 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 \\
-                Dumoulin et al.\citep{39dumoulin2016learned} & 2017 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-                Chen et al.\citep{40chen2017stylebank} & 2017 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-                Jing et al.\citep{41jing2020dynamic} & 2020 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-                Chen et al.\citep{43chen2016fast} & 2016 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-                Xu et al.\citep{44xu2021drb} & 2021 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-                Yang et al.\citep{45yang2022pastiche} & 2022 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
-                Wu et al.\citep{47wu2023preserving} & 2023 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 & 1 & 1 \\
-                Liu et al.\citep{48liu2021adaattn} & 2021 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 \\
-                Deng et al.\citep{49deng2022stytr2} & 2022 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
-                Li et al.\citep{50li2023compact} & 2023 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
-                Zhang et al.\citep{51zhang2024rethink} & 2024 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
-                Wang et al.\citep{52wang2023interactive} & 2023 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
-                Zhang et al.\citep{53zhang2023edge} & 2023 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-                Hong et al.\citep{54hong2023aespa} & 2023 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 \\
-                Zhu et al.\citep{55zhu2023all} & 2023 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
-                Kwon et al.\citep{57kwon2022clipstyler} & 2022 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
-                Hamazaspyan et al.\citep{59hamazaspyan2023diffusion} & 2023 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
-                Zhang et al.\citep{60zhang2024artbank} & 2023 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 \\
-                Rombach et al.\citep{61rombach2022high} & 2022 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 \\
-                Zhang et al.\citep{62zhang2023inversion} & 2023 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
-                AHN et al.\citep{63ahn2024dreamstyler} & 2024 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
-                Wang et al.\citep{64wang2023stylediffusion} & 2023 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 \\
-                Lu et al.\citep{65lu2023specialist} & 2023 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 \\
-                Chung et al.\citep{66chung2024style} & 2024 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 \\
-                Deng et al.\citep{67deng2024z} & 2024 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
-                Chen et al.\citep{70chen2019drop} & 2019 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
-                Kwon et al.\citep{71kwon2024aesfa} & 2023 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 \\
-                Wang et al.\citep{72wang2023microast} & 2023 & 1 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 \\
-                Lin et al.\citep{78lin2023adacm} & 2023 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\
-                Chen et al.\citep{80cheng2023user} & 2023 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 0 \\
+                Gatys et al.\citep{02gatys2016image}&2016 & 1 & - & - & - & - & - & - & - & - & - \\
+                Li et al.\citep{03li2023frequency} & 2023 & 7.91/2.40 & 10.7ms(256) & - & - & - & - & 0.51 & - & 1 & - \\    
+                Huang et al.\citep{04huang2017arbitrary} & 2017 & 2.2/8.76 & 18ms(256) & - & - & - & - & - & - & - & -\\
+                Ke et al.\citep{05ke2023neural} & 2023 & - & - & - & - & - & - & - & - & 1 & -\\
+                Johnson et al.\citep{22johnson2016perceptual} & 2016 &- & 15ms(256) & - & - & - & - & 0.61 & - & - & -\\
+                Ulyanov et al.\citep{23ulyanov2016texture} & 2016 &- & 2-ms(256) & 17-MB & - & - & - & - & - & - & -\\
+                Risser et al.\citep{27risser2017stable} & 2017 &- & 568s(512) & - & - & - & - & - & - & - & -\\
+                Li et al.\citep{28li2017demystifying} & 2017 & - & - & - & - & - & - & - & - & - & - \\
+                Li et al.\citep{33li2016combining} & 2016 & - & - & - & - & - & - & - & - & 1 & -\\
+                Li et al.\citep{35li2016precomputed} & 2016 &- & 10ms(256)/40ms(512)/160ms(1024) & 298MB & - & - & - & - & - & - & -\\
+                Zhu et al.\citep{37zhu2017unpaired} & 2017 & - & - & - & - & - & - & - & - & - & 1\\
+                Men et al.\citep{46Men_2022_CVPR} & 2022 & - & - & - & - & 79.74 & - & - & - & - & 1\\
+                Chen et al.\citep{40chen2017stylebank} & 2017 & - & - & - & - & - & - & - & - & - & - \\
+                Jing et al.\citep{41jing2020dynamic} & 2020 & - & - & - & - & - & - & - & - & - & 1 \\
+                Chen et al.\citep{43chen2016fast} & 2016 &- & 45ms(256) & - & - & - & - & - & - & - & -\\
+                Xu et al.\citep{44xu2021drb} & 2021 &- & 80ms(768) & 1262MB & 0.573 & - & - & - & - & 1 & -\\
+                Yang et al.\citep{45yang2022pastiche} & 2022 &- & - & - & - & - & - & - & - & - & 1\\
+                Wu et al.\citep{47wu2023preserving} & 2023 &- & - & - & 0.672 & 42.83. & 0.223 & - & - & 1 & 1\\
+                Liu et al.\citep{48liu2021adaattn} & 2021 &- & - & - & - & - & - & - & - & 1 & 1\\
+                Deng et al.\citep{49deng2022stytr2} & 2022 &1.91/1.47 & 116ms(256) & - & - & - & - & - & - & 1 & -\\
+                Li et al.\citep{50li2023compact} & 2023 &1.54/1.06 & - & 34.87GB & - & - & - & - & - & 1 & -\\
+                Zhang et al.\citep{51zhang2024rethink} & 2024 &- & - & - & 0.573 & - & - & - & 0.432 & - & -\\
+                Wang et al.\citep{52wang2023interactive} & 2023 &- & - & - & - & - & - & - & - & 1 & -\\
+                Zhang et al.\citep{53zhang2023edge} & 2023 &2.18/1.35 & 270ms(512) & - & - & - & - & - & - & - & -\\
+                Hong et al.\citep{54hong2023aespa} & 2023 &-/0.258 & - & - & - & - & - & - & 0.69 & 1 & 1\\
+                Zhu et al.\citep{55zhu2023all} & 2023 &0.55/1.04 & 14ms(512) & - & - & - & 0.52 & - & - & 1 & -\\
+                Kwon et al.\citep{57kwon2022clipstyler} & 2022 &- & - & - & - & - & - & - & - & - & 1\\
+                Hamazaspyan et al.\citep{59hamazaspyan2023diffusion} & 2023 &- & - & - & - & - & 0.596 & - & - & - & 1\\
+                Zhang et al.\citep{60zhang2024artbank} & 2023 &- & 3.5725s(512) & - & - & - & - & - & - & 1 & 1\\
+                Zhang et al.\citep{62zhang2023inversion} & 2023 &- & - & - & - & - & - & - & - & - & 1\\
+                AHN et al.\citep{63ahn2024dreamstyler} & 2024 &- & - & - & - & - & - & - & - & 1 & -\\
+                Wang et al.\citep{64wang2023stylediffusion} & 2023 &-/0.837 & 5.612s(512) & - & - & - & - & 0.672 & - & 1 & 1\\
+                Lu et al.\citep{65lu2023specialist} & 2023 &-/0.094 & - & - & - & 375.206 & - & - & - & 1 & -\\
+                Chung et al.\citep{66chung2024style} & 2024 &- & - & - & - & 18.131 & 0.506 & - & - & - & 1\\
+                Deng et al.\citep{67deng2024z} & 2024 &- & - & - & - & - & - & - & - & 1 & -\\
+                Chen et al.\citep{70chen2019drop} & 2019 &0 & 11ms(256) & 21885MB & - & - & - & - & - & - & 1\\
+                \multirow{2}{*}{Kwon et al.\citep{71kwon2024aesfa}} & \multirow{2}{*}{2023}&\multirow{2}{*}{-/0.216} & 16ms(256)/20ms(1024)& \multirow{2}{*}{-} & \multirow{2}{*}{-} & \multirow{2}{*}{-} & \multirow{2}{*}{0.372 }& \multirow{2}{*}{-/0.216}& \multirow{2}{*}{-} & 1 & \multirow{2}{*}{-}\\
+                 & & &20m(2048)/20ms(4096) &  &  &  & & &  &  & \\
+                Wang et al.\citep{72wang2023microast} & 2023 &-/2.342 & 522ms(4096) & 1.857MB & - & - & - & 0.531 & - & 1 & 1\\
+                Lin et al.\citep{78lin2023adacm} & 2023 &- & - & - & - & - & 0.178 & 0.7478 & - & - & -\\
+                Chen et al.\citep{80cheng2023user} & 2023 &- & - & - & 0.474 & - & 0.375 & - & - & 1 & -\\
                 \bottomrule
             \end{tabular}
             %% Use \caption command for table caption and label.
     }
-    \caption{Evaluation Metrics Used in Papers. The first column of the table presents the papers along with their respective authors, while the second column indicates the year of publication. The remaining columns, starting from the third, represent the objective evaluation metrics used for style transfer. In the evaluation metrics section, a value of 1 indicates that the paper applied the corresponding metric for evaluation, whereas a value of 0 indicates that the metric was not used.}\label{table1_Evaluation}
+    \caption{Evaluation Metrics Used in Papers. The first column of the table represents the papers and their respective authors, while the second column indicates the year of publication. The remaining columns, starting from the third, represent the evaluation metrics used for style transfer. The third column (Content \& Style Loss) refers to the loss function used by Gatys et al., so it cannot be explicitly provided. The fourth column (Time) indicates the amount of time required for the style transfer model to generate an image at the corresponding resolution during inference. In the final columns, "User Study" and "Others," the number "1" indicates that the paper used user studies or other metrics as evaluation criteria, while the symbol "-" indicates that the standard was not used.}\label{table1_Evaluation}
 \end{table}
 
 \section{From 2D to Multimodal Exploration}

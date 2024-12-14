@@ -194,6 +194,9 @@ A.~Radford, J.~W. Kim, C.~Hallacy, A.~Ramesh, G.~Goh, S.~Agarwal, G.~Sastry, A.~
 \bibitem{57kwon2022clipstyler}
 G.~Kwon, J.~C. Ye, Clipstyler: Image style transfer with a single text condition, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2022, pp. 18062--18071.
 
+\bibitem{113liu2023name}
+Z.-S. Liu, L.-W. Wang, W.-C. Siu, V.~Kalogeiton, Name your style: text-guided artistic style transfer, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023, pp. 3530--3534.
+
 \bibitem{106koley2024you}
 S.~Koley, A.~K. Bhunia, A.~Sain, P.~N. Chowdhury, T.~Xiang, Y.-Z. Song, You'll never walk alone: A sketch and text duet for fine-grained image retrieval, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2024, pp. 16509--16519.
 
