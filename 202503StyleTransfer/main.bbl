@@ -1,0 +1,83 @@
+\begin{thebibliography}{10}
+
+\bibitem{cocodatasetCOCOCommon}
+{C}{O}{C}{O} - {C}ommon {O}bjects in {C}ontext --- cocodataset.org.
+\newblock \url{https://cocodataset.org/#home}.
+\newblock [Accessed 25-03-2025].
+
+\bibitem{wikiartWikiArtorgVisual}
+{W}iki{A}rt.org - {V}isual {A}rt {E}ncyclopedia --- wikiart.org.
+\newblock \url{https://www.wikiart.org/en/App/Home}.
+\newblock [Accessed 25-03-2025].
+
+\bibitem{ahn2024dreamstyler}
+Namhyuk Ahn, Junsoo Lee, Chunggi Lee, Kunhee Kim, Daesik Kim, Seung-Hun Nam, and Kibeom Hong.
+\newblock Dreamstyler: Paint by style inversion with text-to-image diffusion models.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial Intelligence}, volume~38, pages 674--681, 2024.
+
+\bibitem{fu2023neural}
+Bin Fu, Junjun He, Jianjun Wang, and Yu~Qiao.
+\newblock Neural transformation fields for arbitrary-styled font generation.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 22438--22447, 2023.
+
+\bibitem{gatys2016image}
+Leon~A Gatys, Alexander~S Ecker, and Matthias Bethge.
+\newblock Image style transfer using convolutional neural networks.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and pattern recognition}, pages 2414--2423, 2016.
+
+\bibitem{goodfellow2020generative}
+Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio.
+\newblock Generative adversarial networks.
+\newblock {\em Communications of the ACM}, 63(11):139--144, 2020.
+
+\bibitem{huang2017arbitrary}
+Xun Huang and Serge Belongie.
+\newblock Arbitrary style transfer in real-time with adaptive instance normalization.
+\newblock In {\em Proceedings of the IEEE international conference on computer vision}, pages 1501--1510, 2017.
+
+\bibitem{jing2019neural}
+Yongcheng Jing, Yezhou Yang, Zunlei Feng, Jingwen Ye, Yizhou Yu, and Mingli Song.
+\newblock Neural style transfer: A review.
+\newblock {\em IEEE transactions on visualization and computer graphics}, 26(11):3365--3385, 2019.
+
+\bibitem{johnson2016perceptual}
+Justin Johnson, Alexandre Alahi, and Li~Fei-Fei.
+\newblock Perceptual losses for real-time style transfer and super-resolution.
+\newblock In {\em Computer Vision--ECCV 2016: 14th European Conference, Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part II 14}, pages 694--711. Springer, 2016.
+
+\bibitem{ke2023neural}
+Zhanghan Ke, Yuhao Liu, Lei Zhu, Nanxuan Zhao, and Rynson~WH Lau.
+\newblock Neural preset for color style transfer.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 14173--14182, 2023.
+
+\bibitem{li2023frequency}
+Dongyang Li, Hao Luo, Pichao Wang, Zhibin Wang, Shang Liu, and Fan Wang.
+\newblock Frequency domain disentanglement for arbitrary neural style transfer.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial Intelligence}, volume~37, pages 1287--1295, 2023.
+
+\bibitem{liu2022partial}
+Guilin Liu, Aysegul Dundar, Kevin~J Shih, Ting-Chun Wang, Fitsum~A Reda, Karan Sapra, Zhiding Yu, Xiaodong Yang, Andrew Tao, and Bryan Catanzaro.
+\newblock Partial convolution for padding, inpainting, and image synthesis.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence}, 45(5):6096--6110, 2022.
+
+\bibitem{risser2017stable}
+Eric Risser, Pierre Wilmot, and Connelly Barnes.
+\newblock Stable and controllable neural texture synthesis and style transfer using histogram losses.
+\newblock {\em arXiv preprint arXiv:1701.08893}, 2017.
+
+\bibitem{sanakoyeu2018style}
+Artsiom Sanakoyeu, Dmytro Kotovenko, Sabine Lang, and Bjorn Ommer.
+\newblock A style-aware content loss for real-time hd style transfer.
+\newblock In {\em proceedings of the European conference on computer vision (ECCV)}, pages 698--714, 2018.
+
+\bibitem{tang2022few}
+Licheng Tang, Yiyang Cai, Jiaming Liu, Zhibin Hong, Mingming Gong, Minhu Fan, Junyu Han, Jingtuo Liu, Errui Ding, and Jingdong Wang.
+\newblock Few-shot font generation by learning fine-grained local styles.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 7895--7904, 2022.
+
+\bibitem{zhang2024artbank}
+Zhanjie Zhang, Quanwei Zhang, Wei Xing, Guangyuan Li, Lei Zhao, Jiakai Sun, Zehua Lan, Junsheng Luan, Yiling Huang, and Huaizhong Lin.
+\newblock Artbank: Artistic style transfer with pre-trained diffusion model and implicit style prompt bank.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial Intelligence}, volume~38, pages 7396--7404, 2024.
+
+\end{thebibliography}
