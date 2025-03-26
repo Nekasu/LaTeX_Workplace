@@ -70,6 +70,11 @@ Artsiom Sanakoyeu, Dmytro Kotovenko, Sabine Lang, and Bjorn Ommer.
 \newblock A style-aware content loss for real-time hd style transfer.
 \newblock In {\em proceedings of the European conference on computer vision (ECCV)}, pages 698--714, 2018.
 
+\bibitem{tammina2019transfer}
+Srikanth Tammina.
+\newblock Transfer learning using vgg-16 with deep convolutional neural network for classifying images.
+\newblock {\em International Journal of Scientific and Research Publications (IJSRP)}, 9(10):143--150, 2019.
+
 \bibitem{tang2022few}
 Licheng Tang, Yiyang Cai, Jiaming Liu, Zhibin Hong, Mingming Gong, Minhu Fan, Junyu Han, Jingtuo Liu, Errui Ding, and Jingdong Wang.
 \newblock Few-shot font generation by learning fine-grained local styles.
