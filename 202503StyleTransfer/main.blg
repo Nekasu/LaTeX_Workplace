@@ -9,45 +9,45 @@ Warning--to sort, need author or key in cocodatasetCOCOCommon
 Warning--can't use both volume and number fields in ahn2024dreamstyler
 Warning--can't use both volume and number fields in li2023frequency
 Warning--can't use both volume and number fields in zhang2024artbank
-You've used 17 entries,
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            597 strings with 7872 characters,
-and the built_in function-call counts, 8489 in all, are:
-= -- 827
-> -- 456
-< -- 13
-+ -- 182
-- -- 164
-* -- 630
-:= -- 1273
-add.period$ -- 52
-call.type$ -- 17
-change.case$ -- 133
+            611 strings with 8487 characters,
+and the built_in function-call counts, 9496 in all, are:
+= -- 929
+> -- 505
+< -- 14
++ -- 201
+- -- 180
+* -- 688
+:= -- 1439
+add.period$ -- 62
+call.type$ -- 20
+change.case$ -- 150
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 316
-empty$ -- 613
-format.name$ -- 164
-if$ -- 1832
+cite$ -- 25
+duplicate$ -- 359
+empty$ -- 688
+format.name$ -- 180
+if$ -- 2049
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 15
-newline$ -- 88
-num.names$ -- 30
-pop$ -- 163
+int.to.str$ -- 20
+missing$ -- 18
+newline$ -- 103
+num.names$ -- 36
+pop$ -- 183
 preamble$ -- 1
-purify$ -- 116
+purify$ -- 130
 quote$ -- 0
-skip$ -- 273
+skip$ -- 307
 stack$ -- 0
-substring$ -- 590
-swap$ -- 141
-text.length$ -- 13
+substring$ -- 637
+swap$ -- 154
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 68
+type$ -- 80
 warning$ -- 5
-while$ -- 68
-width$ -- 19
-write$ -- 188
+while$ -- 77
+width$ -- 22
+write$ -- 220
 (There were 6 warnings)
