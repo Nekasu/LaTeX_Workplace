@@ -50,6 +50,11 @@ Zhanghan Ke, Yuhao Liu, Lei Zhu, Nanxuan Zhao, and Rynson~WH Lau.
 \newblock Neural preset for color style transfer.
 \newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 14173--14182, 2023.
 
+\bibitem{li2016precomputed}
+Chuan Li and Michael Wand.
+\newblock Precomputed real-time texture synthesis with markovian generative adversarial networks.
+\newblock In {\em Computer Vision--ECCV 2016: 14th European Conference, Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part III 14}, pages 702--716. Springer, 2016.
+
 \bibitem{li2023frequency}
 Dongyang Li, Hao Luo, Pichao Wang, Zhibin Wang, Shang Liu, and Fan Wang.
 \newblock Frequency domain disentanglement for arbitrary neural style transfer.
@@ -70,6 +75,11 @@ Artsiom Sanakoyeu, Dmytro Kotovenko, Sabine Lang, and Bjorn Ommer.
 \newblock A style-aware content loss for real-time hd style transfer.
 \newblock In {\em proceedings of the European conference on computer vision (ECCV)}, pages 698--714, 2018.
 
+\bibitem{simonyan2014very}
+Karen Simonyan and Andrew Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock {\em arXiv preprint arXiv:1409.1556}, 2014.
+
 \bibitem{tammina2019transfer}
 Srikanth Tammina.
 \newblock Transfer learning using vgg-16 with deep convolutional neural network for classifying images.
@@ -79,6 +89,11 @@ Srikanth Tammina.
 Licheng Tang, Yiyang Cai, Jiaming Liu, Zhibin Hong, Mingming Gong, Minhu Fan, Junyu Han, Jingtuo Liu, Errui Ding, and Jingdong Wang.
 \newblock Few-shot font generation by learning fine-grained local styles.
 \newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 7895--7904, 2022.
+
+\bibitem{ulyanov2016texture}
+Dmitry Ulyanov, Vadim Lebedev, Andrea Vedaldi, and Victor Lempitsky.
+\newblock Texture networks: Feed-forward synthesis of textures and stylized images.
+\newblock {\em arXiv preprint arXiv:1603.03417}, 2016.
 
 \bibitem{zhang2024artbank}
 Zhanjie Zhang, Quanwei Zhang, Wei Xing, Guangyuan Li, Lei Zhao, Jiakai Sun, Zehua Lan, Junsheng Luan, Yiling Huang, and Huaizhong Lin.
