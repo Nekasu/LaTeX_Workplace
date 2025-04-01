@@ -15,6 +15,16 @@ Namhyuk Ahn, Junsoo Lee, Chunggi Lee, Kunhee Kim, Daesik Kim, Seung-Hun Nam, and
 \newblock Dreamstyler: Paint by style inversion with text-to-image diffusion models.
 \newblock In {\em Proceedings of the AAAI Conference on Artificial Intelligence}, volume~38, pages 674--681, 2024.
 
+\bibitem{chen2017stylebank}
+Dongdong Chen, Lu~Yuan, Jing Liao, Nenghai Yu, and Gang Hua.
+\newblock Stylebank: An explicit representation for neural image style transfer.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and pattern recognition}, pages 1897--1906, 2017.
+
+\bibitem{dumoulin2016learned}
+Vincent Dumoulin, Jonathon Shlens, and Manjunath Kudlur.
+\newblock A learned representation for artistic style.
+\newblock {\em arXiv preprint arXiv:1610.07629}, 2016.
+
 \bibitem{fu2023neural}
 Bin Fu, Junjun He, Jianjun Wang, and Yu~Qiao.
 \newblock Neural transformation fields for arbitrary-styled font generation.
@@ -45,10 +55,20 @@ Justin Johnson, Alexandre Alahi, and Li~Fei-Fei.
 \newblock Perceptual losses for real-time style transfer and super-resolution.
 \newblock In {\em Computer Vision--ECCV 2016: 14th European Conference, Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part II 14}, pages 694--711. Springer, 2016.
 
+\bibitem{karras2019style}
+Tero Karras, Samuli Laine, and Timo Aila.
+\newblock A style-based generator architecture for generative adversarial networks.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 4401--4410, 2019.
+
 \bibitem{ke2023neural}
 Zhanghan Ke, Yuhao Liu, Lei Zhu, Nanxuan Zhao, and Rynson~WH Lau.
 \newblock Neural preset for color style transfer.
 \newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 14173--14182, 2023.
+
+\bibitem{li2016combining}
+Chuan Li and Michael Wand.
+\newblock Combining markov random fields and convolutional neural networks for image synthesis.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and pattern recognition}, pages 2479--2486, 2016.
 
 \bibitem{li2016precomputed}
 Chuan Li and Michael Wand.
@@ -64,6 +84,11 @@ Dongyang Li, Hao Luo, Pichao Wang, Zhibin Wang, Shang Liu, and Fan Wang.
 Guilin Liu, Aysegul Dundar, Kevin~J Shih, Ting-Chun Wang, Fitsum~A Reda, Karan Sapra, Zhiding Yu, Xiaodong Yang, Andrew Tao, and Bryan Catanzaro.
 \newblock Partial convolution for padding, inpainting, and image synthesis.
 \newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence}, 45(5):6096--6110, 2022.
+
+\bibitem{Men_2022_CVPR}
+Yifang Men, Yuan Yao, Miaomiao Cui, Zhouhui Lian, Xuansong Xie, and Xian-Sheng Hua.
+\newblock Unpaired cartoon image synthesis via gated cycle mapping.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pages 3501--3510, June 2022.
 
 \bibitem{risser2017stable}
 Eric Risser, Pierre Wilmot, and Connelly Barnes.
@@ -95,9 +120,24 @@ Dmitry Ulyanov, Vadim Lebedev, Andrea Vedaldi, and Victor Lempitsky.
 \newblock Texture networks: Feed-forward synthesis of textures and stylized images.
 \newblock {\em arXiv preprint arXiv:1603.03417}, 2016.
 
+\bibitem{xu2021drb}
+Wenju Xu, Chengjiang Long, Ruisheng Wang, and Guanghui Wang.
+\newblock Drb-gan: A dynamic resblock generative adversarial network for artistic style transfer.
+\newblock In {\em Proceedings of the IEEE/CVF international conference on computer vision}, pages 6383--6392, 2021.
+
+\bibitem{zhang2023caster}
+Zhanjie Zhang, Jiakai Sun, Jiafu Chen, Lei Zhao, Boyan Ji, Zehua Lan, Guangyuan Li, Wei Xing, and Duanqing Xu.
+\newblock Caster: Cartoon style transfer via dynamic cartoon style casting.
+\newblock {\em Neurocomputing}, 556:126654, 2023.
+
 \bibitem{zhang2024artbank}
 Zhanjie Zhang, Quanwei Zhang, Wei Xing, Guangyuan Li, Lei Zhao, Jiakai Sun, Zehua Lan, Junsheng Luan, Yiling Huang, and Huaizhong Lin.
 \newblock Artbank: Artistic style transfer with pre-trained diffusion model and implicit style prompt bank.
 \newblock In {\em Proceedings of the AAAI Conference on Artificial Intelligence}, volume~38, pages 7396--7404, 2024.
+
+\bibitem{zhu2017unpaired}
+Jun-Yan Zhu, Taesung Park, Phillip Isola, and Alexei~A Efros.
+\newblock Unpaired image-to-image translation using cycle-consistent adversarial networks.
+\newblock In {\em Proceedings of the IEEE international conference on computer vision}, pages 2223--2232, 2017.
 
 \end{thebibliography}
