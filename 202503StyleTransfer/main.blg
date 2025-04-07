@@ -8,46 +8,47 @@ Warning--to sort, need author or key in wikiartWikiArtorgVisual
 Warning--to sort, need author or key in cocodatasetCOCOCommon
 Warning--can't use both volume and number fields in ahn2024dreamstyler
 Warning--can't use both volume and number fields in li2023frequency
+Warning--empty year in liu2304any
 Warning--can't use both volume and number fields in zhang2024artbank
-You've used 28 entries,
+You've used 30 entries,
             2118 wiz_defined-function locations,
-            649 strings with 10006 characters,
-and the built_in function-call counts, 13592 in all, are:
-= -- 1331
-> -- 709
-< -- 20
-+ -- 283
-- -- 252
-* -- 965
-:= -- 2040
-add.period$ -- 86
-call.type$ -- 28
-change.case$ -- 210
+            657 strings with 10354 characters,
+and the built_in function-call counts, 14477 in all, are:
+= -- 1415
+> -- 760
+< -- 21
++ -- 303
+- -- 270
+* -- 1027
+:= -- 2178
+add.period$ -- 92
+call.type$ -- 30
+change.case$ -- 225
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 530
-empty$ -- 994
-format.name$ -- 252
-if$ -- 2956
+cite$ -- 36
+duplicate$ -- 565
+empty$ -- 1055
+format.name$ -- 270
+if$ -- 3144
 int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 26
-newline$ -- 143
-num.names$ -- 52
-pop$ -- 259
+int.to.str$ -- 30
+missing$ -- 28
+newline$ -- 153
+num.names$ -- 56
+pop$ -- 279
 preamble$ -- 1
-purify$ -- 182
+purify$ -- 195
 quote$ -- 0
-skip$ -- 460
+skip$ -- 489
 stack$ -- 0
-substring$ -- 933
-swap$ -- 234
-text.length$ -- 20
+substring$ -- 983
+swap$ -- 248
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 112
-warning$ -- 5
-while$ -- 111
-width$ -- 30
-write$ -- 307
-(There were 6 warnings)
+type$ -- 120
+warning$ -- 6
+while$ -- 118
+width$ -- 32
+write$ -- 327
+(There were 7 warnings)

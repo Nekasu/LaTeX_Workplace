@@ -60,11 +60,6 @@ Tero Karras, Samuli Laine, and Timo Aila.
 \newblock A style-based generator architecture for generative adversarial networks.
 \newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 4401--4410, 2019.
 
-\bibitem{ke2023neural}
-Zhanghan Ke, Yuhao Liu, Lei Zhu, Nanxuan Zhao, and Rynson~WH Lau.
-\newblock Neural preset for color style transfer.
-\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 14173--14182, 2023.
-
 \bibitem{li2016combining}
 Chuan Li and Michael Wand.
 \newblock Combining markov random fields and convolutional neural networks for image synthesis.
@@ -84,6 +79,16 @@ Dongyang Li, Hao Luo, Pichao Wang, Zhibin Wang, Shang Liu, and Fan Wang.
 Guilin Liu, Aysegul Dundar, Kevin~J Shih, Ting-Chun Wang, Fitsum~A Reda, Karan Sapra, Zhiding Yu, Xiaodong Yang, Andrew Tao, and Bryan Catanzaro.
 \newblock Partial convolution for padding, inpainting, and image synthesis.
 \newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence}, 45(5):6096--6110, 2022.
+
+\bibitem{liu2304any}
+S~Liu, J~Ye, and X~Wang.
+\newblock Any-to-any style transfer: Making picasso and da vinci collaborate. arxiv 2023.
+\newblock {\em arXiv preprint arXiv:2304.09728}.
+
+\bibitem{liu2023name}
+Zhi-Song Liu, Li-Wen Wang, Wan-Chi Siu, and Vicky Kalogeiton.
+\newblock Name your style: text-guided artistic style transfer.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 3530--3534, 2023.
 
 \bibitem{Men_2022_CVPR}
 Yifang Men, Yuan Yao, Miaomiao Cui, Zhouhui Lian, Xuansong Xie, and Xian-Sheng Hua.
@@ -124,6 +129,11 @@ Dmitry Ulyanov, Vadim Lebedev, Andrea Vedaldi, and Victor Lempitsky.
 Wenju Xu, Chengjiang Long, Ruisheng Wang, and Guanghui Wang.
 \newblock Drb-gan: A dynamic resblock generative adversarial network for artistic style transfer.
 \newblock In {\em Proceedings of the IEEE/CVF international conference on computer vision}, pages 6383--6392, 2021.
+
+\bibitem{zhang2023inversion}
+Yuxin Zhang, Nisha Huang, Fan Tang, Haibin Huang, Chongyang Ma, Weiming Dong, and Changsheng Xu.
+\newblock Inversion-based style transfer with diffusion models.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 10146--10156, 2023.
 
 \bibitem{zhang2023caster}
 Zhanjie Zhang, Jiakai Sun, Jiafu Chen, Lei Zhao, Boyan Ji, Zehua Lan, Guangyuan Li, Wei Xing, and Duanqing Xu.
