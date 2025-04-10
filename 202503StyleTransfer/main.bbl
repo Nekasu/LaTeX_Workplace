@@ -60,6 +60,11 @@ Tero Karras, Samuli Laine, and Timo Aila.
 \newblock A style-based generator architecture for generative adversarial networks.
 \newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 4401--4410, 2019.
 
+\bibitem{kwon2024aesfa}
+Joonwoo Kwon, Sooyoung Kim, Yuewei Lin, Shinjae Yoo, and Jiook Cha.
+\newblock Aesfa: an aesthetic feature-aware arbitrary neural style transfer.
+\newblock In {\em Proceedings of the AAAI conference on artificial intelligence}, volume~38, pages 13310--13319, 2024.
+
 \bibitem{li2016combining}
 Chuan Li and Michael Wand.
 \newblock Combining markov random fields and convolutional neural networks for image synthesis.
@@ -94,6 +99,11 @@ Zhi-Song Liu, Li-Wen Wang, Wan-Chi Siu, and Vicky Kalogeiton.
 Yifang Men, Yuan Yao, Miaomiao Cui, Zhouhui Lian, Xuansong Xie, and Xian-Sheng Hua.
 \newblock Unpaired cartoon image synthesis via gated cycle mapping.
 \newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pages 3501--3510, June 2022.
+
+\bibitem{porter1984compositing}
+Thomas Porter and Tom Duff.
+\newblock Compositing digital images.
+\newblock In {\em Proceedings of the 11th annual conference on Computer graphics and interactive techniques}, pages 253--259, 1984.
 
 \bibitem{risser2017stable}
 Eric Risser, Pierre Wilmot, and Connelly Barnes.
