@@ -145,6 +145,11 @@ Wenju Xu, Chengjiang Long, Ruisheng Wang, and Guanghui Wang.
 \newblock Drb-gan: A dynamic resblock generative adversarial network for artistic style transfer.
 \newblock In {\em Proceedings of the IEEE/CVF international conference on computer vision}, pages 6383--6392, 2021.
 
+\bibitem{yu2019free}
+Jiahui Yu, Zhe Lin, Jimei Yang, Xiaohui Shen, Xin Lu, and Thomas~S Huang.
+\newblock Free-form image inpainting with gated convolution.
+\newblock In {\em Proceedings of the IEEE/CVF international conference on computer vision}, pages 4471--4480, 2019.
+
 \bibitem{zhang2023inversion}
 Yuxin Zhang, Nisha Huang, Fan Tang, Haibin Huang, Chongyang Ma, Weiming Dong, and Changsheng Xu.
 \newblock Inversion-based style transfer with diffusion models.

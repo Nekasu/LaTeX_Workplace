@@ -42,4 +42,4 @@ RGBA 图像中的 alpha 通道与 RGB 三个通道在信息表达、语义含义
     M_{\mathbf{out}}^{(i,j)} = \frac{1}{K^2}\sum_{k,l} M_{s}^{(i+k, j+l)} 
 \end{equation}
 
-值得一提的是, Gated Convolution 
+值得一提的是, Gated Convolution\cite{yu2019free} 通常被认为是对 Partial Convolution 的改进, 其核心创新在于将掩膜的更新策略从基于规则的更新机制替换为可学习的门控机制. 该机制能够在训练中自动学习图像中哪些区域应当被保留, 从而在某些任务中（如图像修复）取得了更灵活的表现. 然而, 在本研究聚焦的风格迁移任务中, 我们发现 Partial Convolution 具备更强的结构适配性, 原因如下：

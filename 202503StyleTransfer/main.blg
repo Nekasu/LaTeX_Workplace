@@ -10,45 +10,45 @@ Warning--can't use both volume and number fields in kwon2024aesfa
 Warning--can't use both volume and number fields in li2023frequency
 Warning--empty year in liu2304any
 Warning--can't use both volume and number fields in zhang2024artbank
-You've used 33 entries,
+You've used 34 entries,
             2118 wiz_defined-function locations,
-            674 strings with 11013 characters,
-and the built_in function-call counts, 16110 in all, are:
-= -- 1577
-> -- 834
-< -- 25
-+ -- 332
-- -- 296
-* -- 1138
-:= -- 2408
-add.period$ -- 101
-call.type$ -- 33
-change.case$ -- 247
+            678 strings with 11171 characters,
+and the built_in function-call counts, 16723 in all, are:
+= -- 1637
+> -- 867
+< -- 26
++ -- 345
+- -- 308
+* -- 1181
+:= -- 2496
+add.period$ -- 104
+call.type$ -- 34
+change.case$ -- 256
 chr.to.int$ -- 0
-cite$ -- 40
-duplicate$ -- 636
-empty$ -- 1182
-format.name$ -- 296
-if$ -- 3511
+cite$ -- 41
+duplicate$ -- 661
+empty$ -- 1226
+format.name$ -- 308
+if$ -- 3647
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 31
-newline$ -- 168
-num.names$ -- 62
-pop$ -- 308
+int.to.str$ -- 34
+missing$ -- 32
+newline$ -- 173
+num.names$ -- 64
+pop$ -- 320
 preamble$ -- 1
-purify$ -- 214
+purify$ -- 222
 quote$ -- 0
-skip$ -- 554
+skip$ -- 577
 stack$ -- 0
-substring$ -- 1105
-swap$ -- 285
-text.length$ -- 25
+substring$ -- 1150
+swap$ -- 298
+text.length$ -- 26
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 132
+type$ -- 136
 warning$ -- 7
-while$ -- 133
-width$ -- 35
-write$ -- 361
+while$ -- 138
+width$ -- 36
+write$ -- 372
 (There were 7 warnings)
