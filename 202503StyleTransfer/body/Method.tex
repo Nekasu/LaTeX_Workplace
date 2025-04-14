@@ -22,4 +22,24 @@ RGBA 图像中的 alpha 通道与 RGB 三个通道在信息表达、语义含义
 
 \subsection{Soft Partial Convolution for Countinuous Alpha Transparency}
 
-引入 alpha通道敏感的建模机制有两种实现方式. 其一, 将 alpha通道 与 RGB 通道分离, 分别设计 Encoder, 以提取其中特征, 在各自的 Encoder 之间实现信息交流; 其二, alpha 信息看作 RGB 的补充信息, 用融合策略将 alpha 通道融入主编码网络中, 在统一的特征空间中捕捉颜色与透明度的细粒度特征, 从而实现更为准确的透明区域建模. 考虑到 alpha通道 用于控制像素显隐程度, 在风格迁移任务中可以表示某区域的风格化程度, 同时考虑到计算消耗, 故本文使用第二种实现方式作为主要研究思路.
+引入 alpha通道敏感的建模机制有两种实现方式. 其一, 为alpha通道 与 RGB 通道分别设计 Encoder, 并在二者之间实现信息交流; 其二, alpha 信息看作 RGB 的补充信息, 用融合策略将 alpha 通道融入主编码网络中, 在统一的特征空间中捕捉颜色与透明度的细粒度特征. 考虑到 alpha通道 用于控制像素显隐程度, 在风格迁移任务中可以表示某区域的风格化程度, 可以作为主网络的补充信息; 同时考虑到计算成本, 故本文以第二种实现方式作为主要研究对象.
+
+为了将代表风格化程度的 alpha 信息融入主网络, 我们参考了 Image Inpainting 任务的 Partial Convolution\cite{liu2018image}. Partial Convolution 的核心思想是利用一个二值掩膜来区分已知和缺失区域, 从而仅对已知区域进行卷积运算. 然而, 对与具有连续 alpha 通道信息的 RGBA 图像而言, alpha 通道的像素值通常在 $[$0, 255$]$ 之间变化, 用于反应像素的不透明度与风格化程度. 在这种情况下, 简单地将 alpha 通道二值化容易丢失细腻的透明度信息, 从而影响网络对图像透明边缘与分层合成的精细建模. 因此, 为了让部分卷积更好适配风格迁移任务, 我们有必要对部分卷积进行修改, 使其能够直接利用连续值作为掩膜, 从而更好地保留 alpha 通道的语义信息.
+
+我们提出了 Soft Partial Convolution for image style transfer network. 具体来说, 我们将图像中 alpha 通道归一化为 $[$0,1$]$ 之间的 soft mask, 并用该 soft mask 作为风格化程度信息, 辅助风格迁移. 假设输入特征图为 $X \in \mathbb{R}^{C\times H \times W}$, 其对应的 soft mask 由 alpha 通道归一化得到, 记做 $M_{s}\in [\mathrm{0},\mathrm{1}]$; 给定卷积核 $W \in \mathbb{R}^{C\times K \times K}$ 以及偏置 $b$, 则在 $(i,j)$ 处的 Soft Partial Convolution 输出 $Y_{i,j}$ 定义为:
+\begin{equation}
+    \begin{aligned}
+        \label{equation-soft_partial_convolution}
+        Y_{i,j} = \begin{cases}
+            \frac{1}{\sum M_s^{(i+k,j+l)}} \sum_{k,l} W \cdot X^{(i+k, j+l)} \cdot M_{s}^{(i+k, j+)} + b,& \mathrm{if} \sum_{k,l} M_{s}^{(i+k, j+l)} > 0 \\
+            0, & \mathrm{otherwise}
+        \end{cases}
+    \end{aligned}
+\end{equation}
+同时, 我们采样局部平均值来更新掩膜, 得到新的连续掩膜 $M_{\mathrm{out}}$
+\begin{equation}
+    \label{equation-mask_update}
+    M_{\mathbf{out}}^{(i,j)} = \frac{1}{K^2}\sum_{k,l} M_{s}^{(i+k, j+l)} 
+\end{equation}
+
+值得一提的是, Gated Convolution 

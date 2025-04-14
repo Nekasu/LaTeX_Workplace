@@ -85,6 +85,11 @@ Guilin Liu, Aysegul Dundar, Kevin~J Shih, Ting-Chun Wang, Fitsum~A Reda, Karan S
 \newblock Partial convolution for padding, inpainting, and image synthesis.
 \newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence}, 45(5):6096--6110, 2022.
 
+\bibitem{liu2018image}
+Guilin Liu, Fitsum~A Reda, Kevin~J Shih, Ting-Chun Wang, Andrew Tao, and Bryan Catanzaro.
+\newblock Image inpainting for irregular holes using partial convolutions.
+\newblock In {\em Proceedings of the European conference on computer vision (ECCV)}, pages 85--100, 2018.
+
 \bibitem{liu2304any}
 S~Liu, J~Ye, and X~Wang.
 \newblock Any-to-any style transfer: Making picasso and da vinci collaborate. arxiv 2023.
