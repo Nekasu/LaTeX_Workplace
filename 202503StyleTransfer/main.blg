@@ -3,52 +3,50 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: references.bib
-Warning--to sort, need author or key in wikiartWikiArtorgVisual
-Warning--to sort, need author or key in cocodatasetCOCOCommon
 Warning--can't use both volume and number fields in ahn2024dreamstyler
 Warning--can't use both volume and number fields in kwon2024aesfa
 Warning--can't use both volume and number fields in li2023frequency
 Warning--empty year in liu2304any
 Warning--can't use both volume and number fields in zhang2024artbank
-You've used 34 entries,
+You've used 38 entries,
             2118 wiz_defined-function locations,
-            678 strings with 11171 characters,
-and the built_in function-call counts, 16723 in all, are:
-= -- 1637
-> -- 867
-< -- 26
-+ -- 345
-- -- 308
-* -- 1181
-:= -- 2496
-add.period$ -- 104
-call.type$ -- 34
-change.case$ -- 256
+            700 strings with 12274 characters,
+and the built_in function-call counts, 19930 in all, are:
+= -- 1944
+> -- 1083
+< -- 31
++ -- 429
+- -- 388
+* -- 1438
+:= -- 2995
+add.period$ -- 117
+call.type$ -- 38
+change.case$ -- 307
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 661
-empty$ -- 1226
-format.name$ -- 308
-if$ -- 3647
+cite$ -- 43
+duplicate$ -- 777
+empty$ -- 1418
+format.name$ -- 388
+if$ -- 4326
 int.to.chr$ -- 0
-int.to.str$ -- 34
-missing$ -- 32
-newline$ -- 173
-num.names$ -- 64
-pop$ -- 320
+int.to.str$ -- 38
+missing$ -- 38
+newline$ -- 193
+num.names$ -- 76
+pop$ -- 370
 preamble$ -- 1
-purify$ -- 222
+purify$ -- 269
 quote$ -- 0
-skip$ -- 577
+skip$ -- 680
 stack$ -- 0
-substring$ -- 1150
-swap$ -- 298
-text.length$ -- 26
+substring$ -- 1371
+swap$ -- 356
+text.length$ -- 31
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 136
-warning$ -- 7
-while$ -- 138
-width$ -- 36
-write$ -- 372
-(There were 7 warnings)
+type$ -- 152
+warning$ -- 5
+while$ -- 167
+width$ -- 40
+write$ -- 421
+(There were 5 warnings)

@@ -1,15 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{cocodatasetCOCOCommon}
-{C}{O}{C}{O} - {C}ommon {O}bjects in {C}ontext --- cocodataset.org.
-\newblock \url{https://cocodataset.org/#home}.
-\newblock [Accessed 25-03-2025].
-
-\bibitem{wikiartWikiArtorgVisual}
-{W}iki{A}rt.org - {V}isual {A}rt {E}ncyclopedia --- wikiart.org.
-\newblock \url{https://www.wikiart.org/en/App/Home}.
-\newblock [Accessed 25-03-2025].
-
 \bibitem{ahn2024dreamstyler}
 Namhyuk Ahn, Junsoo Lee, Chunggi Lee, Kunhee Kim, Daesik Kim, Seung-Hun Nam, and Kibeom Hong.
 \newblock Dreamstyler: Paint by style inversion with text-to-image diffusion models.
@@ -19,6 +9,11 @@ Namhyuk Ahn, Junsoo Lee, Chunggi Lee, Kunhee Kim, Daesik Kim, Seung-Hun Nam, and
 Dongdong Chen, Lu~Yuan, Jing Liao, Nenghai Yu, and Gang Hua.
 \newblock Stylebank: An explicit representation for neural image style transfer.
 \newblock In {\em Proceedings of the IEEE conference on computer vision and pattern recognition}, pages 1897--1906, 2017.
+
+\bibitem{deng2022stytr2}
+Yingying Deng, Fan Tang, Weiming Dong, Chongyang Ma, Xingjia Pan, Lei Wang, and Changsheng Xu.
+\newblock Stytr2: Image style transfer with transformers.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 11326--11336, 2022.
 
 \bibitem{dumoulin2016learned}
 Vincent Dumoulin, Jonathon Shlens, and Manjunath Kudlur.
@@ -40,6 +35,11 @@ Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sh
 \newblock Generative adversarial networks.
 \newblock {\em Communications of the ACM}, 63(11):139--144, 2020.
 
+\bibitem{huang2023quantart}
+Siyu Huang, Jie An, Donglai Wei, Jiebo Luo, and Hanspeter Pfister.
+\newblock Quantart: Quantizing image style transfer towards high visual fidelity.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 5947--5956, 2023.
+
 \bibitem{huang2017arbitrary}
 Xun Huang and Serge Belongie.
 \newblock Arbitrary style transfer in real-time with adaptive instance normalization.
@@ -60,6 +60,11 @@ Tero Karras, Samuli Laine, and Timo Aila.
 \newblock A style-based generator architecture for generative adversarial networks.
 \newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 4401--4410, 2019.
 
+\bibitem{kirillov2023segment}
+Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, Tete Xiao, Spencer Whitehead, Alexander~C Berg, Wan-Yen Lo, et~al.
+\newblock Segment anything.
+\newblock In {\em Proceedings of the IEEE/CVF international conference on computer vision}, pages 4015--4026, 2023.
+
 \bibitem{kwon2024aesfa}
 Joonwoo Kwon, Sooyoung Kim, Yuewei Lin, Shinjae Yoo, and Jiook Cha.
 \newblock Aesfa: an aesthetic feature-aware arbitrary neural style transfer.
@@ -79,6 +84,11 @@ Chuan Li and Michael Wand.
 Dongyang Li, Hao Luo, Pichao Wang, Zhibin Wang, Shang Liu, and Fan Wang.
 \newblock Frequency domain disentanglement for arbitrary neural style transfer.
 \newblock In {\em Proceedings of the AAAI Conference on Artificial Intelligence}, volume~37, pages 1287--1295, 2023.
+
+\bibitem{cocodatasetCOCOCommon}
+Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Doll{\'a}r, and C~Lawrence Zitnick.
+\newblock Microsoft coco: Common objects in context.
+\newblock In {\em Computer vision--ECCV 2014: 13th European conference, zurich, Switzerland, September 6-12, 2014, proceedings, part v 13}, pages 740--755. Springer, 2014.
 
 \bibitem{liu2022partial}
 Guilin Liu, Aysegul Dundar, Kevin~J Shih, Ting-Chun Wang, Fitsum~A Reda, Karan Sapra, Zhiding Yu, Xiaodong Yang, Andrew Tao, and Bryan Catanzaro.
@@ -104,6 +114,11 @@ Zhi-Song Liu, Li-Wen Wang, Wan-Chi Siu, and Vicky Kalogeiton.
 Yifang Men, Yuan Yao, Miaomiao Cui, Zhouhui Lian, Xuansong Xie, and Xian-Sheng Hua.
 \newblock Unpaired cartoon image synthesis via gated cycle mapping.
 \newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pages 3501--3510, June 2022.
+
+\bibitem{wikiartWikiArtorgVisual}
+Fred Phillips and Brandy Mackintosh.
+\newblock Wiki art gallery, inc.: A case for critical thinking.
+\newblock {\em Issues in Accounting Education}, 26(3):593--608, 2011.
 
 \bibitem{porter1984compositing}
 Thomas Porter and Tom Duff.
@@ -154,6 +169,11 @@ Jiahui Yu, Zhe Lin, Jimei Yang, Xiaohui Shen, Xin Lu, and Thomas~S Huang.
 Yuxin Zhang, Nisha Huang, Fan Tang, Haibin Huang, Chongyang Ma, Weiming Dong, and Changsheng Xu.
 \newblock Inversion-based style transfer with diffusion models.
 \newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, pages 10146--10156, 2023.
+
+\bibitem{zhang2022domain}
+Yuxin Zhang, Fan Tang, Weiming Dong, Haibin Huang, Chongyang Ma, Tong-Yee Lee, and Changsheng Xu.
+\newblock Domain enhanced arbitrary image style transfer via contrastive learning.
+\newblock In {\em ACM SIGGRAPH 2022 conference proceedings}, pages 1--8, 2022.
 
 \bibitem{zhang2023caster}
 Zhanjie Zhang, Jiakai Sun, Jiafu Chen, Lei Zhao, Boyan Ji, Zehua Lan, Guangyuan Li, Wei Xing, and Duanqing Xu.

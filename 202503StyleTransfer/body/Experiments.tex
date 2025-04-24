@@ -1,0 +1,71 @@
+\section{Experiment}
+
+此部分中, 我们首先介绍提出的 AlphaImg 数据集. 随后, 我们验证了所提出的 Soft Partial Convolution 在进行具有不透明度信息的风格迁移时的有效性, 并说明其相对于其他先进方法的优越性.
+
+\subsection{Dataset}
+
+为了验证所提出方法在透明图像风格迁移中的有效性, 我们构建了一个名为 AlphaImg 的合成数据集. 该数据集基于 MSCOCO\cite{cocodatasetCOCOCommon} 与 WikiArt\cite{wikiartWikiArtorgVisual}数据集, 通过 Segment Anything Model(SAM)\cite{kirillov2023segment}将整副图像分割并裁剪为多个形状不规则的图像, 并为分割后图像添加 alpha 通道信息, 以 png 格式存储. 
+训练集与测试集均由内容图像集与风格图像集组成, 内容图像集以处理后的 MSCOCO 数据为主, 风格图像集以处理后的 WikiArt 数据为主. 训练集包含 50,000 张来自 MSCOCO 且背景透明的内容图像, 以及 10,000 张来自 WikiArt 的风格图像. 测试集中包含 10,000 张来自 MSCOCO 且背景透明的图像, 以及 5,000 张来自 WikiArt 的风格图像. 其中内容图像不透明度仅为0或255, 而风格图像的不透明度则会在0~255之间变化, 以模拟真实情况.
+
+具体来说, 对一张来自 MSCOCO 的内容图像 $C^i$, 我们首先使用 SAM 模型为其创建包含 $n$ 个掩膜的掩膜组 $M_c^i=\{m_c^{i,1}, m_c^{i,2}, \cdots, m_c^{i,n}\}$. 随后将掩膜组 $M_c^i$ 中的每一张掩膜 $m_c^{i,j}$ 当作内容图像 $C^i$ 的 alpha 通道, 以获取 $n$ 张具有透明背景的内容图像. 
+% 对于一张来自 WikiArt 的风格图像 $S^i$, 我们同样使用 SAM 模型为其创建一个风格掩膜组, 并按掩膜中白色区域的大小从小到大排序, 形成排序后的风格掩膜组$M_s^i=\{m_s^{i,1}, m_s^{i,2}, \cdots, m_s^{i,n}\}, \sum m_s^{i,1} \le \sum m_s^{i,2} \le \cdots \le \sum m_s^{i,n}$. 随后, 根据白色区域的大小修改像素值, 以模拟风格图像中可能存在的不透明度变化情况. 对于风格图像 $S^i$ 的 第 $j$ 张风格掩膜 $m_s^{i,j}$, 按如下公式修改以获得 Soft Mask $m_s^{'i,j}$:
+% \begin{equation}
+%     \begin{aligned}
+%         m_{s,(x,y)}^{'i,j} = \begin{cases}
+%             \frac{j+1}{n} \cdot 255, \quad &\text{if} \quad m_{s,(x,y)}^{i,j}=255, \\
+%             0,\quad &\text{if} \quad m_{s,(x,y)}^{i,j}=0 \\
+%         \end{cases}
+%     \end{aligned}
+% \end{equation}
+% 对于 Soft Mask 组 $M_s^{'i}=\{m_s^{'i,1},m_s^{'i,2},\cdot,m_s^{'i,n}\}$
+对于一张来自 WikiArt 的风格图像 $S^i$, 我们同样使用 SAM 为其生成风格掩膜组. 所有掩膜根据其白色区域的像素数量进行升序排序, 得到排序后的风格掩膜集合:
+\begin{equation}
+    M_s^i=\{m_s^{i,1}, m_s^{i,2}, \cdots, m_s^{i,n}\}, \sum m_s^{i,1} \le \sum m_s^{i,2} \le \cdots \le \sum m_s^{i,n}
+\end{equation}
+ 
+为模拟风格图像中可能存在的透明度分布差异, 我们将每个掩膜 $m_s^{i,j}$ 转换为带有不同灰度级别的 soft mask $m_s^{'i,j}$. 具体地, 对于每个像素位置 $(x, y)$, 其值按如下方式赋值:
+
+\begin{equation}
+    \begin{aligned}
+        \label{eq:soft-mask}
+        m_{s,(x,y)}^{'i,j} = 
+        \begin{cases} 
+            \frac{j+1}{n} \cdot 255, & \text{if } m_{s,(x,y)}^{i,j} = 255 \\
+            0, & \text{if } m_{s,(x,y)}^{i,j} = 0
+        \end{cases} 
+    \end{aligned}
+\end{equation}
+该设计使得编号越大的掩膜(即区域面积越大的部分)对应的透明度值越高, 从而体现出一种从局部细节到整体结构的风格强度递进.
+为进一步构建一张连续的 alpha 蒙版图, 我们将所有 soft mask 按照如下规则进行叠加合成:
+
+\begin{equation}
+    \begin{aligned}
+        \label{eq:alpha-composition}
+        \tilde{A}^i(x, y) = 
+        \begin{cases} m_{s,(x,y)}^{'i,j}, & \text{if } m_{s,(x,y)}^{i,j} = 255 \text{ 且 } (x, y) \text{ 尚未被赋值} \\
+        \tilde{A}^i(x, y), & \text{otherwise} \end{cases}
+    \end{aligned}
+\end{equation}
+
+其中 $\tilde{A}^i$ 表示图像 $S^i$ 的最终透明度图. 我们初始化 $\tilde{A}^i(x, y) = 255$, 然后依序扫描每一个 soft mask. 一旦某个位置 $(x, y)$ 被某个掩膜 $m_s^{i,j}$ 覆盖且未被之前的掩膜赋值, 则用 $m_s^{'i,j}$ 中的值更新之. 该策略可确保不同区域以“后掩膜优先”的方式分配透明度, 从而在一定程度上模拟层叠结构.
+
+
+\subsection{Style Transfer Results}
+
+在本节中, we compare the results between the proposed Soft Partial Convolution and previous SOTAS, including AdaIN\cite{huang2017arbitrary}, CycleGAN\cite{zhu2017unpaired}, CAST\cite{zhang2022domain}, StyTr2\cite{deng2022stytr2},  QuantArt\cite{huang2023quantart}, ArtBank\cite{zhang2024artbank}, 以及 baseline 工作 AesFA \cite{kwon2024aesfa}. 
+
+% 介绍上述方法, 包括优势、劣势、特色、对风格迁移发展的意义
+% AdaIN 将风格迁移领域推广到任意风格迁移, CycleGAN 引入无配对图像映射和循环一致性损失, 二者均是风格迁移领域的经典工作. 
+
+\subsection{Qualitative Comparasion}
+
+由于上述方法没有针对 RGBA 图像进行专门训练, 我们将上述 经典 或 SOTAS 方法 在本文整合的数据集 AlphaStyle 上重新训练, 以进行公平的比较. The qualitative comparisons presented in Figure (picture needed) provide a visual assessment of the outcomes achieved by different style transfer methods.
+
+% 分析本文方法与上述方法比较, 优势在何处
+
+% 总结
+与上述方法相比, 我们提出的 Soft Partial Convolution 不仅可以将 alpha 通道纳入风格迁移网络, 也能保留原始输入图像的不透明度关系.
+\subsection{User Study}
+
+
+\subsection{Ablation Study}
