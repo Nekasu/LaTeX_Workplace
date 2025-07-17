@@ -3,44 +3,47 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Formatting-Instructions-LaTeX-2026.aux
 The style file: aaai2026.bst
 Database file #1: aaai2026.bib
-You've used 10 entries,
+Warning--can't use both volume and number fields in ahn2024dreamstyler
+Warning--can't use both volume and number fields in kwon2024aesfa
+You've used 15 entries,
             2840 wiz_defined-function locations,
-            645 strings with 6029 characters,
-and the built_in function-call counts, 5315 in all, are:
-= -- 435
-> -- 222
-< -- 1
-+ -- 84
-- -- 75
-* -- 323
-:= -- 925
-add.period$ -- 43
-call.type$ -- 10
-change.case$ -- 67
-chr.to.int$ -- 11
-cite$ -- 10
-duplicate$ -- 382
-empty$ -- 388
-format.name$ -- 83
-if$ -- 1032
+            675 strings with 7273 characters,
+and the built_in function-call counts, 10186 in all, are:
+= -- 834
+> -- 496
+< -- 3
++ -- 184
+- -- 170
+* -- 667
+:= -- 1651
+add.period$ -- 63
+call.type$ -- 15
+change.case$ -- 125
+chr.to.int$ -- 16
+cite$ -- 17
+duplicate$ -- 701
+empty$ -- 703
+format.name$ -- 193
+if$ -- 2029
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 79
-newline$ -- 55
-num.names$ -- 41
-pop$ -- 164
+missing$ -- 146
+newline$ -- 80
+num.names$ -- 61
+pop$ -- 321
 preamble$ -- 1
-purify$ -- 60
+purify$ -- 108
 quote$ -- 0
-skip$ -- 163
+skip$ -- 349
 stack$ -- 0
-substring$ -- 205
-swap$ -- 185
-text.length$ -- 1
+substring$ -- 460
+swap$ -- 371
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 87
-warning$ -- 0
-while$ -- 47
+type$ -- 132
+warning$ -- 2
+while$ -- 82
 width$ -- 0
-write$ -- 134
+write$ -- 201
+(There were 2 warnings)

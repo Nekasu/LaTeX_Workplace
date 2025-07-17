@@ -1,5 +1,10 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Ahn et~al.(2024)Ahn, Lee, Lee, Kim, Kim, Nam, and Hong}]{ahn2024dreamstyler}
+Ahn, N.; Lee, J.; Lee, C.; Kim, K.; Kim, D.; Nam, S.-H.; and Hong, K. 2024.
+\newblock Dreamstyler: Paint by style inversion with text-to-image diffusion models.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial Intelligence}, volume~38, 674--681.
 
 \bibitem[{Clancey(1979)}]{c:79}
 Clancey, W.~J. 1979.
@@ -26,10 +31,30 @@ Engelmore, R.; and Morgan, A., eds. 1986.
 \newblock \emph{Blackboard Systems}.
 \newblock Reading, Mass.: Addison-Wesley.
 
+\bibitem[{Gatys, Ecker, and Bethge(2016)}]{gatys2016image}
+Gatys, L.~A.; Ecker, A.~S.; and Bethge, M. 2016.
+\newblock Image style transfer using convolutional neural networks.
+\newblock In \emph{Proceedings of the IEEE conference on computer vision and pattern recognition}, 2414--2423.
+
 \bibitem[{Hasling, Clancey, and Rennels(1984)}]{hcr:83}
 Hasling, D.~W.; Clancey, W.~J.; and Rennels, G. 1984.
 \newblock Strategic explanations for a diagnostic consultation system.
 \newblock \emph{International Journal of Man-Machine Studies}, 20(1): 3--19.
+
+\bibitem[{Huang and Belongie(2017)}]{huang2017arbitrary}
+Huang, X.; and Belongie, S. 2017.
+\newblock Arbitrary style transfer in real-time with adaptive instance normalization.
+\newblock In \emph{Proceedings of the IEEE international conference on computer vision}, 1501--1510.
+
+\bibitem[{Kirillov et~al.(2023)Kirillov, Mintun, Ravi, Mao, Rolland, Gustafson, Xiao, Whitehead, Berg, Lo et~al.}]{kirillov2023segment}
+Kirillov, A.; Mintun, E.; Ravi, N.; Mao, H.; Rolland, C.; Gustafson, L.; Xiao, T.; Whitehead, S.; Berg, A.~C.; Lo, W.-Y.; et~al. 2023.
+\newblock Segment anything.
+\newblock In \emph{Proceedings of the IEEE/CVF international conference on computer vision}, 4015--4026.
+
+\bibitem[{Kwon et~al.(2024)Kwon, Kim, Lin, Yoo, and Cha}]{kwon2024aesfa}
+Kwon, J.; Kim, S.; Lin, Y.; Yoo, S.; and Cha, J. 2024.
+\newblock Aesfa: an aesthetic feature-aware arbitrary neural style transfer.
+\newblock In \emph{Proceedings of the AAAI conference on artificial intelligence}, volume~38, 13310--13319.
 
 \bibitem[{{NASA}(2015)}]{c:23}
 {NASA}. 2015.

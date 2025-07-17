@@ -180,20 +180,26 @@ AAAI creates proceedings, working notes, and technical reports directly from ele
 
 \section{Introduction}
 
-Congratulations on having a paper selected for inclusion in an AAAI Press proceedings or technical report! This document details the requirements necessary to get your accepted paper published using PDF\LaTeX{}. If you are using Microsoft Word, instructions are provided in a different document. AAAI Press does not support any other formatting software.
+Neural style transfer (NST) reimagines visual content by synthesizing the semantics of one image with the artistic identity of another using deep neural networks. 
+Since the seminal work of Gatys et al.~\cite{gatys2016image}, which framed style transfer as an optimization problem using the Gram matrix of VGG features, the field has advanced significantly toward real-time stylization~\cite{huang2017arbitrary}, high-fidelity generation~\cite{kwon2024aesfa}, and multimodal controllability~\cite{ahn2024dreamstyler}.
 
-The instructions herein are provided as a general guide for experienced \LaTeX{} users. If you do not know how to use \LaTeX{}, please obtain assistance locally. AAAI cannot provide you with support and the accompanying style files are \textbf{not} guaranteed to work. If the results you obtain are not in accordance with the specifications you received, you must correct your source file to achieve the correct result.
+However, a critical limitation underlies almost all existing NST models: the assumption that input images are fully opaque. This design paradigm excludes the alpha channel—a key component in digital imaging that encodes per-pixel transparency and is widely used in UI composition, image compositing, and layered artistic workflows. As a result, standard NST methods ignore transparency semantics, which often leads to undesirable stylization artifacts such as edge bleeding, occluded detail transfer, and inconsistency in downstream composition.
 
-These instructions are generic. Consequently, they do not include specific dates, page charges, and so forth. Please consult your specific written conference instructions for details regarding your submission. Please review the entire document for specific instructions that might apply to your particular situation. All authors must comply with the following:
+Unlike RGB channels that define visual appearance, the alpha channel governs perceptual visibility. In the context of style transfer, alpha values modulate stylistic salience—pixels with high alpha demand stronger stylization fidelity, while those with low or zero alpha suppress stylistic rendering. This transparency signal encodes important spatial semantics that are entirely discarded in RGB-only NST pipelines.
 
+To address this gap, we introduce \textbf{alpha-aware neural style transfer}—a novel NST paradigm that models transparency semantics throughout the stylization process. Our end-to-end framework accepts RGBA inputs, applies alpha-guided feature computation, and outputs stylized RGBA images that faithfully preserve both artistic identity and transparency structure. To our knowledge, this is the first NST method to treat soft alpha information as a first-class modeling component.
+
+While our study focuses on the alpha channel as a prominent transparency cue, we view our design as a first step toward modeling more general per-pixel semantics such as depth, surface normals, or material attributes. We leave these extensions for future work.
+
+Our contributions are summarized as follows:
 \begin{itemize}
-\item You must use the 2026 AAAI Press \LaTeX{} style file and the aaai2026.bst bibliography style files, which are located in the 2026 AAAI Author Kit (aaai2026.sty, aaai2026.bst).
-\item You must complete, sign, and return by the deadline the AAAI copyright form (unless directed by AAAI Press to use the AAAI Distribution License instead).
-\item You must read and format your paper source and PDF according to the formatting instructions for authors.
-\item You must submit your electronic files and abstract using our electronic submission form \textbf{on time.}
-\item You must pay any required page or formatting charges to AAAI Press so that they are received by the deadline.
-\item You must check your paper before submitting it, ensuring that it compiles without error, and complies with the guidelines found in the AAAI Author Kit.
+    \item {Problem formulation}: We define alpha-aware neural style transfer as a new task setting that extends traditional RGB-only NST to RGBA-space modeling with explicit transparency semantics.
+    \item {Soft Partial Convolution}: We propose a soft partial convolution module that generalizes conventional partial convolutions to handle continuous-valued alpha masks, enabling effective feature propagation under partial visibility.
+    \item {Alpha-guided perceptual loss}: We design an alpha-aware perceptual loss that modulates stylization supervision based on transparency, encouraging semantic consistency between visibility and stylized output.
+    \item {AlphaStyle Dataset}: We construct AlphaStyle, the first large-scale RGBA dataset for NST, derived from WikiArt and MSCOCO using Segment Anything~\cite{kirillov2023segment} to extract irregular masks. The dataset contains over 20,000 high-quality RGBA image pairs in lossless PNG format.
 \end{itemize}
+
+\section{Realted Works}
 
 \section{Copyright}
 All papers submitted for publication by AAAI Press must be accompanied by a valid signed copyright form. They must also contain the AAAI copyright notice at the bottom of the first page of the paper. There are no exceptions to these requirements. If you fail to provide us with a signed copyright form or disable the copyright notice, we will be unable to publish your paper. There are \textbf{no exceptions} to this policy. You will find a PDF version of the AAAI copyright form in the AAAI AuthorKit. Please see the specific instructions for your conference for submission details.

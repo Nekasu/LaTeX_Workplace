@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: chinese-edition.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--can't use both volume and number fields in ahn2024dreamstyler
+Warning--can't use both volume and number fields in kwon2024aesfa
+Warning--can't use both volume and number fields in li2023frequency
+Warning--empty year in liu2304any
+Warning--can't use both volume and number fields in zhang2024s2wat
+You've used 37 entries,
+            2118 wiz_defined-function locations,
+            693 strings with 11868 characters,
+and the built_in function-call counts, 19176 in all, are:
+= -- 1881
+> -- 1005
+< -- 31
++ -- 398
+- -- 358
+* -- 1357
+:= -- 2860
+add.period$ -- 114
+call.type$ -- 37
+change.case$ -- 289
+chr.to.int$ -- 0
+cite$ -- 42
+duplicate$ -- 766
+empty$ -- 1389
+format.name$ -- 358
+if$ -- 4189
+int.to.chr$ -- 0
+int.to.str$ -- 37
+missing$ -- 37
+newline$ -- 188
+num.names$ -- 74
+pop$ -- 354
+preamble$ -- 1
+purify$ -- 252
+quote$ -- 0
+skip$ -- 673
+stack$ -- 0
+substring$ -- 1335
+swap$ -- 355
+text.length$ -- 31
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 148
+warning$ -- 5
+while$ -- 163
+width$ -- 39
+write$ -- 410
+(There were 5 warnings)
