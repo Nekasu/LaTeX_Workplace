@@ -165,6 +165,11 @@ Jiahui Yu, Zhe Lin, Jimei Yang, Xiaohui Shen, Xin Lu, and Thomas~S Huang.
 \newblock Free-form image inpainting with gated convolution.
 \newblock In {\em Proceedings of the IEEE/CVF international conference on computer vision}, pages 4471--4480, 2019.
 
+\bibitem{zhang2024s2wat}
+Chiyu Zhang, Xiaogang Xu, Lei Wang, Zaiyan Dai, and Jun Yang.
+\newblock S2wat: Image style transfer via hierarchical vision transformer using strips window attention.
+\newblock In {\em Proceedings of the AAAI conference on artificial intelligence}, volume~38, pages 7024--7032, 2024.
+
 \bibitem{zhang2023inversion}
 Yuxin Zhang, Nisha Huang, Fan Tang, Haibin Huang, Chongyang Ma, Weiming Dong, and Changsheng Xu.
 \newblock Inversion-based style transfer with diffusion models.

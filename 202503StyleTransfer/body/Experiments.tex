@@ -52,14 +52,16 @@
 
 \subsection{Style Transfer Results}
 
-在本节中, we compare the results between the proposed Soft Partial Convolution and previous SOTAS, including AdaIN\cite{huang2017arbitrary}, CycleGAN\cite{zhu2017unpaired}, CAST\cite{zhang2022domain}, StyTr2\cite{deng2022stytr2},  QuantArt\cite{huang2023quantart}, ArtBank\cite{zhang2024artbank}, 以及 baseline 工作 AesFA \cite{kwon2024aesfa}. 
+在本节中, we compare the results between the proposed Soft Partial Convolution and previous SOTAS, including AdaIN\cite{huang2017arbitrary}, CycleGAN\cite{zhu2017unpaired}, CAST\cite{zhang2022domain}, StyTr2\cite{deng2022stytr2},  QuantArt\cite{huang2023quantart}, S2WAT\cite{zhang2024s2wat} 以及 baseline 工作 AesFA \cite{kwon2024aesfa}. 
 
 % 介绍上述方法, 包括优势、劣势、特色、对风格迁移发展的意义
 % AdaIN 将风格迁移领域推广到任意风格迁移, CycleGAN 引入无配对图像映射和循环一致性损失, 二者均是风格迁移领域的经典工作. 
 
 \subsection{Qualitative Comparasion}
 
-由于上述方法没有针对 RGBA 图像进行专门训练, 我们将上述 经典 或 SOTAS 方法 在本文整合的数据集 AlphaStyle 上重新训练, 以进行公平的比较. The qualitative comparisons presented in Figure (picture needed) provide a visual assessment of the outcomes achieved by different style transfer methods.
+尽管上述方法均基于 RGB 图像训练, 没有针对 RGBA 图像进行专门训练, 但我们认为使用 RGBA 图像为他们重新训练是不必要的. 上述方法在训练或推理时, 会将图像转换为 RGB 的格式, 即使原始图像具有 Alpha 通道信息. 在不修改部分现有成果官方代码的前提下, 它们甚至无法以 RGBA 格式图像作为输入(如 S2WAT 等). 因此这些方法本身在模型设计和训练阶段并不具备处理不透明度信息的能力. 基于这一事实, 我们采样它们的官方预训练模型直接在 AlphaImg 数据集上进行推理测试, 从而分析其在面对透明信息时的泛化能力和表现差异. 这一设置虽然不是在相同训练条件下的严格对比(fair comparison), 但能真实反映现有方法在处理不透明度图像中的表现瓶颈与适用便捷, 也从实验层面佐证了本文引入不透明度建模机制的必要性与有效性. The qualitative comparisons presented in Figure (picture needed) provide a visual assessment of the outcomes achieved by different style transfer methods.
+
+% 由于上述方法没有针对 RGBA 图像进行专门训练, 我们将上述 经典 或 SOTAS 方法 在本文整合的数据集 AlphaStyle 上重新训练, 以进行公平的比较. 
 
 % 分析本文方法与上述方法比较, 优势在何处
 
