@@ -201,6 +201,36 @@ Our contributions are summarized as follows:
 
 \section{Realted Works}
 
+Main goal of this chapter is showing the absence of alpha channel in NST. How to illustrate this phenomenon? 
+
+First of all, we can introduce the prior works, such as AdaIN. By showing the achievements of these important works, the importance of our work can bee seen--cover the absence of alpha-channels.
+
+Additionally, we can emphesize the imoprtance of 
+
+% 诚然, Related Works 一节是在介绍前人工作, 但介绍前人工作的同时, 也应该突出我们工作的重要性. 由于这一节以介绍其他工作为主, 所以在选择突出本文工作重要性方面, 我们主要应用的是“对比”, 即对比其他工作与该工作之间的差异. 
+
+% 但对比也应该是有技巧的, 我们可以列举从多个角度发展风格迁移的前人文章(如风格特征提取、超高分辨率图像风格迁移、人机交互的风格迁移等不同研究方向的前人风格迁移文章), 从而突出表明, 在多个风格迁移发展角度, 都没有人关注 α 通道这一方面的信息, 是严重的失误.
+
+% 我们还可以从发展的角度看, 即从纵向角度观察风格迁移发展. 列举风格迁移发展期间的众多关键性工作. 从时间的角度来说明被忽略的 α 通道. 结合上一段的思路, 即是结合了横向与纵向的发展角度, 整体考虑的差异性.
+
+% 我们还可以从实现的方法角度说明这个问题. 即当前存在的方法考虑了空间, 而未考虑能见性. 
+
+\subsection{Neural Style Transfer}
+
+Neural Style Transfer (NST) aims to synthesize an image that preserves the semantic content of a source image while reflecting the artistic style of another. The field was initiated by Gatys et al.~\cite{gatys2016image}, who formulated NST as an optimization problem by minimizing a style-content loss defined on the Gram matrices of deep feature maps extracted by a pretrained VGG network~\cite{25simonyan2014very}. This seminal work demonstrated the capability of convolutional features to separate and recombine style and content.
+
+However, optimization-based methods~\cite{li2016combining, berger2016incorporating, risser2017stable} are computationally expensive, requiring a forward and backward pass for each output image. To address efficiency, feed-forward approaches were proposed, training a generative model to approximate the style transformation. Early works~\cite{johnson2016perceptual, ulyanov2016texture} trained one model per style, while later extensions~\cite{dumoulin2016learned, chen2017stylebank} enabled multiple styles per model. More recent methods~\cite{huang2017arbitrary, xu2021drb, kwon2024aesfa} support arbitrary style transfer via feature statistic alignment or adaptive modulation.
+
+Despite substantial progress in efficiency, fidelity, and control, all aforementioned methods operate under a common assumption: input images are fully opaque and represented solely in RGB space. This assumption simplifies modeling but ignores transparency semantics crucial to layered visual content, rendering these methods ineffective when dealing with partial visibility or alpha-masked regions.
+% Neural Style Transfer(NST) is an image generation task which absorb the content of one image and style of another.
+% With researches\cite{24mordvintsev2015} on the feature extraction ability of VGG\cite{25simonyan2014very}, Gatys et al.\cite{gatys2016image} first used the certain layer of VGG while encoding a style image and a content image to construct a loss function for optimizing a noisy image, finally got a stylized image. After that, style transfer developed into a new stage. To generate better image, Markov Random Field\cite{li2016combining} and other methods\cite{berger2016incorporating,risser2017stable} are proposed. Forementioned works, which are called pixel-iteative NST all do image optimization, which is time-costing.
+% To improve the efficiency, model-iterative NST are proposed.This kind of NST develop from per-model-per-style\cite{johnson2016perceptual,ulyanov2016texture} to per-model-multi-style\cite{dumoulin2016learned,chen2017stylebank}, fianlly to per-model-arbitrary-style\cite{huang2017arbitrary,xu2021drb,kwon2024aesfa,zhu2023all}.
+% Despite the massive progress in NST, above works all assume fully opaque content and are not applicable to stylization under partial visibility.
+
+\subsection{Structure-aware NST}
+
+\subsection{Partial Convolution and Transparency Modeling}
+
 \section{Copyright}
 All papers submitted for publication by AAAI Press must be accompanied by a valid signed copyright form. They must also contain the AAAI copyright notice at the bottom of the first page of the paper. There are no exceptions to these requirements. If you fail to provide us with a signed copyright form or disable the copyright notice, we will be unable to publish your paper. There are \textbf{no exceptions} to this policy. You will find a PDF version of the AAAI copyright form in the AAAI AuthorKit. Please see the specific instructions for your conference for submission details.
 

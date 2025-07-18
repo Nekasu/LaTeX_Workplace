@@ -5,45 +5,45 @@ The style file: aaai2026.bst
 Database file #1: aaai2026.bib
 Warning--can't use both volume and number fields in ahn2024dreamstyler
 Warning--can't use both volume and number fields in kwon2024aesfa
-You've used 15 entries,
+You've used 24 entries,
             2840 wiz_defined-function locations,
-            675 strings with 7273 characters,
-and the built_in function-call counts, 10186 in all, are:
-= -- 834
-> -- 496
+            714 strings with 8887 characters,
+and the built_in function-call counts, 16316 in all, are:
+= -- 1348
+> -- 819
 < -- 3
-+ -- 184
-- -- 170
-* -- 667
-:= -- 1651
-add.period$ -- 63
-call.type$ -- 15
-change.case$ -- 125
-chr.to.int$ -- 16
-cite$ -- 17
-duplicate$ -- 701
-empty$ -- 703
-format.name$ -- 193
-if$ -- 2029
++ -- 300
+- -- 275
+* -- 1085
+:= -- 2635
+add.period$ -- 100
+call.type$ -- 24
+change.case$ -- 197
+chr.to.int$ -- 25
+cite$ -- 26
+duplicate$ -- 1116
+empty$ -- 1104
+format.name$ -- 325
+if$ -- 3250
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 146
-newline$ -- 80
-num.names$ -- 61
-pop$ -- 321
+missing$ -- 228
+newline$ -- 125
+num.names$ -- 97
+pop$ -- 534
 preamble$ -- 1
-purify$ -- 108
+purify$ -- 172
 quote$ -- 0
-skip$ -- 349
+skip$ -- 571
 stack$ -- 0
-substring$ -- 460
-swap$ -- 371
+substring$ -- 713
+swap$ -- 579
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 132
+type$ -- 213
 warning$ -- 2
-while$ -- 82
+while$ -- 130
 width$ -- 0
-write$ -- 201
+write$ -- 314
 (There were 2 warnings)
