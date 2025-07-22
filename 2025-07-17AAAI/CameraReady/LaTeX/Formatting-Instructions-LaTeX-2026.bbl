@@ -1,4 +1,4 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Ahn et~al.(2024)Ahn, Lee, Lee, Kim, Kim, Nam, and Hong}]{ahn2024dreamstyler}
@@ -16,45 +16,15 @@ Chen, D.; Yuan, L.; Liao, J.; Yu, N.; and Hua, G. 2017.
 \newblock Stylebank: An explicit representation for neural image style transfer.
 \newblock In \emph{Proceedings of the IEEE conference on computer vision and pattern recognition}, 1897--1906.
 
-\bibitem[{Clancey(1979)}]{c:79}
-Clancey, W.~J. 1979.
-\newblock \emph{{Transfer of Rule-Based Expertise through a Tutorial Dialogue}}.
-\newblock {Ph.D.} diss., Dept.\ of Computer Science, Stanford Univ., Stanford, Calif.
-
-\bibitem[{Clancey(1983)}]{c:83}
-Clancey, W.~J. 1983.
-\newblock {Communication, Simulation, and Intelligent Agents: Implications of Personal Intelligent Machines for Medical Education}.
-\newblock In \emph{Proceedings of the Eighth International Joint Conference on Artificial Intelligence {(IJCAI-83)}}, 556--560. Menlo Park, Calif: {IJCAI Organization}.
-
-\bibitem[{Clancey(1984)}]{c:84}
-Clancey, W.~J. 1984.
-\newblock {Classification Problem Solving}.
-\newblock In \emph{Proceedings of the Fourth National Conference on Artificial Intelligence}, 45--54. Menlo Park, Calif.: AAAI Press.
-
-\bibitem[{Clancey(2021)}]{c:21}
-Clancey, W.~J. 2021.
-\newblock {The Engineering of Qualitative Models}.
-\newblock Forthcoming.
-
 \bibitem[{Dumoulin, Shlens, and Kudlur(2016)}]{dumoulin2016learned}
 Dumoulin, V.; Shlens, J.; and Kudlur, M. 2016.
 \newblock A learned representation for artistic style.
 \newblock \emph{arXiv preprint arXiv:1610.07629}.
 
-\bibitem[{Engelmore and Morgan(1986)}]{em:86}
-Engelmore, R.; and Morgan, A., eds. 1986.
-\newblock \emph{Blackboard Systems}.
-\newblock Reading, Mass.: Addison-Wesley.
-
 \bibitem[{Gatys, Ecker, and Bethge(2016)}]{gatys2016image}
 Gatys, L.~A.; Ecker, A.~S.; and Bethge, M. 2016.
 \newblock Image style transfer using convolutional neural networks.
 \newblock In \emph{Proceedings of the IEEE conference on computer vision and pattern recognition}, 2414--2423.
-
-\bibitem[{Hasling, Clancey, and Rennels(1984)}]{hcr:83}
-Hasling, D.~W.; Clancey, W.~J.; and Rennels, G. 1984.
-\newblock Strategic explanations for a diagnostic consultation system.
-\newblock \emph{International Journal of Man-Machine Studies}, 20(1): 3--19.
 
 \bibitem[{Huang and Belongie(2017)}]{huang2017arbitrary}
 Huang, X.; and Belongie, S. 2017.
@@ -71,6 +41,11 @@ Kirillov, A.; Mintun, E.; Ravi, N.; Mao, H.; Rolland, C.; Gustafson, L.; Xiao, T
 \newblock Segment anything.
 \newblock In \emph{Proceedings of the IEEE/CVF international conference on computer vision}, 4015--4026.
 
+\bibitem[{Ko and Kim(2023)}]{ko2023continuously}
+Ko, K.; and Kim, C.-S. 2023.
+\newblock Continuously masked transformer for image inpainting.
+\newblock In \emph{Proceedings of the IEEE/CVF international conference on computer vision}, 13169--13178.
+
 \bibitem[{Kwon et~al.(2024)Kwon, Kim, Lin, Yoo, and Cha}]{kwon2024aesfa}
 Kwon, J.; Kim, S.; Lin, Y.; Yoo, S.; and Cha, J. 2024.
 \newblock Aesfa: an aesthetic feature-aware arbitrary neural style transfer.
@@ -81,26 +56,15 @@ Li, C.; and Wand, M. 2016.
 \newblock Combining markov random fields and convolutional neural networks for image synthesis.
 \newblock In \emph{Proceedings of the IEEE conference on computer vision and pattern recognition}, 2479--2486.
 
-\bibitem[{{NASA}(2015)}]{c:23}
-{NASA}. 2015.
-\newblock Pluto: The 'Other' Red Planet.
-\newblock \url{https://www.nasa.gov/nh/pluto-the-other-red-planet}.
-\newblock Accessed: 2018-12-06.
-
-\bibitem[{Rice(1986)}]{r:86}
-Rice, J. 1986.
-\newblock {Poligon: A System for Parallel Problem Solving}.
-\newblock Technical Report KSL-86-19, Dept.\ of Computer Science, Stanford Univ.
+\bibitem[{Liu et~al.(2018)Liu, Reda, Shih, Wang, Tao, and Catanzaro}]{liu2018image}
+Liu, G.; Reda, F.~A.; Shih, K.~J.; Wang, T.-C.; Tao, A.; and Catanzaro, B. 2018.
+\newblock Image inpainting for irregular holes using partial convolutions.
+\newblock In \emph{Proceedings of the European conference on computer vision (ECCV)}, 85--100.
 
 \bibitem[{Risser, Wilmot, and Barnes(2017)}]{risser2017stable}
 Risser, E.; Wilmot, P.; and Barnes, C. 2017.
 \newblock Stable and controllable neural texture synthesis and style transfer using histogram losses.
 \newblock \emph{arXiv preprint arXiv:1701.08893}.
-
-\bibitem[{Robinson(1980)}]{r:80}
-Robinson, A.~L. 1980.
-\newblock New Ways to Make Microcircuits Smaller.
-\newblock \emph{Science}, 208(4447): 1019--1022.
 
 \bibitem[{Simonyan and Zisserman(2014)}]{25simonyan2014very}
 Simonyan, K.; and Zisserman, A. 2014.
@@ -112,14 +76,34 @@ Ulyanov, D.; Lebedev, V.; Vedaldi, A.; and Lempitsky, V. 2016.
 \newblock Texture networks: Feed-forward synthesis of textures and stylized images.
 \newblock \emph{arXiv preprint arXiv:1603.03417}.
 
-\bibitem[{Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin}]{c:22}
-Vaswani, A.; Shazeer, N.; Parmar, N.; Uszkoreit, J.; Jones, L.; Gomez, A.~N.; Kaiser, L.; and Polosukhin, I. 2017.
-\newblock Attention Is All You Need.
-\newblock arXiv:1706.03762.
+\bibitem[{Xia and Chen(2025)}]{xia2025alphadog}
+Xia, Q.; and Chen, Q. 2025.
+\newblock AlphaDog: No-Box Camouflage Attacks via Alpha Channel Oversight.
+\newblock In \emph{NDSS}.
 
 \bibitem[{Xu et~al.(2021)Xu, Long, Wang, and Wang}]{xu2021drb}
 Xu, W.; Long, C.; Wang, R.; and Wang, G. 2021.
 \newblock Drb-gan: A dynamic resblock generative adversarial network for artistic style transfer.
 \newblock In \emph{Proceedings of the IEEE/CVF international conference on computer vision}, 6383--6392.
+
+\bibitem[{Yao et~al.(2024)Yao, Wang, Ye, and Liu}]{yao2024matte}
+Yao, J.; Wang, X.; Ye, L.; and Liu, W. 2024.
+\newblock Matte anything: Interactive natural image matting with segment anything model.
+\newblock \emph{Image and Vision Computing}, 147: 105067.
+
+\bibitem[{Yu et~al.(2019)Yu, Lin, Yang, Shen, Lu, and Huang}]{yu2019free}
+Yu, J.; Lin, Z.; Yang, J.; Shen, X.; Lu, X.; and Huang, T.~S. 2019.
+\newblock Free-form image inpainting with gated convolution.
+\newblock In \emph{Proceedings of the IEEE/CVF international conference on computer vision}, 4471--4480.
+
+\bibitem[{Yu, Wang, and Li(2024)}]{yu2024foreground}
+Yu, Y.; Wang, J.; and Li, N. 2024.
+\newblock Foreground and background separated image style transfer with a single text condition.
+\newblock \emph{Image and Vision Computing}, 143: 104956.
+
+\bibitem[{Zhao et~al.(2020)Zhao, Rosin, Lai, and Wang}]{zhao2020automatic}
+Zhao, H.-H.; Rosin, P.~L.; Lai, Y.-K.; and Wang, Y.-N. 2020.
+\newblock Automatic semantic style transfer using deep convolutional neural networks and soft masks.
+\newblock \emph{The Visual Computer}, 36(7): 1307--1324.
 
 \end{thebibliography}

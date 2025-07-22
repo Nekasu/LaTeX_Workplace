@@ -1,0 +1,273 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.26)  22 JUL 2025 22:41
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**Formatting-Instructions-LaTeX-2026
+(./Formatting-Instructions-LaTeX-2026.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22> (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(c:/SoftWares/texlive/2023/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (./aaai2026.sty
+Package: aaai2026 2026/04/29 AAAI 2026 Submission format
+
+Conference Style for AAAI for LaTeX 2e -- version for submission
+\titlebox=\skip50
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2020/03/25 PSNFSS-v9.3 (WaS) 
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks17
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip51
+\bibsep=\skip52
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count193
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/03/12 v3.6j Customizing captions (AR)
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
+\caption@tempdima=\dimen143
+\captionmargin=\dimen144
+\caption@leftmargin=\dimen145
+\caption@rightmargin=\dimen146
+\caption@width=\dimen147
+\caption@indent=\dimen148
+\caption@parindent=\dimen149
+\caption@hangindent=\dimen150
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count194
+\c@continuedfloat=\count195
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count196
+\float@exts=\toks18
+\float@box=\box51
+\@float@everytoks=\toks19
+\@floatcapt=\box52
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks20
+\c@algorithm=\count197
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count198
+\c@ALC@line=\count199
+\c@ALC@rem=\count266
+\c@ALC@depth=\count267
+\ALC@tlm=\skip53
+\algorithmicindent=\skip54
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/newfloat/newfloat.sty
+Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count268
+\lst@gtempboxa=\box53
+\lst@token=\toks21
+\lst@length=\count269
+\lst@currlwidth=\dimen151
+\lst@column=\count270
+\lst@pos=\count271
+\lst@lostspace=\dimen152
+\lst@width=\dimen153
+\lst@newlines=\count272
+\lst@lineno=\count273
+\lst@maxwidth=\dimen154
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count274
+\lst@skipnumbers=\count275
+\lst@framebox=\box54
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+\@float@every@listing=\toks22
+\c@listing=\count276
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/natbib/bibentry.sty
+Package: bibentry 2007/10/30 1.5 (PWD)
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 141.
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count277
+\l__pdf_internal_box=\box55
+) (./Formatting-Instructions-LaTeX-2026.aux)
+\openout1 = `Formatting-Instructions-LaTeX-2026.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count278
+\scratchdimen=\dimen155
+\scratchbox=\box56
+\nofMPsegments=\count279
+\nofMParguments=\count280
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count281
+\MPscratchDim=\dimen156
+\MPnumerator=\count282
+\makeMPintoPDFobject=\count283
+\everyMPtoPDFconversion=\toks24
+) (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package newfloat Info: `float' package detected.
+\c@lstlisting=\count284
+\c@eqfn=\count285
+\titlearea=\box57
+LaTeX Font Info:    Trying to load font information for U+msa on input line 143.
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 143.
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+\actualheight=\skip55
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 143.
+ (c:/SoftWares/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Underfull \hbox (badness 1253) in paragraph at lines 164--165
+[]\OT1/ptm/m/n/10 Unlike RGB chan-nels that de-fine vi-sual ap-pear-ance,
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 164--165
+\OT1/ptm/m/n/10 the al-pha chan-nel gov-erns per-cep-tual vis-i-bil-ity. In the
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 198--199
+[]\OT1/ptm/m/n/10 However, optimization-based meth-ods (Li and Wand
+ []
+
+[1{c:/SoftWares/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/SoftWares/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
+
+
+
+]
+Underfull \hbox (badness 6961) in paragraph at lines 235--236
+[]\OT1/ptm/m/n/10 Some re-cent ap-proaches also ex-tend the use of
+ []
+
+
+Underfull \hbox (badness 2237) in paragraph at lines 235--236
+\OT1/ptm/m/n/10 segmentation-aware styl-iza-tion (Zhao et al. 2020; Yu,
+ []
+
+
+Underfull \hbox (badness 1342) in paragraph at lines 239--240
+[]\OT1/ptm/m/n/10 To our knowl-edge, this is the first at-tempt to in-te-
+ []
+
+
+Underfull \hbox (badness 1184) in paragraph at lines 251--252
+[]\OT1/ptm/m/n/10 The al-pha chan-nel of $\OML/cmm/m/it/10 I[]$ \OT1/ptm/m/n/10 con-veys mean-ing-ful trans-
+ []
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 254--255
+\OT1/ptm/m/n/10 guided fea-ture prop-a-ga-tion and visibility-weighted loss
+ []
+
+(./Formatting-Instructions-LaTeX-2026.bbl [2]
+Underfull \hbox (badness 1762) in paragraph at lines 20--23
+[]\OT1/ptm/m/n/10 Dumoulin, V.; Shlens, J.; and Kud-lur, M. 2016.  A
+ []
+
+
+Underfull \hbox (badness 1221) in paragraph at lines 45--48
+[]\OT1/ptm/m/n/10 Ko, K.; and Kim, C.-S. 2023.  Con-tin-u-ously masked
+ []
+
+) [3] (./Formatting-Instructions-LaTeX-2026.aux) ) 
+Here is how much of TeX's memory you used:
+ 5742 strings out of 476025
+ 94605 string characters out of 5789024
+ 1867382 words of memory out of 5000000
+ 26143 multiletter control sequences out of 15000+600000
+ 529038 words of font info for 65 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,7n,63p,747b,261s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/SoftWares/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/SoftWares/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/SoftWares/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/SoftWares/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/SoftWares/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/SoftWares/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/SoftWares/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/SoftWares/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/SoftWares/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Formatting-Instructions-LaTeX-2026.pdf (3 pages, 106340 bytes).
+PDF statistics:
+ 60 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
