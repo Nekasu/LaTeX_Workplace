@@ -242,16 +242,42 @@ To our knowledge, this is the first attempt to integrate visibility-aware guidan
 
 \subsection{Problem Formulation: Alpha-aware Neural Style Transfer}
 
-We define \textbf{Alpha-aware Neural Style Transfer (A-NST)} as an extension of traditional neural style transfer from the RGB domain to the RGBA space, where the alpha channel provides pixel-level transparency signals. In contrast to conventional NST, which assumes full visibility across all pixels, A-NST explicitly incorporates \textit{visibility semantics}—i.e., where and to what extent style should be rendered—guided by the alpha channel.
+We define \textbf{Alpha-aware Neural Style Transfer (A-NST)} as an extension of conventional neural style transfer from the RGB space to the RGBA domain, where the alpha channel encodes per-pixel transparency. Unlike standard NST, which assumes full visibility across all pixels, A-NST explicitly models \textit{visibility semantics}—that is, the spatial extent and intensity of stylization—guided by the input alpha map.
 
-Formally, let $I_c \in \mathbb{R}^{H \times W \times 4}$ and $I_s \in \mathbb{R}^{H \times W \times 4}$ be the content and style images in RGBA format, respectively. The objective is to synthesize a stylized output $I_t \in \mathbb{R}^{H \times W \times 4}$ such that:
-
+Formally, let $I_c \in \mathbb{R}^{H \times W \times 4}$ and $I_s \in \mathbb{R}^{H \times W \times 4}$ denote the content and style images in RGBA format, respectively. The goal is to synthesize a stylized output $I_t \in \mathbb{R}^{H \times W \times 4}$ such that:
 \begin{itemize}
-    \item The RGB channels of $I_t$ preserve the structural layout of $I_c$ while reflecting the style characteristics of $I_s$;
-    \item The alpha channel of $I_t$ conveys meaningful transparency, inherited from $I_c$ and/or $I_s$ depending on task constraints.
+    \item The RGB channels of $I_t$ preserve the structural content of $I_c$ while reflecting the style patterns of $I_s$;
+    
+    \item The alpha channel of $I_t$ conveys semantically meaningful transparency, consistent with $I_c$ and/or $I_s$ depending on the stylization objective.
 \end{itemize}
 
-This problem formulation introduces a new modeling dimension in NST: transparency-aware processing. To this end, we propose a framework that integrates soft alpha-guided feature propagation and visibility-weighted loss computation, ensuring style synthesis aligns with the perceptual transparency structure of the input.
+This problem formulation introduces a new dimension to neural stylization: transparency-aware modeling. It demands the network to account not only for appearance transformation, but also for selective feature propagation conditioned on pixel-wise visibility. To address this, we propose an end-to-end framework that incorporates soft alpha-guided feature routing and transparency-aware loss functions to produce stylized RGBA outputs that preserve both artistic identity and alpha structure.
+
+% \subsection{Problem Formulation: Alpha-aware Neural Style Transfer}
+
+% We define \textbf{Alpha-aware Neural Style Transfer (A-NST)} as an extension of traditional neural style transfer from the RGB domain to the RGBA space, where the alpha channel provides pixel-level transparency signals. In contrast to conventional NST, which assumes full visibility across all pixels, A-NST explicitly incorporates \textit{visibility semantics}—i.e., where and to what extent style should be rendered—guided by the alpha channel.
+
+% Formally, let $I_c \in \mathbb{R}^{H \times W \times 4}$ and $I_s \in \mathbb{R}^{H \times W \times 4}$ be the content and style images in RGBA format, respectively. The objective is to synthesize a stylized output $I_t \in \mathbb{R}^{H \times W \times 4}$ such that:
+
+% \begin{itemize}
+%     \item The RGB channels of $I_t$ preserve the structural layout of $I_c$ while reflecting the style characteristics of $I_s$;
+
+%     \item The alpha channel of $I_t$ conveys meaningful transparency, inherited from $I_c$ and/or $I_s$ depending on task constraints.
+% \end{itemize}
+
+% This problem formulation introduces a new modeling dimension in NST: transparency-aware processing. To this end, we propose a framework that integrates soft alpha-guided feature propagation and visibility-weighted loss computation, ensuring style synthesis aligns with the perceptual transparency structure of the input.
+
+\subsection{Soft Alpha-Guided Feature Propagation}
+
+We propose \textbf{Soft Alpha-Guided Feature Propagation (SAFP)}, a framework-level mechanism designed to explicitly integrate pixel-level visibility information encoded in the alpha channel into the stylization process. Unlike conventional neural style transfer approaches that uniformly propagate features without visibility constraints, our method leverages alpha transparency to dynamically modulate feature flow.
+
+Specifically, given RGBA inputs, we first separate the alpha channel from RGB components. The alpha channel is normalized and interpreted as a spatially continuous visibility mask, directly informing feature extraction and stylization stages. To effectively implement this alpha-guided propagation, we introduce a modified convolutional operation—\textit{Soft Partial Convolution (SoftPConv)}—as the core computational unit. SoftPConv conditions convolutional feature extraction on alpha values, ensuring that transparent regions minimally influence feature activations.
+
+Throughout the encoder-decoder pipeline—adapted from the recent state-of-the-art AesFA architecture~\cite{kwon2024aesfa}—we systematically replace all vanilla convolutions with SoftPConv, thus maintaining a consistent visibility-aware feature representation. This allows alpha-derived visibility semantics to be preserved across downsampling and upsampling stages, guiding both local texture adaptation and global structural alignment.
+
+Figure~X illustrates the detailed alpha-guided feature propagation process within our pipeline.
+
+% 我需要修改这一节. method部分应按如下方式展开: 1. 任务设定, 什么是A-NST; 2. α引导的特征传递. 解释该名词, 并介绍本文的实现方法: soft partial convolution; 3. 我的文章结构很像gated covolution一样, 参考gated文章中 method 第三小节怎么写的, 来确定我的文章如何展开.
 
 \bibliography{aaai2026}
 
