@@ -8,6 +8,7 @@
 \usepackage[hyphens]{url}  % DO NOT CHANGE THIS
 \usepackage{graphicx} % DO NOT CHANGE THIS
 \usepackage{amssymb}
+\usepackage{amsmath}
 \urlstyle{rm} % DO NOT CHANGE THIS
 \def\UrlFont{\rm}  % DO NOT CHANGE THIS
 \usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
@@ -93,7 +94,7 @@
 % nouns, adverbs, adjectives should be capitalized, including both words in hyphenated terms, while
 % articles, conjunctions, and prepositions are lower case unless they
 % directly follow a colon or long dash
-\title{AAAI Press Formatting Instructions \\for Authors Using \LaTeX{} --- A Guide}
+\title{Transparency-Aware Style Transfer via Soft Alpha-Guided Feature Propagation}
 \author{
     %Authors
     % All authors must be in the same font size and format.
@@ -143,7 +144,9 @@
 \maketitle
 
 \begin{abstract}
-AAAI creates proceedings, working notes, and technical reports directly from electronic source furnished by the authors. To ensure that all papers in the publication have a uniform appearance, authors must adhere to the following instructions.
+Neural style transfer (NST) aims to synthesize images that retain the structural content of one image while adopting the visual style of another. While recent methods have advanced stylization quality and speed, they typically assume fully opaque inputs and disregard the alpha channel commonly present in RGBA images. However, pixel-wise transparency is essential in many practical settings, including compositional graphics, UI layering, and even adversarial attacks where hidden content is encoded in alpha channels.
+We introduce the task of alpha-aware neural style transfer (A-NST), which generalizes conventional NST to handle partially visible inputs. To address this problem, we propose a novel framework called Soft Alpha-Guided Feature Propagation (SAFP), where the alpha channel serves as a continuous visibility prior to guide feature modulation throughout the stylization process. Our framework instantiates SAFP by adapting a state-of-the-art style transfer backbone to the RGBA domain, replacing all standard convolutions with soft partial convolutions.
+To evaluate A-NST, we construct AlphaStyle, a new dataset comprising RGBA-style pairs with varying transparency levels, derived from MSCOCO and WikiArt via segmentation and compositing. Experiments demonstrate that our method significantly outperforms RGB-only baselines in preserving structural fidelity and transparency alignment. To our knowledge, this is the first formal study to frame neural style transfer in the RGBA domain.
 \end{abstract}
 
 % Uncomment the following to link to your code, datasets, an extended version or similar.
@@ -159,7 +162,7 @@ AAAI creates proceedings, working notes, and technical reports directly from ele
 Neural style transfer (NST) reimagines visual content by synthesizing the semantics of one image with the artistic identity of another using deep neural networks. 
 Since the seminal work of Gatys et al.~\cite{gatys2016image}, which framed style transfer as an optimization problem using the Gram matrix of VGG features, the field has advanced significantly toward real-time stylization~\cite{huang2017arbitrary}, high-fidelity generation~\cite{kwon2024aesfa}, and multimodal controllability~\cite{ahn2024dreamstyler}.
 
-However, a critical limitation underlies almost all existing NST models: the assumption that input images are fully opaque. This design paradigm excludes the alpha channel—a key component in digital imaging that encodes per-pixel transparency and is widely used in UI composition, image compositing, and layered artistic workflows. As a result, standard NST methods ignore transparency semantics, which often leads to undesirable stylization artifacts such as edge bleeding, occluded detail transfer, and inconsistency in downstream composition.
+However, a critical limitation persists across almost all existing neural style transfer (NST) models: the implicit assumption that input images are fully opaque. This design paradigm effectively excludes the alpha channel—an integral component of digital imagery that encodes per-pixel transparency. The alpha channel is central to layered graphics, UI composition, and image compositing workflows, where transparency governs how visual elements interact across spatial hierarchies. By ignoring this dimension, conventional NST models fail to account for transparency semantics, often resulting in stylization artifacts such as edge bleeding, style leakage into transparent regions, and compositional inconsistencies during downstream integration.
 
 Unlike RGB channels that define visual appearance, the alpha channel governs perceptual visibility. In the context of style transfer, alpha values modulate stylistic salience—pixels with high alpha demand stronger stylization fidelity, while those with low or zero alpha suppress stylistic rendering. This transparency signal encodes important spatial semantics that are entirely discarded in RGB-only NST pipelines.
 
@@ -170,7 +173,8 @@ While our study focuses on the alpha channel as a prominent transparency cue, we
 Our contributions are summarized as follows:
 \begin{itemize}
     \item {Problem formulation}: We define alpha-aware neural style transfer as a new task setting that extends traditional RGB-only NST to RGBA-space modeling with explicit transparency semantics.
-    \item {Soft Partial Convolution}: We propose a soft partial convolution module that generalizes conventional partial convolutions to handle continuous-valued alpha masks, enabling effective feature propagation under partial visibility.
+    % \item {Soft Partial Convolution}: We propose a soft partial convolution module that generalizes conventional partial convolutions to handle continuous-valued alpha masks, enabling effective feature propagation under partial visibility.
+    \item {Soft Alpha-Guided Feature Propagation (SAFP)}: We introduce a transparency-aware feature routing mechanism that integrates the alpha channel as a continuous visibility prior throughout the network. 
     \item {Alpha-guided perceptual loss}: We design an alpha-aware perceptual loss that modulates stylization supervision based on transparency, encouraging semantic consistency between visibility and stylized output.
     \item {AlphaStyle Dataset}: We construct AlphaStyle, the first large-scale RGBA dataset for NST, derived from WikiArt and MSCOCO using Segment Anything~\cite{kirillov2023segment} to extract irregular masks. The dataset contains over 20,000 high-quality RGBA image pairs in lossless PNG format.
 \end{itemize}
@@ -269,15 +273,115 @@ This problem formulation introduces a new dimension to neural stylization: trans
 
 \subsection{Soft Alpha-Guided Feature Propagation}
 
-We propose \textbf{Soft Alpha-Guided Feature Propagation (SAFP)}, a framework-level mechanism designed to explicitly integrate pixel-level visibility information encoded in the alpha channel into the stylization process. Unlike conventional neural style transfer approaches that uniformly propagate features without visibility constraints, our method leverages alpha transparency to dynamically modulate feature flow.
+% 2025-07-23 22:31 周三 版本
+We propose \textbf{Soft Alpha-Guided Feature Propagation (SAFP)}, a transparency-aware mechanism that integrates pixel-wise visibility semantics into the stylization process. Instead of treating the alpha channel as an auxiliary mask applied post-hoc, we embed it directly into the convolutional backbone, allowing alpha transparency to dynamically modulate feature propagation throughout the network.
 
-Specifically, given RGBA inputs, we first separate the alpha channel from RGB components. The alpha channel is normalized and interpreted as a spatially continuous visibility mask, directly informing feature extraction and stylization stages. To effectively implement this alpha-guided propagation, we introduce a modified convolutional operation—\textit{Soft Partial Convolution (SoftPConv)}—as the core computational unit. SoftPConv conditions convolutional feature extraction on alpha values, ensuring that transparent regions minimally influence feature activations.
+Given an RGBA input image $I \in \mathbb{R}^{H \times W \times 4}$, we decompose it into an RGB tensor $I_{RGB} \in \mathbb{R}^{H \times W \times 3}$ and a normalized alpha map $M_\alpha \in [0, 1]^{H \times W}$. The alpha map is interpreted as a soft visibility prior: higher values indicate greater relevance in stylization, while lower values correspond to transparent or visually suppressed regions.
 
-Throughout the encoder-decoder pipeline—adapted from the recent state-of-the-art AesFA architecture~\cite{kwon2024aesfa}—we systematically replace all vanilla convolutions with SoftPConv, thus maintaining a consistent visibility-aware feature representation. This allows alpha-derived visibility semantics to be preserved across downsampling and upsampling stages, guiding both local texture adaptation and global structural alignment.
+To incorporate $M_\alpha$ into the feature extraction pipeline, we introduce \emph{Soft Partial Convolution (SoftPConv)}, an extension of Partial Convolution~\cite{liu2018image} to continuous masks. The output feature Y at pixel $(i, j)$ is computed as:
 
-Figure~X illustrates the detailed alpha-guided feature propagation process within our pipeline.
+\begin{equation}
+Y_{i,j} = 
+\begin{cases}
+\displaystyle
+\frac{
+\sum\limits_{(u,v) \in \Omega_{i,j}} W_{u,v} \cdot I_{RGB}^{(u, v)} \cdot M_\alpha^{(u, v)}
+}{
+\sum\limits_{(u,v) \in \Omega_{i,j}} M_\alpha^{(u, v)}
+} + b, & \text{if } \sum M_\alpha > 0 \\
+0, & \text{otherwise}
+\end{cases}
+\label{eq:softpconv}
+\end{equation}
 
-% 我需要修改这一节. method部分应按如下方式展开: 1. 任务设定, 什么是A-NST; 2. α引导的特征传递. 解释该名词, 并介绍本文的实现方法: soft partial convolution; 3. 我的文章结构很像gated covolution一样, 参考gated文章中 method 第三小节怎么写的, 来确定我的文章如何展开.
+Here, $\Omega_{i,j}$ denotes the local kernel window centered at pixel $(i,j)$, $W$ is the convolution kernel, and $b$ is the bias term.
+
+Following~\cite{liu2018image}, we update the alpha map after each layer to reflect the effective visibility at the next stage:
+
+\begin{equation}
+M_\alpha'(i,j) = \frac{1}{|\Omega|} \sum\limits_{(u,v) \in \Omega_{i,j}} M_\alpha(u,v)
+\label{eq:mask_update}
+\end{equation}
+
+We apply SoftPConv throughout the encoder by replacing all vanilla convolutions. This ensures that visibility-aware feature propagation is maintained at every spatial scale, enabling the network to stylize partially visible regions while respecting transparency boundaries and semantic layering. 
+
+Importantly, SoftPConv is implemented as a drop-in replacement for conventional convolutional layers and does not require architectural re-design. As such, it can be seamlessly integrated into existing convolutional architectures, making it a lightweight and modular enhancement for transparency-aware vision tasks.
+% 2025-07-23 22:23 周三 版本
+% We propose \textbf{Soft Alpha-Guided Feature Propagation (SAFP)}, a framework-level mechanism designed to explicitly integrate pixel-level visibility information encoded in the alpha channel into the stylization process. Unlike conventional neural style transfer approaches that uniformly propagate features without visibility constraints, our method leverages alpha transparency to dynamically modulate feature flow.
+
+% Specifically, given RGBA inputs, we first separate the alpha channel from RGB components. The alpha channel is normalized and interpreted as a spatially continuous visibility mask, directly informing feature extraction and stylization stages. To effectively implement this alpha-guided propagation, we introduce a modified convolutional operation—\textit{Soft Partial Convolution (SoftPConv)}—as the core computational unit. SoftPConv, which is based on Partial Convolution\cite{liu2022partial}, conditions convolutional feature extraction on alpha values, ensuring that transparent regions minimally influence feature activations.
+% Supposing that RGBA inputs $I$ have been separate into a normalized alpha channel, also called continuous visible mask $M_{\alpha}$, and RGB parts $I_{RGB}$, the SoftPConv works as the following formula:
+
+% \begin{equation}
+%     \begin{aligned}
+%         \label{equation-soft_partial_convolution}
+%         Y_{i,j} = \begin{cases}
+%             \frac{\sum_{k,l} W \cdot I_{RGB}^{(i+k, j+l)} \cdot M_{\alpha}^{(i+k, j+l)}}{\sum M_{\alpha}^{(i+k,j+l)}} & +b,\\
+%             &\mathrm{if} \sum_{k,l} M_{\alpha}^{(i+k, j+l)} > 0\\
+%             0, & \mathrm{otherwise},
+%         \end{cases}
+%     \end{aligned}
+% \end{equation}
+% where $(i,j)$ represents the current pixel, $W$ means a vanilla convolution operator, $k,l$ means the amount of cheapness relative to the current pixel.
+
+% Similar to Partial Convolution, we sample local averages to update the continuous visibe mask $M'_{\alpha}$:
+
+% \begin{equation}
+%     M_{\alpha}^{'(i,j)} = \frac{1}{K^2}\sum_{k,l}M_{\alpha}^{(i+k,.j+l)}
+% \end{equation}
+
+% Throughout the encoder-decoder pipeline—adapted from the recent state-of-the-art AesFA architecture~\cite{kwon2024aesfa}—we systematically replace all vanilla convolutions with SoftPConv, thus maintaining a consistent visibility-aware feature representation. This allows alpha-derived visibility semantics to be preserved across downsampling and upsampling stages, guiding both local texture adaptation and global structural alignment.
+
+% Figure~X illustrates the detailed alpha-guided feature propagation process within our pipeline.
+
+% 我需要修改这一节. method部分应按如下方式展开: 1. 任务设定, 什么是A-NST(已完成); 2. α引导的特征传递. 解释该名词, 并介绍本文的实现方法: soft partial convolution; 3. 我的文章结构很像gated covolution一样, 参考gated文章中 method 第三小节怎么写的, 来确定我的文章如何展开.
+
+%  2025-07-24 23:05 周四
+\subsection{Alpha-Aware Network Architecture}
+
+SoftPConv layers, introduced in the previous section as the implementation of SAFP, replace all vanilla convolutions in the encoder to enable transparency-aware stylization.To validate its effectiveness, we integrate SoftPConv into a recent state-of-the-art architecture for arbitrary style transfer: \textit{AesFA}~\cite{kwon2024aesfa}.
+
+Our design goal is to extend style transfer models (here is AesFA) to operate in the RGBA domain while preserving its expressive capacity and training stability. We therefore adopt a minimally invasive strategy: only convolutional components are modified to support alpha guidance, while higher-level design such as feature adaptation remains unchanged.
+
+\noindent\textbf{Input and Output.}
+The model receives two RGBA images as input: a content image 
+$I_c \in \mathbb{R}^{H \times W \times 4}$ and a style image $I_s \in \mathbb{R}^{H \times W \times 4}$. The output is a stylized image $I_t \in \mathbb{R}^{H \times W \times 4}$. We decompose each input into RGB and alpha components. The RGB parts are used to encode content and style features. The alpha channel of the \textit{style image} is passed into the network as a soft visibility prior via SoftPConv, modulating feature propagation. In contrast, the \textit{content alpha} is not processed during stylization but preserved for post-processing to maintain downstream compositional fidelity.
+
+\noindent\textbf{Module Replacement Strategy.}
+All vanilla convolutions in the encoder of AesFA are replaced with SoftPConv modules, allowing the style alpha map to influence activations throughout the hierarchy. These modified layers serve as drop-in replacements and require no change to the surrounding network topology or loss functions. This design ensures compatibility with pretrained weights and minimizes engineering overhead.
+
+\noindent\textbf{Alpha Preprocessing and Postprocessing.}
+Before feature extraction, the style alpha channel is normalized and injected as a soft mask into SoftPConv layers. During decoding, the network reconstructs a stylized RGB image, to which the original content alpha is appended to form the RGBA output. This ensures that style propagation respects stylistic visibility while maintaining structural transparency from the content.
+
+\noindent\textbf{Generalization and Compatibility.}
+Although our implementation is instantiated on AesFA, the proposed integration strategy is model-agnostic. Any encoder-decoder-based NST architecture can benefit from alpha-aware modulation by substituting convolutional layers with SoftPConv. This highlights the plug-and-play nature of SoftPConv as a modular enhancement for RGBA-compatible stylization networks.
+
+
+
+% 2025-07-24 22:52 周四 版本
+% \subsection{Alpha-Aware Network Architecture}
+
+% To demonstrate the general applicability and plug-in nature of Soft Alpha-Guided Feature Propagation (SAFP), we instantiate our method on top of AesFA~\cite{kwon2024aesfa}, a recent state-of-the-art network for arbitrary style transfer. Rather than proposing a new architecture from scratch, we aim to show that transparency-aware stylization can be effectively enabled by augmenting a strong existing baseline with soft visibility priors.
+
+% This design choice facilitates fair comparisons with RGB-only methods while minimizing confounding variables. It also reflects a central goal of our work: to propose a lightweight and modular extension that can be broadly adopted across existing encoder-decoder style transfer pipelines, without disrupting their original structure or performance characteristics.
+
+% In the following, we detail how SoftPConv modules are integrated into AesFA, and how the alpha channel is processed to enable visibility-aware stylization. While our implementation is grounded in AesFA, the methodology is not tied to a specific architecture and can be readily applied to other NST frameworks.
+
+
+% \noindent\textbf{Input and Output.}
+% The model accepts two RGBA images as input: a content image 
+% $I_c \in \mathbb{R}^{H \times W \times 4}$  and a style image  $I_s \in \mathbb{R}^{H \times W \times 4}$. The output is a stylized RGBA image $I_t \in \mathbb{R}^{H \times W \times 4}$. The RGB components of both inputs are used for encoding structural and stylistic representations, while the alpha channel of the style image is leveraged during feature extraction to modulate visibility. The content alpha channel, in contrast, is reserved for post-processing to preserve compositional integrity.
+
+% \noindent\textbf{Module Replacement Strategy.}
+% To enable transparency-aware feature computation, we replace all vanilla convolution layers in the encoder and decoder of AesFA with SoftPConv modules as described in the previous section of Soft Alpha-Guided Feature Propagation. These modified layers allow the style alpha map to influence intermediate feature activations in a spatially continuous manner. The attention module and style adaptation layers of AesFA are left unchanged, ensuring compatibility with pretrained weights and preserving the model’s expressive power.
+
+% \noindent\textbf{Alpha Preprocessing and Postprocessing.}
+% Prior to encoding, the input images are separated into RGB and alpha components. The style alpha map is normalized and injected as a soft visibility mask into the feature propagation pipeline. During decoding, we reconstruct the RGB output via stylization, and append the original content alpha channel as the final alpha output. This design ensures that style is guided by stylistic visibility, while structural transparency from the content image is preserved.
+
+% \noindent\textbf{Generalization and Compatibility.}
+% Our framework is designed to be model-agnostic. Since SoftPConv is a drop-in replacement for standard convolution, it can be readily applied to other encoder-decoder style transfer models. We demonstrate this design using AesFA as the base architecture, but the method generalizes to a broad range of NST frameworks.
+
+\subsection{Alpha-Aware Loss Functions}
 
 \bibliography{aaai2026}
 
