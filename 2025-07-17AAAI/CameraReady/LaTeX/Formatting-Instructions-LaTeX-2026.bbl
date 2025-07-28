@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Ahn et~al.(2024)Ahn, Lee, Lee, Kim, Kim, Nam, and Hong}]{ahn2024dreamstyler}
@@ -16,6 +16,11 @@ Chen, D.; Yuan, L.; Liao, J.; Yu, N.; and Hua, G. 2017.
 \newblock Stylebank: An explicit representation for neural image style transfer.
 \newblock In \emph{Proceedings of the IEEE conference on computer vision and pattern recognition}, 1897--1906.
 
+\bibitem[{Deng et~al.(2022)Deng, Tang, Dong, Ma, Pan, Wang, and Xu}]{deng2022stytr2}
+Deng, Y.; Tang, F.; Dong, W.; Ma, C.; Pan, X.; Wang, L.; and Xu, C. 2022.
+\newblock Stytr2: Image style transfer with transformers.
+\newblock In \emph{Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, 11326--11336.
+
 \bibitem[{Dumoulin, Shlens, and Kudlur(2016)}]{dumoulin2016learned}
 Dumoulin, V.; Shlens, J.; and Kudlur, M. 2016.
 \newblock A learned representation for artistic style.
@@ -25,6 +30,11 @@ Dumoulin, V.; Shlens, J.; and Kudlur, M. 2016.
 Gatys, L.~A.; Ecker, A.~S.; and Bethge, M. 2016.
 \newblock Image style transfer using convolutional neural networks.
 \newblock In \emph{Proceedings of the IEEE conference on computer vision and pattern recognition}, 2414--2423.
+
+\bibitem[{Huang et~al.(2023)Huang, An, Wei, Luo, and Pfister}]{huang2023quantart}
+Huang, S.; An, J.; Wei, D.; Luo, J.; and Pfister, H. 2023.
+\newblock Quantart: Quantizing image style transfer towards high visual fidelity.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, 5947--5956.
 
 \bibitem[{Huang and Belongie(2017)}]{huang2017arbitrary}
 Huang, X.; and Belongie, S. 2017.
@@ -56,10 +66,20 @@ Li, C.; and Wand, M. 2016.
 \newblock Combining markov random fields and convolutional neural networks for image synthesis.
 \newblock In \emph{Proceedings of the IEEE conference on computer vision and pattern recognition}, 2479--2486.
 
+\bibitem[{Lin et~al.(2014)Lin, Maire, Belongie, Hays, Perona, Ramanan, Doll{\'a}r, and Zitnick}]{cocodatasetCOCOCommon}
+Lin, T.-Y.; Maire, M.; Belongie, S.; Hays, J.; Perona, P.; Ramanan, D.; Doll{\'a}r, P.; and Zitnick, C.~L. 2014.
+\newblock Microsoft coco: Common objects in context.
+\newblock In \emph{Computer vision--ECCV 2014: 13th European conference, zurich, Switzerland, September 6-12, 2014, proceedings, part v 13}, 740--755. Springer.
+
 \bibitem[{Liu et~al.(2018)Liu, Reda, Shih, Wang, Tao, and Catanzaro}]{liu2018image}
 Liu, G.; Reda, F.~A.; Shih, K.~J.; Wang, T.-C.; Tao, A.; and Catanzaro, B. 2018.
 \newblock Image inpainting for irregular holes using partial convolutions.
 \newblock In \emph{Proceedings of the European conference on computer vision (ECCV)}, 85--100.
+
+\bibitem[{Phillips and Mackintosh(2011)}]{wikiartWikiArtorgVisual}
+Phillips, F.; and Mackintosh, B. 2011.
+\newblock Wiki art gallery, inc.: A case for critical thinking.
+\newblock \emph{Issues in Accounting Education}, 26(3): 593--608.
 
 \bibitem[{Risser, Wilmot, and Barnes(2017)}]{risser2017stable}
 Risser, E.; Wilmot, P.; and Barnes, C. 2017.
@@ -101,9 +121,24 @@ Yu, Y.; Wang, J.; and Li, N. 2024.
 \newblock Foreground and background separated image style transfer with a single text condition.
 \newblock \emph{Image and Vision Computing}, 143: 104956.
 
+\bibitem[{Zhang et~al.(2024)Zhang, Xu, Wang, Dai, and Yang}]{zhang2024s2wat}
+Zhang, C.; Xu, X.; Wang, L.; Dai, Z.; and Yang, J. 2024.
+\newblock S2wat: Image style transfer via hierarchical vision transformer using strips window attention.
+\newblock In \emph{Proceedings of the AAAI conference on artificial intelligence}, volume~38, 7024--7032.
+
+\bibitem[{Zhang et~al.(2022)Zhang, Li, Li, Jia, and Zhang}]{zhang2022exact}
+Zhang, Y.; Li, M.; Li, R.; Jia, K.; and Zhang, L. 2022.
+\newblock Exact feature distribution matching for arbitrary style transfer and domain generalization.
+\newblock In \emph{Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, 8035--8045.
+
 \bibitem[{Zhao et~al.(2020)Zhao, Rosin, Lai, and Wang}]{zhao2020automatic}
 Zhao, H.-H.; Rosin, P.~L.; Lai, Y.-K.; and Wang, Y.-N. 2020.
 \newblock Automatic semantic style transfer using deep convolutional neural networks and soft masks.
 \newblock \emph{The Visual Computer}, 36(7): 1307--1324.
+
+\bibitem[{Zhu et~al.(2017)Zhu, Park, Isola, and Efros}]{zhu2017unpaired}
+Zhu, J.-Y.; Park, T.; Isola, P.; and Efros, A.~A. 2017.
+\newblock Unpaired image-to-image translation using cycle-consistent adversarial networks.
+\newblock In \emph{Proceedings of the IEEE international conference on computer vision}, 2223--2232.
 
 \end{thebibliography}

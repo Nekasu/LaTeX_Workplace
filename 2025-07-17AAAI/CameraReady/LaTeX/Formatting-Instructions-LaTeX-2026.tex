@@ -383,6 +383,52 @@ Although our implementation is instantiated on AesFA, the proposed integration s
 
 \subsection{Alpha-Aware Loss Functions}
 
+To ensure that our training objective is consistent with the transparency-aware design of Soft Alpha-Guided Feature Propagation (SAFP), we adapt the loss framework of AesFA~\cite{kwon2024aesfa} by incorporating visibility guidance through the alpha channel. Rather than redesigning all loss terms from scratch, we selectively apply alpha-aware weighting where it is most critical, while keeping the other objectives unchanged to preserve stable baselines.
+
+\noindent\textbf{Content and Style Losses.}
+We retain the original content and style reconstruction losses of Gatys et al.~\cite{gatys2016image} without modification. These objectives rely on global feature statistics and are largely agnostic to local visibility variations, making them less sensitive to partial transparency. Preserving their formulation also allows for a cleaner comparison with existing RGB-only baselines.
+
+\noindent\textbf{Alpha-aware EFDM Contrastive Loss.}
+The perceptual contrastive loss in AesFA, which is built on Exact Feature Distribution Matching (EFDM)~\cite{zhang2022exact}, is highly sensitive to local feature activations and therefore benefits most from explicit visibility control. We extend EFDM by incorporating alpha masks $M_\alpha$ when matching positive and negative samples: features at transparent or occluded pixels are excluded from the sorted feature distributions before distance computation. 
+A subtle challenge arises in this setting: the effective number of valid pixels may differ between the output $O_i$ and the positive sample $S_{\text{pos},i}$ (or negative samples $S_{\text{neg},j}$) due to different alpha masks. Because EFDM relies on comparing sorted feature distributions, unequal sample sizes would result in biased or unstable matching. To address this, we resample the larger set via linear interpolation so that both distributions have the same number of elements before sorting. This step ensures that the alpha-aware EFDM remains a fair and consistent measure of feature alignment.
+
+Formally, the alpha-aware contrastive loss is defined as:
+\begin{equation}
+    \begin{aligned}
+    &\mathcal{L}_{\text{contrastive}}^{\alpha} =\\
+    &\sum_{i=1}^N
+    \frac{
+    \left\|
+    F_l(O_i) -
+    \text{EFDM}\left(F_l(O_i), F_l(S_{\text{pos}, i}); M_\alpha \right)
+    \right\|_2
+    }{
+    \sum_{j=1}^k
+    \left\|
+    F_l(O_i) -
+    \text{EFDM}\left(F_l(O_i), F_l(S_{\text{neg}, j}); M_\alpha \right)
+    \right\|_2
+    }
+    \label{eq:alpha_efdm}
+    \end{aligned}
+\end{equation}
+where $F_l(\cdot)$ denotes the features extracted at layer $l$, $S_{\text{pos}, i}$ and $S_{\text{neg}, j}$ are the positive and negative style samples, and $\text{EFDM}(\cdot; M_\alpha)$ represents masked feature matching with resampling.
+
+\noindent\textbf{Total Loss.}
+Our final training objective is a weighted combination of the three terms:
+\begin{equation}
+\mathcal{L}_{\text{total}} =
+\lambda_c \mathcal{L}_{\text{content}} +
+\lambda_s \mathcal{L}_{\text{style}} +
+\lambda_{\text{con}} \mathcal{L}_{\text{contrastive}}^{\alpha}
+\end{equation}
+where $\lambda_c$, $\lambda_s$, and $\lambda_{\text{con}}$ are scalar weights controlling the relative importance of each loss.
+
+\noindent\textbf{Discussion.}
+By making the EFDM-based contrastive loss alpha-aware while keeping the content and style losses intact, we achieve two goals: (i) the most visibility-sensitive component of the objective is explicitly aligned with transparency semantics, and (ii) the overall formulation remains plug-and-play and compatible with existing NST frameworks. This minimal yet effective modification closes the loop for SAFP, ensuring that both feature propagation and supervision consistently respect the alpha channel.
+
+
+
 \bibliography{aaai2026}
 
 \end{document}
